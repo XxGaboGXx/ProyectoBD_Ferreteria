@@ -3,7 +3,7 @@ const { sql } = require('../config/database');
 
 class CompraService {
     /**
-     * Crear una nueva compra
+     * Crear una nueva compra (ahora usa sp_CreateCompra)
      */
     async createCompra(compraData) {
         transactionService.validateTransactionData(compraData, [
@@ -17,7 +17,7 @@ class CompraService {
         return await transactionService.executeWithRetry(async (transaction, request) => {
             const total = compraData.Cantidad * compraData.PrecioUnitario;
 
-            // Insertar compra
+            // Ejecutar SP para insertar la compra y obtener Id por OUTPUT
             const compraResult = await request
                 .input('proveedorId', sql.Int, compraData.Id_Proveedor)
                 .input('colaboradorId', sql.Int, compraData.Id_Colaborador)
@@ -25,15 +25,10 @@ class CompraService {
                 .input('cantidad', sql.Int, compraData.Cantidad)
                 .input('precioUnitario', sql.Decimal(10, 2), compraData.PrecioUnitario)
                 .input('total', sql.Decimal(10, 2), total)
-                .query(`
-                    INSERT INTO Compra 
-                    (Id_Proveedor, Id_Colaborador, Id_Producto, Cantidad, PrecioUnitario, Total, Fecha, Estado)
-                    OUTPUT INSERTED.Id_Compra
-                    VALUES 
-                    (@proveedorId, @colaboradorId, @productoId, @cantidad, @precioUnitario, @total, GETDATE(), 'COMPLETADA')
-                `);
+                .output('newId', sql.Int)
+                .execute('dbo.sp_CreateCompra');
 
-            const compraId = compraResult.recordset[0].Id_Compra;
+            const compraId = compraResult.output.newId;
 
             // Actualizar stock (agregar cantidad)
             await transactionService.updateStock(
@@ -63,7 +58,7 @@ class CompraService {
     }
 
     /**
-     * Obtener detalles de una compra
+     * Obtener detalles de una compra (usa sp_GetCompraDetailsById)
      */
     async getCompraDetails(compraId) {
         const { getConnection } = require('../config/database');
@@ -71,21 +66,9 @@ class CompraService {
 
         const result = await pool.request()
             .input('compraId', sql.Int, compraId)
-            .query(`
-                SELECT 
-                    c.*,
-                    p.Nombre as ProductoNombre,
-                    prov.Nombre as ProveedorNombre,
-                    col.Nombre as ColaboradorNombre,
-                    col.Apellidos as ColaboradorApellidos
-                FROM Compra c
-                INNER JOIN Producto p ON c.Id_Producto = p.Id_Producto
-                INNER JOIN Proveedor prov ON c.Id_Proveedor = prov.Id_Proveedor
-                INNER JOIN Colaborador col ON c.Id_Colaborador = col.Id_Colaborador
-                WHERE c.Id_Compra = @compraId
-            `);
+            .execute('dbo.sp_GetCompraDetailsById');
 
-        if (result.recordset.length === 0) {
+        if (!result.recordset || result.recordset.length === 0) {
             throw new Error(`Compra ${compraId} no encontrada`);
         }
 

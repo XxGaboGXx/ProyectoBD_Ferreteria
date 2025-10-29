@@ -13,13 +13,14 @@ class ClienteService extends BaseService {
         const pool = await getConnection();
         const result = await pool.request()
             .input('cedula', sql.VarChar, cedula)
-            .query(`SELECT * FROM Cliente WHERE Cedula = @cedula`);
+            .execute('dbo.sp_GetClienteByCedula');
 
-        if (result.recordset.length === 0) {
+        const rows = result.recordset || [];
+        if (rows.length === 0) {
             throw new Error(`Cliente con cédula ${cedula} no encontrado`);
         }
 
-        return result.recordset[0];
+        return rows[0];
     }
 
     /**
@@ -29,23 +30,9 @@ class ClienteService extends BaseService {
         const pool = await getConnection();
         const result = await pool.request()
             .input('clienteId', sql.Int, clienteId)
-            .query(`
-                SELECT 
-                    v.*,
-                    col.Nombre as ColaboradorNombre,
-                    col.Apellidos as ColaboradorApellidos,
-                    COUNT(dv.Id_DetalleVenta) as TotalProductos
-                FROM Venta v
-                INNER JOIN Colaborador col ON v.Id_Colaborador = col.Id_Colaborador
-                LEFT JOIN DetalleVenta dv ON v.Id_Venta = dv.Id_Venta
-                WHERE v.Id_Cliente = @clienteId
-                GROUP BY v.Id_Venta, v.Id_Cliente, v.Id_Colaborador, v.Subtotal, 
-                         v.Descuento, v.Impuesto, v.Total, v.MetodoPago, v.Fecha, 
-                         v.Estado, col.Nombre, col.Apellidos
-                ORDER BY v.Fecha DESC
-            `);
+            .execute('dbo.sp_GetHistorialComprasByClienteId');
 
-        return result.recordset;
+        return result.recordset || [];
     }
 
     /**
@@ -55,19 +42,10 @@ class ClienteService extends BaseService {
         const pool = await getConnection();
         const result = await pool.request()
             .input('clienteId', sql.Int, clienteId)
-            .query(`
-                SELECT 
-                    COUNT(v.Id_Venta) as TotalCompras,
-                    SUM(v.Total) as TotalGastado,
-                    AVG(v.Total) as PromedioCompra,
-                    MAX(v.Fecha) as UltimaCompra,
-                    MIN(v.Fecha) as PrimeraCompra
-                FROM Venta v
-                WHERE v.Id_Cliente = @clienteId
-                AND v.Estado = 'COMPLETADA'
-            `);
+            .execute('dbo.sp_GetEstadisticasCliente');
 
-        return result.recordset[0];
+        const row = (result.recordset && result.recordset[0]) ? result.recordset[0] : null;
+        return row;
     }
 }
 

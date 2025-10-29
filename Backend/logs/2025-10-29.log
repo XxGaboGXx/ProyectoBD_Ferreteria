@@ -1,0 +1,101 @@
+{"timestamp":"2025-10-29T07:00:49.824Z","method":"GET","url":"/health","status":200,"duration":"8ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
+{"timestamp":"2025-10-29T07:00:49.860Z","method":"GET","url":"/favicon.ico","status":404,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
+{"timestamp":"2025-10-29T07:01:01.285Z","method":"GET","url":"/api/test-connection","status":200,"duration":"89ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
+{"timestamp":"2025-10-29T07:01:13.550Z","method":"GET","url":"/api/tables","status":200,"duration":"65ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
+{"timestamp":"2025-10-29T07:01:20.407Z","method":"GET","url":"/api/data/:tableName","status":500,"duration":"12ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
+{"timestamp":"2025-10-29T07:02:13.218Z","method":"GET","url":"/health","status":200,"duration":"1ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-10-29T07:17:02.069Z","method":"GET","url":"/","status":404,"duration":"6ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
+{"timestamp":"2025-10-29T07:20:36.064Z","method":"GET","url":"/health","status":200,"duration":"3ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:20:36.075Z","method":"GET","url":"/api/test-connection","status":200,"duration":"8ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:20:36.133Z","method":"GET","url":"/api/tables","status":200,"duration":"57ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:20:36.158Z","method":"GET","url":"/api/data/Producto?limit=10","status":200,"duration":"22ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:20:36.180Z","method":"GET","url":"/api/data/Categoria","status":200,"duration":"20ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:20:36.240Z","method":"GET","url":"/api/backups/list","status":500,"duration":"59ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:20:36.301Z","method":"GET","url":"/api/backups/info","status":500,"duration":"59ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:20:36.316Z","method":"GET","url":"/api/data/TablaInexistente","status":404,"duration":"14ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:20:36.319Z","method":"GET","url":"/api/ruta-inexistente","status":404,"duration":"1ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:24:55.459Z","method":"GET","url":"/health","status":200,"duration":"4ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:24:55.539Z","method":"GET","url":"/api/test-connection","status":200,"duration":"77ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:24:55.591Z","method":"GET","url":"/api/tables","status":200,"duration":"51ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:24:55.613Z","method":"GET","url":"/api/data/Producto?limit=10","status":200,"duration":"19ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:24:55.632Z","method":"GET","url":"/api/data/Categoria","status":200,"duration":"17ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:24:55.691Z","method":"GET","url":"/api/backups/list","status":500,"duration":"57ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:24:55.749Z","method":"GET","url":"/api/backups/info","status":500,"duration":"56ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:24:55.762Z","method":"GET","url":"/api/data/TablaInexistente","status":404,"duration":"12ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:24:55.764Z","method":"GET","url":"/api/ruta-inexistente","status":404,"duration":"1ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:25:09.334Z","method":"GET","url":"/health","status":200,"duration":"3ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:25:09.344Z","method":"GET","url":"/api/test-connection","status":200,"duration":"7ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:25:09.382Z","method":"GET","url":"/api/tables","status":200,"duration":"37ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:25:09.400Z","method":"GET","url":"/api/data/Producto?limit=10","status":200,"duration":"16ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:25:09.421Z","method":"GET","url":"/api/data/Categoria","status":200,"duration":"20ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:25:09.479Z","method":"GET","url":"/api/backups/list","status":500,"duration":"57ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:25:09.534Z","method":"GET","url":"/api/backups/info","status":500,"duration":"52ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:25:09.549Z","method":"GET","url":"/api/data/TablaInexistente","status":404,"duration":"11ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:25:09.552Z","method":"GET","url":"/api/ruta-inexistente","status":404,"duration":"1ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:27:32.421Z","method":"GET","url":"/health","status":200,"duration":"3ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:27:32.432Z","method":"GET","url":"/api/test-connection","status":200,"duration":"7ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:27:32.483Z","method":"GET","url":"/api/tables","status":200,"duration":"50ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:27:32.505Z","method":"GET","url":"/api/data/Producto?limit=10","status":200,"duration":"20ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:27:32.525Z","method":"GET","url":"/api/data/Categoria","status":200,"duration":"18ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:27:32.528Z","method":"GET","url":"/api/backups/list","status":200,"duration":"1ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:27:32.530Z","method":"GET","url":"/api/backups/info","status":200,"duration":"1ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:27:32.544Z","method":"GET","url":"/api/data/TablaInexistente","status":404,"duration":"13ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T07:27:32.548Z","method":"GET","url":"/api/ruta-inexistente","status":404,"duration":"0ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T08:04:31.958Z","method":"GET","url":"/health","status":200,"duration":"4ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T08:04:32.036Z","method":"GET","url":"/api/test-connection","status":200,"duration":"75ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T08:04:32.098Z","method":"GET","url":"/api/tables","status":200,"duration":"60ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T08:04:32.121Z","method":"GET","url":"/api/data/Producto?limit=10","status":200,"duration":"19ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T08:04:32.142Z","method":"GET","url":"/api/data/Categoria","status":200,"duration":"19ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T08:04:32.145Z","method":"GET","url":"/api/backups/list","status":200,"duration":"1ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T08:04:32.148Z","method":"GET","url":"/api/backups/info","status":200,"duration":"0ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T08:04:32.164Z","method":"GET","url":"/api/data/TablaInexistente","status":404,"duration":"14ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T08:04:32.169Z","method":"GET","url":"/api/ruta-inexistente","status":404,"duration":"1ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T08:05:21.813Z","method":"GET","url":"/api/backups/info","status":200,"duration":"7ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
+{"timestamp":"2025-10-29T08:05:37.249Z","method":"GET","url":"/api/backups/create","status":404,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
+{"timestamp":"2025-10-29T08:06:04.512Z","method":"GET","url":"/health","status":200,"duration":"0ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T08:06:04.522Z","method":"GET","url":"/api/test-connection","status":200,"duration":"6ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T08:06:04.571Z","method":"GET","url":"/api/tables","status":200,"duration":"47ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T08:06:04.592Z","method":"GET","url":"/api/data/Producto?limit=10","status":200,"duration":"19ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T08:06:04.610Z","method":"GET","url":"/api/data/Categoria","status":200,"duration":"17ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T08:06:04.611Z","method":"GET","url":"/api/backups/list","status":200,"duration":"0ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T08:06:04.614Z","method":"GET","url":"/api/backups/info","status":200,"duration":"1ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T08:06:04.628Z","method":"GET","url":"/api/data/TablaInexistente","status":404,"duration":"13ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T08:06:04.630Z","method":"GET","url":"/api/ruta-inexistente","status":404,"duration":"0ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T15:57:42.162Z","method":"GET","url":"/api/tables","status":200,"duration":"102ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
+{"timestamp":"2025-10-29T15:57:42.222Z","method":"GET","url":"/favicon.ico","status":404,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
+{"timestamp":"2025-10-29T15:57:48.368Z","method":"GET","url":"/api/backups/list","status":200,"duration":"2ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
+{"timestamp":"2025-10-29T15:58:16.869Z","method":"GET","url":"/health","status":200,"duration":"1ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T15:58:16.880Z","method":"GET","url":"/api/test-connection","status":200,"duration":"5ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T15:58:16.891Z","method":"GET","url":"/api/tables","status":200,"duration":"8ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T15:58:16.919Z","method":"GET","url":"/api/data/Producto?limit=10","status":200,"duration":"25ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T15:58:16.943Z","method":"GET","url":"/api/data/Categoria","status":200,"duration":"21ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T15:58:16.948Z","method":"GET","url":"/api/backups/list","status":200,"duration":"2ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T15:58:16.951Z","method":"GET","url":"/api/backups/info","status":200,"duration":"1ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T15:58:16.968Z","method":"GET","url":"/api/data/TablaInexistente","status":404,"duration":"15ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T15:58:16.973Z","method":"GET","url":"/api/ruta-inexistente","status":404,"duration":"0ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T17:07:41.682Z","method":"GET","url":"/api/dashboard/summary","status":500,"duration":"32ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T17:30:39.874Z","method":"GET","url":"/api/dashboard/summary","status":200,"duration":"80ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T17:30:39.926Z","method":"GET","url":"/api/dashboard/ventas-por-dia?days=7","status":200,"duration":"45ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T17:30:39.955Z","method":"GET","url":"/api/dashboard/alertas","status":200,"duration":"27ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T17:30:39.976Z","method":"GET","url":"/api/dashboard/resumen-financiero","status":200,"duration":"19ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T17:30:39.989Z","method":"GET","url":"/api/dashboard/top-clientes?limit=5","status":200,"duration":"10ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T17:30:40.001Z","method":"GET","url":"/api/reportes/inventario","status":500,"duration":"11ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T17:32:51.666Z","method":"GET","url":"/api/dashboard/summary","status":200,"duration":"46ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T17:32:51.697Z","method":"GET","url":"/api/dashboard/ventas-por-dia?days=7","status":200,"duration":"23ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T17:32:51.731Z","method":"GET","url":"/api/dashboard/alertas","status":200,"duration":"32ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T17:32:51.757Z","method":"GET","url":"/api/dashboard/resumen-financiero","status":200,"duration":"24ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T17:32:51.770Z","method":"GET","url":"/api/dashboard/top-clientes?limit=5","status":200,"duration":"11ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T17:32:51.782Z","method":"GET","url":"/api/reportes/inventario","status":200,"duration":"11ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T17:34:52.595Z","method":"GET","url":"/api/dashboard/summary","status":200,"duration":"59ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T17:34:52.636Z","method":"GET","url":"/api/dashboard/ventas-por-dia?days=7","status":200,"duration":"32ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T17:34:52.659Z","method":"GET","url":"/api/dashboard/ventas-por-categoria","status":200,"duration":"19ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T17:34:52.673Z","method":"GET","url":"/api/dashboard/ventas-por-metodo-pago","status":200,"duration":"12ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T17:34:52.712Z","method":"GET","url":"/api/dashboard/alertas","status":200,"duration":"34ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T17:34:52.741Z","method":"GET","url":"/api/dashboard/resumen-financiero","status":200,"duration":"24ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T17:34:52.759Z","method":"GET","url":"/api/dashboard/top-clientes?limit=5","status":200,"duration":"13ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T17:34:52.773Z","method":"GET","url":"/api/dashboard/rendimiento-colaboradores","status":200,"duration":"11ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T17:34:52.795Z","method":"GET","url":"/api/dashboard/analisis-inventario","status":200,"duration":"18ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T17:34:52.813Z","method":"GET","url":"/api/dashboard/movimientos-recientes?limit=10","status":200,"duration":"14ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T17:34:52.826Z","method":"GET","url":"/api/reportes/inventario","status":200,"duration":"11ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T17:34:52.840Z","method":"GET","url":"/api/reportes/clientes","status":200,"duration":"11ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T17:34:52.875Z","method":"GET","url":"/api/reportes/ventas?fechaInicio=2025-10-01&fechaFin=2025-10-29","status":200,"duration":"31ms","ip":"::1","userAgent":"axios/1.13.1"}

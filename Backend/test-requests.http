@@ -1,0 +1,372 @@
+### ========================================
+### API FerreteriaCentral - Test Requests COMPLETO
+### ========================================
+
+@baseUrl = http://localhost:3000
+
+### ========================================
+### HEALTH & CONNECTION
+### ========================================
+
+### Health Check
+GET {{baseUrl}}/health
+
+### Test Connection
+GET {{baseUrl}}/api/test-connection
+
+### Get All Tables
+GET {{baseUrl}}/api/tables
+
+### ========================================
+### DASHBOARD
+### ========================================
+
+### Dashboard Summary (Principal)
+GET {{baseUrl}}/api/dashboard/summary
+
+### Ventas por Día (últimos 30 días)
+GET {{baseUrl}}/api/dashboard/ventas-por-dia?days=30
+
+### Ventas por Día (últimos 7 días)
+GET {{baseUrl}}/api/dashboard/ventas-por-dia?days=7
+
+### Ventas por Categoría
+GET {{baseUrl}}/api/dashboard/ventas-por-categoria
+
+### Ventas por Método de Pago
+GET {{baseUrl}}/api/dashboard/ventas-por-metodo-pago
+
+### Top 10 Clientes
+GET {{baseUrl}}/api/dashboard/top-clientes?limit=10
+
+### Top 5 Clientes
+GET {{baseUrl}}/api/dashboard/top-clientes?limit=5
+
+### Rendimiento de Colaboradores
+GET {{baseUrl}}/api/dashboard/rendimiento-colaboradores
+
+### Análisis de Inventario
+GET {{baseUrl}}/api/dashboard/analisis-inventario
+
+### Movimientos Recientes
+GET {{baseUrl}}/api/dashboard/movimientos-recientes?limit=20
+
+### Resumen Financiero
+GET {{baseUrl}}/api/dashboard/resumen-financiero
+
+### Alertas del Sistema
+GET {{baseUrl}}/api/dashboard/alertas
+
+### ========================================
+### REPORTES
+### ========================================
+
+### Reporte de Ventas (Mes actual)
+GET {{baseUrl}}/api/reportes/ventas?fechaInicio=2025-10-01&fechaFin=2025-10-31
+
+### Reporte de Ventas (Año completo)
+GET {{baseUrl}}/api/reportes/ventas?fechaInicio=2025-01-01&fechaFin=2025-12-31
+
+### Reporte de Inventario
+GET {{baseUrl}}/api/reportes/inventario
+
+### Reporte de Clientes
+GET {{baseUrl}}/api/reportes/clientes
+
+### Reporte de Productos Más Vendidos
+GET {{baseUrl}}/api/reportes/productos-mas-vendidos?fechaInicio=2025-01-01&fechaFin=2025-12-31&limit=20
+
+### Reporte de Productos Más Vendidos (Top 10)
+GET {{baseUrl}}/api/reportes/productos-mas-vendidos?fechaInicio=2025-10-01&fechaFin=2025-10-31&limit=10
+
+### Reporte de Compras
+GET {{baseUrl}}/api/reportes/compras?fechaInicio=2025-01-01&fechaFin=2025-12-31
+
+### Reporte de Alquileres
+GET {{baseUrl}}/api/reportes/alquileres?fechaInicio=2025-01-01&fechaFin=2025-12-31
+
+### ========================================
+### PRODUCTOS
+### ========================================
+
+### Get All Productos
+GET {{baseUrl}}/api/productos
+
+### Get Productos (Paginados)
+GET {{baseUrl}}/api/productos?page=1&limit=10
+
+### Get Productos (Con filtros)
+GET {{baseUrl}}/api/productos?Nombre=Martillo
+
+### Get Producto by ID
+GET {{baseUrl}}/api/productos/1
+
+### Get Low Stock Products
+GET {{baseUrl}}/api/productos/low-stock
+
+### Create Producto
+POST {{baseUrl}}/api/productos
+Content-Type: application/json
+
+{
+    "Nombre": "Martillo de Acero",
+    "Descripcion": "Martillo profesional de acero forjado",
+    "Precio": 15000.00,
+    "CantidadActual": 50,
+    "StockMinimo": 10,
+    "Id_Categoria": 1
+}
+
+### Update Producto
+PUT {{baseUrl}}/api/productos/1
+Content-Type: application/json
+
+{
+    "Precio": 16000.00,
+    "CantidadActual": 45
+}
+
+### Adjust Stock
+POST {{baseUrl}}/api/productos/1/adjust-stock
+Content-Type: application/json
+
+{
+    "cantidad": 10,
+    "motivo": "AJUSTE_INVENTARIO",
+    "userId": "admin"
+}
+
+### Get Movimientos Producto
+GET {{baseUrl}}/api/productos/1/movimientos
+
+### Delete Producto
+DELETE {{baseUrl}}/api/productos/999
+
+### ========================================
+### CLIENTES
+### ========================================
+
+### Get All Clientes
+GET {{baseUrl}}/api/clientes
+
+### Get Cliente by ID
+GET {{baseUrl}}/api/clientes/1
+
+### Get Cliente by Cedula
+GET {{baseUrl}}/api/clientes/cedula/123456789
+
+### Create Cliente
+POST {{baseUrl}}/api/clientes
+Content-Type: application/json
+
+{
+    "Cedula": "987654321",
+    "Nombre": "Juan",
+    "Apellidos": "Pérez García",
+    "Telefono": "88887777",
+    "Email": "juan.perez@email.com",
+    "Direccion": "San José, Costa Rica"
+}
+
+### Update Cliente
+PUT {{baseUrl}}/api/clientes/1
+Content-Type: application/json
+
+{
+    "Telefono": "88889999",
+    "Email": "nuevo.email@email.com"
+}
+
+### Get Historial Compras Cliente
+GET {{baseUrl}}/api/clientes/1/historial
+
+### Get Estadísticas Cliente
+GET {{baseUrl}}/api/clientes/1/estadisticas
+
+### Delete Cliente
+DELETE {{baseUrl}}/api/clientes/999
+
+### ========================================
+### VENTAS
+### ========================================
+
+### Create Venta
+POST {{baseUrl}}/api/ventas
+Content-Type: application/json
+
+{
+    "Id_Cliente": 1,
+    "Id_Colaborador": 1,
+    "MetodoPago": "TARJETA",
+    "items": [
+        {
+            "Id_Producto": 1,
+            "Cantidad": 2,
+            "PrecioUnitario": 15000.00,
+            "Descuento": 500.00
+        },
+        {
+            "Id_Producto": 2,
+            "Cantidad": 1,
+            "PrecioUnitario": 25000.00,
+            "Descuento": 0
+        }
+    ]
+}
+
+### Get Venta Details
+GET {{baseUrl}}/api/ventas/1
+
+### Cancel Venta
+POST {{baseUrl}}/api/ventas/1/cancel
+Content-Type: application/json
+
+{
+    "userId": "admin"
+}
+
+### ========================================
+### COMPRAS
+### ========================================
+
+### Create Compra
+POST {{baseUrl}}/api/compras
+Content-Type: application/json
+
+{
+    "Id_Proveedor": 1,
+    "Id_Colaborador": 1,
+    "Id_Producto": 1,
+    "Cantidad": 100,
+    "PrecioUnitario": 12000.00
+}
+
+### Get Compra Details
+GET {{baseUrl}}/api/compras/1
+
+### ========================================
+### PROVEEDORES
+### ========================================
+
+### Get All Proveedores
+GET {{baseUrl}}/api/proveedores
+
+### Get Proveedor by ID
+GET {{baseUrl}}/api/proveedores/1
+
+### Create Proveedor
+POST {{baseUrl}}/api/proveedores
+Content-Type: application/json
+
+{
+    "Nombre": "Ferretería El Maestro S.A.",
+    "Contacto": "María González",
+    "Telefono": "22334455",
+    "Email": "ventas@elmaestro.com",
+    "Direccion": "Cartago, Costa Rica"
+}
+
+### Update Proveedor
+PUT {{baseUrl}}/api/proveedores/1
+Content-Type: application/json
+
+{
+    "Telefono": "22334466"
+}
+
+### Get Historial Compras Proveedor
+GET {{baseUrl}}/api/proveedores/1/historial
+
+### Get Productos Proveedor
+GET {{baseUrl}}/api/proveedores/1/productos
+
+### ========================================
+### ALQUILERES
+### ========================================
+
+### Create Alquiler
+POST {{baseUrl}}/api/alquileres
+Content-Type: application/json
+
+{
+    "Id_Cliente": 1,
+    "Id_Colaborador": 1,
+    "Id_Producto": 5,
+    "Cantidad": 2,
+    "PrecioDia": 5000.00,
+    "Dias": 7
+}
+
+### Get Alquileres Activos
+GET {{baseUrl}}/api/alquileres/activos
+
+### Get Alquileres Vencidos
+GET {{baseUrl}}/api/alquileres/vencidos
+
+### Finalizar Alquiler
+POST {{baseUrl}}/api/alquileres/1/finalizar
+Content-Type: application/json
+
+{
+    "userId": "admin"
+}
+
+### ========================================
+### CATEGORÍAS
+### ========================================
+
+### Get All Categorías
+GET {{baseUrl}}/api/categorias
+
+### Create Categoría
+POST {{baseUrl}}/api/categorias
+Content-Type: application/json
+
+{
+    "Nombre": "Herramientas Eléctricas",
+    "Descripcion": "Taladros, sierras y herramientas con motor"
+}
+
+### Update Categoría
+PUT {{baseUrl}}/api/categorias/1
+Content-Type: application/json
+
+{
+    "Descripcion": "Descripción actualizada"
+}
+
+### ========================================
+### COLABORADORES
+### ========================================
+
+### Get All Colaboradores
+GET {{baseUrl}}/api/colaboradores
+
+### Create Colaborador
+POST {{baseUrl}}/api/colaboradores
+Content-Type: application/json
+
+{
+    "Cedula": "305550123",
+    "Nombre": "Carlos",
+    "Apellidos": "Ramírez Soto",
+    "Puesto": "Vendedor",
+    "Telefono": "77665544",
+    "Email": "carlos.ramirez@ferreteria.com"
+}
+
+### ========================================
+### BACKUPS
+### ========================================
+
+### Create Backup
+POST {{baseUrl}}/api/backups/create
+
+### List Backups
+GET {{baseUrl}}/api/backups/list
+
+### Get Backup Info
+GET {{baseUrl}}/api/backups/info
+
+### Delete Old Backups
+DELETE {{baseUrl}}/api/backups/cleanup?days=30

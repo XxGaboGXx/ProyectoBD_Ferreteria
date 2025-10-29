@@ -1,0 +1,180 @@
+{
+  "timestamp": "2025-10-29T07:01:20.404Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near ':'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near ':'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/data/:tableName",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-29T07:01:20.408Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near ':'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near ':'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/data/:tableName",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-29T07:20:36.238Z",
+  "message": "next is not a function",
+  "stack": "TypeError: next is not a function\n    at exports.listBackups (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\backupService.js:34:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async exports.listBackups (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\backupController.js:25:25)",
+  "method": "GET",
+  "url": "/api/backups/list",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-29T07:20:36.240Z",
+  "message": "next is not a function",
+  "stack": "TypeError: next is not a function\n    at exports.listBackups (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\backupService.js:34:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async exports.listBackups (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\backupController.js:25:25)",
+  "method": "GET",
+  "url": "/api/backups/list",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-29T07:20:36.300Z",
+  "message": "next is not a function",
+  "stack": "TypeError: next is not a function\n    at exports.getBackupInfo (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\backupService.js:49:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async exports.getBackupInfo (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\backupController.js:43:22)",
+  "method": "GET",
+  "url": "/api/backups/info",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-29T07:20:36.301Z",
+  "message": "next is not a function",
+  "stack": "TypeError: next is not a function\n    at exports.getBackupInfo (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\backupService.js:49:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async exports.getBackupInfo (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\backupController.js:43:22)",
+  "method": "GET",
+  "url": "/api/backups/info",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-29T07:24:55.690Z",
+  "message": "next is not a function",
+  "stack": "TypeError: next is not a function\n    at exports.listBackups (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\backupService.js:34:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async exports.listBackups (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\backupController.js:25:25)",
+  "method": "GET",
+  "url": "/api/backups/list",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-29T07:24:55.691Z",
+  "message": "next is not a function",
+  "stack": "TypeError: next is not a function\n    at exports.listBackups (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\backupService.js:34:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async exports.listBackups (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\backupController.js:25:25)",
+  "method": "GET",
+  "url": "/api/backups/list",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-29T07:24:55.748Z",
+  "message": "next is not a function",
+  "stack": "TypeError: next is not a function\n    at exports.getBackupInfo (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\backupService.js:49:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async exports.getBackupInfo (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\backupController.js:43:22)",
+  "method": "GET",
+  "url": "/api/backups/info",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-29T07:24:55.749Z",
+  "message": "next is not a function",
+  "stack": "TypeError: next is not a function\n    at exports.getBackupInfo (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\backupService.js:49:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async exports.getBackupInfo (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\backupController.js:43:22)",
+  "method": "GET",
+  "url": "/api/backups/info",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-29T07:25:09.478Z",
+  "message": "next is not a function",
+  "stack": "TypeError: next is not a function\n    at exports.listBackups (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\backupService.js:34:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async exports.listBackups (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\backupController.js:25:25)",
+  "method": "GET",
+  "url": "/api/backups/list",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-29T07:25:09.480Z",
+  "message": "next is not a function",
+  "stack": "TypeError: next is not a function\n    at exports.listBackups (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\backupService.js:34:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async exports.listBackups (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\backupController.js:25:25)",
+  "method": "GET",
+  "url": "/api/backups/list",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-29T07:25:09.533Z",
+  "message": "next is not a function",
+  "stack": "TypeError: next is not a function\n    at exports.getBackupInfo (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\backupService.js:49:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async exports.getBackupInfo (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\backupController.js:43:22)",
+  "method": "GET",
+  "url": "/api/backups/info",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-29T07:25:09.535Z",
+  "message": "next is not a function",
+  "stack": "TypeError: next is not a function\n    at exports.getBackupInfo (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\backupService.js:49:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async exports.getBackupInfo (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\backupController.js:43:22)",
+  "method": "GET",
+  "url": "/api/backups/info",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-29T17:07:41.677Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Precio'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Precio'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-29T17:07:41.682Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Precio'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Precio'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-29T17:30:39.998Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'StockMinimo'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'StockMinimo'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/reportes/inventario",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-29T17:30:40.002Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'StockMinimo'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'StockMinimo'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/reportes/inventario",
+  "ip": "::1",
+  "body": {}
+}
+---

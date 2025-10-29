@@ -1,0 +1,25 @@
+### ========================================
+### LOAD TESTING - API FerreteriaCentral
+### ========================================
+
+@baseUrl = http://localhost:3000
+
+### Test 1: Múltiples peticiones simultáneas (ejecuta 20 veces)
+GET {{baseUrl}}/health
+
+### Test 2: Consultas pesadas
+GET {{baseUrl}}/api/data/DetalleVenta?limit=1000
+
+### Test 3: Rate Limit Test (ejecuta 150 veces)
+GET {{baseUrl}}/api/test-connection
+
+### Test 4: Crear múltiples backups (ejecuta con precaución)
+POST {{baseUrl}}/api/backups/create
+Content-Type: application/json
+
+{
+    "name": "test_backup_{{$timestamp}}.bak"
+}
+
+### Test 5: Obtener info de backups repetidamente
+GET {{baseUrl}}/api/backups/info

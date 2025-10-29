@@ -1,19 +1,16 @@
 const express = require('express');
 const router = express.Router();
 const ventaController = require('../controllers/ventaController');
-const { validateRequired } = require('../middlewares');
 
-// Crear venta
-router.post(
-    '/',
-    validateRequired(['Id_Cliente', 'Id_Colaborador', 'items']),
-    ventaController.createVenta
-);
+// Rutas de ventas
+router.get('/', ventaController.getAll);
+router.get('/:id', ventaController.getById);
+router.post('/', ventaController.create);
+router.put('/:id', ventaController.update);
+router.delete('/:id', ventaController.delete);
 
-// Obtener detalles de venta
-router.get('/:id', ventaController.getVentaDetails);
-
-// Cancelar venta
-router.post('/:id/cancel', ventaController.cancelVenta);
+// Rutas específicas de ventas
+router.get('/:id/detalles', ventaController.getDetalles);
+router.post('/:id/anular', ventaController.anularVenta);
 
 module.exports = router;

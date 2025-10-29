@@ -11,7 +11,10 @@
     "log-stats": "node src/scripts/log-stats.js",
     "test-api": "node src/scripts/test-api.js",
     "check-structure": "node src/scripts/check-structure.js",
-     "test-dashboard": "node src/scripts/test-dashboard.js"
+     "test-dashboard": "node src/scripts/test-dashboard.js",
+     "verify-schema": "node src/scripts/verify-schema.js",
+    "seed": "node src/scripts/seed-database.js",
+    "seed:fresh": "node src/scripts/seed-database.js --clear"
   },
   "keywords": [
     "ferreteria",

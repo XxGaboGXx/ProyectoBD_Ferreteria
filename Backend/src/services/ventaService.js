@@ -8,68 +8,34 @@ class VentaService {
         const pool = await getConnection();
         const offset = (page - 1) * limit;
 
-        let whereClause = 'WHERE 1=1';
-        const params = [];
-
-        if (filters.estado) {
-            whereClause += ' AND v.Estado = @estado';
-            params.push({ name: 'estado', type: sql.VarChar, value: filters.estado });
-        }
-
-        if (filters.fechaInicio) {
-            whereClause += ' AND v.Fecha >= @fechaInicio';
-            params.push({ name: 'fechaInicio', type: sql.DateTime, value: filters.fechaInicio });
-        }
-
-        if (filters.fechaFin) {
-            whereClause += ' AND v.Fecha <= @fechaFin';
-            params.push({ name: 'fechaFin', type: sql.DateTime, value: filters.fechaFin });
-        }
-
-        if (filters.clienteId) {
-            whereClause += ' AND v.Id_cliente = @clienteId';
-            params.push({ name: 'clienteId', type: sql.Int, value: filters.clienteId });
-        }
-
-        const query = `
-            SELECT 
-                v.Id_venta,
-                v.Fecha,
-                v.TotalVenta,
-                v.MetodoPago,
-                v.Estado,
-                c.Nombre + ' ' + c.Apellido1 + ISNULL(' ' + c.Apellido2, '') as Cliente,
-                col.Nombre + ' ' + col.Apellido1 + ISNULL(' ' + col.Apellido2, '') as Colaborador,
-                (SELECT COUNT(*) FROM DetalleVenta WHERE Id_venta = v.Id_venta) as CantidadItems
-            FROM Venta v
-            INNER JOIN Cliente c ON v.Id_cliente = c.Id_cliente
-            INNER JOIN Colaborador col ON v.Id_colaborador = col.Id_colaborador
-            ${whereClause}
-            ORDER BY v.Fecha DESC
-            OFFSET @offset ROWS FETCH NEXT @limit ROWS ONLY
-        `;
-
-        let request = pool.request()
+        const request = pool.request()
             .input('offset', sql.Int, offset)
-            .input('limit', sql.Int, limit);
+            .input('limit', sql.Int, limit)
+            .input('estado', sql.VarChar, filters.estado || null)
+            .input('fechaInicio', sql.DateTime, filters.fechaInicio || null)
+            .input('fechaFin', sql.DateTime, filters.fechaFin || null)
+            .input('clienteId', sql.Int, filters.clienteId || null);
 
-        params.forEach(p => request.input(p.name, p.type, p.value));
+        // Obtener filas paginadas
+        const result = await request.execute('dbo.sp_GetVentasPaged');
 
-        const result = await request.query(query);
+        // Contar total separado (se hace en otro SP)
+        const countReq = pool.request()
+            .input('estado', sql.VarChar, filters.estado || null)
+            .input('fechaInicio', sql.DateTime, filters.fechaInicio || null)
+            .input('fechaFin', sql.DateTime, filters.fechaFin || null)
+            .input('clienteId', sql.Int, filters.clienteId || null);
 
-        // Contar total
-        const countQuery = `SELECT COUNT(*) as total FROM Venta v ${whereClause}`;
-        let countRequest = pool.request();
-        params.forEach(p => countRequest.input(p.name, p.type, p.value));
-        const countResult = await countRequest.query(countQuery);
+        const countResult = await countReq.execute('dbo.sp_GetVentasCount');
+        const total = (countResult.recordset && countResult.recordset[0]) ? countResult.recordset[0].total : 0;
 
         return {
-            data: result.recordset,
+            data: result.recordset || [],
             pagination: {
                 page,
                 limit,
-                total: countResult.recordset[0].total,
-                totalPages: Math.ceil(countResult.recordset[0].total / limit)
+                total,
+                totalPages: Math.ceil(total / limit)
             }
         };
     }
@@ -79,46 +45,20 @@ class VentaService {
      */
     async getById(id) {
         const pool = await getConnection();
-        
+
         const result = await pool.request()
             .input('id', sql.Int, id)
-            .query(`
-                SELECT 
-                    v.*,
-                    c.Nombre + ' ' + c.Apellido1 + ISNULL(' ' + c.Apellido2, '') as ClienteNombre,
-                    c.Telefono as ClienteTelefono,
-                    c.Correo as ClienteCorreo,
-                    col.Nombre + ' ' + col.Apellido1 + ISNULL(' ' + col.Apellido2, '') as ColaboradorNombre
-                FROM Venta v
-                INNER JOIN Cliente c ON v.Id_cliente = c.Id_cliente
-                INNER JOIN Colaborador col ON v.Id_colaborador = col.Id_colaborador
-                WHERE v.Id_venta = @id
-            `);
+            .execute('dbo.sp_GetVentaById');
 
-        if (result.recordset.length === 0) return null;
+        if (!result.recordset || result.recordset.length === 0) return null;
 
         const venta = result.recordset[0];
 
-        // Obtener detalles
-        const detalles = await pool.request()
+        const detallesRes = await pool.request()
             .input('ventaId', sql.Int, id)
-            .query(`
-                SELECT 
-                    dv.Id_detalleVenta,
-                    dv.CantidadVenta,
-                    dv.NumeroLinea,
-                    dv.PrecioUnitario,
-                    dv.Subtotal,
-                    p.Id_Producto,
-                    p.Nombre as ProductoNombre,
-                    p.Descripcion as ProductoDescripcion
-                FROM DetalleVenta dv
-                INNER JOIN Producto p ON dv.Id_producto = p.Id_Producto
-                WHERE dv.Id_venta = @ventaId
-                ORDER BY dv.NumeroLinea
-            `);
+            .execute('dbo.sp_GetDetallesByVentaId');
 
-        venta.detalles = detalles.recordset;
+        venta.detalles = detallesRes.recordset || [];
 
         return venta;
     }
@@ -139,7 +79,7 @@ class VentaService {
                 totalVenta += detalle.cantidad * detalle.precioUnitario;
             });
 
-            // Insertar venta
+            // Insertar venta mediante SP y obtener Id
             const ventaResult = await transaction.request()
                 .input('fecha', sql.DateTime, data.fecha || new Date())
                 .input('total', sql.Decimal(12, 2), totalVenta)
@@ -147,57 +87,53 @@ class VentaService {
                 .input('estado', sql.VarChar, 'Completada')
                 .input('clienteId', sql.Int, data.clienteId)
                 .input('colaboradorId', sql.Int, data.colaboradorId)
-                .query(`
-                    INSERT INTO Venta (Fecha, TotalVenta, MetodoPago, Estado, Id_cliente, Id_colaborador)
-                    OUTPUT INSERTED.Id_venta
-                    VALUES (@fecha, @total, @metodoPago, @estado, @clienteId, @colaboradorId)
-                `);
+                .output('newId', sql.Int)
+                .execute('dbo.sp_CreateVenta');
 
-            const ventaId = ventaResult.recordset[0].Id_venta;
+            const ventaId = ventaResult.output ? ventaResult.output.newId : null;
 
-            // Insertar detalles y actualizar stock
+            if (!ventaId) {
+                throw new Error('No se pudo insertar la venta');
+            }
+
+            // Insertar detalles y actualizar stock usando SPs
             for (let i = 0; i < data.detalles.length; i++) {
                 const detalle = data.detalles[i];
                 const subtotal = detalle.cantidad * detalle.precioUnitario;
 
-                // Verificar stock disponible
+                // Validar existencia y stock mediante sp_GetProductoById (ya definido en transactionService SPs)
                 const stockCheck = await transaction.request()
-                    .input('productoId', sql.Int, detalle.productoId)
-                    .query('SELECT CantidadActual, Nombre FROM Producto WHERE Id_Producto = @productoId');
+                    .input('productId', sql.Int, detalle.productoId)
+                    .execute('dbo.sp_GetProductoById');
 
-                if (stockCheck.recordset.length === 0) {
+                if (!stockCheck.recordset || stockCheck.recordset.length === 0) {
                     throw new Error(`Producto ${detalle.productoId} no encontrado`);
                 }
 
-                const stockActual = stockCheck.recordset[0].CantidadActual;
-                const nombreProducto = stockCheck.recordset[0].Nombre;
+                const stockActual = stockCheck.recordset[0].CantidadActual || 0;
+                const nombreProducto = stockCheck.recordset[0].Nombre || `Id ${detalle.productoId}`;
 
                 if (stockActual < detalle.cantidad) {
                     throw new Error(`Stock insuficiente para ${nombreProducto}. Disponible: ${stockActual}, Solicitado: ${detalle.cantidad}`);
                 }
 
-                // Insertar detalle
+                // Insertar detalle via SP
                 await transaction.request()
                     .input('cantidad', sql.Int, detalle.cantidad)
-                    .input('linea', sql.Int, i + 1)
+                    .input('numeroLinea', sql.Int, i + 1)
                     .input('precio', sql.Decimal(12, 2), detalle.precioUnitario)
                     .input('subtotal', sql.Decimal(12, 2), subtotal)
                     .input('ventaId', sql.Int, ventaId)
                     .input('productoId', sql.Int, detalle.productoId)
-                    .query(`
-                        INSERT INTO DetalleVenta (CantidadVenta, NumeroLinea, PrecioUnitario, Subtotal, Id_venta, Id_producto)
-                        VALUES (@cantidad, @linea, @precio, @subtotal, @ventaId, @productoId)
-                    `);
+                    .execute('dbo.sp_InsertDetalleVenta');
 
-                // Actualizar stock
+                // Actualizar stock: usar sp_UpdateStock (debe existir, creado con TransactionService conversion)
                 await transaction.request()
-                    .input('cantidad', sql.Int, detalle.cantidad)
-                    .input('productoId', sql.Int, detalle.productoId)
-                    .query(`
-                        UPDATE Producto 
-                        SET CantidadActual = CantidadActual - @cantidad 
-                        WHERE Id_Producto = @productoId
-                    `);
+                    .input('productId', sql.Int, detalle.productoId)
+                    .input('change', sql.Int, -detalle.cantidad)
+                    .input('movType', sql.NVarChar, 'VENTA')
+                    .input('quantity', sql.Int, detalle.cantidad)
+                    .execute('dbo.sp_UpdateStock');
             }
 
             await transaction.commit();
@@ -205,7 +141,11 @@ class VentaService {
             return await this.getById(ventaId);
 
         } catch (error) {
-            await transaction.rollback();
+            try {
+                await transaction.rollback();
+            } catch (rbErr) {
+                // noop
+            }
             throw error;
         }
     }
@@ -220,9 +160,9 @@ class VentaService {
         try {
             await transaction.begin();
 
-            // Obtener venta
+            // Obtener venta y detalles
             const venta = await this.getById(id);
-            
+
             if (!venta) {
                 throw new Error('Venta no encontrada');
             }
@@ -231,34 +171,35 @@ class VentaService {
                 throw new Error('La venta ya está cancelada');
             }
 
-            // Actualizar estado
+            // Actualizar estado mediante SP
             await transaction.request()
-                .input('id', sql.Int, id)
-                .query(`UPDATE Venta SET Estado = 'Cancelada' WHERE Id_venta = @id`);
+                .input('ventaId', sql.Int, id)
+                .execute('dbo.sp_CancelVenta');
 
-            // Devolver stock
+            // Devolver stock para cada detalle (usar sp_UpdateStock)
             for (const detalle of venta.detalles) {
                 await transaction.request()
-                    .input('cantidad', sql.Int, detalle.CantidadVenta)
-                    .input('productoId', sql.Int, detalle.Id_Producto)
-                    .query(`
-                        UPDATE Producto 
-                        SET CantidadActual = CantidadActual + @cantidad 
-                        WHERE Id_Producto = @productoId
-                    `);
+                    .input('productId', sql.Int, detalle.Id_Producto)
+                    .input('change', sql.Int, detalle.CantidadVenta) // suma al stock
+                    .input('movType', sql.NVarChar, 'DEVOLUCION_VENTA')
+                    .input('quantity', sql.Int, detalle.CantidadVenta)
+                    .execute('dbo.sp_UpdateStock');
             }
 
             await transaction.commit();
 
-            return { 
-                id, 
-                estado: 'Cancelada', 
+            return {
+                id,
+                estado: 'Cancelada',
                 motivo,
                 message: 'Venta cancelada y stock devuelto exitosamente'
             };
-
         } catch (error) {
-            await transaction.rollback();
+            try {
+                await transaction.rollback();
+            } catch (rbErr) {
+                // noop
+            }
             throw error;
         }
     }

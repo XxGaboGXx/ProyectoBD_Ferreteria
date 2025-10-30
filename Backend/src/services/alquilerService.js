@@ -29,7 +29,7 @@ class AlquilerService {
             const fechaFin = new Date();
             fechaFin.setDate(fechaFin.getDate() + alquilerData.Dias);
 
-            // Insertar alquiler
+            // Ejecutar SP para insertar alquiler y obtener Id por OUTPUT
             const result = await request
                 .input('clienteId', sql.Int, alquilerData.Id_Cliente)
                 .input('colaboradorId', sql.Int, alquilerData.Id_Colaborador)
@@ -40,17 +40,10 @@ class AlquilerService {
                 .input('total', sql.Decimal(10, 2), total)
                 .input('fechaInicio', sql.DateTime, fechaInicio)
                 .input('fechaFin', sql.DateTime, fechaFin)
-                .query(`
-                    INSERT INTO Alquiler 
-                    (Id_Cliente, Id_Colaborador, Id_Producto, Cantidad, PrecioDia, Dias, 
-                     Total, FechaInicio, FechaFin, Estado)
-                    OUTPUT INSERTED.Id_Alquiler
-                    VALUES 
-                    (@clienteId, @colaboradorId, @productoId, @cantidad, @precioDia, @dias,
-                     @total, @fechaInicio, @fechaFin, 'ACTIVO')
-                `);
+                .output('newId', sql.Int)
+                .execute('dbo.sp_CreateAlquiler');
 
-            const alquilerId = result.recordset[0].Id_Alquiler;
+            const alquilerId = result.output.newId;
 
             // Reducir stock (productos alquilados)
             await transactionService.updateStock(
@@ -85,16 +78,12 @@ class AlquilerService {
      */
     async finalizarAlquiler(alquilerId, userId) {
         return await transactionService.executeTransaction(async (transaction, request) => {
-            // Obtener datos del alquiler
+            // Obtener datos del alquiler via SP
             const alquilerData = await request
                 .input('alquilerId', sql.Int, alquilerId)
-                .query(`
-                    SELECT Id_Producto, Cantidad, Estado
-                    FROM Alquiler
-                    WHERE Id_Alquiler = @alquilerId
-                `);
+                .execute('dbo.sp_GetAlquilerById');
 
-            if (alquilerData.recordset.length === 0) {
+            if (!alquilerData.recordset || alquilerData.recordset.length === 0) {
                 throw new Error(`Alquiler ${alquilerId} no encontrado`);
             }
 
@@ -113,13 +102,10 @@ class AlquilerService {
                 'DEVOLUCION_ALQUILER'
             );
 
-            // Actualizar estado
-            await request.query(`
-                UPDATE Alquiler
-                SET Estado = 'FINALIZADO',
-                    FechaDevolucion = GETDATE()
-                WHERE Id_Alquiler = @alquilerId
-            `);
+            // Actualizar estado mediante SP
+            await request
+                .input('alquilerId', sql.Int, alquilerId)
+                .execute('dbo.sp_FinalizarAlquiler');
 
             // Registrar en bitácora
             await transactionService.logToBitacora(
@@ -146,21 +132,7 @@ class AlquilerService {
         const { getConnection } = require('../config/database');
         const pool = await getConnection();
 
-        const result = await pool.request().query(`
-            SELECT 
-                a.*,
-                c.Nombre as ClienteNombre,
-                c.Apellidos as ClienteApellidos,
-                p.Nombre as ProductoNombre,
-                col.Nombre as ColaboradorNombre,
-                DATEDIFF(day, GETDATE(), a.FechaFin) as DiasRestantes
-            FROM Alquiler a
-            INNER JOIN Cliente c ON a.Id_Cliente = c.Id_Cliente
-            INNER JOIN Producto p ON a.Id_Producto = p.Id_Producto
-            INNER JOIN Colaborador col ON a.Id_Colaborador = col.Id_Colaborador
-            WHERE a.Estado = 'ACTIVO'
-            ORDER BY a.FechaFin ASC
-        `);
+        const result = await pool.request().execute('dbo.sp_GetAlquileresActivos');
 
         return result.recordset;
     }
@@ -172,21 +144,7 @@ class AlquilerService {
         const { getConnection } = require('../config/database');
         const pool = await getConnection();
 
-        const result = await pool.request().query(`
-            SELECT 
-                a.*,
-                c.Nombre as ClienteNombre,
-                c.Apellidos as ClienteApellidos,
-                c.Telefono as ClienteTelefono,
-                p.Nombre as ProductoNombre,
-                DATEDIFF(day, a.FechaFin, GETDATE()) as DiasVencidos
-            FROM Alquiler a
-            INNER JOIN Cliente c ON a.Id_Cliente = c.Id_Cliente
-            INNER JOIN Producto p ON a.Id_Producto = p.Id_Producto
-            WHERE a.Estado = 'ACTIVO'
-            AND a.FechaFin < GETDATE()
-            ORDER BY a.FechaFin ASC
-        `);
+        const result = await pool.request().execute('dbo.sp_GetAlquileresVencidos');
 
         return result.recordset;
     }

@@ -28,7 +28,7 @@ class BackupService {
     }
 
     /**
-     * Crea un backup de la base de datos
+     * Crea un backup de la base de datos usando el procedimiento almacenado dbo.sp_CreateBackup
      */
     async createBackup(backupName = null) {
         try {
@@ -40,16 +40,13 @@ class BackupService {
 
             console.log('🔄 Iniciando backup de base de datos...');
             console.log(`📁 Destino: ${fullPath}`);
-            
-            await pool.request().query(`
-                BACKUP DATABASE FerreteriaCentral 
-                TO DISK = '${fullPath}'
-                WITH FORMAT, 
-                MEDIANAME = 'FerreteriaCentralBackup',
-                NAME = 'Full Backup of FerreteriaCentral',
-                COMPRESSION;
-            `);
 
+            // Llamar al procedimiento almacenado que realiza el BACKUP en el servidor SQL
+            await pool.request()
+                .input('backupFullPath', sql.NVarChar(4000), fullPath)
+                .execute('dbo.sp_CreateBackup');
+
+            // Verificar que el archivo fue creado en el filesystem (esto asume que SQL Server y la app acceden al mismo FS)
             const stats = fs.statSync(fullPath);
             const sizeInMB = (stats.size / (1024 * 1024)).toFixed(2);
 
@@ -73,7 +70,7 @@ class BackupService {
     }
 
     /**
-     * Restaura un backup
+     * Restaura un backup usando el procedimiento almacenado dbo.sp_RestoreBackup
      */
     async restoreBackup(backupFileName) {
         try {
@@ -85,21 +82,11 @@ class BackupService {
             }
 
             console.log('🔄 Restaurando backup...');
-            
-            await pool.request().query(`
-                USE master;
-                ALTER DATABASE FerreteriaCentral SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
-            `);
 
-            await pool.request().query(`
-                RESTORE DATABASE FerreteriaCentral 
-                FROM DISK = '${fullPath}'
-                WITH REPLACE, RECOVERY;
-            `);
-
-            await pool.request().query(`
-                ALTER DATABASE FerreteriaCentral SET MULTI_USER;
-            `);
+            // Ejecutar el SP que hace el ALTER DATABASE ... RESTORE ... y vuelve a MULTI_USER
+            await pool.request()
+                .input('backupFullPath', sql.NVarChar(4000), fullPath)
+                .execute('dbo.sp_RestoreBackup');
 
             console.log('✅ Backup restaurado exitosamente');
             
@@ -112,6 +99,7 @@ class BackupService {
         } catch (error) {
             console.error('❌ Error al restaurar backup:', error.message);
             
+            // Intentar asegurar que la DB vuelva a multi_user si algo falló
             try {
                 const pool = await getConnection();
                 await pool.request().query(`
@@ -119,7 +107,7 @@ class BackupService {
                     ALTER DATABASE FerreteriaCentral SET MULTI_USER;
                 `);
             } catch (e) {
-                console.error('⚠️  No se pudo restaurar modo multi user');
+                console.error('⚠️  No se pudo restaurar modo multi user:', e.message);
             }
             
             throw error;
@@ -127,7 +115,7 @@ class BackupService {
     }
 
     /**
-     * Lista todos los backups disponibles
+     * Lista todos los backups disponibles (sin cambios, opera en filesystem)
      */
     async listBackups() {
         try {

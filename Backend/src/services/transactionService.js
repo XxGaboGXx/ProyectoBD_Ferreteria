@@ -110,20 +110,17 @@ class TransactionService {
 
     /**
      * Registra una operación en la bitácora
+     * Ahora utiliza el procedimiento almacenado dbo.sp_LogToBitacora
      */
     async logToBitacora(transaction, request, tableName, action, recordId, userId = null) {
         try {
+            // request viene ligado a la transacción cuando se llama desde executeTransaction
             await request
-                .input('tabla', sql.VarChar, tableName)
-                .input('accion', sql.VarChar, action)
+                .input('tabla', sql.NVarChar, tableName)
+                .input('accion', sql.NVarChar, action)
                 .input('id_registro', sql.Int, recordId)
-                .input('usuario', sql.VarChar, userId || 'SYSTEM')
-                .query(`
-                    INSERT INTO BitacoraProducto 
-                    (Tabla, Accion, Id_Registro, Usuario, Fecha)
-                    VALUES 
-                    (@tabla, @accion, @id_registro, @usuario, GETDATE())
-                `);
+                .input('usuario', sql.NVarChar, userId || 'SYSTEM')
+                .execute('dbo.sp_LogToBitacora');
             
             console.log(`📝 Registrado en bitácora: ${action} en ${tableName}`);
         } catch (error) {
@@ -134,30 +131,24 @@ class TransactionService {
 
     /**
      * Valida que exista stock suficiente para una venta
+     * Ahora usa el procedimiento almacenado dbo.sp_GetProductoById
      */
     async validateStock(transaction, request, productId, quantity) {
         const result = await request
             .input('productId', sql.Int, productId)
-            .query(`
-                SELECT 
-                    Id_Producto,
-                    Nombre,
-                    CantidadActual,
-                    StockMinimo
-                FROM Producto 
-                WHERE Id_Producto = @productId
-            `);
+            .execute('dbo.sp_GetProductoById');
         
-        if (result.recordset.length === 0) {
+        if (!result.recordset || result.recordset.length === 0) {
             throw new Error(`Producto con ID ${productId} no encontrado`);
         }
         
         const product = result.recordset[0];
+        const available = product.CantidadActual || 0;
         
-        if (product.CantidadActual < quantity) {
+        if (available < quantity) {
             throw new Error(
                 `Stock insuficiente para ${product.Nombre}. ` +
-                `Disponible: ${product.CantidadActual}, Solicitado: ${quantity}`
+                `Disponible: ${available}, Solicitado: ${quantity}`
             );
         }
         
@@ -165,52 +156,31 @@ class TransactionService {
     }
 
     /**
-     * Actualiza el stock de un producto
+     * Actualiza el stock de un producto y registra movimiento usando SP dbo.sp_UpdateStock
      */
     async updateStock(transaction, request, productId, quantityChange, movementType) {
-        // Actualizar cantidad
+        // cantidad absoluta para el movimiento
+        const quantityForMovement = Math.abs(quantityChange);
+
         await request
             .input('productId', sql.Int, productId)
             .input('change', sql.Int, quantityChange)
-            .query(`
-                UPDATE Producto 
-                SET CantidadActual = CantidadActual + @change,
-                    FechaActualizacion = GETDATE()
-                WHERE Id_Producto = @productId
-            `);
-        
-        // Registrar movimiento de stock
-        await request
-            .input('movType', sql.VarChar, movementType)
-            .input('quantity', sql.Int, Math.abs(quantityChange))
-            .query(`
-                INSERT INTO MovimientoStock 
-                (Id_Producto, TipoMovimiento, Cantidad, Fecha)
-                VALUES 
-                (@productId, @movType, @quantity, GETDATE())
-            `);
-        
+            .input('movType', sql.NVarChar, movementType)
+            .input('quantity', sql.Int, quantityForMovement)
+            .execute('dbo.sp_UpdateStock');
+
         console.log(`📦 Stock actualizado para producto ${productId}: ${quantityChange > 0 ? '+' : ''}${quantityChange}`);
     }
 
     /**
-     * Verifica alertas de stock bajo
+     * Verifica alertas de stock bajo usando SP dbo.sp_CheckStockAlertByProductId
      */
     async checkStockAlerts(transaction, request, productId) {
         const result = await request
             .input('productId', sql.Int, productId)
-            .query(`
-                SELECT 
-                    Id_Producto,
-                    Nombre,
-                    CantidadActual,
-                    StockMinimo
-                FROM Producto 
-                WHERE Id_Producto = @productId
-                AND CantidadActual <= StockMinimo
-            `);
+            .execute('dbo.sp_CheckStockAlertByProductId');
         
-        if (result.recordset.length > 0) {
+        if (result.recordset && result.recordset.length > 0) {
             const product = result.recordset[0];
             console.log(`⚠️  ALERTA: Stock bajo para ${product.Nombre} (Actual: ${product.CantidadActual}, Mínimo: ${product.StockMinimo})`);
             return {

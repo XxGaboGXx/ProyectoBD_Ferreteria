@@ -1,54 +1,47 @@
 const BaseService = require('./baseService');
-const { sql } = require('../config/database');
+const { getConnection, sql } = require('../config/database');
 
 class ProductoService extends BaseService {
     constructor() {
         super('Producto', 'Id_Producto');
     }
 
+    /**
+     * Obtener listado paginado de productos (ahora via SP: dbo.sp_GetProductosPaged)
+     * Mantengo la firma original: getAll(page, limit, filters)
+     */
     async getAll(page = 1, limit = 50, filters = {}) {
-        const { getConnection } = require('../config/database');
         const pool = await getConnection();
-        const offset = (page - 1) * limit;
 
-        let whereClause = '';
-        let request = pool.request();
+        const columns = Object.keys(filters);
+        const values = columns.map(col => filters[col]);
 
-        if (Object.keys(filters).length > 0) {
-            const conditions = [];
-            Object.entries(filters).forEach(([key, value], index) => {
-                const paramName = `filter${index}`;
-                conditions.push(`p.${key} LIKE @${paramName}`);
-                request.input(paramName, sql.VarChar, `%${value}%`);
-            });
-            whereClause = `WHERE ${conditions.join(' AND ')}`;
+        const filterColumnsJson = columns.length > 0 ? JSON.stringify(columns) : null;
+        const filterValuesJson = values.length > 0 ? JSON.stringify(values) : null;
+
+        const request = pool.request()
+            .input('page', sql.Int, page)
+            .input('limit', sql.Int, limit)
+            .input('filterColumns', sql.NVarChar(sql.MAX), filterColumnsJson)
+            .input('filterValues', sql.NVarChar(sql.MAX), filterValuesJson);
+
+        const result = await request.execute('dbo.sp_GetProductosPaged');
+
+        // sp_GetProductosPaged returns two resultsets: [0] => total, [1] => rows
+        const recordsets = result.recordsets || [];
+        let total = 0;
+        let rows = [];
+
+        if (recordsets.length === 2) {
+            total = recordsets[0] && recordsets[0][0] ? recordsets[0][0].Total : 0;
+            rows = recordsets[1] || [];
+        } else if (recordsets.length === 1) {
+            rows = recordsets[0] || [];
+            total = rows.length;
         }
 
-        const countResult = await request.query(`
-            SELECT COUNT(*) as total FROM Producto p ${whereClause}
-        `);
-        const total = countResult.recordset[0].total;
-
-        request = pool.request();
-        Object.entries(filters).forEach(([key, value], index) => {
-            request.input(`filter${index}`, sql.VarChar, `%${value}%`);
-        });
-
-        const result = await request.query(`
-            SELECT 
-                p.*,
-                c.Nombre as CategoriaNombre,
-                c.Descripcion as CategoriaDescripcion
-            FROM Producto p
-            LEFT JOIN Categoria c ON p.Id_categoria = c.Id_categoria
-            ${whereClause}
-            ORDER BY p.Id_Producto DESC
-            OFFSET ${offset} ROWS 
-            FETCH NEXT ${limit} ROWS ONLY
-        `);
-
         return {
-            data: result.recordset,
+            data: rows,
             pagination: {
                 total,
                 page,
@@ -58,74 +51,39 @@ class ProductoService extends BaseService {
         };
     }
 
+    /**
+     * Obtener productos con stock bajo (SP: dbo.sp_GetLowStockProducts)
+     */
     async getLowStock() {
-        const { getConnection } = require('../config/database');
         const pool = await getConnection();
-
-        const result = await pool.request().query(`
-            SELECT 
-                p.*,
-                c.Nombre as CategoriaNombre,
-                (p.CantidadMinima - p.CantidadActual) as Faltante
-            FROM Producto p
-            LEFT JOIN Categoria c ON p.Id_categoria = c.Id_categoria
-            WHERE p.CantidadActual <= p.CantidadMinima
-            ORDER BY Faltante DESC
-        `);
-
-        return result.recordset;
+        const result = await pool.request().execute('dbo.sp_GetLowStockProducts');
+        return result.recordset || [];
     }
 
+    /**
+     * Ajustar stock (ahora usa SP: dbo.sp_AdjustStock)
+     * Preservo la lógica transaccional (se abre transaction en el service)
+     */
     async adjustStock(id, cantidad, motivo, userId = 'SYSTEM') {
-        const { getConnection } = require('../config/database');
         const pool = await getConnection();
         const transaction = pool.transaction();
 
         try {
             await transaction.begin();
 
-            // Actualizar stock
-            await transaction.request()
-                .input('id', sql.Int, id)
-                .input('cantidad', sql.Int, cantidad)
-                .query(`
-                    UPDATE Producto 
-                    SET CantidadActual = CantidadActual + @cantidad
-                    WHERE Id_Producto = @id
-                `);
+            const request = transaction.request();
 
-            // Registrar movimiento
-            const movResult = await transaction.request()
-                .input('userId', sql.VarChar, userId)
-                .query(`
-                    INSERT INTO Movimiento (Fecha, Responsable, Id_colaborador)
-                    OUTPUT INSERTED.Id_movimiento
-                    VALUES (GETDATE(), @userId, 1)
-                `);
-
-            const movId = movResult.recordset[0].Id_movimiento;
-
-            // Buscar tipo de movimiento de ajuste
-            const tipoMov = await transaction.request().query(`
-                SELECT TOP 1 Id_tipoDetalleMovimiento 
-                FROM TipoDetalleMovimiento 
-                WHERE Codigo = 'AJUSTE' OR Nombre LIKE '%AJUSTE%'
-            `);
-
-            const tipoMovId = tipoMov.recordset[0]?.Id_tipoDetalleMovimiento || 1;
-
-            // Insertar detalle
-            await transaction.request()
-                .input('cantidad', sql.Int, cantidad)
-                .input('descripcion', sql.VarChar, motivo)
-                .input('tipoMovId', sql.Int, tipoMovId)
-                .input('movId', sql.Int, movId)
+            // Llamada al SP que realiza: UPDATE Producto, INSERT Movimiento (devuelve movId), INSERT DetalleMovimiento
+            const execResult = await request
                 .input('prodId', sql.Int, id)
-                .query(`
-                    INSERT INTO DetalleMovimiento 
-                    (Cantidad, Descripcion, Id_tipoDetalleMovimiento, Id_movimiento, Id_producto)
-                    VALUES (@cantidad, @descripcion, @tipoMovId, @movId, @prodId)
-                `);
+                .input('cantidad', sql.Int, cantidad)
+                .input('descripcion', sql.NVarChar(4000), motivo)
+                .input('userId', sql.NVarChar(200), userId)
+                .input('tipoMovCode', sql.NVarChar(100), null)
+                .output('movId', sql.Int)
+                .execute('dbo.sp_AdjustStock');
+
+            const movId = execResult.output ? execResult.output.movId : null;
 
             await transaction.commit();
 
@@ -133,36 +91,30 @@ class ProductoService extends BaseService {
                 success: true,
                 message: 'Stock ajustado correctamente',
                 cantidad,
-                motivo
+                motivo,
+                movId
             };
         } catch (error) {
-            await transaction.rollback();
+            try {
+                await transaction.rollback();
+            } catch (rbErr) {
+                // noop
+            }
             throw error;
         }
     }
 
+    /**
+     * Obtener movimientos de un producto (SP: dbo.sp_GetMovimientosByProducto)
+     */
     async getMovimientos(id, limit = 20) {
-        const { getConnection } = require('../config/database');
         const pool = await getConnection();
-
         const result = await pool.request()
-            .input('id', sql.Int, id)
+            .input('prodId', sql.Int, id)
             .input('limit', sql.Int, limit)
-            .query(`
-                SELECT TOP (@limit)
-                    dm.Cantidad,
-                    dm.Descripcion,
-                    m.Fecha,
-                    tdm.Nombre as TipoMovimiento,
-                    m.Responsable
-                FROM DetalleMovimiento dm
-                INNER JOIN Movimiento m ON dm.Id_movimiento = m.Id_movimiento
-                INNER JOIN TipoDetalleMovimiento tdm ON dm.Id_tipoDetalleMovimiento = tdm.Id_tipoDetalleMovimiento
-                WHERE dm.Id_producto = @id
-                ORDER BY m.Fecha DESC
-            `);
+            .execute('dbo.sp_GetMovimientosByProducto');
 
-        return result.recordset;
+        return result.recordset || [];
     }
 }
 

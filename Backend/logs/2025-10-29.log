@@ -108,3 +108,34 @@
 {"timestamp":"2025-10-29T18:33:20.915Z","method":"GET","url":"/api/ventas","status":500,"duration":"23ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
 {"timestamp":"2025-10-29T18:34:48.556Z","method":"GET","url":"/api/ventas","status":200,"duration":"77ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
 {"timestamp":"2025-10-29T18:34:56.382Z","method":"GET","url":"/api/ventas/1","status":200,"duration":"36ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
+{"timestamp":"2025-10-29T19:00:49.471Z","method":"GET","url":"/","status":404,"duration":"9ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
+{"timestamp":"2025-10-29T19:00:52.029Z","method":"GET","url":"/favicon.ico","status":404,"duration":"2ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
+{"timestamp":"2025-10-29T19:05:53.360Z","method":"GET","url":"/health","status":200,"duration":"6ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T19:05:53.471Z","method":"GET","url":"/api/test-connection","status":200,"duration":"106ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T19:05:53.531Z","method":"GET","url":"/api/tables","status":200,"duration":"58ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T19:05:53.556Z","method":"GET","url":"/api/data/Producto?limit=10","status":200,"duration":"22ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T19:05:53.580Z","method":"GET","url":"/api/data/Categoria","status":200,"duration":"22ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T19:05:53.584Z","method":"GET","url":"/api/backups/list","status":200,"duration":"2ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T19:05:53.589Z","method":"GET","url":"/api/backups/info","status":200,"duration":"2ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T19:05:53.607Z","method":"GET","url":"/api/data/TablaInexistente","status":404,"duration":"15ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T19:05:53.615Z","method":"GET","url":"/api/ruta-inexistente","status":404,"duration":"2ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T19:18:45.325Z","method":"GET","url":"/","status":404,"duration":"10ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
+{"timestamp":"2025-10-29T19:20:24.386Z","method":"GET","url":"/api/dashboard/summary","status":200,"duration":"78ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T19:20:24.427Z","method":"GET","url":"/api/dashboard/ventas-por-dia?days=7","status":200,"duration":"31ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T19:20:24.451Z","method":"GET","url":"/api/dashboard/ventas-por-categoria","status":200,"duration":"22ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T19:20:24.472Z","method":"GET","url":"/api/dashboard/ventas-por-metodo-pago","status":200,"duration":"19ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T19:20:24.529Z","method":"GET","url":"/api/dashboard/alertas","status":200,"duration":"54ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T19:20:24.554Z","method":"GET","url":"/api/dashboard/resumen-financiero","status":200,"duration":"23ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T19:20:24.570Z","method":"GET","url":"/api/dashboard/top-clientes?limit=5","status":200,"duration":"11ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T19:20:24.590Z","method":"GET","url":"/api/dashboard/rendimiento-colaboradores","status":200,"duration":"16ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T19:20:24.613Z","method":"GET","url":"/api/dashboard/analisis-inventario","status":200,"duration":"20ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T19:20:24.629Z","method":"GET","url":"/api/dashboard/movimientos-recientes?limit=10","status":200,"duration":"10ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T19:20:24.642Z","method":"GET","url":"/api/reportes/inventario","status":200,"duration":"11ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T19:20:24.656Z","method":"GET","url":"/api/reportes/clientes","status":200,"duration":"11ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T19:20:24.679Z","method":"GET","url":"/api/reportes/ventas?fechaInicio=2025-10-01&fechaFin=2025-10-29","status":200,"duration":"20ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-10-29T19:21:42.714Z","method":"GET","url":"/api/dashboard/summary","status":200,"duration":"35ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 Edg/141.0.0.0"}
+{"timestamp":"2025-10-29T19:21:42.994Z","method":"GET","url":"/favicon.ico","status":404,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 Edg/141.0.0.0"}
+{"timestamp":"2025-10-29T19:24:10.189Z","method":"GET","url":"/api/dashboard/summary","status":200,"duration":"53ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 Edg/141.0.0.0"}
+{"timestamp":"2025-10-29T19:24:52.194Z","method":"GET","url":"/api/ventas","status":200,"duration":"23ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 Edg/141.0.0.0"}
+{"timestamp":"2025-10-29T19:25:19.606Z","method":"GET","url":"/api/productos","status":200,"duration":"19ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 Edg/141.0.0.0"}
+{"timestamp":"2025-10-29T19:26:10.666Z","method":"GET","url":"/api/reportes/inventario","status":200,"duration":"27ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 Edg/141.0.0.0"}

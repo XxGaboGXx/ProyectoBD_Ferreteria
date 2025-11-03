@@ -51,7 +51,13 @@ exports.delete = async (req, res, next) => {
 
 exports.getHistorialCompras = async (req, res, next) => {
     try {
-        const result = await proveedorService.getHistorialCompras(parseInt(req.params.id));
+        const { page = 1, limit = 50, ...filters } = req.query;
+        const result = await proveedorService.getHistorialCompras(
+            parseInt(req.params.id),
+            parseInt(page),
+            parseInt(limit),
+            filters
+        );
         res.json(utils.successResponse(result));
     } catch (error) {
         next(error);
@@ -60,7 +66,21 @@ exports.getHistorialCompras = async (req, res, next) => {
 
 exports.getProductos = async (req, res, next) => {
     try {
-        const result = await proveedorService.getProductos(parseInt(req.params.id));
+        const { page = 1, limit = 50 } = req.query;
+        const result = await proveedorService.getProductos(
+            parseInt(req.params.id),
+            parseInt(page),
+            parseInt(limit)
+        );
+        res.json(utils.successResponse(result));
+    } catch (error) {
+        next(error);
+    }
+};
+
+exports.getEstadisticas = async (req, res, next) => {
+    try {
+        const result = await proveedorService.getEstadisticas(parseInt(req.params.id));
         res.json(utils.successResponse(result));
     } catch (error) {
         next(error);

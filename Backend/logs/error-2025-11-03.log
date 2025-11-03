@@ -1,0 +1,392 @@
+{
+  "timestamp": "2025-11-03T03:54:40.813Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Apellidos'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Apellidos'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/compras/1",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-03T03:54:40.827Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Apellidos'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Apellidos'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/compras/1",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-03T04:25:24.543Z",
+  "message": "Proveedor con ID NaN no encontrado",
+  "stack": "Error: Proveedor con ID NaN no encontrado\n    at ProveedorService.getById (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\baseService.js:72:19)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async exports.getById (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\proveedorController.js:16:24)",
+  "method": "GET",
+  "url": "/api/proveedores/:id",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Telefono": "2222-4444",
+    "Direccion": "San José, Barrio Aranjuez"
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T04:25:24.545Z",
+  "message": "Proveedor con ID NaN no encontrado",
+  "stack": "Error: Proveedor con ID NaN no encontrado\n    at ProveedorService.getById (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\baseService.js:72:19)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async exports.getById (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\proveedorController.js:16:24)",
+  "method": "GET",
+  "url": "/api/proveedores/:id",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Telefono": "2222-4444",
+    "Direccion": "San José, Barrio Aranjuez"
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T04:28:05.601Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The DELETE statement conflicted with the REFERENCE constraint \"FK_Compra_Proveedor\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Compra\", column 'Id_proveedor'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The DELETE statement conflicted with the REFERENCE constraint \"FK_Compra_Proveedor\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Compra\", column 'Id_proveedor'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "DELETE",
+  "url": "/api/proveedores/2",
+  "ip": "::ffff:127.0.0.1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-03T05:22:35.475Z",
+  "message": "Ya existe una categoría con ese nombre",
+  "stack": "Error: Ya existe una categoría con ese nombre\n    at CategoriaService.create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\categoriaService.js:133:23)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async exports.create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\categoriaController.js:25:24)",
+  "method": "POST",
+  "url": "/api/categorias",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Herramientas"
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T05:22:35.478Z",
+  "message": "Ya existe una categoría con ese nombre",
+  "stack": "Error: Ya existe una categoría con ese nombre\n    at CategoriaService.create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\categoriaService.js:133:23)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async exports.create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\categoriaController.js:25:24)",
+  "method": "POST",
+  "url": "/api/categorias",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Herramientas"
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T05:23:10.776Z",
+  "message": "Unexpected token '\"', \"\r\n  \"Nombre\": \"... is not valid JSON",
+  "stack": "SyntaxError: Unexpected token '\"', \"\r\n  \"Nombre\": \"... is not valid JSON\n    at JSON.parse (<anonymous>)\n    at createStrictSyntaxError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\body-parser\\lib\\types\\json.js:169:10)\n    at parse (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\body-parser\\lib\\types\\json.js:86:15)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\body-parser\\lib\\read.js:128:18\n    at AsyncResource.runInAsyncScope (node:async_hooks:214:14)\n    at invokeCallback (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\raw-body\\index.js:238:16)\n    at done (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\raw-body\\index.js:227:7)\n    at IncomingMessage.onEnd (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\raw-body\\index.js:287:7)\n    at IncomingMessage.emit (node:events:518:28)\n    at endReadableNT (node:internal/streams/readable:1698:12)",
+  "method": "POST",
+  "url": "/api/categorias",
+  "ip": "::ffff:127.0.0.1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-03T05:23:21.224Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert the value NULL into column 'Descripcion', table 'FerreteriaCentral.dbo.Categoria'; column does not allow nulls. INSERT fails.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert the value NULL into column 'Descripcion', table 'FerreteriaCentral.dbo.Categoria'; column does not allow nulls. INSERT fails.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/categorias",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "armas"
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T05:29:15.047Z",
+  "message": "Ya existe una categoría con ese nombre",
+  "stack": "Error: Ya existe una categoría con ese nombre\n    at CategoriaService.create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\categoriaService.js:136:23)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async exports.create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\categoriaController.js:25:24)",
+  "method": "POST",
+  "url": "/api/categorias",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Herramientas",
+    "Descripcion": "Herramientas de mano y eléctricas"
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T05:29:15.050Z",
+  "message": "Ya existe una categoría con ese nombre",
+  "stack": "Error: Ya existe una categoría con ese nombre\n    at CategoriaService.create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\categoriaService.js:136:23)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async exports.create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\categoriaController.js:25:24)",
+  "method": "POST",
+  "url": "/api/categorias",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Herramientas",
+    "Descripcion": "Herramientas de mano y eléctricas"
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T05:37:35.131Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Apellidos'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Apellidos'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/alquileres/activos",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "armas",
+    "Descripcion": "armas de fuego"
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T05:37:35.133Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Apellidos'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Apellidos'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/alquileres/activos",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "armas",
+    "Descripcion": "armas de fuego"
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T05:44:57.410Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Id_Producto'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Id_Producto'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/alquileres/activos",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "armas",
+    "Descripcion": "armas de fuego"
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T05:44:57.415Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Id_Producto'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Id_Producto'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/alquileres/activos",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "armas",
+    "Descripcion": "armas de fuego"
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T05:48:19.596Z",
+  "message": "The parameter name cantidad has already been declared. Parameter names must be unique",
+  "stack": "RequestError: The parameter name cantidad has already been declared. Parameter names must be unique\n    at Request.input (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\base\\request.js:129:13)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\alquilerService.js:68:22\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async TransactionService.executeTransaction (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\transactionService.js:26:28)\n    at async TransactionService.executeWithRetry (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\transactionService.js:85:24)\n    at async AlquilerService.createAlquiler (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\alquilerService.js:14:16)\n    at async exports.create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\alquilerController.js:25:24)",
+  "method": "POST",
+  "url": "/api/alquileres",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 1,
+    "Id_colaborador": 1,
+    "detalles": [
+      {
+        "Id_producto": 5,
+        "Cantidad": 2,
+        "TarifaDiaria": 5000,
+        "Dias": 7,
+        "Deposito": 10000
+      },
+      {
+        "Id_producto": 8,
+        "Cantidad": 1,
+        "TarifaDiaria": 3000,
+        "Dias": 7,
+        "Deposito": 5000
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T05:48:19.598Z",
+  "message": "The parameter name cantidad has already been declared. Parameter names must be unique",
+  "stack": "RequestError: The parameter name cantidad has already been declared. Parameter names must be unique\n    at Request.input (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\base\\request.js:129:13)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\alquilerService.js:68:22\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async TransactionService.executeTransaction (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\transactionService.js:26:28)\n    at async TransactionService.executeWithRetry (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\transactionService.js:85:24)\n    at async AlquilerService.createAlquiler (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\alquilerService.js:14:16)\n    at async exports.create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\alquilerController.js:25:24)",
+  "method": "POST",
+  "url": "/api/alquileres",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 1,
+    "Id_colaborador": 1,
+    "detalles": [
+      {
+        "Id_producto": 5,
+        "Cantidad": 2,
+        "TarifaDiaria": 5000,
+        "Dias": 7,
+        "Deposito": 10000
+      },
+      {
+        "Id_producto": 8,
+        "Cantidad": 1,
+        "TarifaDiaria": 3000,
+        "Dias": 7,
+        "Deposito": 5000
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T05:48:48.902Z",
+  "message": "The parameter name cantidad has already been declared. Parameter names must be unique",
+  "stack": "RequestError: The parameter name cantidad has already been declared. Parameter names must be unique\n    at Request.input (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\base\\request.js:129:13)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\alquilerService.js:68:22\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async TransactionService.executeTransaction (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\transactionService.js:26:28)\n    at async TransactionService.executeWithRetry (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\transactionService.js:85:24)\n    at async AlquilerService.createAlquiler (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\alquilerService.js:14:16)\n    at async exports.create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\alquilerController.js:25:24)",
+  "method": "POST",
+  "url": "/api/alquileres",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 1,
+    "Id_colaborador": 1,
+    "detalles": [
+      {
+        "Id_producto": 5,
+        "Cantidad": 2,
+        "TarifaDiaria": 5000,
+        "Dias": 7,
+        "Deposito": 10000
+      },
+      {
+        "Id_producto": 8,
+        "Cantidad": 1,
+        "TarifaDiaria": 3000,
+        "Dias": 7,
+        "Deposito": 5000
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T05:48:48.903Z",
+  "message": "The parameter name cantidad has already been declared. Parameter names must be unique",
+  "stack": "RequestError: The parameter name cantidad has already been declared. Parameter names must be unique\n    at Request.input (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\base\\request.js:129:13)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\alquilerService.js:68:22\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async TransactionService.executeTransaction (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\transactionService.js:26:28)\n    at async TransactionService.executeWithRetry (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\transactionService.js:85:24)\n    at async AlquilerService.createAlquiler (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\alquilerService.js:14:16)\n    at async exports.create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\alquilerController.js:25:24)",
+  "method": "POST",
+  "url": "/api/alquileres",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 1,
+    "Id_colaborador": 1,
+    "detalles": [
+      {
+        "Id_producto": 5,
+        "Cantidad": 2,
+        "TarifaDiaria": 5000,
+        "Dias": 7,
+        "Deposito": 10000
+      },
+      {
+        "Id_producto": 8,
+        "Cantidad": 1,
+        "TarifaDiaria": 3000,
+        "Dias": 7,
+        "Deposito": 5000
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T15:26:25.130Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Colaborador' when IDENTITY_INSERT is set to OFF.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Colaborador' when IDENTITY_INSERT is set to OFF.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/colaboradores",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_colaborador": 5,
+    "Nombre": "Gabriel",
+    "Apellido1": "Gonzalez",
+    "Apellido2": "Juarez",
+    "Telefono": null,
+    "Direccion": null,
+    "CorreoElectronico": "gabogonzarez@gmail.com"
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T15:26:25.133Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Colaborador' when IDENTITY_INSERT is set to OFF.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Colaborador' when IDENTITY_INSERT is set to OFF.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/colaboradores",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_colaborador": 5,
+    "Nombre": "Gabriel",
+    "Apellido1": "Gonzalez",
+    "Apellido2": "Juarez",
+    "Telefono": null,
+    "Direccion": null,
+    "CorreoElectronico": "gabogonzarez@gmail.com"
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T15:55:57.838Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'FechaRegistro'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'FechaRegistro'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::ffff:127.0.0.1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-03T15:55:57.846Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'FechaRegistro'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'FechaRegistro'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::ffff:127.0.0.1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-03T16:06:48.993Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'FechaRegistro'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'FechaRegistro'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-03T16:06:48.997Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'FechaRegistro'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'FechaRegistro'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-03T16:07:45.013Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'FechaRegistro'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'FechaRegistro'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-03T16:07:45.014Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'FechaRegistro'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'FechaRegistro'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---

@@ -111,23 +111,34 @@ class TransactionService {
     /**
      * Registra una operación en la bitácora
      */
-    async logToBitacora(transaction, request, tableName, action, recordId, userId = null) {
+    async logToBitacora(transaction, request, tableName, action, recordId, descripcion = null, datosAdicionales = null) {
         try {
-            await request
-                .input('tabla', sql.VarChar, tableName)
-                .input('accion', sql.VarChar, action)
-                .input('id_registro', sql.Int, recordId)
-                .input('usuario', sql.VarChar, userId || 'SYSTEM')
+            // Crear nuevo request para evitar conflictos
+            const logRequest = transaction.request();
+            
+            // Construir descripción más completa si hay datos adicionales
+            let descripcionFinal = descripcion || `${action} en ${tableName}`;
+            if (datosAdicionales) {
+                const datosStr = JSON.stringify(datosAdicionales);
+                // Truncar si es muy largo (máximo 200 caracteres)
+                descripcionFinal += ` - ${datosStr.substring(0, 200)}`;
+            }
+            
+            await logRequest
+                .input('tabla', sql.VarChar(50), tableName)
+                .input('accion', sql.VarChar(50), action)
+                .input('id_producto', sql.Int, recordId)
+                .input('descripcion', sql.VarChar(255), descripcionFinal)
                 .query(`
                     INSERT INTO BitacoraProducto 
-                    (Tabla, Accion, Id_Registro, Usuario, Fecha)
+                    (TablaAfectada, Accion, Id_producto, Descripcion)
                     VALUES 
-                    (@tabla, @accion, @id_registro, @usuario, GETDATE())
+                    (@tabla, @accion, @id_producto, @descripcion)
                 `);
             
-            console.log(`📝 Registrado en bitácora: ${action} en ${tableName}`);
+            console.log(`📝 Bitácora: ${action} en ${tableName} ID:${recordId}`);
         } catch (error) {
-            console.error('⚠️  Error al registrar en bitácora:', error.message);
+            console.error('⚠️  Error en bitácora:', error.message);
             // No lanzar error para no afectar la transacción principal
         }
     }
@@ -136,14 +147,17 @@ class TransactionService {
      * Valida que exista stock suficiente para una venta
      */
     async validateStock(transaction, request, productId, quantity) {
-        const result = await request
+        // Crear nuevo request para evitar conflictos
+        const validateRequest = transaction.request();
+        
+        const result = await validateRequest
             .input('productId', sql.Int, productId)
             .query(`
                 SELECT 
                     Id_Producto,
                     Nombre,
                     CantidadActual,
-                    StockMinimo
+                    CantidadMinima
                 FROM Producto 
                 WHERE Id_Producto = @productId
             `);
@@ -167,52 +181,57 @@ class TransactionService {
     /**
      * Actualiza el stock de un producto
      */
-    async updateStock(transaction, request, productId, quantityChange, movementType) {
+    async updateStock(transaction, request, productId, quantityChange, descripcion = '') {
+        // Crear nuevo request para evitar conflictos
+        const updateRequest = transaction.request();
+        
         // Actualizar cantidad
-        await request
+        await updateRequest
             .input('productId', sql.Int, productId)
             .input('change', sql.Int, quantityChange)
             .query(`
                 UPDATE Producto 
-                SET CantidadActual = CantidadActual + @change,
-                    FechaActualizacion = GETDATE()
+                SET CantidadActual = CantidadActual + @change
                 WHERE Id_Producto = @productId
             `);
         
-        // Registrar movimiento de stock
-        await request
-            .input('movType', sql.VarChar, movementType)
-            .input('quantity', sql.Int, Math.abs(quantityChange))
-            .query(`
-                INSERT INTO MovimientoStock 
-                (Id_Producto, TipoMovimiento, Cantidad, Fecha)
-                VALUES 
-                (@productId, @movType, @quantity, GETDATE())
-            `);
-        
         console.log(`📦 Stock actualizado para producto ${productId}: ${quantityChange > 0 ? '+' : ''}${quantityChange}`);
+        
+        // Registrar en bitácora
+        await this.logToBitacora(
+            transaction, 
+            request, 
+            'Producto', 
+            quantityChange > 0 ? 'ENTRADA' : 'SALIDA', 
+            productId,
+            descripcion || `Ajuste de stock: ${quantityChange}`,
+            { cantidad: quantityChange }
+        );
     }
 
     /**
      * Verifica alertas de stock bajo
      */
     async checkStockAlerts(transaction, request, productId) {
-        const result = await request
+        // Crear nuevo request para evitar conflictos
+        const alertRequest = transaction.request();
+        
+        const result = await alertRequest
             .input('productId', sql.Int, productId)
             .query(`
                 SELECT 
                     Id_Producto,
                     Nombre,
                     CantidadActual,
-                    StockMinimo
+                    CantidadMinima
                 FROM Producto 
                 WHERE Id_Producto = @productId
-                AND CantidadActual <= StockMinimo
+                AND CantidadActual <= CantidadMinima
             `);
         
         if (result.recordset.length > 0) {
             const product = result.recordset[0];
-            console.log(`⚠️  ALERTA: Stock bajo para ${product.Nombre} (Actual: ${product.CantidadActual}, Mínimo: ${product.StockMinimo})`);
+            console.log(`⚠️  ALERTA: Stock bajo para ${product.Nombre} (Actual: ${product.CantidadActual}, Mínimo: ${product.CantidadMinima})`);
             return {
                 alert: true,
                 product: product

@@ -1,7 +1,8 @@
 const BaseService = require('../services/baseService');
 const { utils, constants } = require('../config');
 
-const colaboradorService = new BaseService('Colaborador', 'Id_Colaborador');
+// ✅ CORREGIDO: Id_colaborador (minúscula)
+const colaboradorService = new BaseService('Colaborador', 'Id_colaborador');
 
 exports.getAll = async (req, res, next) => {
     try {

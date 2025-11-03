@@ -88,7 +88,7 @@ class VentaController {
         }
     }
 
-    async getDetalles(req, res, next) {
+       async getDetalles(req, res, next) {
         try {
             const detalles = await ventaService.getDetalles(req.params.id);
             
@@ -101,15 +101,61 @@ class VentaController {
         }
     }
 
-    async anularVenta(req, res, next) {
+    async getEstadisticas(req, res, next) {
         try {
-            const { motivo } = req.body;
+            const filters = {
+                fechaInicio: req.query.fechaInicio,
+                fechaFin: req.query.fechaFin
+            };
             
-            const resultado = await ventaService.anularVenta(req.params.id, motivo);
+            const result = await ventaService.getEstadisticas(filters);
             
             res.json({
                 success: true,
-                message: 'Venta anulada exitosamente',
+                message: 'Estadísticas obtenidas correctamente',
+                data: result
+            });
+        } catch (error) {
+            next(error);
+        }
+    }
+
+    async getProductosMasVendidos(req, res, next) {
+        try {
+            const limit = parseInt(req.query.limit) || 10;
+            const filters = {
+                fechaInicio: req.query.fechaInicio,
+                fechaFin: req.query.fechaFin
+            };
+            
+            const result = await ventaService.getProductosMasVendidos(limit, filters);
+            
+            res.json({
+                success: true,
+                message: 'Productos más vendidos obtenidos correctamente',
+                data: result
+            });
+        } catch (error) {
+            next(error);
+        }
+    }
+
+    async cancelarVenta(req, res, next) {
+        try {
+            const { motivo } = req.body;
+            
+            if (!motivo) {
+                return res.status(400).json({
+                    success: false,
+                    message: 'El motivo de cancelación es requerido'
+                });
+            }
+            
+            const resultado = await ventaService.cancelarVenta(req.params.id, motivo);
+            
+            res.json({
+                success: true,
+                message: 'Venta cancelada exitosamente',
                 data: resultado
             });
         } catch (error) {

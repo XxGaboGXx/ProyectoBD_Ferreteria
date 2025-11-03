@@ -1,0 +1,658 @@
+{
+  "timestamp": "2025-10-31T06:15:12.637Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'IDCategoria'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'IDCategoria'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Martillo 16oz",
+    "Descripcion": "Martillo profesional mango fibra",
+    "PrecioCompra": 8000,
+    "PrecioVenta": 12000,
+    "Stock": 45,
+    "StockMinimo": 10,
+    "IDCategoria": 1
+  }
+}
+---
+{
+  "timestamp": "2025-10-31T06:15:12.641Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'IDCategoria'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'IDCategoria'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Martillo 16oz",
+    "Descripcion": "Martillo profesional mango fibra",
+    "PrecioCompra": 8000,
+    "PrecioVenta": 12000,
+    "Stock": 45,
+    "StockMinimo": 10,
+    "IDCategoria": 1
+  }
+}
+---
+{
+  "timestamp": "2025-10-31T06:15:51.790Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'IDCategoria'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'IDCategoria'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Martillo 16oz",
+    "Descripcion": "Martillo profesional mango fibra",
+    "PrecioCompra": 8000,
+    "PrecioVenta": 12000,
+    "Stock": 45,
+    "StockMinimo": 10,
+    "IDCategoria": 1
+  }
+}
+---
+{
+  "timestamp": "2025-10-31T06:15:51.791Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'IDCategoria'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'IDCategoria'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Martillo 16oz",
+    "Descripcion": "Martillo profesional mango fibra",
+    "PrecioCompra": 8000,
+    "PrecioVenta": 12000,
+    "Stock": 45,
+    "StockMinimo": 10,
+    "IDCategoria": 1
+  }
+}
+---
+{
+  "timestamp": "2025-10-31T06:22:45.220Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'StockMinimo'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'StockMinimo'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Martillo 16oz",
+    "Descripcion": "Martillo profesional mango fibra",
+    "PrecioCompra": 8000,
+    "PrecioVenta": 12000,
+    "Stock": 45,
+    "StockMinimo": 10,
+    "Id_categoria": 1
+  }
+}
+---
+{
+  "timestamp": "2025-10-31T06:22:45.222Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'StockMinimo'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'StockMinimo'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Martillo 16oz",
+    "Descripcion": "Martillo profesional mango fibra",
+    "PrecioCompra": 8000,
+    "PrecioVenta": 12000,
+    "Stock": 45,
+    "StockMinimo": 10,
+    "Id_categoria": 1
+  }
+}
+---
+{
+  "timestamp": "2025-10-31T06:31:57.868Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]Se ha superado el tiempo de espera de la consulta",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]Se ha superado el tiempo de espera de la consulta\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Martillo 16oz",
+    "Descripcion": "Martillo profesional mango fibra de vidrio",
+    "PrecioCompra": 8000,
+    "PrecioVenta": 12000,
+    "CodigoBarra": "7501234567890",
+    "CantidadActual": 45,
+    "CantidadMinima": 10,
+    "Id_categoria": 1
+  }
+}
+---
+{
+  "timestamp": "2025-10-31T06:31:57.870Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]Se ha superado el tiempo de espera de la consulta",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]Se ha superado el tiempo de espera de la consulta\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Martillo 16oz",
+    "Descripcion": "Martillo profesional mango fibra de vidrio",
+    "PrecioCompra": 8000,
+    "PrecioVenta": 12000,
+    "CodigoBarra": "7501234567890",
+    "CantidadActual": 45,
+    "CantidadMinima": 10,
+    "Id_categoria": 1
+  }
+}
+---
+{
+  "timestamp": "2025-10-31T06:33:41.320Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]Se ha superado el tiempo de espera de la consulta",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]Se ha superado el tiempo de espera de la consulta\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Martillo 16oz",
+    "Descripcion": "Martillo profesional mango fibra de vidrio",
+    "PrecioCompra": 8000,
+    "PrecioVenta": 12000,
+    "CodigoBarra": "7501234567890",
+    "CantidadActual": 45,
+    "CantidadMinima": 10,
+    "Id_categoria": 1
+  }
+}
+---
+{
+  "timestamp": "2025-10-31T06:33:41.323Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]Se ha superado el tiempo de espera de la consulta",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]Se ha superado el tiempo de espera de la consulta\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Martillo 16oz",
+    "Descripcion": "Martillo profesional mango fibra de vidrio",
+    "PrecioCompra": 8000,
+    "PrecioVenta": 12000,
+    "CodigoBarra": "7501234567890",
+    "CantidadActual": 45,
+    "CantidadMinima": 10,
+    "Id_categoria": 1
+  }
+}
+---
+{
+  "timestamp": "2025-10-31T06:40:17.782Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]Se ha superado el tiempo de espera de la consulta",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]Se ha superado el tiempo de espera de la consulta\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Martillo 16oz",
+    "Descripcion": "Martillo profesional mango fibra de vidrio",
+    "PrecioCompra": 8000,
+    "PrecioVenta": 12000,
+    "CodigoBarra": "7501234567890",
+    "CantidadActual": 45,
+    "CantidadMinima": 10,
+    "Id_categoria": 1
+  }
+}
+---
+{
+  "timestamp": "2025-10-31T06:40:17.790Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]Se ha superado el tiempo de espera de la consulta",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]Se ha superado el tiempo de espera de la consulta\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Martillo 16oz",
+    "Descripcion": "Martillo profesional mango fibra de vidrio",
+    "PrecioCompra": 8000,
+    "PrecioVenta": 12000,
+    "CodigoBarra": "7501234567890",
+    "CantidadActual": 45,
+    "CantidadMinima": 10,
+    "Id_categoria": 1
+  }
+}
+---
+{
+  "timestamp": "2025-10-31T06:43:51.423Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]Se ha superado el tiempo de espera de la consulta",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]Se ha superado el tiempo de espera de la consulta\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Martillo",
+    "Descripcion": "Martillo de acero",
+    "PrecioCompra": 100,
+    "PrecioVenta": 150,
+    "Id_categoria": 1,
+    "CantidadActual": 50,
+    "CantidadMinima": 10
+  }
+}
+---
+{
+  "timestamp": "2025-10-31T06:43:51.425Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]Se ha superado el tiempo de espera de la consulta",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]Se ha superado el tiempo de espera de la consulta\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Martillo",
+    "Descripcion": "Martillo de acero",
+    "PrecioCompra": 100,
+    "PrecioVenta": 150,
+    "Id_categoria": 1,
+    "CantidadActual": 50,
+    "CantidadMinima": 10
+  }
+}
+---
+{
+  "timestamp": "2025-10-31T06:49:14.187Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]Se ha superado el tiempo de espera de la consulta",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]Se ha superado el tiempo de espera de la consulta\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Martillo",
+    "Descripcion": "Martillo de acero",
+    "PrecioCompra": 100,
+    "PrecioVenta": 150,
+    "Id_categoria": 1,
+    "CantidadActual": 50,
+    "CantidadMinima": 10
+  }
+}
+---
+{
+  "timestamp": "2025-10-31T06:49:14.189Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]Se ha superado el tiempo de espera de la consulta",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]Se ha superado el tiempo de espera de la consulta\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Martillo",
+    "Descripcion": "Martillo de acero",
+    "PrecioCompra": 100,
+    "PrecioVenta": 150,
+    "Id_categoria": 1,
+    "CantidadActual": 50,
+    "CantidadMinima": 10
+  }
+}
+---
+{
+  "timestamp": "2025-10-31T07:25:43.625Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Apellidos'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Apellidos'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/clientes/1/historial",
+  "ip": "::ffff:127.0.0.1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-31T07:25:43.629Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Apellidos'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Apellidos'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/clientes/1/historial",
+  "ip": "::ffff:127.0.0.1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-31T07:26:07.663Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Total'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Total'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/clientes/1/estadisticas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-31T07:26:07.668Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Total'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Total'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/clientes/1/estadisticas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-31T07:26:41.780Z",
+  "message": "Cliente con ID 999 no encontrado",
+  "stack": "Error: Cliente con ID 999 no encontrado\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\baseService.js:217:23\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async TransactionService.executeTransaction (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\transactionService.js:26:28)\n    at async ClienteService.delete (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\baseService.js:205:16)\n    at async exports.delete (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\clienteController.js:54:24)",
+  "method": "DELETE",
+  "url": "/api/clientes/999",
+  "ip": "::ffff:127.0.0.1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-31T07:26:41.784Z",
+  "message": "Cliente con ID 999 no encontrado",
+  "stack": "Error: Cliente con ID 999 no encontrado\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\baseService.js:217:23\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async TransactionService.executeTransaction (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\transactionService.js:26:28)\n    at async ClienteService.delete (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\baseService.js:205:16)\n    at async exports.delete (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\clienteController.js:54:24)",
+  "method": "DELETE",
+  "url": "/api/clientes/999",
+  "ip": "::ffff:127.0.0.1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-31T07:26:52.323Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The DELETE statement conflicted with the REFERENCE constraint \"FK_Alquiler_Cliente\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Alquiler\", column 'Id_cliente'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The DELETE statement conflicted with the REFERENCE constraint \"FK_Alquiler_Cliente\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Alquiler\", column 'Id_cliente'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "DELETE",
+  "url": "/api/clientes/3",
+  "ip": "::ffff:127.0.0.1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-31T07:35:00.037Z",
+  "message": "Cliente con ID NaN no encontrado",
+  "stack": "Error: Cliente con ID NaN no encontrado\n    at ClienteService.getById (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\baseService.js:72:19)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async exports.getById (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\clienteController.js:16:24)",
+  "method": "GET",
+  "url": "/api/clientes/activos",
+  "ip": "::ffff:127.0.0.1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-31T07:35:00.047Z",
+  "message": "Cliente con ID NaN no encontrado",
+  "stack": "Error: Cliente con ID NaN no encontrado\n    at ClienteService.getById (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\baseService.js:72:19)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async exports.getById (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\clienteController.js:16:24)",
+  "method": "GET",
+  "url": "/api/clientes/activos",
+  "ip": "::ffff:127.0.0.1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-31T07:37:20.914Z",
+  "message": "Cliente con ID NaN no encontrado",
+  "stack": "Error: Cliente con ID NaN no encontrado\n    at ClienteService.getById (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\baseService.js:72:19)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async exports.getById (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\clienteController.js:16:24)",
+  "method": "GET",
+  "url": "/api/clientes/activos",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-31T07:37:20.916Z",
+  "message": "Cliente con ID NaN no encontrado",
+  "stack": "Error: Cliente con ID NaN no encontrado\n    at ClienteService.getById (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\baseService.js:72:19)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async exports.getById (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\clienteController.js:16:24)",
+  "method": "GET",
+  "url": "/api/clientes/activos",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-31T07:43:20.704Z",
+  "message": "Cliente con ID NaN no encontrado",
+  "stack": "Error: Cliente con ID NaN no encontrado\n    at ClienteService.getById (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\baseService.js:72:19)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async exports.getById (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\clienteController.js:16:24)",
+  "method": "GET",
+  "url": "/api/clientes/activos",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-31T07:43:20.707Z",
+  "message": "Cliente con ID NaN no encontrado",
+  "stack": "Error: Cliente con ID NaN no encontrado\n    at ClienteService.getById (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\baseService.js:72:19)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async exports.getById (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\clienteController.js:16:24)",
+  "method": "GET",
+  "url": "/api/clientes/activos",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-31T07:48:23.355Z",
+  "message": "ventaService.getDetalles is not a function",
+  "stack": "TypeError: ventaService.getDetalles is not a function\n    at getDetalles (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\ventaController.js:93:49)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at param (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:365:14)\n    at param (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:376:14)\n    at Function.process_params (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:421:3)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)",
+  "method": "GET",
+  "url": "/api/ventas/1/detalles",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-31T07:48:23.357Z",
+  "message": "ventaService.getDetalles is not a function",
+  "stack": "TypeError: ventaService.getDetalles is not a function\n    at getDetalles (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\ventaController.js:93:49)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at param (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:365:14)\n    at param (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:376:14)\n    at Function.process_params (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:421:3)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)",
+  "method": "GET",
+  "url": "/api/ventas/1/detalles",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-31T08:07:54.154Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column 'Venta.Estado' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column 'Venta.Estado' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/ventas/estadisticas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-31T08:07:54.164Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column 'Venta.Estado' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column 'Venta.Estado' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/ventas/estadisticas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-31T08:14:58.885Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column 'Venta.Fecha' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column 'Venta.Fecha' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/ventas/estadisticas?fechaInicio=2025-01-01&fechaFin=2025-12-31",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-31T08:14:58.887Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column 'Venta.Fecha' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column 'Venta.Fecha' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/ventas/estadisticas?fechaInicio=2025-01-01&fechaFin=2025-12-31",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-31T08:16:04.041Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column 'Venta.Fecha' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column 'Venta.Fecha' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/ventas/estadisticas?fechaInicio=2025-01-01&fechaFin=2025-12-31",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-31T08:16:04.043Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column 'Venta.Fecha' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column 'Venta.Fecha' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/ventas/estadisticas?fechaInicio=2025-01-01&fechaFin=2025-12-31",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-31T08:18:28.372Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column 'Venta.Fecha' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column 'Venta.Fecha' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/ventas/estadisticas?fechaInicio=2025-01-01&fechaFin=2025-12-31",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-31T08:18:28.374Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column 'Venta.Fecha' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column 'Venta.Fecha' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/ventas/estadisticas?fechaInicio=2025-01-01&fechaFin=2025-12-31",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-31T08:21:38.659Z",
+  "message": "Cannot read properties of undefined (reading 'forEach')",
+  "stack": "TypeError: Cannot read properties of undefined (reading 'forEach')\n    at VentaService.create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\ventaService.js:319:27)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\ventaController.js:52:32)",
+  "method": "POST",
+  "url": "/api/ventas",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 1,
+    "Id_colaborador": 1,
+    "MetodoPago": "Efectivo",
+    "items": [
+      {
+        "Id_producto": 1,
+        "Cantidad": 3,
+        "PrecioUnitario": 12000
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-10-31T08:21:38.661Z",
+  "message": "Cannot read properties of undefined (reading 'forEach')",
+  "stack": "TypeError: Cannot read properties of undefined (reading 'forEach')\n    at VentaService.create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\ventaService.js:319:27)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\ventaController.js:52:32)",
+  "method": "POST",
+  "url": "/api/ventas",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 1,
+    "Id_colaborador": 1,
+    "MetodoPago": "Efectivo",
+    "items": [
+      {
+        "Id_producto": 1,
+        "Cantidad": 3,
+        "PrecioUnitario": 12000
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-10-31T08:28:20.666Z",
+  "message": "ventaService.update is not a function",
+  "stack": "TypeError: ventaService.update is not a function\n    at update (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\ventaController.js:66:57)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at param (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:365:14)\n    at param (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:376:14)\n    at Function.process_params (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:421:3)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)",
+  "method": "PUT",
+  "url": "/api/ventas/1",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "MetodoPago": "Tarjeta"
+  }
+}
+---
+{
+  "timestamp": "2025-10-31T08:28:20.669Z",
+  "message": "ventaService.update is not a function",
+  "stack": "TypeError: ventaService.update is not a function\n    at update (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\ventaController.js:66:57)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at param (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:365:14)\n    at param (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:376:14)\n    at Function.process_params (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:421:3)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)",
+  "method": "PUT",
+  "url": "/api/ventas/1",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "MetodoPago": "Tarjeta"
+  }
+}
+---
+{
+  "timestamp": "2025-10-31T08:31:46.759Z",
+  "message": "ventaService.delete is not a function",
+  "stack": "TypeError: ventaService.delete is not a function\n    at delete (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\ventaController.js:80:38)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at param (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:365:14)\n    at param (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:376:14)\n    at Function.process_params (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:421:3)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)",
+  "method": "DELETE",
+  "url": "/api/ventas/1",
+  "ip": "::ffff:127.0.0.1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-31T08:31:46.760Z",
+  "message": "ventaService.delete is not a function",
+  "stack": "TypeError: ventaService.delete is not a function\n    at delete (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\ventaController.js:80:38)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at param (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:365:14)\n    at param (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:376:14)\n    at Function.process_params (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:421:3)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)",
+  "method": "DELETE",
+  "url": "/api/ventas/1",
+  "ip": "::ffff:127.0.0.1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-10-31T08:42:53.004Z",
+  "message": "Venta con ID :1 no encontrada",
+  "stack": "Error: Venta con ID :1 no encontrada\n    at VentaService.cancelarVenta (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\ventaService.js:459:23)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async cancelarVenta (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\ventaController.js:154:31)",
+  "method": "PATCH",
+  "url": "/api/ventas/:1/cancelar",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "motivo": "Cliente solicitó devolución"
+  }
+}
+---
+{
+  "timestamp": "2025-10-31T08:42:53.006Z",
+  "message": "Venta con ID :1 no encontrada",
+  "stack": "Error: Venta con ID :1 no encontrada\n    at VentaService.cancelarVenta (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\ventaService.js:459:23)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async cancelarVenta (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\ventaController.js:154:31)",
+  "method": "PATCH",
+  "url": "/api/ventas/:1/cancelar",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "motivo": "Cliente solicitó devolución"
+  }
+}
+---
+{
+  "timestamp": "2025-10-31T08:43:01.136Z",
+  "message": "Venta con ID :2 no encontrada",
+  "stack": "Error: Venta con ID :2 no encontrada\n    at VentaService.cancelarVenta (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\ventaService.js:459:23)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async cancelarVenta (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\ventaController.js:154:31)",
+  "method": "PATCH",
+  "url": "/api/ventas/:2/cancelar",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "motivo": "Cliente solicitó devolución"
+  }
+}
+---
+{
+  "timestamp": "2025-10-31T08:43:01.137Z",
+  "message": "Venta con ID :2 no encontrada",
+  "stack": "Error: Venta con ID :2 no encontrada\n    at VentaService.cancelarVenta (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\ventaService.js:459:23)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async cancelarVenta (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\ventaController.js:154:31)",
+  "method": "PATCH",
+  "url": "/api/ventas/:2/cancelar",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "motivo": "Cliente solicitó devolución"
+  }
+}
+---

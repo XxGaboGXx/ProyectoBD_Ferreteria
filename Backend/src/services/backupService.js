@@ -5,7 +5,7 @@ const { config } = require('../config');
 
 class BackupService {
     constructor() {
-        this.backupPath = config.backup.path;
+        this.sqlServerBackupPath = config.backup?.path || 'C:\\Backups\\FerreteriaCentral';
         this.ensureBackupDirectory();
     }
 
@@ -13,17 +13,15 @@ class BackupService {
      * Asegura que el directorio de backups existe
      */
     ensureBackupDirectory() {
-        if (!fs.existsSync(this.backupPath)) {
-            try {
-                fs.mkdirSync(this.backupPath, { recursive: true });
-                console.log(`✅ Directorio de backups creado: ${this.backupPath}`);
-            } catch (error) {
-                console.error(`❌ Error al crear directorio de backups: ${error.message}`);
-                console.log(`⚠️  Intentando con ruta alternativa...`);
-                this.backupPath = path.join(__dirname, '../../backups');
-                fs.mkdirSync(this.backupPath, { recursive: true });
-                console.log(`✅ Usando ruta alternativa: ${this.backupPath}`);
+        try {
+            if (!fs.existsSync(this.sqlServerBackupPath)) {
+                fs.mkdirSync(this.sqlServerBackupPath, { recursive: true });
+                console.log(`✅ Directorio de backups creado: ${this.sqlServerBackupPath}`);
+            } else {
+                console.log(`✅ Directorio de backups encontrado: ${this.sqlServerBackupPath}`);
             }
+        } catch (error) {
+            console.error(`❌ Error al crear/verificar directorio: ${error.message}`);
         }
     }
 
@@ -36,22 +34,34 @@ class BackupService {
             
             const timestamp = new Date().toISOString().replace(/[:.]/g, '-').split('.')[0];
             const fileName = backupName || `FerreteriaCentral_${timestamp}.bak`;
-            const fullPath = path.join(this.backupPath, fileName);
-
+            
+            const fullPath = path.join(this.sqlServerBackupPath, fileName);
+            
             console.log('🔄 Iniciando backup de base de datos...');
             console.log(`📁 Destino: ${fullPath}`);
             
+            // ✅ SIN COMPRESSION para SQL Server Express
             await pool.request().query(`
-                BACKUP DATABASE FerreteriaCentral 
-                TO DISK = '${fullPath}'
+                BACKUP DATABASE [FerreteriaCentral]
+                TO DISK = N'${fullPath}'
                 WITH FORMAT, 
                 MEDIANAME = 'FerreteriaCentralBackup',
                 NAME = 'Full Backup of FerreteriaCentral',
-                COMPRESSION;
+                STATS = 10;
             `);
 
-            const stats = fs.statSync(fullPath);
-            const sizeInMB = (stats.size / (1024 * 1024)).toFixed(2);
+            // Obtener tamaño del archivo
+            let fileSize = 0;
+            try {
+                if (fs.existsSync(fullPath)) {
+                    const stats = fs.statSync(fullPath);
+                    fileSize = stats.size;
+                }
+            } catch (e) {
+                console.warn('⚠️  No se pudo obtener tamaño del archivo');
+            }
+
+            const sizeInMB = (fileSize / (1024 * 1024)).toFixed(2);
 
             console.log(`✅ Backup creado exitosamente`);
             console.log(`   📄 Archivo: ${fileName}`);
@@ -61,13 +71,25 @@ class BackupService {
                 success: true,
                 fileName,
                 path: fullPath,
-                size: stats.size,
+                size: fileSize,
                 sizeFormatted: `${sizeInMB} MB`,
                 date: new Date(),
                 timestamp
             };
         } catch (error) {
             console.error('❌ Error al crear backup:', error.message);
+            
+            if (error.message.includes('Cannot open backup device') || 
+                error.message.includes('denied') || 
+                error.message.includes('EPERM')) {
+                console.error('\n💡 SOLUCIÓN:');
+                console.error('   1. Verifica que la carpeta existe:');
+                console.error(`      dir "${this.sqlServerBackupPath}"`);
+                console.error('   2. Da permisos (PowerShell Admin):');
+                console.error(`      icacls "${this.sqlServerBackupPath}" /grant "NT SERVICE\\MSSQL\`$SQLEXPRESS:(OI)(CI)F" /T`);
+                console.error(`      icacls "${this.sqlServerBackupPath}" /grant "$env:USERDOMAIN\\$env:USERNAME:(OI)(CI)F" /T`);
+            }
+            
             throw error;
         }
     }
@@ -78,28 +100,51 @@ class BackupService {
     async restoreBackup(backupFileName) {
         try {
             const pool = await getConnection();
-            const fullPath = path.join(this.backupPath, backupFileName);
+            const fullPath = path.join(this.sqlServerBackupPath, backupFileName);
 
             if (!fs.existsSync(fullPath)) {
                 throw new Error(`Archivo de backup no encontrado: ${backupFileName}`);
             }
 
             console.log('🔄 Restaurando backup...');
+            console.log(`📁 Origen: ${fullPath}`);
             
+            // Obtener nombres lógicos de los archivos
+            const fileListResult = await pool.request().query(`
+                RESTORE FILELISTONLY 
+                FROM DISK = N'${fullPath}'
+            `);
+            
+            const dataFile = fileListResult.recordset.find(f => f.Type === 'D');
+            const logFile = fileListResult.recordset.find(f => f.Type === 'L');
+
+            if (!dataFile || !logFile) {
+                throw new Error('No se pudieron obtener los nombres de archivos del backup');
+            }
+
+            // Poner BD en modo single user
             await pool.request().query(`
                 USE master;
-                ALTER DATABASE FerreteriaCentral SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+                ALTER DATABASE [FerreteriaCentral] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
             `);
 
-            await pool.request().query(`
-                RESTORE DATABASE FerreteriaCentral 
-                FROM DISK = '${fullPath}'
-                WITH REPLACE, RECOVERY;
-            `);
-
-            await pool.request().query(`
-                ALTER DATABASE FerreteriaCentral SET MULTI_USER;
-            `);
+            try {
+                // Restaurar con MOVE
+                await pool.request().query(`
+                    RESTORE DATABASE [FerreteriaCentral]
+                    FROM DISK = N'${fullPath}'
+                    WITH REPLACE, RECOVERY,
+                    MOVE N'${dataFile.LogicalName}' TO N'${dataFile.PhysicalName}',
+                    MOVE N'${logFile.LogicalName}' TO N'${logFile.PhysicalName}',
+                    STATS = 10;
+                `);
+            } finally {
+                // Volver a modo multi user (siempre ejecutar esto)
+                await pool.request().query(`
+                    USE master;
+                    ALTER DATABASE [FerreteriaCentral] SET MULTI_USER;
+                `);
+            }
 
             console.log('✅ Backup restaurado exitosamente');
             
@@ -112,11 +157,12 @@ class BackupService {
         } catch (error) {
             console.error('❌ Error al restaurar backup:', error.message);
             
+            // Intentar restaurar modo multi user
             try {
                 const pool = await getConnection();
                 await pool.request().query(`
                     USE master;
-                    ALTER DATABASE FerreteriaCentral SET MULTI_USER;
+                    ALTER DATABASE [FerreteriaCentral] SET MULTI_USER;
                 `);
             } catch (e) {
                 console.error('⚠️  No se pudo restaurar modo multi user');
@@ -131,15 +177,18 @@ class BackupService {
      */
     async listBackups() {
         try {
-            if (!fs.existsSync(this.backupPath)) {
+            if (!fs.existsSync(this.sqlServerBackupPath)) {
+                console.warn(`⚠️  Ruta de backups no encontrada: ${this.sqlServerBackupPath}`);
+                console.log('📁 Creando directorio...');
+                fs.mkdirSync(this.sqlServerBackupPath, { recursive: true });
                 return [];
             }
 
-            const files = fs.readdirSync(this.backupPath);
+            const files = fs.readdirSync(this.sqlServerBackupPath);
             const backups = files
                 .filter(file => file.endsWith('.bak'))
                 .map(file => {
-                    const filePath = path.join(this.backupPath, file);
+                    const filePath = path.join(this.sqlServerBackupPath, file);
                     const stats = fs.statSync(filePath);
                     const sizeInMB = (stats.size / (1024 * 1024)).toFixed(2);
                     
@@ -157,7 +206,13 @@ class BackupService {
 
             return backups;
         } catch (error) {
-            console.error('❌ Error al listar backups:', error);
+            console.error('❌ Error al listar backups:', error.message);
+            
+            if (error.code === 'EPERM' || error.code === 'EACCES') {
+                console.warn('⚠️  Sin permisos para leer la carpeta. Devolviendo lista vacía.');
+                return [];
+            }
+            
             throw error;
         }
     }
@@ -188,7 +243,11 @@ class BackupService {
      */
     async deleteOldBackups(daysToKeep = 30) {
         try {
-            const files = fs.readdirSync(this.backupPath);
+            if (!fs.existsSync(this.sqlServerBackupPath)) {
+                return { success: true, deleted: 0, deletedFiles: [], daysToKeep };
+            }
+
+            const files = fs.readdirSync(this.sqlServerBackupPath);
             const now = Date.now();
             const maxAge = daysToKeep * 24 * 60 * 60 * 1000;
             let deleted = 0;
@@ -197,7 +256,7 @@ class BackupService {
             files.forEach(file => {
                 if (!file.endsWith('.bak')) return;
                 
-                const filePath = path.join(this.backupPath, file);
+                const filePath = path.join(this.sqlServerBackupPath, file);
                 const stats = fs.statSync(filePath);
                 const age = now - stats.birthtime.getTime();
 
@@ -235,7 +294,7 @@ class BackupService {
      */
     async deleteBackup(fileName) {
         try {
-            const filePath = path.join(this.backupPath, fileName);
+            const filePath = path.join(this.sqlServerBackupPath, fileName);
             
             if (!fs.existsSync(filePath)) {
                 throw new Error(`Backup no encontrado: ${fileName}`);
@@ -272,13 +331,14 @@ class BackupService {
             const totalSizeInGB = (totalSize / (1024 * 1024 * 1024)).toFixed(2);
 
             return {
-                path: this.backupPath,
+                path: this.sqlServerBackupPath,
                 count: backups.length,
                 totalSize: totalSize,
                 totalSizeFormatted: totalSizeInGB > 1 ? `${totalSizeInGB} GB` : `${totalSizeInMB} MB`,
                 oldest: backups.length > 0 ? backups[backups.length - 1] : null,
                 newest: backups.length > 0 ? backups[0] : null,
-                backups: backups
+                backups: backups,
+                sqlServerEdition: 'Express (sin compresión)'
             };
         } catch (error) {
             console.error('❌ Error al obtener información de backups:', error);
@@ -290,15 +350,16 @@ class BackupService {
      * Inicia el sistema de backups automáticos
      */
     startAutoBackup() {
-        if (!config.backup.enabled) {
+        if (!config.backup?.enabled) {
             console.log('⚠️  Backups automáticos deshabilitados en configuración');
             return;
         }
 
         console.log('🔄 Iniciando sistema de backups automáticos...');
-        console.log(`   📁 Ruta: ${this.backupPath}`);
+        console.log(`   📁 Ruta: ${this.sqlServerBackupPath}`);
         console.log(`   ⏰ Intervalo: ${config.backup.autoBackupInterval / (60 * 60 * 1000)} horas`);
         console.log(`   📅 Retención: ${config.backup.retention} días`);
+        console.log(`   💡 SQL Server Express: Backups SIN compresión`);
         
         this.autoBackupInterval = setInterval(async () => {
             try {

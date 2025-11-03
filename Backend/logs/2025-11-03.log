@@ -59,3 +59,78 @@
 {"timestamp":"2025-11-03T16:06:49.061Z","method":"GET","url":"/favicon.ico","status":404,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
 {"timestamp":"2025-11-03T16:07:45.014Z","method":"GET","url":"/api/dashboard/summary","status":500,"duration":"18ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
 {"timestamp":"2025-11-03T16:12:51.654Z","method":"GET","url":"/api/dashboard/summary","status":200,"duration":"71ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
+{"timestamp":"2025-11-03T19:37:48.456Z","method":"GET","url":"/api/dashboard/resumen-financiero","status":200,"duration":"123ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T19:41:06.208Z","method":"GET","url":"/api/backups/list","status":200,"duration":"3ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T19:48:16.071Z","method":"GET","url":"/api/backups/list","status":200,"duration":"1ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T19:48:35.299Z","method":"GET","url":"/api/backups/list","status":200,"duration":"1ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T19:48:51.221Z","method":"GET","url":"/api/backups/create","status":404,"duration":"3ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T20:28:32.494Z","method":"GET","url":"/api/backups/list","status":500,"duration":"15ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
+{"timestamp":"2025-11-03T20:28:32.562Z","method":"GET","url":"/favicon.ico","status":404,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
+{"timestamp":"2025-11-03T21:14:54.345Z","method":"POST","url":"/api/backups/create","status":201,"duration":"220ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T21:15:03.485Z","method":"GET","url":"/api/backups/list","status":200,"duration":"2ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
+{"timestamp":"2025-11-03T21:15:23.928Z","method":"GET","url":"/api/backups/info","status":200,"duration":"2ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
+{"timestamp":"2025-11-03T22:15:55.267Z","method":"GET","url":"/api/backups/list","status":200,"duration":"7ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:16:29.452Z","method":"GET","url":"/api/colaboradores","status":200,"duration":"128ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:17:02.349Z","method":"GET","url":"/api/productos","status":200,"duration":"39ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:19:50.743Z","method":"POST","url":"/api/productos","status":201,"duration":"112ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:20:18.499Z","method":"DELETE","url":"/api/productos/7","status":200,"duration":"25ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:20:43.651Z","method":"GET","url":"/api/dashboard/summary","status":200,"duration":"52ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:22:07.042Z","method":"GET","url":"/api/dashboard/ventas-por-categoria","status":200,"duration":"32ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:22:39.982Z","method":"GET","url":"/api/clientes","status":200,"duration":"24ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:24:57.874Z","method":"POST","url":"/api/ventas","status":500,"duration":"8ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:26:14.282Z","method":"GET","url":"/api/clientes","status":200,"duration":"88ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
+{"timestamp":"2025-11-03T22:26:14.353Z","method":"GET","url":"/favicon.ico","status":404,"duration":"2ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
+{"timestamp":"2025-11-03T22:26:59.123Z","method":"POST","url":"/api/ventas","status":500,"duration":"3ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:27:21.585Z","method":"POST","url":"/api/ventas","status":500,"duration":"2ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:27:44.003Z","method":"POST","url":"/api/ventas","status":500,"duration":"3ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:27:44.670Z","method":"POST","url":"/api/ventas","status":500,"duration":"2ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:27:44.838Z","method":"POST","url":"/api/ventas","status":500,"duration":"2ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:31:52.961Z","method":"POST","url":"/api/ventas","status":201,"duration":"73ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:32:12.285Z","method":"GET","url":"/api/ventas","status":200,"duration":"38ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:33:08.498Z","method":"GET","url":"/api/clientes/9","status":200,"duration":"10ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:33:21.662Z","method":"DELETE","url":"/api/clientes/9","status":200,"duration":"24ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:34:46.866Z","method":"DELETE","url":"/api/proveedores","status":404,"duration":"1ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:34:53.266Z","method":"GET","url":"/api/proveedores","status":200,"duration":"17ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:35:29.880Z","method":"GET","url":"/api/proveedores/6","status":200,"duration":"15ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:35:41.339Z","method":"GET","url":"/api/proveedores/:id/historial","status":404,"duration":"1ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:35:51.592Z","method":"GET","url":"/api/proveedores/6/historial","status":404,"duration":"2ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:35:52.963Z","method":"GET","url":"/api/proveedores/6/historial","status":404,"duration":"1ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:35:53.426Z","method":"GET","url":"/api/proveedores/6/historial","status":404,"duration":"1ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:35:53.604Z","method":"GET","url":"/api/proveedores/6/historial","status":404,"duration":"0ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:35:53.771Z","method":"GET","url":"/api/proveedores/6/historial","status":404,"duration":"1ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:36:26.710Z","method":"GET","url":"/api/proveedores/historial/6","status":404,"duration":"1ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:36:55.845Z","method":"GET","url":"/api/proveedores/6/productos","status":200,"duration":"29ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:37:04.116Z","method":"GET","url":"/api/proveedores/1/productos","status":200,"duration":"26ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:38:55.631Z","method":"POST","url":"/api/alquileres","status":201,"duration":"126ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:39:50.449Z","method":"POST","url":"/api/alquileres","status":500,"duration":"3ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:40:43.654Z","method":"GET","url":"/api/alquileres","status":500,"duration":"111ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:40:55.441Z","method":"GET","url":"/api/alquileres","status":500,"duration":"9ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:41:15.056Z","method":"GET","url":"/api/alquileres/activos","status":200,"duration":"39ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:43:53.501Z","method":"POST","url":"/api/alquileres","status":500,"duration":"2ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:46:14.134Z","method":"POST","url":"/api/alquileres","status":201,"duration":"169ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:47:56.414Z","method":"POST","url":"/api/alquileres","status":201,"duration":"86ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:48:41.747Z","method":"POST","url":"/api/alquileres","status":201,"duration":"44ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:50:08.093Z","method":"GET","url":"/api/alquileres/activos","status":200,"duration":"27ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:50:21.971Z","method":"GET","url":"/api/alquileres/estadisticas","status":200,"duration":"10ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:50:46.127Z","method":"GET","url":"/api/categorias","status":200,"duration":"18ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:51:27.002Z","method":"GET","url":"/api/colaboradores","status":200,"duration":"10ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:53:52.123Z","method":"GET","url":"/api/colaboradores/2","status":200,"duration":"116ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:54:02.697Z","method":"GET","url":"/api/backups/list","status":200,"duration":"2ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:57:44.803Z","method":"GET","url":"/api/backups","status":404,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0"}
+{"timestamp":"2025-11-03T22:58:01.671Z","method":"POST","url":"/api/backups","status":404,"duration":"1ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T22:58:26.194Z","method":"POST","url":"/api/backups/create","status":201,"duration":"289ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T23:01:36.199Z","method":"GET","url":"/api/backups","status":404,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
+{"timestamp":"2025-11-03T23:02:03.740Z","method":"GET","url":"/api/backups/list","status":200,"duration":"2ms","ip":"::ffff:127.0.0.1","userAgent":"Thunder Client (https://www.thunderclient.com)"}
+{"timestamp":"2025-11-03T23:07:04.701Z","method":"GET","url":"/api/dashboard/summary","status":200,"duration":"135ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-11-03T23:07:04.737Z","method":"GET","url":"/api/dashboard/ventas-por-dia?days=7","status":200,"duration":"25ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-11-03T23:07:04.755Z","method":"GET","url":"/api/dashboard/ventas-por-categoria","status":200,"duration":"15ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-11-03T23:07:04.765Z","method":"GET","url":"/api/dashboard/ventas-por-metodo-pago","status":200,"duration":"8ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-11-03T23:07:04.805Z","method":"GET","url":"/api/dashboard/alertas","status":200,"duration":"37ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-11-03T23:07:04.832Z","method":"GET","url":"/api/dashboard/resumen-financiero","status":200,"duration":"24ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-11-03T23:07:04.850Z","method":"GET","url":"/api/dashboard/top-clientes?limit=5","status":200,"duration":"13ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-11-03T23:07:04.865Z","method":"GET","url":"/api/dashboard/rendimiento-colaboradores","status":200,"duration":"12ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-11-03T23:07:04.886Z","method":"GET","url":"/api/dashboard/analisis-inventario","status":200,"duration":"18ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-11-03T23:07:04.904Z","method":"GET","url":"/api/dashboard/movimientos-recientes?limit=10","status":200,"duration":"14ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-11-03T23:07:04.918Z","method":"GET","url":"/api/reportes/inventario","status":200,"duration":"13ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-11-03T23:07:04.933Z","method":"GET","url":"/api/reportes/clientes","status":200,"duration":"13ms","ip":"::1","userAgent":"axios/1.13.1"}
+{"timestamp":"2025-11-03T23:07:04.954Z","method":"GET","url":"/api/reportes/ventas?fechaInicio=2025-11-01&fechaFin=2025-11-03","status":200,"duration":"18ms","ip":"::1","userAgent":"axios/1.13.1"}

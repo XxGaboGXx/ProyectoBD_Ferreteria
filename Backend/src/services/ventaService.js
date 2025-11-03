@@ -307,136 +307,147 @@ class VentaService {
     /**
      * Crear nueva venta
      */
-   async create(data) {
-        const pool = await getConnection();
-        const transaction = pool.transaction();
+   async create(ventaData) {
+    const transaction = new sql.Transaction(await getConnection());
 
-        try {
-            console.log('🛒 Iniciando creación de venta:', data);
+    try {
+        await transaction.begin();
 
-            // Validar datos requeridos
-            if (!data.Id_cliente || !data.Id_colaborador) {
-                throw new Error('Cliente y colaborador son requeridos');
+        const {
+            Id_cliente,
+            Id_colaborador,      // ✅ Cambiado de Id_empleado
+            MetodoPago,          // ✅ Cambiado de Metodo_pago
+            Estado = 'Completada',
+            Descuento = 0,
+            Notas = null,
+            Productos = []
+        } = ventaData;
+
+        // Validación
+        console.log('📝 Datos recibidos:', {
+            Id_cliente,
+            Id_colaborador,
+            MetodoPago,
+            CantidadProductos: Productos.length
+        });
+
+        if (!Id_cliente || !Id_colaborador) {
+            throw new Error('Cliente y colaborador son requeridos');
+        }
+
+        if (!Productos || Productos.length === 0) {
+            throw new Error('Debe incluir al menos un producto');
+        }
+
+        // ✅ Verificar cliente en tabla Cliente (sin campo Activo)
+        const clienteExists = await new sql.Request(transaction).query(`
+            SELECT Id_cliente FROM Cliente 
+            WHERE Id_cliente = ${Id_cliente}
+        `);
+
+        if (!clienteExists.recordset.length) {
+            throw new Error(`Cliente con ID ${Id_cliente} no existe`);
+        }
+
+        // ✅ Verificar colaborador en tabla Colaborador
+        const colaboradorExists = await new sql.Request(transaction).query(`
+            SELECT Id_colaborador FROM Colaborador 
+            WHERE Id_colaborador = ${Id_colaborador}
+        `);
+
+        if (!colaboradorExists.recordset.length) {
+            throw new Error(`Colaborador con ID ${Id_colaborador} no existe`);
+        }
+
+        console.log('✅ Cliente y colaborador validados correctamente');
+
+        // Calcular total
+        let total = 0;
+        for (const producto of Productos) {
+            const subtotal = (producto.PrecioUnitario * producto.Cantidad) - (producto.Descuento || 0);
+            total += subtotal;
+        }
+        total -= Descuento;
+
+        // ✅ Insertar en tabla Venta (nombres correctos)
+        const ventaResult = await new sql.Request(transaction)
+            .input('Id_cliente', sql.Int, Id_cliente)
+            .input('Id_colaborador', sql.Int, Id_colaborador)
+            .input('MetodoPago', sql.VarChar(20), MetodoPago)
+            .input('TotalVenta', sql.Decimal(12, 2), total)
+            .input('Estado', sql.VarChar(20), Estado)
+            .query(`
+                INSERT INTO Venta (Id_cliente, Id_colaborador, Fecha, MetodoPago, TotalVenta, Estado)
+                OUTPUT INSERTED.*
+                VALUES (@Id_cliente, @Id_colaborador, GETDATE(), @MetodoPago, @TotalVenta, @Estado)
+            `);
+
+        const venta = ventaResult.recordset[0];
+        console.log('✅ Venta creada con ID:', venta.Id_venta);
+
+        // Insertar detalles
+        const detalles = [];
+        let numeroLinea = 1;
+
+        for (const producto of Productos) {
+            // ✅ Verificar stock en tabla Producto
+            const stockCheck = await new sql.Request(transaction).query(`
+                SELECT CantidadActual FROM Producto 
+                WHERE Id_producto = ${producto.Id_producto}
+            `);
+
+            if (!stockCheck.recordset.length) {
+                throw new Error(`Producto con ID ${producto.Id_producto} no existe`);
             }
 
-            if (!data.detalles || !Array.isArray(data.detalles) || data.detalles.length === 0) {
-                throw new Error('Debe incluir al menos un producto en la venta');
+            const stockActual = stockCheck.recordset[0].CantidadActual;
+            if (stockActual < producto.Cantidad) {
+                throw new Error(`Stock insuficiente para producto ID ${producto.Id_producto}. Disponible: ${stockActual}, Solicitado: ${producto.Cantidad}`);
             }
 
-            // Iniciar transacción
-            await transaction.begin();
-
-            // 1. Crear la venta principal
-            const ventaRequest = new sql.Request(transaction);
-            const ventaResult = await ventaRequest
-                .input('fecha', sql.DateTime, data.Fecha || new Date())
-                .input('totalVenta', sql.Decimal(12, 2), data.TotalVenta || 0)
-                .input('metodoPago', sql.VarChar(20), data.MetodoPago || 'Efectivo')
-                .input('estado', sql.VarChar(20), data.Estado || 'Completada')
-                .input('idCliente', sql.Int, data.Id_cliente)
-                .input('idColaborador', sql.Int, data.Id_colaborador)
+            const subtotal = producto.PrecioUnitario * producto.Cantidad;
+            
+            // ✅ Insertar en tabla DetalleVenta (nombres correctos)
+            const detalleResult = await new sql.Request(transaction)
+                .input('Id_venta', sql.Int, venta.Id_venta)
+                .input('Id_producto', sql.Int, producto.Id_producto)
+                .input('CantidadVenta', sql.Int, producto.Cantidad)
+                .input('NumeroLinea', sql.Int, numeroLinea)
+                .input('PrecioUnitario', sql.Decimal(10, 2), producto.PrecioUnitario)
+                .input('Subtotal', sql.Decimal(10, 2), subtotal)
                 .query(`
-                    INSERT INTO Venta (Fecha, TotalVenta, MetodoPago, Estado, Id_cliente, Id_colaborador)
+                    INSERT INTO DetalleVenta (Id_venta, Id_producto, CantidadVenta, NumeroLinea, PrecioUnitario, Subtotal)
                     OUTPUT INSERTED.*
-                    VALUES (@fecha, @totalVenta, @metodoPago, @estado, @idCliente, @idColaborador)
+                    VALUES (@Id_venta, @Id_producto, @CantidadVenta, @NumeroLinea, @PrecioUnitario, @Subtotal)
                 `);
 
-            const venta = ventaResult.recordset[0];
-            console.log(`✅ Venta creada con ID: ${venta.Id_venta}`);
+            detalles.push(detalleResult.recordset[0]);
 
-            // 2. Insertar detalles de la venta y actualizar inventario
-            let totalCalculado = 0;
-            const detallesCreados = [];
+            // ✅ Actualizar stock en tabla Producto (campo CantidadActual)
+            await new sql.Request(transaction).query(`
+                UPDATE Producto 
+                SET CantidadActual = CantidadActual - ${producto.Cantidad}
+                WHERE Id_producto = ${producto.Id_producto}
+            `);
 
-            for (let i = 0; i < data.detalles.length; i++) {
-                const detalle = data.detalles[i];
-
-                // Validar producto
-                if (!detalle.Id_producto || !detalle.CantidadVenta || !detalle.PrecioUnitario) {
-                    throw new Error(`Detalle ${i + 1}: Producto, cantidad y precio son requeridos`);
-                }
-
-                // Verificar stock disponible
-                const stockRequest = new sql.Request(transaction);
-                const stockResult = await stockRequest
-                    .input('idProducto', sql.Int, detalle.Id_producto)
-                    .query('SELECT CantidadActual, Nombre FROM Producto WHERE Id_Producto = @idProducto');
-
-                if (stockResult.recordset.length === 0) {
-                    throw new Error(`Producto con ID ${detalle.Id_producto} no encontrado`);
-                }
-
-                const producto = stockResult.recordset[0];
-                if (producto.CantidadActual < detalle.CantidadVenta) {
-                    throw new Error(`Stock insuficiente para ${producto.Nombre}. Disponible: ${producto.CantidadActual}, Solicitado: ${detalle.CantidadVenta}`);
-                }
-
-                // Calcular subtotal
-                const subtotal = detalle.CantidadVenta * detalle.PrecioUnitario;
-                totalCalculado += subtotal;
-
-                // Insertar detalle de venta
-                const detalleRequest = new sql.Request(transaction);
-                const detalleResult = await detalleRequest
-                    .input('cantidadVenta', sql.Int, detalle.CantidadVenta)
-                    .input('numeroLinea', sql.Int, i + 1)
-                    .input('precioUnitario', sql.Decimal(10, 2), detalle.PrecioUnitario)
-                    .input('subtotal', sql.Decimal(10, 2), subtotal)
-                    .input('idVenta', sql.Int, venta.Id_venta)
-                    .input('idProducto', sql.Int, detalle.Id_producto)
-                    .query(`
-                        INSERT INTO DetalleVenta (CantidadVenta, NumeroLinea, PrecioUnitario, Subtotal, Id_venta, Id_producto)
-                        OUTPUT INSERTED.*
-                        VALUES (@cantidadVenta, @numeroLinea, @precioUnitario, @subtotal, @idVenta, @idProducto)
-                    `);
-
-                // Actualizar inventario
-                const updateStockRequest = new sql.Request(transaction);
-                await updateStockRequest
-                    .input('cantidad', sql.Int, detalle.CantidadVenta)
-                    .input('idProducto', sql.Int, detalle.Id_producto)
-                    .query(`
-                        UPDATE Producto 
-                        SET CantidadActual = CantidadActual - @cantidad,
-                            FechaSalida = GETDATE()
-                        WHERE Id_Producto = @idProducto
-                    `);
-
-                detallesCreados.push(detalleResult.recordset[0]);
-                console.log(`  ✓ Detalle ${i + 1}: ${producto.Nombre} - Cantidad: ${detalle.CantidadVenta}`);
-            }
-
-            // 3. Actualizar total de venta si es necesario
-            if (data.TotalVenta === 0 || !data.TotalVenta) {
-                const updateVentaRequest = new sql.Request(transaction);
-                await updateVentaRequest
-                    .input('total', sql.Decimal(12, 2), totalCalculado)
-                    .input('idVenta', sql.Int, venta.Id_venta)
-                    .query('UPDATE Venta SET TotalVenta = @total WHERE Id_venta = @idVenta');
-
-                venta.TotalVenta = totalCalculado;
-            }
-
-            // Commit de la transacción
-            await transaction.commit();
-            console.log(`✅ Venta completada exitosamente. Total: ${venta.TotalVenta}`);
-
-            return {
-                ...venta,
-                detalles: detallesCreados
-            };
-
-        } catch (error) {
-            // Rollback en caso de error
-            if (transaction._aborted === false) {
-                await transaction.rollback();
-            }
-            console.error('❌ Error al crear venta:', error);
-            throw error;
+            console.log(`✅ Stock actualizado para producto ID ${producto.Id_producto}`);
+            numeroLinea++;
         }
+
+        await transaction.commit();
+        console.log('✅ Venta completada exitosamente');
+
+        return {
+            ...venta,
+            DetalleVenta: detalles
+        };
+
+    } catch (error) {
+        await transaction.rollback();
+        console.error('❌ Error en creación de venta:', error.message);
+        throw error;
     }
-
-
+}
     /**
      * Cancelar venta
      */

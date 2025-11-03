@@ -6,9 +6,8 @@ const { utils, constants } = require('../config');
  */
 exports.createBackup = async (req, res, next) => {
     try {
-        const { name } = req.body;
-        const result = await backupService.createBackup(name);
-        
+        const { backupName } = req.body;
+        const result = await backupService.createBackup(backupName);
         res.status(constants.HTTP_STATUS.CREATED).json(
             utils.successResponse(result, 'Backup creado exitosamente')
         );
@@ -23,28 +22,19 @@ exports.createBackup = async (req, res, next) => {
 exports.listBackups = async (req, res, next) => {
     try {
         const backups = await backupService.listBackups();
-        
-        res.json(
-            utils.successResponse({
-                count: backups.length,
-                backups
-            }, 'Lista de backups obtenida exitosamente')
-        );
+        res.json(utils.successResponse(backups));
     } catch (error) {
         next(error);
     }
 };
 
 /**
- * Obtener información detallada de backups
+ * Obtener información de backups
  */
 exports.getBackupInfo = async (req, res, next) => {
     try {
         const info = await backupService.getBackupInfo();
-        
-        res.json(
-            utils.successResponse(info, 'Información de backups obtenida')
-        );
+        res.json(utils.successResponse(info));
     } catch (error) {
         next(error);
     }
@@ -58,20 +48,13 @@ exports.restoreBackup = async (req, res, next) => {
         const { fileName } = req.body;
         
         if (!fileName) {
-            return res.status(constants.HTTP_STATUS.BAD_REQUEST).json({
-                success: false,
-                error: {
-                    message: 'El nombre del archivo es requerido',
-                    code: 'FILENAME_REQUIRED'
-                }
-            });
+            return res.status(constants.HTTP_STATUS.BAD_REQUEST).json(
+                utils.errorResponse('El nombre del archivo es requerido')
+            );
         }
-        
+
         const result = await backupService.restoreBackup(fileName);
-        
-        res.json(
-            utils.successResponse(result, 'Backup restaurado exitosamente')
-        );
+        res.json(utils.successResponse(result, 'Backup restaurado exitosamente'));
     } catch (error) {
         next(error);
     }
@@ -82,16 +65,9 @@ exports.restoreBackup = async (req, res, next) => {
  */
 exports.deleteOldBackups = async (req, res, next) => {
     try {
-        const days = parseInt(req.query.days) || 30;
-        const result = await backupService.deleteOldBackups(days);
-        
-        res.json(
-            utils.successResponse(result, 
-                result.deleted > 0 
-                    ? `${result.deleted} backup(s) eliminado(s)` 
-                    : 'No hay backups antiguos para eliminar'
-            )
-        );
+        const { days = 30 } = req.query;
+        const result = await backupService.deleteOldBackups(parseInt(days));
+        res.json(utils.successResponse(result, `Backups antiguos eliminados (>${days} días)`));
     } catch (error) {
         next(error);
     }
@@ -104,10 +80,7 @@ exports.deleteBackup = async (req, res, next) => {
     try {
         const { fileName } = req.params;
         const result = await backupService.deleteBackup(fileName);
-        
-        res.json(
-            utils.successResponse(result, 'Backup eliminado exitosamente')
-        );
+        res.json(utils.successResponse(result, 'Backup eliminado exitosamente'));
     } catch (error) {
         next(error);
     }

@@ -390,3 +390,581 @@
   "body": {}
 }
 ---
+{
+  "timestamp": "2025-11-03T20:28:32.484Z",
+  "message": "EPERM: operation not permitted, scandir 'C:\\Program Files\\Microsoft SQL Server\\MSSQL16.SQLEXPRESS\\MSSQL\\Backup'",
+  "stack": "Error: EPERM: operation not permitted, scandir 'C:\\Program Files\\Microsoft SQL Server\\MSSQL16.SQLEXPRESS\\MSSQL\\Backup'\n    at Object.readdirSync (node:fs:1583:26)\n    at BackupService.listBackups (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\backupService.js:193:30)\n    at exports.listBackups (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\backupController.js:24:45)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)",
+  "method": "GET",
+  "url": "/api/backups/list",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-03T20:28:32.494Z",
+  "message": "EPERM: operation not permitted, scandir 'C:\\Program Files\\Microsoft SQL Server\\MSSQL16.SQLEXPRESS\\MSSQL\\Backup'",
+  "stack": "Error: EPERM: operation not permitted, scandir 'C:\\Program Files\\Microsoft SQL Server\\MSSQL16.SQLEXPRESS\\MSSQL\\Backup'\n    at Object.readdirSync (node:fs:1583:26)\n    at BackupService.listBackups (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\backupService.js:193:30)\n    at exports.listBackups (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\backupController.js:24:45)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)",
+  "method": "GET",
+  "url": "/api/backups/list",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-03T21:14:25.958Z",
+  "message": "Expected property name or '}' in JSON at position 1 (line 1 column 2)",
+  "stack": "SyntaxError: Expected property name or '}' in JSON at position 1 (line 1 column 2)\n    at JSON.parse (<anonymous>)\n    at parse (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\body-parser\\lib\\types\\json.js:92:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\body-parser\\lib\\read.js:128:18\n    at AsyncResource.runInAsyncScope (node:async_hooks:214:14)\n    at invokeCallback (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\raw-body\\index.js:238:16)\n    at done (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\raw-body\\index.js:227:7)\n    at IncomingMessage.onEnd (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\raw-body\\index.js:287:7)\n    at IncomingMessage.emit (node:events:518:28)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)",
+  "method": "POST",
+  "url": "/api/backups/create",
+  "ip": "::ffff:127.0.0.1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-03T22:24:57.871Z",
+  "message": "Cliente y colaborador son requeridos",
+  "stack": "Error: Cliente y colaborador son requeridos\n    at VentaService.create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\ventaService.js:319:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\ventaController.js:52:32)",
+  "method": "POST",
+  "url": "/api/ventas",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "IDCliente": 1,
+    "IDEmpleado": 1,
+    "MetodoPago": "Efectivo",
+    "productos": [
+      {
+        "IDProducto": 1,
+        "Cantidad": 2,
+        "PrecioUnitario": 125.5
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T22:24:57.874Z",
+  "message": "Cliente y colaborador son requeridos",
+  "stack": "Error: Cliente y colaborador son requeridos\n    at VentaService.create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\ventaService.js:319:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\ventaController.js:52:32)",
+  "method": "POST",
+  "url": "/api/ventas",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "IDCliente": 1,
+    "IDEmpleado": 1,
+    "MetodoPago": "Efectivo",
+    "productos": [
+      {
+        "IDProducto": 1,
+        "Cantidad": 2,
+        "PrecioUnitario": 125.5
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T22:26:59.121Z",
+  "message": "Cliente y colaborador son requeridos",
+  "stack": "Error: Cliente y colaborador son requeridos\n    at VentaService.create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\ventaService.js:319:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\ventaController.js:52:32)",
+  "method": "POST",
+  "url": "/api/ventas",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 9,
+    "Nombre": "Juan Carlos",
+    "Apellido1": "Pérez",
+    "Apellido2": "Mora",
+    "Telefono": "88887777",
+    "Direccion": "San José, Escazú, 200m norte del Mall",
+    "Correo": "juan.perez@email.com",
+    "Activo": true
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T22:26:59.123Z",
+  "message": "Cliente y colaborador son requeridos",
+  "stack": "Error: Cliente y colaborador son requeridos\n    at VentaService.create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\ventaService.js:319:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\ventaController.js:52:32)",
+  "method": "POST",
+  "url": "/api/ventas",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 9,
+    "Nombre": "Juan Carlos",
+    "Apellido1": "Pérez",
+    "Apellido2": "Mora",
+    "Telefono": "88887777",
+    "Direccion": "San José, Escazú, 200m norte del Mall",
+    "Correo": "juan.perez@email.com",
+    "Activo": true
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T22:27:21.584Z",
+  "message": "Cliente y colaborador son requeridos",
+  "stack": "Error: Cliente y colaborador son requeridos\n    at VentaService.create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\ventaService.js:319:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\ventaController.js:52:32)",
+  "method": "POST",
+  "url": "/api/ventas",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 9,
+    "Nombre": "Juan Carlos",
+    "Apellido1": "Pérez",
+    "Apellido2": "Mora",
+    "Telefono": "88887777",
+    "Direccion": "San José, Escazú, 200m norte del Mall",
+    "Correo": "juan.perez@email.com",
+    "Activo": true
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T22:27:21.585Z",
+  "message": "Cliente y colaborador son requeridos",
+  "stack": "Error: Cliente y colaborador son requeridos\n    at VentaService.create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\ventaService.js:319:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\ventaController.js:52:32)",
+  "method": "POST",
+  "url": "/api/ventas",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 9,
+    "Nombre": "Juan Carlos",
+    "Apellido1": "Pérez",
+    "Apellido2": "Mora",
+    "Telefono": "88887777",
+    "Direccion": "San José, Escazú, 200m norte del Mall",
+    "Correo": "juan.perez@email.com",
+    "Activo": true
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T22:27:44.001Z",
+  "message": "Cliente y colaborador son requeridos",
+  "stack": "Error: Cliente y colaborador son requeridos\n    at VentaService.create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\ventaService.js:319:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\ventaController.js:52:32)",
+  "method": "POST",
+  "url": "/api/ventas",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 2,
+    "Id_empleado": 1,
+    "Metodo_pago": "Tarjeta",
+    "Estado": "Completada",
+    "Descuento": 0,
+    "Notas": "Venta de materiales para construcción",
+    "Productos": [
+      {
+        "Id_producto": 1,
+        "Cantidad": 5,
+        "Precio_unitario": 125.5,
+        "Descuento": 0
+      },
+      {
+        "Id_producto": 2,
+        "Cantidad": 10,
+        "Precio_unitario": 45,
+        "Descuento": 0
+      },
+      {
+        "Id_producto": 3,
+        "Cantidad": 2,
+        "Precio_unitario": 850,
+        "Descuento": 0
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T22:27:44.003Z",
+  "message": "Cliente y colaborador son requeridos",
+  "stack": "Error: Cliente y colaborador son requeridos\n    at VentaService.create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\ventaService.js:319:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\ventaController.js:52:32)",
+  "method": "POST",
+  "url": "/api/ventas",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 2,
+    "Id_empleado": 1,
+    "Metodo_pago": "Tarjeta",
+    "Estado": "Completada",
+    "Descuento": 0,
+    "Notas": "Venta de materiales para construcción",
+    "Productos": [
+      {
+        "Id_producto": 1,
+        "Cantidad": 5,
+        "Precio_unitario": 125.5,
+        "Descuento": 0
+      },
+      {
+        "Id_producto": 2,
+        "Cantidad": 10,
+        "Precio_unitario": 45,
+        "Descuento": 0
+      },
+      {
+        "Id_producto": 3,
+        "Cantidad": 2,
+        "Precio_unitario": 850,
+        "Descuento": 0
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T22:27:44.669Z",
+  "message": "Cliente y colaborador son requeridos",
+  "stack": "Error: Cliente y colaborador son requeridos\n    at VentaService.create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\ventaService.js:319:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\ventaController.js:52:32)",
+  "method": "POST",
+  "url": "/api/ventas",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 2,
+    "Id_empleado": 1,
+    "Metodo_pago": "Tarjeta",
+    "Estado": "Completada",
+    "Descuento": 0,
+    "Notas": "Venta de materiales para construcción",
+    "Productos": [
+      {
+        "Id_producto": 1,
+        "Cantidad": 5,
+        "Precio_unitario": 125.5,
+        "Descuento": 0
+      },
+      {
+        "Id_producto": 2,
+        "Cantidad": 10,
+        "Precio_unitario": 45,
+        "Descuento": 0
+      },
+      {
+        "Id_producto": 3,
+        "Cantidad": 2,
+        "Precio_unitario": 850,
+        "Descuento": 0
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T22:27:44.670Z",
+  "message": "Cliente y colaborador son requeridos",
+  "stack": "Error: Cliente y colaborador son requeridos\n    at VentaService.create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\ventaService.js:319:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\ventaController.js:52:32)",
+  "method": "POST",
+  "url": "/api/ventas",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 2,
+    "Id_empleado": 1,
+    "Metodo_pago": "Tarjeta",
+    "Estado": "Completada",
+    "Descuento": 0,
+    "Notas": "Venta de materiales para construcción",
+    "Productos": [
+      {
+        "Id_producto": 1,
+        "Cantidad": 5,
+        "Precio_unitario": 125.5,
+        "Descuento": 0
+      },
+      {
+        "Id_producto": 2,
+        "Cantidad": 10,
+        "Precio_unitario": 45,
+        "Descuento": 0
+      },
+      {
+        "Id_producto": 3,
+        "Cantidad": 2,
+        "Precio_unitario": 850,
+        "Descuento": 0
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T22:27:44.837Z",
+  "message": "Cliente y colaborador son requeridos",
+  "stack": "Error: Cliente y colaborador son requeridos\n    at VentaService.create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\ventaService.js:319:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\ventaController.js:52:32)",
+  "method": "POST",
+  "url": "/api/ventas",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 2,
+    "Id_empleado": 1,
+    "Metodo_pago": "Tarjeta",
+    "Estado": "Completada",
+    "Descuento": 0,
+    "Notas": "Venta de materiales para construcción",
+    "Productos": [
+      {
+        "Id_producto": 1,
+        "Cantidad": 5,
+        "Precio_unitario": 125.5,
+        "Descuento": 0
+      },
+      {
+        "Id_producto": 2,
+        "Cantidad": 10,
+        "Precio_unitario": 45,
+        "Descuento": 0
+      },
+      {
+        "Id_producto": 3,
+        "Cantidad": 2,
+        "Precio_unitario": 850,
+        "Descuento": 0
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T22:27:44.839Z",
+  "message": "Cliente y colaborador son requeridos",
+  "stack": "Error: Cliente y colaborador son requeridos\n    at VentaService.create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\ventaService.js:319:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\ventaController.js:52:32)",
+  "method": "POST",
+  "url": "/api/ventas",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 2,
+    "Id_empleado": 1,
+    "Metodo_pago": "Tarjeta",
+    "Estado": "Completada",
+    "Descuento": 0,
+    "Notas": "Venta de materiales para construcción",
+    "Productos": [
+      {
+        "Id_producto": 1,
+        "Cantidad": 5,
+        "Precio_unitario": 125.5,
+        "Descuento": 0
+      },
+      {
+        "Id_producto": 2,
+        "Cantidad": 10,
+        "Precio_unitario": 45,
+        "Descuento": 0
+      },
+      {
+        "Id_producto": 3,
+        "Cantidad": 2,
+        "Precio_unitario": 850,
+        "Descuento": 0
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T22:39:50.447Z",
+  "message": "Debe especificar cliente, colaborador y al menos un producto",
+  "stack": "Error: Debe especificar cliente, colaborador y al menos un producto\n    at AlquilerService.createAlquiler (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\alquilerService.js:11:19)\n    at exports.create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\alquilerController.js:25:46)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:175:3)",
+  "method": "POST",
+  "url": "/api/alquileres",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 1,
+    "Id_colaborador": 1,
+    "FechaInicio": "2025-11-03T08:00:00",
+    "FechaFin": "2025-11-10T18:00:00",
+    "Estado": "Pendiente",
+    "Productos": [
+      {
+        "Id_producto": 1,
+        "Cantidad": 1,
+        "TarifaDiaria": 150,
+        "DiasAlquilados": 7,
+        "Deposito": 500
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T22:39:50.449Z",
+  "message": "Debe especificar cliente, colaborador y al menos un producto",
+  "stack": "Error: Debe especificar cliente, colaborador y al menos un producto\n    at AlquilerService.createAlquiler (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\alquilerService.js:11:19)\n    at exports.create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\alquilerController.js:25:46)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:175:3)",
+  "method": "POST",
+  "url": "/api/alquileres",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 1,
+    "Id_colaborador": 1,
+    "FechaInicio": "2025-11-03T08:00:00",
+    "FechaFin": "2025-11-10T18:00:00",
+    "Estado": "Pendiente",
+    "Productos": [
+      {
+        "Id_producto": 1,
+        "Cantidad": 1,
+        "TarifaDiaria": 150,
+        "DiasAlquilados": 7,
+        "Deposito": 500
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T22:40:43.652Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column 'Alquiler.Multa' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column 'Alquiler.Multa' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/alquileres",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 1,
+    "Id_colaborador": 1,
+    "FechaInicio": "2025-11-03T08:00:00",
+    "FechaFin": "2025-11-10T18:00:00",
+    "Estado": "Pendiente",
+    "Productos": [
+      {
+        "Id_producto": 1,
+        "Cantidad": 1,
+        "TarifaDiaria": 150,
+        "DiasAlquilados": 7,
+        "Deposito": 500
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T22:40:43.655Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column 'Alquiler.Multa' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column 'Alquiler.Multa' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/alquileres",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 1,
+    "Id_colaborador": 1,
+    "FechaInicio": "2025-11-03T08:00:00",
+    "FechaFin": "2025-11-10T18:00:00",
+    "Estado": "Pendiente",
+    "Productos": [
+      {
+        "Id_producto": 1,
+        "Cantidad": 1,
+        "TarifaDiaria": 150,
+        "DiasAlquilados": 7,
+        "Deposito": 500
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T22:40:55.440Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column 'Alquiler.Multa' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column 'Alquiler.Multa' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/alquileres",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 1,
+    "Id_colaborador": 1,
+    "FechaInicio": "2025-11-03T08:00:00",
+    "FechaFin": "2025-11-10T18:00:00",
+    "Estado": "Pendiente",
+    "Productos": [
+      {
+        "Id_producto": 1,
+        "Cantidad": 1,
+        "TarifaDiaria": 150,
+        "DiasAlquilados": 7,
+        "Deposito": 500
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T22:40:55.441Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column 'Alquiler.Multa' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column 'Alquiler.Multa' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/alquileres",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 1,
+    "Id_colaborador": 1,
+    "FechaInicio": "2025-11-03T08:00:00",
+    "FechaFin": "2025-11-10T18:00:00",
+    "Estado": "Pendiente",
+    "Productos": [
+      {
+        "Id_producto": 1,
+        "Cantidad": 1,
+        "TarifaDiaria": 150,
+        "DiasAlquilados": 7,
+        "Deposito": 500
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T22:43:53.499Z",
+  "message": "Debe especificar cliente, colaborador y al menos un producto",
+  "stack": "Error: Debe especificar cliente, colaborador y al menos un producto\n    at AlquilerService.createAlquiler (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\alquilerService.js:11:19)\n    at exports.create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\alquilerController.js:25:46)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:175:3)",
+  "method": "POST",
+  "url": "/api/alquileres",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "IdCliente": 1,
+    "IdColaborador": 1,
+    "FechaInicio": "2025-11-03",
+    "FechaFin": "2025-11-10",
+    "Estado": "Activo",
+    "productos": [
+      {
+        "IdProducto": 1,
+        "Cantidad": 1,
+        "PrecioAlquiler": 150,
+        "Deposito": 500
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T22:43:53.501Z",
+  "message": "Debe especificar cliente, colaborador y al menos un producto",
+  "stack": "Error: Debe especificar cliente, colaborador y al menos un producto\n    at AlquilerService.createAlquiler (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\alquilerService.js:11:19)\n    at exports.create (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\alquilerController.js:25:46)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:175:3)",
+  "method": "POST",
+  "url": "/api/alquileres",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "IdCliente": 1,
+    "IdColaborador": 1,
+    "FechaInicio": "2025-11-03",
+    "FechaFin": "2025-11-10",
+    "Estado": "Activo",
+    "productos": [
+      {
+        "IdProducto": 1,
+        "Cantidad": 1,
+        "PrecioAlquiler": 150,
+        "Deposito": 500
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-03T22:44:22.940Z",
+  "message": "Unexpected non-whitespace character after JSON at position 268 (line 16 column 1)",
+  "stack": "SyntaxError: Unexpected non-whitespace character after JSON at position 268 (line 16 column 1)\n    at JSON.parse (<anonymous>)\n    at parse (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\body-parser\\lib\\types\\json.js:92:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\body-parser\\lib\\read.js:128:18\n    at AsyncResource.runInAsyncScope (node:async_hooks:214:14)\n    at invokeCallback (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\raw-body\\index.js:238:16)\n    at done (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\raw-body\\index.js:227:7)\n    at IncomingMessage.onEnd (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\raw-body\\index.js:287:7)\n    at IncomingMessage.emit (node:events:518:28)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)",
+  "method": "POST",
+  "url": "/api/alquileres",
+  "ip": "::ffff:127.0.0.1",
+  "body": {}
+}
+---

@@ -38,7 +38,7 @@ app.use(logger);
 app.use(sanitize);
 app.use(rateLimiter);
 
-// Ruta de salud
+// Ruta de salud básica
 app.get('/health', (req, res) => {
     res.json({
         success: true,
@@ -49,6 +49,94 @@ app.get('/health', (req, res) => {
         version: '1.0.0'
     });
 });
+
+// ✅ NUEVO: Estado completo del sistema
+app.get('/api/status', async (req, res, next) => {
+    try {
+        const pool = await getConnection();
+        const dbResult = await pool.request().query('SELECT @@VERSION as version, DB_NAME() as database_name');
+        
+        let backupInfo = { count: 0, totalSizeFormatted: 'N/A', newest: null };
+        try {
+            backupInfo = await backupService.getBackupInfo();
+        } catch (e) {
+            console.warn('⚠️  No se pudo obtener info de backups:', e.message);
+        }
+        
+        res.json(utils.successResponse({
+            server: {
+                status: 'running',
+                uptime: Math.floor(process.uptime()),
+                uptimeFormatted: formatUptime(process.uptime()),
+                memory: {
+                    used: `${Math.floor(process.memoryUsage().heapUsed / 1024 / 1024)} MB`,
+                    total: `${Math.floor(process.memoryUsage().heapTotal / 1024 / 1024)} MB`
+                },
+                version: '1.0.0',
+                nodeVersion: process.version
+            },
+            database: {
+                status: 'connected',
+                name: dbResult.recordset[0].database_name,
+                server: config.database.server
+            },
+            backups: {
+                enabled: config.backup?.enabled || false,
+                count: backupInfo.count,
+                totalSize: backupInfo.totalSizeFormatted,
+                latest: backupInfo.newest?.fileName || 'N/A',
+                latestDate: backupInfo.newest?.created || 'N/A'
+            }
+        }, 'Sistema operativo correctamente'));
+    } catch (err) {
+        next(err);
+    }
+});
+
+// Helper para formatear uptime
+function formatUptime(seconds) {
+    const days = Math.floor(seconds / 86400);
+    const hours = Math.floor((seconds % 86400) / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const secs = Math.floor(seconds % 60);
+    
+    const parts = [];
+    if (days > 0) parts.push(`${days}d`);
+    if (hours > 0) parts.push(`${hours}h`);
+    if (minutes > 0) parts.push(`${minutes}m`);
+    if (secs > 0 || parts.length === 0) parts.push(`${secs}s`);
+    
+    return parts.join(' ');
+}
+
+// ✅ NUEVO: Configuración (solo desarrollo)
+if (config.nodeEnv === 'development') {
+    app.get('/api/config', (req, res) => {
+        res.json(utils.successResponse({
+            environment: config.nodeEnv,
+            database: {
+                server: config.database.server,
+                database: config.database.database,
+                port: config.database.port
+            },
+            server: {
+                port: config.port
+            },
+            backup: {
+                enabled: config.backup?.enabled || false,
+                path: config.backup?.path || 'N/A',
+                retention: config.backup?.retention || 'N/A',
+                interval: config.backup?.autoBackupInterval 
+                    ? `${config.backup.autoBackupInterval / (60 * 60 * 1000)} horas` 
+                    : 'N/A'
+            },
+            pagination: config.pagination,
+            cors: {
+                origin: config.cors.origin
+            }
+        }, 'Configuración actual del sistema'));
+    });
+}
 
 // Ruta de prueba de conexión
 app.get('/api/test-connection', async (req, res, next) => {
@@ -168,7 +256,13 @@ app.use((req, res) => {
     res.status(404).json({
         success: false,
         message: 'Ruta no encontrada',
-        path: req.originalUrl
+        path: req.originalUrl,
+        availableEndpoints: {
+            health: '/health',
+            status: '/api/status',
+            tables: '/api/tables',
+            config: config.nodeEnv === 'development' ? '/api/config' : 'N/A (solo en desarrollo)'
+        }
     });
 });
 
@@ -191,8 +285,20 @@ app.listen(PORT, async () => {
         await getConnection();
         console.log('✅ Conexión a base de datos establecida');
         
-        if (config.backup.enabled) {
-            backupService.startAutoBackup();
+        // ✅ MEJORADO: Validación de backups con manejo de errores
+        if (config.backup && config.backup.enabled) {
+            try {
+                backupService.startAutoBackup();
+                console.log(`✅ Sistema de backups automáticos activado`);
+                console.log(`   📁 Ruta: ${config.backup.path}`);
+                console.log(`   ⏰ Intervalo: ${config.backup.autoBackupInterval / (60 * 60 * 1000)} horas`);
+                console.log(`   📅 Retención: ${config.backup.retention} días`);
+            } catch (backupError) {
+                console.warn('⚠️  No se pudo iniciar backups automáticos:', backupError.message);
+                console.warn('   El sistema continuará sin backups automáticos');
+            }
+        } else {
+            console.log('⚠️  Sistema de backups automáticos deshabilitado');
         }
         
         console.log('\n' + '='.repeat(60));
@@ -200,124 +306,184 @@ app.listen(PORT, async () => {
         console.log('='.repeat(60));
         
         console.log('\n🏥 SALUD Y CONEXIÓN:');
-        console.log('  GET    /health');
-        console.log('  GET    /api/test-connection');
-        console.log('  GET    /api/tables');
+        console.log('  GET    /health                          # Estado básico del servidor');
+        console.log('  GET    /api/status                      # Estado completo del sistema');
+        console.log('  GET    /api/test-connection             # Test de conexión a BD');
+        console.log('  GET    /api/tables                      # Listar todas las tablas');
+        console.log('  GET    /api/data/:tableName?limit=50    # Ver datos de una tabla');
+        if (config.nodeEnv === 'development') {
+            console.log('  GET    /api/config                      # Ver configuración (solo dev)');
+        }
         
         console.log('\n📊 DASHBOARD:');
-        console.log('  GET    /api/dashboard/summary');
-        console.log('  GET    /api/dashboard/ventas-por-dia?days=30');
-        console.log('  GET    /api/dashboard/ventas-por-categoria');
-        console.log('  GET    /api/dashboard/ventas-por-metodo-pago');
-        console.log('  GET    /api/dashboard/top-clientes?limit=10');
-        console.log('  GET    /api/dashboard/rendimiento-colaboradores');
-        console.log('  GET    /api/dashboard/analisis-inventario');
-        console.log('  GET    /api/dashboard/movimientos-recientes?limit=20');
-        console.log('  GET    /api/dashboard/resumen-financiero');
-        console.log('  GET    /api/dashboard/alertas');
+        console.log('  GET    /api/dashboard/summary                       # Resumen general');
+        console.log('  GET    /api/dashboard/ventas-por-dia?days=30        # Ventas por día');
+        console.log('  GET    /api/dashboard/ventas-por-categoria          # Ventas por categoría');
+        console.log('  GET    /api/dashboard/ventas-por-metodo-pago        # Ventas por método de pago');
+        console.log('  GET    /api/dashboard/top-clientes?limit=10         # Top clientes');
+        console.log('  GET    /api/dashboard/rendimiento-colaboradores     # Rendimiento colaboradores');
+        console.log('  GET    /api/dashboard/analisis-inventario           # Análisis de inventario');
+        console.log('  GET    /api/dashboard/movimientos-recientes?limit=20 # Movimientos recientes');
+        console.log('  GET    /api/dashboard/resumen-financiero            # Resumen financiero');
+        console.log('  GET    /api/dashboard/alertas                       # Alertas del sistema');
         
         console.log('\n📈 REPORTES:');
-        console.log('  GET    /api/reportes/ventas?fechaInicio=2025-01-01&fechaFin=2025-12-31');
-        console.log('  GET    /api/reportes/inventario');
-        console.log('  GET    /api/reportes/clientes');
-        console.log('  GET    /api/reportes/productos-mas-vendidos?fechaInicio=...&fechaFin=...&limit=20');
-        console.log('  GET    /api/reportes/compras?fechaInicio=...&fechaFin=...');
-        console.log('  GET    /api/reportes/alquileres?fechaInicio=...&fechaFin=...');
+        console.log('  GET    /api/reportes/ventas?fechaInicio=...&fechaFin=...    # Reporte de ventas');
+        console.log('  GET    /api/reportes/inventario                             # Reporte de inventario');
+        console.log('  GET    /api/reportes/clientes                               # Reporte de clientes');
+        console.log('  GET    /api/reportes/productos-mas-vendidos?limit=20        # Productos más vendidos');
+        console.log('  GET    /api/reportes/compras?fechaInicio=...&fechaFin=...   # Reporte de compras');
+        console.log('  GET    /api/reportes/alquileres?fechaInicio=...&fechaFin=... # Reporte de alquileres');
         
         console.log('\n📦 PRODUCTOS:');
-        console.log('  GET    /api/productos');
-        console.log('  GET    /api/productos/low-stock');
-        console.log('  GET    /api/productos/:id');
-        console.log('  POST   /api/productos');
-        console.log('  PUT    /api/productos/:id');
-        console.log('  DELETE /api/productos/:id');
-        console.log('  POST   /api/productos/:id/adjust-stock');
-        console.log('  GET    /api/productos/:id/movimientos');
+        console.log('  GET    /api/productos                               # Listar productos');
+        console.log('  GET    /api/productos/low-stock                     # Productos con stock bajo');
+        console.log('  GET    /api/productos/:id                           # Obtener producto');
+        console.log('  POST   /api/productos                               # Crear producto');
+        console.log('  PUT    /api/productos/:id                           # Actualizar producto');
+        console.log('  DELETE /api/productos/:id                           # Eliminar producto');
+        console.log('  POST   /api/productos/:id/adjust-stock              # Ajustar stock');
+        console.log('  GET    /api/productos/:id/movimientos               # Historial movimientos');
         
         console.log('\n👥 CLIENTES:');
-        console.log('  GET    /api/clientes');
-        console.log('  GET    /api/clientes/:id');
-        console.log('  GET    /api/clientes/cedula/:cedula');
-        console.log('  POST   /api/clientes');
-        console.log('  PUT    /api/clientes/:id');
-        console.log('  DELETE /api/clientes/:id');
-        console.log('  GET    /api/clientes/:id/historial');
-        console.log('  GET    /api/clientes/:id/estadisticas');
+        console.log('  GET    /api/clientes                                # Listar clientes');
+        console.log('  GET    /api/clientes/:id                            # Obtener cliente');
+        console.log('  GET    /api/clientes/cedula/:cedula                 # Buscar por cédula');
+        console.log('  POST   /api/clientes                                # Crear cliente');
+        console.log('  PUT    /api/clientes/:id                            # Actualizar cliente');
+        console.log('  DELETE /api/clientes/:id                            # Eliminar cliente');
+        console.log('  GET    /api/clientes/:id/historial                  # Historial de compras');
+        console.log('  GET    /api/clientes/:id/estadisticas               # Estadísticas del cliente');
         
         console.log('\n💰 VENTAS:');
-        console.log('  POST   /api/ventas');
-        console.log('  GET    /api/ventas/:id');
-        console.log('  POST   /api/ventas/:id/cancel');
+        console.log('  POST   /api/ventas                                  # Crear venta');
+        console.log('  GET    /api/ventas/:id                              # Obtener venta');
+        console.log('  POST   /api/ventas/:id/cancel                       # Cancelar venta');
         
         console.log('\n🛒 COMPRAS:');
-        console.log('  POST   /api/compras');
-        console.log('  GET    /api/compras/:id');
+        console.log('  POST   /api/compras                                 # Crear compra');
+        console.log('  GET    /api/compras/:id                             # Obtener compra');
         
         console.log('\n🏪 PROVEEDORES:');
-        console.log('  GET    /api/proveedores');
-        console.log('  GET    /api/proveedores/:id');
-        console.log('  POST   /api/proveedores');
-        console.log('  PUT    /api/proveedores/:id');
-        console.log('  DELETE /api/proveedores/:id');
-        console.log('  GET    /api/proveedores/:id/historial');
-        console.log('  GET    /api/proveedores/:id/productos');
+        console.log('  GET    /api/proveedores                             # Listar proveedores');
+        console.log('  GET    /api/proveedores/:id                         # Obtener proveedor');
+        console.log('  POST   /api/proveedores                             # Crear proveedor');
+        console.log('  PUT    /api/proveedores/:id                         # Actualizar proveedor');
+        console.log('  DELETE /api/proveedores/:id                         # Eliminar proveedor');
+        console.log('  GET    /api/proveedores/:id/historial               # Historial de compras');
+        console.log('  GET    /api/proveedores/:id/productos               # Productos del proveedor');
         
         console.log('\n🔧 ALQUILERES:');
-        console.log('  POST   /api/alquileres');
-        console.log('  GET    /api/alquileres/activos');
-        console.log('  GET    /api/alquileres/vencidos');
-        console.log('  POST   /api/alquileres/:id/finalizar');
+        console.log('  POST   /api/alquileres                              # Crear alquiler');
+        console.log('  GET    /api/alquileres/activos                      # Alquileres activos');
+        console.log('  GET    /api/alquileres/vencidos                     # Alquileres vencidos');
+        console.log('  POST   /api/alquileres/:id/finalizar                # Finalizar alquiler');
+        console.log('  POST   /api/alquileres/:id/extender                 # Extender alquiler');
+        console.log('  POST   /api/alquileres/:id/cancelar                 # Cancelar alquiler');
         
         console.log('\n📂 CATEGORÍAS:');
-        console.log('  GET    /api/categorias');
-        console.log('  GET    /api/categorias/:id');
-        console.log('  POST   /api/categorias');
-        console.log('  PUT    /api/categorias/:id');
-        console.log('  DELETE /api/categorias/:id');
+        console.log('  GET    /api/categorias                              # Listar categorías');
+        console.log('  GET    /api/categorias/:id                          # Obtener categoría');
+        console.log('  POST   /api/categorias                              # Crear categoría');
+        console.log('  PUT    /api/categorias/:id                          # Actualizar categoría');
+        console.log('  DELETE /api/categorias/:id                          # Eliminar categoría');
         
         console.log('\n👷 COLABORADORES:');
-        console.log('  GET    /api/colaboradores');
-        console.log('  GET    /api/colaboradores/:id');
-        console.log('  POST   /api/colaboradores');
-        console.log('  PUT    /api/colaboradores/:id');
-        console.log('  DELETE /api/colaboradores/:id');
+        console.log('  GET    /api/colaboradores                           # Listar colaboradores');
+        console.log('  GET    /api/colaboradores/:id                       # Obtener colaborador');
+        console.log('  POST   /api/colaboradores                           # Crear colaborador');
+        console.log('  PUT    /api/colaboradores/:id                       # Actualizar colaborador');
+        console.log('  DELETE /api/colaboradores/:id                       # Eliminar colaborador');
         
         console.log('\n💾 BACKUPS:');
-        console.log('  POST   /api/backups/create');
-        console.log('  GET    /api/backups/list');
-        console.log('  GET    /api/backups/info');
-        console.log('  POST   /api/backups/restore');
-        console.log('  DELETE /api/backups/cleanup?days=30');
+        console.log('  POST   /api/backups/create                          # Crear backup manual');
+        console.log('  GET    /api/backups/list                            # Listar todos los backups');
+        console.log('  GET    /api/backups/info                            # Info del sistema de backups');
+        console.log('  POST   /api/backups/restore                         # Restaurar un backup');
+        console.log('  DELETE /api/backups/cleanup?days=30                 # Eliminar backups antiguos');
+        console.log('  DELETE /api/backups/:fileName                       # Eliminar backup específico');
         
         console.log('\n' + '='.repeat(60));
         console.log('✅ Servidor iniciado correctamente');
+        console.log('📌 Documentación completa en /api/status');
         console.log('='.repeat(60) + '\n');
         
     } catch (error) {
         console.error('\n❌ Error durante la inicialización:', error.message);
-        console.error('Stack:', error.stack);
+        console.error('📋 Stack:', error.stack);
+        console.error('\n⚠️  El servidor se cerrará...');
+        process.exit(1);
     }
 });
 
-// Manejo de cierre graceful
+// ✅ MEJORADO: Manejo de cierre graceful con try-catch
 process.on('SIGINT', async () => {
-    console.log('\n\n🛑 Cerrando servidor gracefully...');
+    console.log('\n\n🛑 Señal de cierre recibida (SIGINT)');
+    console.log('🔄 Cerrando servidor gracefully...');
     
-    backupService.stopAutoBackup();
+    try {
+        // Detener backups automáticos
+        if (backupService && typeof backupService.stopAutoBackup === 'function') {
+            try {
+                backupService.stopAutoBackup();
+                console.log('✅ Sistema de backups detenido');
+            } catch (e) {
+                console.warn('⚠️  Error al detener backups:', e.message);
+            }
+        }
+        
+        // Cerrar conexión a BD
+        try {
+            const { closeConnection } = require('./config/database');
+            await closeConnection();
+            console.log('✅ Conexión a base de datos cerrada');
+        } catch (e) {
+            console.warn('⚠️  Error al cerrar BD:', e.message);
+        }
+        
+        console.log('✅ Servidor cerrado correctamente');
+        process.exit(0);
+    } catch (error) {
+        console.error('❌ Error durante el cierre:', error.message);
+        process.exit(1);
+    }
+});
+
+// Manejo de señal SIGTERM (usado por Docker, PM2, etc.)
+process.on('SIGTERM', async () => {
+    console.log('\n\n🛑 Señal de cierre recibida (SIGTERM)');
+    console.log('🔄 Cerrando servidor gracefully...');
     
-    const { closeConnection } = require('./config/database');
-    await closeConnection();
-    
-    console.log('✅ Servidor cerrado correctamente');
-    process.exit(0);
+    try {
+        if (backupService && typeof backupService.stopAutoBackup === 'function') {
+            backupService.stopAutoBackup();
+        }
+        
+        const { closeConnection } = require('./config/database');
+        await closeConnection();
+        
+        console.log('✅ Servidor cerrado correctamente');
+        process.exit(0);
+    } catch (error) {
+        console.error('❌ Error durante el cierre:', error.message);
+        process.exit(1);
+    }
 });
 
 // Manejo de errores no capturados
 process.on('unhandledRejection', (reason, promise) => {
-    console.error('❌ Unhandled Rejection at:', promise, 'reason:', reason);
+    console.error('\n❌ Unhandled Rejection detectado:');
+    console.error('📍 Promise:', promise);
+    console.error('📋 Razón:', reason);
 });
 
 process.on('uncaughtException', (error) => {
-    console.error('❌ Uncaught Exception:', error);
-    process.exit(1);
+    console.error('\n❌ Uncaught Exception detectado:');
+    console.error('📋 Error:', error.message);
+    console.error('📋 Stack:', error.stack);
+    
+    // Dar tiempo para que se escriban los logs antes de salir
+    setTimeout(() => {
+        process.exit(1);
+    }, 1000);
 });

@@ -3,17 +3,17 @@ import logoFerreteria from "../../assets/LogoFerreteriaCentral.png";
 
 function Navbar() {
   return (
-    <header className="w-full">
+    <header className="w-full fixed top-0 left-0 right-0 z-40">
       {/* Barra superior gris */}
-      <div className="bg-gray-300 text-[#0b3b68] text-center font-bold py-1 tracking-wide">
+      <div className="bg-gray-300 text-[#0b3b68] text-center font-bold py-1 tracking-wide text-sm">
         FERRETERÍA CENTRAL
       </div>
 
       {/* Navbar azul */}
-      <nav className="bg-[#0b3b68] flex items-center justify-between px-6 py-3">
+      <nav className="bg-[#0b3b68] flex items-center justify-between px-6 py-3 shadow-md">
         {/* Logo y texto */}
         <div className="flex items-center gap-3">
-          <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex items-center justify-center">
+          <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex items-center justify-center shadow-sm">
             <img
               src={logoFerreteria}
               alt="Logo Ferretería Central"
@@ -32,12 +32,12 @@ function Navbar() {
             <input
               type="text"
               placeholder="Buscar"
-              className="pl-9 pr-3 py-2 rounded-md outline-none border w-56 text-gray-700 bg-white placeholder-gray-500"
+              className="pl-9 pr-3 py-2 rounded-md outline-none border border-gray-300 w-56 text-gray-700 bg-white placeholder-gray-500 focus:ring-2 focus:ring-blue-400"
             />
           </div>
-          <button className="flex items-center gap-2 bg-[#1f4e7a] hover:bg-[#255b8d] text-white px-4 py-2 rounded-md transition">
+          <button className="flex items-center gap-2 bg-[#1f4e7a] hover:bg-[#255b8d] text-white px-4 py-2 rounded-md transition shadow-sm">
             <FaUser />
-            <span>Admin</span>
+            <span className="font-medium">Admin</span>
           </button>
         </div>
       </nav>

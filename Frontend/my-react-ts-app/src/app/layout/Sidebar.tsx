@@ -1,25 +1,88 @@
 // src/app/layout/Sidebar.tsx
-{/* Sidebar.tsx 
 import { Link } from 'react-router-dom';
+import { 
+  RiHome5Line, RiBox3Line, RiMoneyDollarCircleLine, RiShoppingCartLine,
+  RiKeyLine, RiTeamLine, RiBarChartBoxLine, RiLineChartLine,
+  RiFileList3Line, RiPriceTag3Line, RiSettings4Line 
+} from 'react-icons/ri';
 
 const Sidebar = () => {
   return (
-    <aside className="w-64 bg-gray-800 text-white h-screen fixed top-0 left-0">
-      <div className="p-4">
-        <h2 className="text-xl font-bold mb-6">Menú</h2>
+    <aside className="w-64 bg-white border-r border-gray-200 flex flex-col h-full">
+      <div className="p-6">
+        <div className="mb-8 text-center">
+          <p className="text-xl font-bold text-gray-800">Ferretería Central</p>
+        </div>
+
         <nav>
-          <ul className="space-y-2">
-            <li><Link to="/" className="block px-4 py-2 hover:bg-gray-700">Inicio</Link></li>
-            <li><Link to="/productos" className="block px-4 py-2 hover:bg-gray-700">Productos</Link></li>
-            <li><Link to="/ventas" className="block px-4 py-2 hover:bg-gray-700">Ventas</Link></li>
-            <li><Link to="/compras" className="block px-4 py-2 hover:bg-gray-700">Compras</Link></li>
-            <li><Link to="/alquileres" className="block px-4 py-2 hover:bg-gray-700">Alquileres</Link></li>
-            <li><Link to="/clientes" className="block px-4 py-2 hover:bg-gray-700">Clientes</Link></li>
-            <li><Link to="/inventario" className="block px-4 py-2 hover:bg-gray-700">Inventario</Link></li>
-            <li><Link to="/reportes" className="block px-4 py-2 hover:bg-gray-700">Reportes</Link></li>
-            <li><Link to="/bitacora" className="block px-4 py-2 hover:bg-gray-700">Bitácora</Link></li>
-            <li><Link to="/etiquetas" className="block px-4 py-2 hover:bg-gray-700">Etiquetas</Link></li>
-            <li><Link to="/configuracion" className="block px-4 py-2 hover:bg-gray-700">Configuración</Link></li>
+          <ul className="space-y-1">
+            {/* Misma lista de enlaces que ya tienes */}
+            <li>
+              <Link to="/" className="flex items-center gap-3 px-4 py-2.5 rounded-lg hover:bg-gray-100 transition text-gray-700 hover:text-[#0b3b68]">
+                <RiHome5Line className="text-xl text-[#0b3b68]" />
+                <span className="font-medium">Inicio</span>
+              </Link>
+            </li>
+            <li>
+              <Link to="/productos" className="flex items-center gap-3 px-4 py-2.5 rounded-lg hover:bg-gray-100 transition text-gray-700 hover:text-[#0b3b68]">
+                <RiBox3Line className="text-xl text-[#0b3b68]" />
+                <span className="font-medium">Productos</span>
+              </Link>
+            </li>
+            <li>
+              <Link to="/ventas" className="flex items-center gap-3 px-4 py-2.5 rounded-lg hover:bg-gray-100 transition text-gray-700 hover:text-[#0b3b68]">
+                <RiMoneyDollarCircleLine className="text-xl text-[#0b3b68]" />
+                <span className="font-medium">Ventas</span>
+              </Link>
+            </li>
+            <li>
+              <Link to="/compras" className="flex items-center gap-3 px-4 py-2.5 rounded-lg hover:bg-gray-100 transition text-gray-700 hover:text-[#0b3b68]">
+                <RiShoppingCartLine className="text-xl text-[#0b3b68]" />
+                <span className="font-medium">Compras</span>
+              </Link>
+            </li>
+            <li>
+              <Link to="/alquileres" className="flex items-center gap-3 px-4 py-2.5 rounded-lg hover:bg-gray-100 transition text-gray-700 hover:text-[#0b3b68]">
+                <RiKeyLine className="text-xl text-[#0b3b68]" />
+                <span className="font-medium">Alquileres</span>
+              </Link>
+            </li>
+            <li>
+              <Link to="/clientes" className="flex items-center gap-3 px-4 py-2.5 rounded-lg hover:bg-gray-100 transition text-gray-700 hover:text-[#0b3b68]">
+                <RiTeamLine className="text-xl text-[#0b3b68]" />
+                <span className="font-medium">Clientes</span>
+              </Link>
+            </li>
+            <li>
+              <Link to="/inventario" className="flex items-center gap-3 px-4 py-2.5 rounded-lg hover:bg-gray-100 transition text-gray-700 hover:text-[#0b3b68]">
+                <RiBarChartBoxLine className="text-xl text-[#0b3b68]" />
+                <span className="font-medium">Inventario</span>
+              </Link>
+            </li>
+            <li>
+              <Link to="/reportes" className="flex items-center gap-3 px-4 py-2.5 rounded-lg hover:bg-gray-100 transition text-gray-700 hover:text-[#0b3b68]">
+                <RiLineChartLine className="text-xl text-[#0b3b68]" />
+                <span className="font-medium">Reportes</span>
+              </Link>
+            </li>
+            <li>
+              <Link to="/bitacora" className="flex items-center gap-3 px-4 py-2.5 rounded-lg hover:bg-gray-100 transition text-gray-700 hover:text-[#0b3b68]">
+                <RiFileList3Line className="text-xl text-[#0b3b68]" />
+                <span className="font-medium">Bitácora</span>
+              </Link>
+            </li>
+            <li>
+              <Link to="/etiquetas" className="flex items-center gap-3 px-4 py-2.5 rounded-lg hover:bg-gray-100 transition text-gray-700 hover:text-[#0b3b68]">
+                <RiPriceTag3Line className="text-xl text-[#0b3b68]" />
+                <span className="font-medium">Etiquetas</span>
+              </Link>
+            </li>
+            <li>
+              <Link to="/configuracion" className="flex items-center gap-3 px-4 py-2.5 rounded-lg hover:bg-gray-100 transition text-gray-700 hover:text-[#0b3b68]">
+                <RiSettings4Line className="text-xl text-[#0b3b68]" />
+                <span className="font-medium">Configuración</span>
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>
@@ -27,4 +90,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar; */}
+export default Sidebar;

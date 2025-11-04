@@ -1,7 +1,7 @@
 import { FaUser, FaSearch } from "react-icons/fa";
-import logoFerreteria from "../../assets/LogoFerreteriaCentral.png";
+import logoferreteria from "../../assets/logoferreteria.png";
 
- function Navbar() {
+function Navbar() {
   return (
     <header className="w-full">
       {/* Barra superior gris */}
@@ -13,13 +13,15 @@ import logoFerreteria from "../../assets/LogoFerreteriaCentral.png";
       <nav className="bg-[#0b3b68] flex items-center justify-between px-6 py-3">
         {/* Logo y texto */}
         <div className="flex items-center gap-3">
-          <img
-            src={logoFerreteria}
-            alt="Logo Ferretería Central"
-            className="w-12 h-12"
-          />
-          <div className="text-white font-bold leading-tight text-lg">
-            FERRETERÍA <br /> CENTRAL
+          <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex items-center justify-center">
+            <img
+              src={logoferreteria}
+              alt="Logo Ferretería Central"
+              className="w-10 h-10 object-contain"
+            />
+          </div>
+          <div className="text-white font-bold text-lg">
+            Todo para tu proyecto
           </div>
         </div>
 
@@ -30,7 +32,7 @@ import logoFerreteria from "../../assets/LogoFerreteriaCentral.png";
             <input
               type="text"
               placeholder="Buscar"
-              className="pl-9 pr-3 py-2 rounded-md outline-none border-none w-56 text-gray-700"
+              className="pl-9 pr-3 py-2 rounded-md outline-none border w-56 text-gray-700 bg-white placeholder-gray-500"
             />
           </div>
           <button className="flex items-center gap-2 bg-[#1f4e7a] hover:bg-[#255b8d] text-white px-4 py-2 rounded-md transition">
@@ -42,4 +44,5 @@ import logoFerreteria from "../../assets/LogoFerreteriaCentral.png";
     </header>
   );
 }
+
 export default Navbar;

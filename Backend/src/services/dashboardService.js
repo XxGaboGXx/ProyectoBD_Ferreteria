@@ -4,52 +4,57 @@ class DashboardService {
     /**
      * Obtener resumen general del dashboard
      */
-    async getDashboardSummary() {
-        const pool = await getConnection();
+  async getDashboardSummary() {
+    const pool = await getConnection();
 
-        try {
-            // Ejecutar SP_ObtenerResumenDashboard que retorna múltiples resultsets
-            const result = await pool.request().execute('SP_ObtenerResumenDashboard');
-            
-            const ventasHoy = result.recordsets[0][0];
-            const ventasMes = result.recordsets[1][0];
-            const productosTotal = result.recordsets[2][0];
-            const productosLowStock = result.recordsets[3][0];
-            const clientesTotal = result.recordsets[4][0];
-            const alquileresActivos = result.recordsets[5][0];
+    try {
+        // Ejecutar SP_ObtenerResumenDashboard que retorna múltiples resultsets
+        const result = await pool.request().execute('SP_ObtenerResumenDashboard');
+        
+        const ventasHoy = result.recordsets[0][0];
+        const ventasMes = result.recordsets[1][0];
+        const productosTotal = result.recordsets[2][0];
+        const productosLowStock = result.recordsets[3][0];
+        const clientesTotal = result.recordsets[4][0];
+        const alquileresActivos = result.recordsets[5][0];
 
-            // Obtener top productos y ventas recientes
-            const topProductos = await this.getTopProductos(pool);
-            const ventasRecientes = await this.getVentasRecientes(pool);
+        // CAMBIO: Crear nuevas conexiones para cada llamada
+        const topProductosResult = await pool.request()
+            .input('Limit', sql.Int, 5)
+            .execute('SP_ObtenerTopProductos');
+        
+        const ventasRecientesResult = await pool.request()
+            .input('Limit', sql.Int, 10)
+            .execute('SP_ObtenerVentasRecientes');
 
-            return {
-                ventas: {
-                    hoy: ventasHoy,
-                    mes: ventasMes
-                },
-                inventario: {
-                    totalProductos: productosTotal.total,
-                    unidadesTotal: productosTotal.unidadesTotal,
-                    valorInventario: productosTotal.valorInventario,
-                    lowStock: productosLowStock.cantidad
-                },
-                clientes: {
-                    total: clientesTotal.total,
-                    nuevosHoy: clientesTotal.nuevosHoy
-                },
-                alquileres: {
-                    activos: alquileresActivos.total,
-                    valorTotal: alquileresActivos.valorTotal,
-                    vencidos: alquileresActivos.vencidos
-                },
-                topProductos,
-                ventasRecientes
-            };
-        } catch (error) {
-            console.error('❌ Error en getDashboardSummary:', error);
-            throw error;
-        }
+        return {
+            ventas: {
+                hoy: ventasHoy,
+                mes: ventasMes
+            },
+            inventario: {
+                totalProductos: productosTotal.total,
+                unidadesTotal: productosTotal.unidadesTotal,
+                valorInventario: productosTotal.valorInventario,
+                lowStock: productosLowStock.cantidad
+            },
+            clientes: {
+                total: clientesTotal.total,
+                nuevosHoy: clientesTotal.nuevosHoy
+            },
+            alquileres: {
+                activos: alquileresActivos.total,
+                valorTotal: alquileresActivos.valorTotal,
+                vencidos: alquileresActivos.vencidos
+            },
+            topProductos: topProductosResult.recordset,
+            ventasRecientes: ventasRecientesResult.recordset
+        };
+    } catch (error) {
+        console.error('❌ Error en getDashboardSummary:', error);
+        throw error;
     }
+}
 
     async getVentasHoy(pool) {
         // Método legacy - ya no se usa directamente, está en SP_ObtenerResumenDashboard
@@ -87,19 +92,6 @@ class DashboardService {
         return result.recordsets[5][0];
     }
 
-    async getTopProductos(pool, limit = 5) {
-        const result = await pool.request()
-            .input('Limit', sql.Int, limit)
-            .execute('SP_ObtenerTopProductos');
-        return result.recordset;
-    }
-
-    async getVentasRecientes(pool, limit = 10) {
-        const result = await pool.request()
-            .input('Limit', sql.Int, limit)
-            .execute('SP_ObtenerVentasRecientes');
-        return result.recordset;
-    }
 
     async getVentasPorDia(days = 30) {
         const pool = await getConnection();
@@ -141,32 +133,46 @@ class DashboardService {
         }
     }
 
-    async getTopClientes(limit = 10) {
-        const pool = await getConnection();
-        
-        try {
-            const result = await pool.request()
-                .input('Limit', sql.Int, limit)
-                .execute('SP_ObtenerTopClientes');
-            return result.recordset;
-        } catch (error) {
-            console.error('❌ Error en getTopClientes:', error);
-            throw error;
-        }
+   async getTopClientes(limit = 10) {
+    const pool = await getConnection();
+    
+    try {
+        const result = await pool.request()
+            .input('Limit', sql.Int, limit)
+            .execute('SP_ObtenerTopClientes');
+        return result.recordset;
+    } catch (error) {
+        console.error('❌ Error en getTopClientes:', error);
+        throw error;
     }
+}
 
-    async getRendimientoColaboradores() {
-        const pool = await getConnection();
-        
-        try {
-            const result = await pool.request()
-                .execute('SP_ObtenerRendimientoColaboradores');
-            return result.recordset;
-        } catch (error) {
-            console.error('❌ Error en getRendimientoColaboradores:', error);
-            throw error;
-        }
+async getTopProductos(limit = 10) {
+    const pool = await getConnection();
+    
+    try {
+        const result = await pool.request()
+            .input('Limit', sql.Int, limit)
+            .execute('SP_ObtenerTopProductos');
+        return result.recordset;
+    } catch (error) {
+        console.error('❌ Error en getTopProductos:', error);
+        throw error;
     }
+}
+
+async getRendimientoColaboradores() {
+    const pool = await getConnection();
+    
+    try {
+        const result = await pool.request()
+            .execute('SP_ObtenerRendimientoColaboradores');
+        return result.recordset;
+    } catch (error) {
+        console.error('❌ Error en getRendimientoColaboradores:', error);
+        throw error;
+    }
+}
 
     async getAnalisisInventario() {
         const pool = await getConnection();

@@ -7,7 +7,7 @@ module.exports = {
     
     // Configuración de la base de datos
     database: {
-        server: process.env.DB_SERVER || 'localhost\\SQLEXPRESS',
+        server: process.env.DB_SERVER || 'localhost\\SQLEXPRESS01',
         database: process.env.DB_DATABASE || 'FerreteriaCentral',
         user: process.env.DB_USER || '',
         password: process.env.DB_PASSWORD || ''

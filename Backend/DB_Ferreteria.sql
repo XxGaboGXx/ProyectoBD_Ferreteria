@@ -9,8 +9,7 @@ Drop database FerreteriaCentral;
 CREATE DATABASE FerreteriaCentral
 ON PRIMARY
 (
-    NAME = 'FerreteriaCentral_Data',
-    FILENAME = 'C:\SQLData\FerreteriaCentral_Data.mdf',
+    NAME = 'FerreteriaCentral_Data',ru
     SIZE = 4GB,
     MAXSIZE = 7GB,
     FILEGROWTH = 1GB

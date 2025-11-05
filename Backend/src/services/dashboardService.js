@@ -8,47 +8,35 @@ class DashboardService {
     const pool = await getConnection();
 
     try {
-        // Ejecutar SP_ObtenerResumenDashboard que retorna múltiples resultsets
+        console.log('🔍 Ejecutando SP_ObtenerResumenDashboard...');
+        
         const result = await pool.request().execute('SP_ObtenerResumenDashboard');
         
-        const ventasHoy = result.recordsets[0][0];
-        const ventasMes = result.recordsets[1][0];
-        const productosTotal = result.recordsets[2][0];
-        const productosLowStock = result.recordsets[3][0];
-        const clientesTotal = result.recordsets[4][0];
-        const alquileresActivos = result.recordsets[5][0];
-
-        // CAMBIO: Crear nuevas conexiones para cada llamada
-        const topProductosResult = await pool.request()
-            .input('Limit', sql.Int, 5)
-            .execute('SP_ObtenerTopProductos');
+        console.log('📊 Resultados recibidos:', result.recordsets.length, 'recordsets');
         
-        const ventasRecientesResult = await pool.request()
-            .input('Limit', sql.Int, 10)
-            .execute('SP_ObtenerVentasRecientes');
+        if (!result.recordsets || result.recordsets.length < 6) {
+            console.error('❌ El SP no retornó todos los recordsets esperados');
+            throw new Error('Estructura de datos incompleta del Stored Procedure');
+        }
+        
+        const ventasHoy = result.recordsets[0][0] || { total: 0 };
+        const ventasMes = result.recordsets[1][0] || { total: 0 };
+        const productosTotal = result.recordsets[2][0] || { total: 0, unidadesTotal: 0, valorInventario: 0 };
+        const productosLowStock = result.recordsets[3][0] || { cantidad: 0 };
+        const clientesTotal = result.recordsets[4][0] || { total: 0, nuevosHoy: 0 };
+        const alquileresActivos = result.recordsets[5][0] || { total: 0, valorTotal: 0, vencidos: 0 };
+
+        console.log('✅ Datos procesados correctamente');
 
         return {
-            ventas: {
-                hoy: ventasHoy,
-                mes: ventasMes
-            },
-            inventario: {
-                totalProductos: productosTotal.total,
-                unidadesTotal: productosTotal.unidadesTotal,
-                valorInventario: productosTotal.valorInventario,
-                lowStock: productosLowStock.cantidad
-            },
-            clientes: {
-                total: clientesTotal.total,
-                nuevosHoy: clientesTotal.nuevosHoy
-            },
-            alquileres: {
-                activos: alquileresActivos.total,
-                valorTotal: alquileresActivos.valorTotal,
-                vencidos: alquileresActivos.vencidos
-            },
-            topProductos: topProductosResult.recordset,
-            ventasRecientes: ventasRecientesResult.recordset
+            ventasHoy: parseFloat(ventasHoy.total || 0),
+            ventasDelMes: parseFloat(ventasMes.total || 0),
+            totalProductos: parseInt(productosTotal.total || 0),
+            productosStockBajo: parseInt(productosLowStock.cantidad || 0),
+            totalClientes: parseInt(clientesTotal.total || 0),
+            clientesActivos: parseInt(clientesTotal.nuevosHoy || 0),
+            alquileresActivos: parseInt(alquileresActivos.total || 0),
+            alquileresVencidos: parseInt(alquileresActivos.vencidos || 0)
         };
     } catch (error) {
         console.error('❌ Error en getDashboardSummary:', error);
@@ -133,27 +121,16 @@ class DashboardService {
         }
     }
 
-   async getTopClientes(limit = 10) {
-    const pool = await getConnection();
-    
-    try {
-        const result = await pool.request()
-            .input('Limit', sql.Int, limit)
-            .execute('SP_ObtenerTopClientes');
-        return result.recordset;
-    } catch (error) {
-        console.error('❌ Error en getTopClientes:', error);
-        throw error;
-    }
-}
-
+   
 async getTopProductos(limit = 10) {
     const pool = await getConnection();
     
     try {
         const result = await pool.request()
-            .input('Limit', sql.Int, limit)
+            .input('Limite', sql.Int, limit)  // ✅ Con 'e'
             .execute('SP_ObtenerTopProductos');
+        
+        console.log('✅ Top Productos:', result.recordset.length, 'registros');
         return result.recordset;
     } catch (error) {
         console.error('❌ Error en getTopProductos:', error);
@@ -161,6 +138,21 @@ async getTopProductos(limit = 10) {
     }
 }
 
+async getTopClientes(limit = 10) {
+    const pool = await getConnection();
+    
+    try {
+        const result = await pool.request()
+            .input('Limite', sql.Int, limit)  // ✅ Con 'e'
+            .execute('SP_ObtenerTopClientes');
+        
+        console.log('✅ Top Clientes:', result.recordset.length, 'registros');
+        return result.recordset;
+    } catch (error) {
+        console.error('❌ Error en getTopClientes:', error);
+        throw error;
+    }
+}
 async getRendimientoColaboradores() {
     const pool = await getConnection();
     

@@ -42,6 +42,15 @@ router.get('/top-clientes', dashboardController.getTopClientes);
  * @desc    Obtener rendimiento de colaboradores
  * @access  Private
  */
+
+router.get('/top-productos', dashboardController.getTopProductos);
+
+/**
+ * @route   GET /api/dashboard/rendimiento-colaboradores
+ * @desc    Obtener rendimiento de colaboradores
+ * @access  Private
+ */
+
 router.get('/rendimiento-colaboradores', dashboardController.getRendimientoColaboradores);
 
 /**

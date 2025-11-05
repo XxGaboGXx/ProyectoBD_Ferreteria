@@ -22,8 +22,7 @@ exports.getAll = async (req, res, next) => {
  */
 exports.getLowStock = async (req, res, next) => {
     try {
-        const { page = 1, limit = 50 } = req.query;
-        const result = await productoService.getLowStock(parseInt(page), parseInt(limit));
+        const result = await productoService.getProductosBajoStock();
         res.json({
             success: true,
             message: 'Productos con stock bajo obtenidos correctamente',
@@ -103,28 +102,7 @@ exports.delete = async (req, res, next) => {
  */
 exports.adjustStock = async (req, res, next) => {
     try {
-        const { cantidad, motivo, tipo } = req.body;
-
-        if (!cantidad || !motivo || !tipo) {
-            return res.status(400).json({
-                success: false,
-                message: 'Cantidad, motivo y tipo son requeridos'
-            });
-        }
-
-        if (!['entrada', 'salida'].includes(tipo)) {
-            return res.status(400).json({
-                success: false,
-                message: 'Tipo debe ser "entrada" o "salida"'
-            });
-        }
-
-        const result = await productoService.adjustStock(
-            req.params.id,
-            parseInt(cantidad),
-            motivo,
-            tipo
-        );
+        const result = await productoService.ajustarInventario(req.params.id, req.body);
 
         res.json({
             success: true,
@@ -158,6 +136,43 @@ exports.getMovimientos = async (req, res, next) => {
         res.json({
             success: true,
             message: 'Movimientos obtenidos correctamente',
+            data: result
+        });
+    } catch (error) {
+        next(error);
+    }
+};
+
+/**
+ * Obtener estadísticas generales del inventario
+ */
+exports.getEstadisticas = async (req, res, next) => {
+    try {
+        const result = await productoService.getEstadisticasInventario();
+        res.json({
+            success: true,
+            message: 'Estadísticas de inventario obtenidas correctamente',
+            data: result
+        });
+    } catch (error) {
+        next(error);
+    }
+};
+
+/**
+ * Obtener productos por categoría
+ */
+exports.getByCategoria = async (req, res, next) => {
+    try {
+        const { page = 1, limit = 50 } = req.query;
+        const result = await productoService.getByCategoria(
+            req.params.idCategoria,
+            parseInt(page),
+            parseInt(limit)
+        );
+        res.json({
+            success: true,
+            message: 'Productos de la categoría obtenidos correctamente',
             data: result
         });
     } catch (error) {

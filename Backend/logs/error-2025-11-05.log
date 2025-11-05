@@ -1,0 +1,1374 @@
+{
+  "timestamp": "2025-11-05T04:39:51.308Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Producto no encontrado",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Producto no encontrado\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "PUT",
+  "url": "/api/productos/1",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Taladro Percutor",
+    "Descripcion": "Taladro percutor profesional 800W",
+    "CantidadActual": 15,
+    "PrecioVenta": 1550,
+    "PrecioCompra": 850,
+    "CantidadMinima": 5,
+    "Id_categoria": 1,
+    "CodigoBarra": "7501234567890"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T04:39:51.312Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Producto no encontrado",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Producto no encontrado\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "PUT",
+  "url": "/api/productos/1",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Taladro Percutor",
+    "Descripcion": "Taladro percutor profesional 800W",
+    "CantidadActual": 15,
+    "PrecioVenta": 1550,
+    "PrecioCompra": 850,
+    "CantidadMinima": 5,
+    "Id_categoria": 1,
+    "CodigoBarra": "7501234567890"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T04:40:29.926Z",
+  "message": "Producto con ID 1 no encontrado",
+  "stack": "Error: Producto con ID 1 no encontrado\n    at ProductoService.getById (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\services\\productoService.js:55:23)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async exports.getById (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\controllers\\productoController.js:41:24)",
+  "method": "GET",
+  "url": "/api/productos/1",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Taladro Percutor",
+    "Descripcion": "Taladro percutor profesional 800W",
+    "CantidadActual": 15,
+    "PrecioVenta": 1550,
+    "PrecioCompra": 850,
+    "CantidadMinima": 5,
+    "Id_categoria": 1,
+    "CodigoBarra": "7501234567890"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T04:40:29.928Z",
+  "message": "Producto con ID 1 no encontrado",
+  "stack": "Error: Producto con ID 1 no encontrado\n    at ProductoService.getById (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\services\\productoService.js:55:23)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async exports.getById (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\controllers\\productoController.js:41:24)",
+  "method": "GET",
+  "url": "/api/productos/1",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Taladro Percutor",
+    "Descripcion": "Taladro percutor profesional 800W",
+    "CantidadActual": 15,
+    "PrecioVenta": 1550,
+    "PrecioCompra": 850,
+    "CantidadMinima": 5,
+    "Id_categoria": 1,
+    "CodigoBarra": "7501234567890"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T07:14:04.067Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]RESTORE HEADERONLY is terminating abnormally.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]RESTORE HEADERONLY is terminating abnormally.\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/backups/TestBackup_Manual.bak/details",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "backupName": "TestBackup_Manual.bak"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T07:14:04.073Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]RESTORE HEADERONLY is terminating abnormally.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]RESTORE HEADERONLY is terminating abnormally.\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/backups/TestBackup_Manual.bak/details",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "backupName": "TestBackup_Manual.bak"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T07:25:25.401Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]Associated statement is not prepared",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]Associated statement is not prepared\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at Query.end (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:298:12)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:401:14",
+  "method": "POST",
+  "url": "/api/backups/restore",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "fileName": "TestBackup_Manual.bak"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T07:25:25.413Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]Associated statement is not prepared",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]Associated statement is not prepared\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at Query.end (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:298:12)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:401:14",
+  "method": "POST",
+  "url": "/api/backups/restore",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "fileName": "TestBackup_Manual.bak"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T07:33:24.318Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]Associated statement is not prepared",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]Associated statement is not prepared\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at Query.end (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:298:12)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:401:14",
+  "method": "POST",
+  "url": "/api/backups/restore",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "fileName": "BackupParaRestaurar.bak"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T07:33:24.321Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]Associated statement is not prepared",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]Associated statement is not prepared\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at Query.end (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:298:12)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:401:14",
+  "method": "POST",
+  "url": "/api/backups/restore",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "fileName": "BackupParaRestaurar.bak"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T07:35:55.733Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]Associated statement is not prepared",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]Associated statement is not prepared\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at Query.end (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:298:12)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:401:14",
+  "method": "POST",
+  "url": "/api/backups/restore",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "fileName": "BackupParaRestaurar.bak"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T07:35:55.737Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]Associated statement is not prepared",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]Associated statement is not prepared\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at Query.end (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:298:12)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:401:14",
+  "method": "POST",
+  "url": "/api/backups/restore",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "fileName": "BackupParaRestaurar.bak"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T07:45:23.035Z",
+  "message": "Expected property name or '}' in JSON at position 1 (line 1 column 2)",
+  "stack": "SyntaxError: Expected property name or '}' in JSON at position 1 (line 1 column 2)\n    at JSON.parse (<anonymous>)\n    at parse (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\body-parser\\lib\\types\\json.js:92:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\body-parser\\lib\\read.js:128:18\n    at AsyncResource.runInAsyncScope (node:async_hooks:214:14)\n    at invokeCallback (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\raw-body\\index.js:238:16)\n    at done (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\raw-body\\index.js:227:7)\n    at IncomingMessage.onEnd (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\raw-body\\index.js:287:7)\n    at IncomingMessage.emit (node:events:519:28)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)",
+  "method": "POST",
+  "url": "/api/backups/details",
+  "ip": "::ffff:127.0.0.1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T17:01:21.704Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_DetalleAlquiler_Producto\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Producto\", column 'Id_Producto'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_DetalleAlquiler_Producto\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Producto\", column 'Id_Producto'.\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/alquileres",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 1,
+    "Id_colaborador": 1,
+    "detalles": [
+      {
+        "Id_producto": 1,
+        "Cantidad": 2,
+        "Dias": 5,
+        "TarifaDiaria": 10,
+        "Deposito": 50
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T17:15:18.042Z",
+  "message": "Archivo de backup no encontrado: TestBackup_Manual.bak",
+  "stack": "Error: Archivo de backup no encontrado: TestBackup_Manual.bak\n    at BackupService.getBackupDetails (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\services\\backupService.js:419:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async exports.getBackupDetails (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\controllers\\backupController.js:122:24)",
+  "method": "GET",
+  "url": "/api/backups/TestBackup_Manual.bak/details",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "backupName": "TestBackup_Manual.bak"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T17:15:18.050Z",
+  "message": "Archivo de backup no encontrado: TestBackup_Manual.bak",
+  "stack": "Error: Archivo de backup no encontrado: TestBackup_Manual.bak\n    at BackupService.getBackupDetails (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\services\\backupService.js:419:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async exports.getBackupDetails (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\controllers\\backupController.js:122:24)",
+  "method": "GET",
+  "url": "/api/backups/TestBackup_Manual.bak/details",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "backupName": "TestBackup_Manual.bak"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T17:16:15.030Z",
+  "message": "Archivo de backup no encontrado: TestBackup_Manual.bak",
+  "stack": "Error: Archivo de backup no encontrado: TestBackup_Manual.bak\n    at BackupService.getBackupDetails (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\services\\backupService.js:419:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async exports.getBackupDetails (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\controllers\\backupController.js:122:24)",
+  "method": "GET",
+  "url": "/api/backups/TestBackup_Manual.bak/details",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "fileName": "TestBackup_Manual.bak"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T17:16:15.034Z",
+  "message": "Archivo de backup no encontrado: TestBackup_Manual.bak",
+  "stack": "Error: Archivo de backup no encontrado: TestBackup_Manual.bak\n    at BackupService.getBackupDetails (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\services\\backupService.js:419:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async exports.getBackupDetails (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\controllers\\backupController.js:122:24)",
+  "method": "GET",
+  "url": "/api/backups/TestBackup_Manual.bak/details",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "fileName": "TestBackup_Manual.bak"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T17:16:23.702Z",
+  "message": "Archivo de backup no encontrado: TestBackup_Manual.bak",
+  "stack": "Error: Archivo de backup no encontrado: TestBackup_Manual.bak\n    at BackupService.getBackupDetails (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\services\\backupService.js:419:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async exports.getBackupDetails (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\controllers\\backupController.js:122:24)",
+  "method": "GET",
+  "url": "/api/backups/TestBackup_Manual.bak/details",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "backupName": "TestBackup_Manual.bak"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T17:16:23.703Z",
+  "message": "Archivo de backup no encontrado: TestBackup_Manual.bak",
+  "stack": "Error: Archivo de backup no encontrado: TestBackup_Manual.bak\n    at BackupService.getBackupDetails (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\services\\backupService.js:419:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async exports.getBackupDetails (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\controllers\\backupController.js:122:24)",
+  "method": "GET",
+  "url": "/api/backups/TestBackup_Manual.bak/details",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "backupName": "TestBackup_Manual.bak"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T18:05:28.564Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe un producto con ese nombre",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe un producto con ese nombre\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Maquina de cortar hierro",
+    "Descripcion": "Maquina especializada en cortar hierro",
+    "CantidadActual": 15,
+    "PrecioVenta": 50000,
+    "PrecioCompra": 880,
+    "CantidadMinima": 5,
+    "Id_categoria": 1,
+    "CodigoBarra": "7501234567890"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T18:05:28.567Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe un producto con ese nombre",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe un producto con ese nombre\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Maquina de cortar hierro",
+    "Descripcion": "Maquina especializada en cortar hierro",
+    "CantidadActual": 15,
+    "PrecioVenta": 50000,
+    "PrecioCompra": 880,
+    "CantidadMinima": 5,
+    "Id_categoria": 1,
+    "CodigoBarra": "7501234567890"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T21:06:59.899Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:06:59.901Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:06:59.904Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:06:59.905Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/alertas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:00.405Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/alertas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:00.408Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/alertas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:00.413Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:00.416Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:00.419Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:00.420Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:00.432Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:00.428Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:00.435Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/alertas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:00.439Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/alertas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:00.442Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:00.448Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:01.879Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:01.880Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:01.881Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/alertas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:01.882Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/alertas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:01.883Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:01.886Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:02.247Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:02.253Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:02.250Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:02.251Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:02.256Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/alertas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:02.259Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/alertas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:02.397Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:02.399Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:02.401Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:02.402Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:02.404Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/alertas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:02.406Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/alertas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:14.850Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:14.854Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:14.858Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:14.861Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:14.863Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/alertas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:14.866Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/alertas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:14.875Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:14.876Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:14.878Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:14.879Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:14.887Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/alertas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:14.891Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/alertas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:15.785Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:15.788Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:15.792Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:15.794Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:15.796Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/alertas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:15.799Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/alertas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:15.961Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:15.963Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:15.965Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:15.968Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:15.972Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/alertas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:07:15.970Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/alertas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:13:19.817Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:13:19.819Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:13:19.822Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/alertas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:13:19.825Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/alertas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:13:19.828Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:13:19.831Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:13:19.843Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:13:19.842Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:13:19.847Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/alertas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:13:19.849Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/alertas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:13:19.850Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:13:19.852Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:13:21.653Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:13:21.654Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:13:21.655Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/alertas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:13:21.656Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/alertas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:13:21.658Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:13:21.660Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:13:21.834Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:13:21.835Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:13:21.836Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:13:21.839Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:13:21.841Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/alertas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:13:21.843Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/alertas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:13:22.010Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:13:22.012Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerTopClientes'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:13:22.013Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:13:22.014Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerResumenDashboard'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:13:22.015Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/alertas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:13:22.017Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_ObtenerAlertas'.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/alertas",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:19:26.115Z",
+  "message": "Cannot read properties of null (reading 'request')",
+  "stack": "TypeError: Cannot read properties of null (reading 'request')\n    at DashboardService.getTopProductos (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\dashboardService.js:91:35)\n    at exports.getTopProductos (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\dashboardController.js:53:47)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:175:3)",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:19:26.122Z",
+  "message": "Cannot read properties of null (reading 'request')",
+  "stack": "TypeError: Cannot read properties of null (reading 'request')\n    at DashboardService.getTopProductos (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\dashboardService.js:91:35)\n    at exports.getTopProductos (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\dashboardController.js:53:47)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:175:3)",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:19:26.130Z",
+  "message": "Cannot read properties of null (reading 'request')",
+  "stack": "TypeError: Cannot read properties of null (reading 'request')\n    at DashboardService.getTopProductos (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\dashboardService.js:91:35)\n    at exports.getTopProductos (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\dashboardController.js:53:47)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:175:3)",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:19:26.128Z",
+  "message": "Cannot read properties of null (reading 'request')",
+  "stack": "TypeError: Cannot read properties of null (reading 'request')\n    at DashboardService.getTopProductos (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\services\\dashboardService.js:91:35)\n    at exports.getTopProductos (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\src\\controllers\\dashboardController.js:53:47)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\express\\lib\\router\\index.js:175:3)",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:24:01.305Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]La instrucci�n asociada no est� preparada",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]La instrucci�n asociada no est� preparada\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at Query.end (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:298:12)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:401:14",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:24:01.309Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]La instrucci�n asociada no est� preparada",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]La instrucci�n asociada no est� preparada\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at Query.end (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:298:12)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:401:14",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:24:01.340Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]La instrucci�n asociada no est� preparada",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]La instrucci�n asociada no est� preparada\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at Query.end (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:298:12)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:401:14",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:24:01.341Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]La instrucci�n asociada no est� preparada",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]La instrucci�n asociada no est� preparada\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at Query.end (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:298:12)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:401:14",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:24:02.805Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]La instrucci�n asociada no est� preparada",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]La instrucci�n asociada no est� preparada\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at Query.end (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:298:12)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:401:14",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:24:02.807Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]La instrucci�n asociada no est� preparada",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]La instrucci�n asociada no est� preparada\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at Query.end (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:298:12)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:401:14",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:24:02.995Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]La instrucci�n asociada no est� preparada",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]La instrucci�n asociada no est� preparada\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at Query.end (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:298:12)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:401:14",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:24:02.998Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]La instrucci�n asociada no est� preparada",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]La instrucci�n asociada no est� preparada\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at Query.end (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:298:12)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:401:14",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:24:03.170Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]La instrucci�n asociada no est� preparada",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]La instrucci�n asociada no est� preparada\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at Query.end (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:298:12)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:401:14",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:24:03.172Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]La instrucci�n asociada no est� preparada",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]La instrucci�n asociada no est� preparada\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at Query.end (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:298:12)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:401:14",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:24:03.365Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]La instrucci�n asociada no est� preparada",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]La instrucci�n asociada no est� preparada\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at Query.end (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:298:12)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:401:14",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:24:03.367Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]La instrucci�n asociada no est� preparada",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]La instrucci�n asociada no est� preparada\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at Query.end (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:298:12)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:401:14",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:24:03.552Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]La instrucci�n asociada no est� preparada",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]La instrucci�n asociada no est� preparada\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at Query.end (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:298:12)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:401:14",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T21:24:03.554Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]La instrucci�n asociada no est� preparada",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]La instrucci�n asociada no est� preparada\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at Query.end (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:298:12)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:401:14",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---

@@ -1,4 +1,5 @@
 const { getConnection, sql } = require('../config/database');
+const transactionService = require('./transactionService');
 
 class CompraService {
     /**
@@ -9,64 +10,21 @@ class CompraService {
         const offset = (page - 1) * limit;
 
         try {
-            let whereClause = 'WHERE 1=1';
-            const params = [];
+            // Llamar al SP con filtros
+            const result = await pool.request()
+                .input('Limit', sql.Int, limit)
+                .input('Offset', sql.Int, offset)
+                .input('Id_proveedor', sql.Int, filters.Id_proveedor ? parseInt(filters.Id_proveedor) : null)
+                .input('FechaInicio', sql.DateTime, filters.fechaInicio ? new Date(filters.fechaInicio) : null)
+                .input('FechaFin', sql.DateTime, filters.fechaFin ? new Date(filters.fechaFin) : null)
+                .execute('SP_ObtenerCompras');
 
-            if (filters.Id_proveedor) {
-                whereClause += ' AND c.Id_proveedor = @idProveedor';
-                params.push({ name: 'idProveedor', type: sql.Int, value: parseInt(filters.Id_proveedor) });
-            }
-
-            if (filters.fechaInicio) {
-                whereClause += ' AND c.FechaCompra >= @fechaInicio';
-                params.push({ name: 'fechaInicio', type: sql.DateTime, value: new Date(filters.fechaInicio) });
-            }
-
-            if (filters.fechaFin) {
-                whereClause += ' AND c.FechaCompra <= @fechaFin';
-                params.push({ name: 'fechaFin', type: sql.DateTime, value: new Date(filters.fechaFin) });
-            }
-
-            let request = pool.request()
-                .input('limit', sql.Int, limit)
-                .input('offset', sql.Int, offset);
-
-            params.forEach(p => request.input(p.name, p.type, p.value));
-
-            // Consulta principal
-            const result = await request.query(`
-                SELECT 
-                    c.*,
-                    p.Nombre as ProveedorNombre,
-                    p.Telefono as ProveedorTelefono,
-                    p.Direccion as ProveedorDireccion,
-                    p.Correo_electronico as ProveedorCorreo,
-                    COUNT(dc.Id_detalleCompra) as TotalProductos
-                FROM Compra c
-                INNER JOIN Proveedor p ON c.Id_proveedor = p.Id_proveedor
-                LEFT JOIN DetalleCompra dc ON c.Id_compra = dc.Id_compra
-                ${whereClause}
-                GROUP BY c.Id_compra, c.FechaCompra, c.TotalCompra, c.NumeroFactura,
-                         c.Id_proveedor, p.Nombre, p.Telefono, p.Direccion, p.Correo_electronico
-                ORDER BY c.FechaCompra DESC
-                OFFSET @offset ROWS
-                FETCH NEXT @limit ROWS ONLY
-            `);
-
-            // Contar total
-            request = pool.request();
-            params.forEach(p => request.input(p.name, p.type, p.value));
-
-            const countResult = await request.query(`
-                SELECT COUNT(DISTINCT c.Id_compra) as total
-                FROM Compra c
-                ${whereClause}
-            `);
-
-            const total = countResult.recordset[0].total;
+            // El SP retorna 2 recordsets: [0] = datos, [1] = total
+            const data = result.recordsets[0] || [];
+            const total = result.recordsets[1] && result.recordsets[1][0] ? result.recordsets[1][0].Total : 0;
 
             return {
-                data: result.recordset,
+                data,
                 pagination: {
                     page,
                     limit,
@@ -88,44 +46,17 @@ class CompraService {
         const pool = await getConnection();
 
         try {
+            // Llamar al SP que retorna 2 recordsets: [0] = maestro, [1] = detalles
             const result = await pool.request()
-                .input('id', sql.Int, id)
-                .query(`
-                    SELECT 
-                        c.*,
-                        p.Nombre as ProveedorNombre,
-                        p.Telefono as ProveedorTelefono,
-                        p.Direccion as ProveedorDireccion,
-                        p.Correo_electronico as ProveedorCorreo
-                    FROM Compra c
-                    INNER JOIN Proveedor p ON c.Id_proveedor = p.Id_proveedor
-                    WHERE c.Id_compra = @id
-                `);
+                .input('Id', sql.Int, id)
+                .execute('SP_ObtenerCompraPorId');
 
-            if (result.recordset.length === 0) {
+            if (!result.recordsets[0] || result.recordsets[0].length === 0) {
                 throw new Error(`Compra con ID ${id} no encontrada`);
             }
 
-            const compra = result.recordset[0];
-
-            // Obtener detalles
-            const detallesResult = await pool.request()
-                .input('compraId', sql.Int, id)
-                .query(`
-                    SELECT 
-                        dc.*,
-                        p.Nombre as ProductoNombre,
-                        p.Descripcion as ProductoDescripcion,
-                        p.CodigoBarra,
-                        c.Nombre as Categoria
-                    FROM DetalleCompra dc
-                    INNER JOIN Producto p ON dc.Id_producto = p.Id_Producto
-                    LEFT JOIN Categoria c ON p.Id_categoria = c.Id_categoria
-                    WHERE dc.Id_compra = @compraId
-                    ORDER BY dc.NumeroLinea
-                `);
-
-            compra.detalles = detallesResult.recordset;
+            const compra = result.recordsets[0][0];
+            compra.detalles = result.recordsets[1] || [];
 
             return compra;
 
@@ -139,125 +70,69 @@ class CompraService {
      * Crear nueva compra con detalles
      */
     async create(data) {
-        const pool = await getConnection();
-        const transaction = pool.transaction();
+        // Validar estructura
+        if (!data.Id_proveedor || !data.detalles || !Array.isArray(data.detalles) || data.detalles.length === 0) {
+            throw new Error('Debe especificar proveedor y al menos un producto');
+        }
 
-        try {
-            console.log('🛒 Iniciando creación de compra:', data);
+        return await transactionService.executeWithRetry(async (transaction, request) => {
+            console.log('🛒 Iniciando creación de compra:', {
+                Id_proveedor: data.Id_proveedor,
+                NumeroFactura: data.NumeroFactura,
+                CantidadProductos: data.detalles.length
+            });
 
-            // Validar datos requeridos
-            if (!data.Id_proveedor) {
-                throw new Error('El proveedor es requerido');
-            }
-
-            if (!data.detalles || !Array.isArray(data.detalles) || data.detalles.length === 0) {
-                throw new Error('Debe incluir al menos un producto en la compra');
-            }
-
-            await transaction.begin();
-
-            // 1. Crear la compra principal
-            const compraRequest = new sql.Request(transaction);
-            const compraResult = await compraRequest
-                .input('fechaCompra', sql.DateTime, data.FechaCompra || new Date())
-                .input('totalCompra', sql.Decimal(12, 2), data.TotalCompra || 0)
-                .input('numeroFactura', sql.VarChar(50), data.NumeroFactura || null)
-                .input('idProveedor', sql.Int, data.Id_proveedor)
-                .query(`
-                    INSERT INTO Compra (FechaCompra, TotalCompra, NumeroFactura, Id_proveedor)
-                    OUTPUT INSERTED.*
-                    VALUES (@fechaCompra, @totalCompra, @numeroFactura, @idProveedor)
-                `);
-
-            const compra = compraResult.recordset[0];
-            console.log(`✅ Compra creada con ID: ${compra.Id_compra}`);
-
-            // 2. Insertar detalles y actualizar inventario
+            // Calcular total
             let totalCalculado = 0;
-            const detallesCreados = [];
-
-            for (let i = 0; i < data.detalles.length; i++) {
-                const detalle = data.detalles[i];
-
-                if (!detalle.Id_producto || !detalle.CantidadCompra || !detalle.PrecioUnitario) {
-                    throw new Error(`Detalle ${i + 1}: Producto, cantidad y precio son requeridos`);
-                }
-
-                // Verificar que el producto existe
-                const productoRequest = new sql.Request(transaction);
-                const productoResult = await productoRequest
-                    .input('idProducto', sql.Int, detalle.Id_producto)
-                    .query('SELECT Id_Producto, Nombre, CantidadActual FROM Producto WHERE Id_Producto = @idProducto');
-
-                if (productoResult.recordset.length === 0) {
-                    throw new Error(`Producto con ID ${detalle.Id_producto} no encontrado`);
-                }
-
-                const producto = productoResult.recordset[0];
+            for (const detalle of data.detalles) {
                 const subtotal = detalle.CantidadCompra * detalle.PrecioUnitario;
                 totalCalculado += subtotal;
+            }
 
-                // Insertar detalle
-                const detalleRequest = new sql.Request(transaction);
+            // Insertar maestro de compra usando SP
+            const pool = transaction;
+            const compraRequest = new sql.Request(pool);
+            
+            const compraResult = await compraRequest
+                .input('Id_proveedor', sql.Int, data.Id_proveedor)
+                .input('FechaCompra', sql.DateTime, data.FechaCompra || new Date())
+                .input('TotalCompra', sql.Decimal(12, 2), data.TotalCompra || totalCalculado)
+                .input('NumeroFactura', sql.VarChar(50), data.NumeroFactura || null)
+                .execute('SP_CrearCompra');
+
+            const compra = compraResult.recordset[0];
+            const detallesCreados = [];
+
+            // Insertar detalles usando SP (que aumenta stock automáticamente)
+            let numeroLinea = 1;
+            for (const detalle of data.detalles) {
+                const subtotal = detalle.CantidadCompra * detalle.PrecioUnitario;
+
+                // CREAR NUEVO REQUEST PARA CADA DETALLE
+                const detalleRequest = new sql.Request(pool);
                 const detalleResult = await detalleRequest
-                    .input('cantidadCompra', sql.Int, detalle.CantidadCompra)
-                    .input('numeroLinea', sql.Int, i + 1)
-                    .input('precioUnitario', sql.Decimal(12, 2), detalle.PrecioUnitario)
-                    .input('subtotal', sql.Decimal(12, 2), subtotal)
-                    .input('idCompra', sql.Int, compra.Id_compra)
-                    .input('idProducto', sql.Int, detalle.Id_producto)
-                    .query(`
-                        INSERT INTO DetalleCompra (CantidadCompra, NumeroLinea, PrecioUnitario, Subtotal, Id_compra, Id_producto)
-                        OUTPUT INSERTED.*
-                        VALUES (@cantidadCompra, @numeroLinea, @precioUnitario, @subtotal, @idCompra, @idProducto)
-                    `);
-
-                // Actualizar inventario (sumar stock y actualizar precio de compra)
-                const updateStockRequest = new sql.Request(transaction);
-                await updateStockRequest
-                    .input('cantidad', sql.Int, detalle.CantidadCompra)
-                    .input('idProducto', sql.Int, detalle.Id_producto)
-                    .input('precioCompra', sql.Decimal(12, 2), detalle.PrecioUnitario)
-                    .query(`
-                        UPDATE Producto 
-                        SET CantidadActual = CantidadActual + @cantidad,
-                            PrecioCompra = @precioCompra,
-                            FechaEntrada = GETDATE()
-                        WHERE Id_Producto = @idProducto
-                    `);
+                    .input('Id_compra', sql.Int, compra.Id_compra)
+                    .input('Id_producto', sql.Int, detalle.Id_producto)
+                    .input('CantidadCompra', sql.Int, detalle.CantidadCompra)
+                    .input('NumeroLinea', sql.Int, numeroLinea)
+                    .input('PrecioUnitario', sql.Decimal(12, 2), detalle.PrecioUnitario)
+                    .input('Subtotal', sql.Decimal(12, 2), subtotal)
+                    .execute('SP_CrearDetalleCompra');
 
                 detallesCreados.push(detalleResult.recordset[0]);
-                console.log(`  ✓ Detalle ${i + 1}: ${producto.Nombre} - Cantidad: ${detalle.CantidadCompra} (Stock anterior: ${producto.CantidadActual}, Nuevo: ${producto.CantidadActual + detalle.CantidadCompra})`);
+                numeroLinea++;
             }
 
-            // 3. Actualizar total si es necesario
-            if (data.TotalCompra === 0 || !data.TotalCompra) {
-                const updateCompraRequest = new sql.Request(transaction);
-                await updateCompraRequest
-                    .input('total', sql.Decimal(12, 2), totalCalculado)
-                    .input('idCompra', sql.Int, compra.Id_compra)
-                    .query('UPDATE Compra SET TotalCompra = @total WHERE Id_compra = @idCompra');
-
-                compra.TotalCompra = totalCalculado;
-            }
-
-            await transaction.commit();
-            console.log(`✅ Compra completada exitosamente. Total: ${compra.TotalCompra}`);
+            console.log(`✅ Compra creada con ID: ${compra.Id_compra}. Total: ${compra.TotalCompra}`);
 
             return {
                 ...compra,
                 detalles: detallesCreados,
                 totalProductos: detallesCreados.length,
-                inventarioActualizado: true
+                inventarioActualizado: true,
+                mensaje: 'Compra creada exitosamente'
             };
-
-        } catch (error) {
-            if (transaction._aborted === false) {
-                await transaction.rollback();
-            }
-            console.error('❌ Error al crear compra:', error);
-            throw error;
-        }
+        });
     }
 
     /**
@@ -267,50 +142,26 @@ class CompraService {
         const pool = await getConnection();
 
         try {
-            const params = [];
-            let whereFechas = '';
+            // Llamar al SP
+            const result = await pool.request()
+                .input('FechaInicio', sql.DateTime, filters.fechaInicio ? new Date(filters.fechaInicio) : null)
+                .input('FechaFin', sql.DateTime, filters.fechaFin ? new Date(filters.fechaFin) : null)
+                .execute('SP_ObtenerEstadisticasCompras');
 
-            if (filters.fechaInicio || filters.fechaFin) {
-                whereFechas = 'WHERE 1=1';
+            const estadisticas = result.recordset[0];
 
-                if (filters.fechaInicio) {
-                    whereFechas += ' AND FechaCompra >= @fechaInicio';
-                    params.push({ name: 'fechaInicio', type: sql.DateTime, value: new Date(filters.fechaInicio) });
-                }
-
-                if (filters.fechaFin) {
-                    whereFechas += ' AND FechaCompra <= @fechaFin';
-                    params.push({ name: 'fechaFin', type: sql.DateTime, value: new Date(filters.fechaFin) });
-                }
-            }
-
-            let request = pool.request();
-            params.forEach(p => request.input(p.name, p.type, p.value));
-
-            const comprasStats = await request.query(`
-                SELECT 
-                    COUNT(*) as TotalCompras,
-                    ISNULL(SUM(TotalCompra), 0) as CompraTotal,
-                    ISNULL(AVG(TotalCompra), 0) as PromedioCompra,
-                    ISNULL(MAX(TotalCompra), 0) as CompraMayor,
-                    ISNULL(MIN(TotalCompra), 0) as CompraMenor,
-                    COUNT(DISTINCT Id_proveedor) as ProveedoresUnicos
-                FROM Compra
-                ${whereFechas}
-            `);
-
-            const estadisticas = {
-                TotalCompras: comprasStats.recordset[0].TotalCompras,
-                CompraTotal: parseFloat(comprasStats.recordset[0].CompraTotal.toFixed(2)),
-                PromedioCompra: parseFloat(comprasStats.recordset[0].PromedioCompra.toFixed(2)),
-                CompraMayor: parseFloat(comprasStats.recordset[0].CompraMayor.toFixed(2)),
-                CompraMenor: parseFloat(comprasStats.recordset[0].CompraMenor.toFixed(2)),
-                ProveedoresUnicos: comprasStats.recordset[0].ProveedoresUnicos
+            const estadisticasFormateadas = {
+                TotalCompras: estadisticas.TotalCompras,
+                CompraTotal: parseFloat(estadisticas.CompraTotal.toFixed(2)),
+                PromedioCompra: parseFloat(estadisticas.PromedioCompra.toFixed(2)),
+                CompraMayor: parseFloat(estadisticas.CompraMayor.toFixed(2)),
+                CompraMenor: parseFloat(estadisticas.CompraMenor.toFixed(2)),
+                ProveedoresUnicos: estadisticas.ProveedoresUnicos
             };
 
-            console.log('📊 Estadísticas de compras calculadas:', estadisticas);
+            console.log('📊 Estadísticas de compras calculadas:', estadisticasFormateadas);
 
-            return estadisticas;
+            return estadisticasFormateadas;
 
         } catch (error) {
             console.error('❌ Error al obtener estadísticas:', error);
@@ -325,42 +176,12 @@ class CompraService {
         const pool = await getConnection();
 
         try {
-            let whereClause = 'WHERE 1=1';
-            const params = [];
-
-            if (filters.fechaInicio) {
-                whereClause += ' AND c.FechaCompra >= @fechaInicio';
-                params.push({ name: 'fechaInicio', type: sql.DateTime, value: new Date(filters.fechaInicio) });
-            }
-
-            if (filters.fechaFin) {
-                whereClause += ' AND c.FechaCompra <= @fechaFin';
-                params.push({ name: 'fechaFin', type: sql.DateTime, value: new Date(filters.fechaFin) });
-            }
-
-            let request = pool.request()
-                .input('limit', sql.Int, limit);
-
-            params.forEach(p => request.input(p.name, p.type, p.value));
-
-            const result = await request.query(`
-                SELECT TOP (@limit)
-                    p.Id_Producto,
-                    p.Nombre,
-                    p.Descripcion,
-                    cat.Nombre as Categoria,
-                    SUM(dc.CantidadCompra) as TotalComprado,
-                    COUNT(DISTINCT c.Id_compra) as NumeroCompras,
-                    SUM(dc.Subtotal) as TotalInvertido,
-                    AVG(dc.PrecioUnitario) as PrecioPromedio
-                FROM DetalleCompra dc
-                INNER JOIN Compra c ON dc.Id_compra = c.Id_compra
-                INNER JOIN Producto p ON dc.Id_producto = p.Id_Producto
-                LEFT JOIN Categoria cat ON p.Id_categoria = cat.Id_categoria
-                ${whereClause}
-                GROUP BY p.Id_Producto, p.Nombre, p.Descripcion, cat.Nombre
-                ORDER BY TotalComprado DESC
-            `);
+            // Llamar al SP
+            const result = await pool.request()
+                .input('Limit', sql.Int, limit)
+                .input('FechaInicio', sql.DateTime, filters.fechaInicio ? new Date(filters.fechaInicio) : null)
+                .input('FechaFin', sql.DateTime, filters.fechaFin ? new Date(filters.fechaFin) : null)
+                .execute('SP_ObtenerProductosMasComprados');
 
             console.log(`📈 Top ${limit} productos más comprados obtenidos`);
 

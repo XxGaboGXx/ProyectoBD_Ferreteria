@@ -14,15 +14,6 @@ class AlquilerService {
         return await transactionService.executeWithRetry(async (transaction, request) => {
             console.log('🔧 Creando alquiler:', alquilerData);
 
-            // Validar que el cliente existe
-            const clienteResult = await request
-                .input('clienteId', sql.Int, alquilerData.Id_cliente)
-                .query('SELECT Id_cliente FROM Cliente WHERE Id_cliente = @clienteId');
-
-            if (clienteResult.recordset.length === 0) {
-                throw new Error('Cliente no encontrado');
-            }
-
             // Calcular fechas
             const fechaInicio = new Date();
             const diasMaximos = Math.max(...alquilerData.detalles.map(d => d.Dias || 1));
@@ -36,79 +27,42 @@ class AlquilerService {
                 totalAlquiler += subtotal;
             }
 
-            // Insertar maestro de alquiler (CREAR NUEVO REQUEST)
+            // Insertar maestro de alquiler usando SP
             const pool = transaction;
             const alquilerRequest = new sql.Request(pool);
             
             const alquilerResult = await alquilerRequest
-                .input('clienteId', sql.Int, alquilerData.Id_cliente)
-                .input('fechaInicio', sql.DateTime, fechaInicio)
-                .input('fechaFin', sql.DateTime, fechaFin)
-                .input('estado', sql.VarChar(50), 'ACTIVO')
-                .input('totalAlquiler', sql.Decimal(10, 2), totalAlquiler)
-                .input('colaboradorId', sql.Int, alquilerData.Id_colaborador)
-                .query(`
-                    INSERT INTO Alquiler (FechaInicio, FechaFin, Estado, TotalAlquiler, Id_cliente, Id_colaborador)
-                    OUTPUT INSERTED.*
-                    VALUES (@fechaInicio, @fechaFin, @estado, @totalAlquiler, @clienteId, @colaboradorId)
-                `);
+                .input('Id_cliente', sql.Int, alquilerData.Id_cliente)
+                .input('Id_colaborador', sql.Int, alquilerData.Id_colaborador)
+                .input('FechaInicio', sql.DateTime, fechaInicio)
+                .input('FechaFin', sql.DateTime, fechaFin)
+                .input('TotalAlquiler', sql.Decimal(10, 2), totalAlquiler)
+                .execute('SP_CrearAlquiler');
 
             const alquiler = alquilerResult.recordset[0];
             const detallesCreados = [];
 
-            // Insertar detalles (CREAR NUEVO REQUEST PARA CADA DETALLE)
+            // Insertar detalles usando SP (CREAR NUEVO REQUEST PARA CADA DETALLE)
             for (const detalle of alquilerData.detalles) {
-                // Validar stock (CREAR NUEVO REQUEST)
-                const stockRequest = new sql.Request(pool);
-                await transactionService.validateStock(
-                    transaction,
-                    stockRequest,
-                    detalle.Id_producto,
-                    detalle.Cantidad
-                );
-
                 const subtotal = detalle.TarifaDiaria * detalle.Dias * detalle.Cantidad;
 
                 // CREAR NUEVO REQUEST PARA CADA DETALLE
                 const detalleRequest = new sql.Request(pool);
                 const detalleResult = await detalleRequest
-                    .input('cantidad', sql.Int, detalle.Cantidad)
-                    .input('dias', sql.Decimal(10, 2), detalle.Dias)
-                    .input('subtotal', sql.Decimal(10, 2), subtotal)
-                    .input('tarifaDiaria', sql.Decimal(10, 2), detalle.TarifaDiaria)
-                    .input('deposito', sql.Decimal(10, 2), detalle.Deposito || 0)
-                    .input('alquilerId', sql.Int, alquiler.Id_alquiler)
-                    .input('productoId', sql.Int, detalle.Id_producto)
-                    .query(`
-                        INSERT INTO DetalleAlquiler 
-                        (CantidadDetalleAlquiler, DiasAlquilados, Subtotal, TarifaDiaria, Deposito, Id_alquiler, Id_producto)
-                        OUTPUT INSERTED.*
-                        VALUES (@cantidad, @dias, @subtotal, @tarifaDiaria, @deposito, @alquilerId, @productoId)
-                    `);
+                    .input('Cantidad', sql.Int, detalle.Cantidad)
+                    .input('Dias', sql.Decimal(10, 2), detalle.Dias)
+                    .input('Subtotal', sql.Decimal(10, 2), subtotal)
+                    .input('TarifaDiaria', sql.Decimal(10, 2), detalle.TarifaDiaria)
+                    .input('Deposito', sql.Decimal(10, 2), detalle.Deposito || 0)
+                    .input('Id_alquiler', sql.Int, alquiler.Id_alquiler)
+                    .input('Id_producto', sql.Int, detalle.Id_producto)
+                    .execute('SP_CrearDetalleAlquiler');
 
                 detallesCreados.push(detalleResult.recordset[0]);
-
-                // Reducir stock (CREAR NUEVO REQUEST)
-                const updateStockRequest = new sql.Request(pool);
-                await transactionService.updateStock(
-                    transaction,
-                    updateStockRequest,
-                    detalle.Id_producto,
-                    -detalle.Cantidad,
-                    'ALQUILER'
-                );
             }
 
-            // Registrar en bitácora (CREAR NUEVO REQUEST)
-            const bitacoraRequest = new sql.Request(pool);
-            await transactionService.logToBitacora(
-                transaction,
-                bitacoraRequest,
-                'Alquiler',
-                'INSERT',
-                alquiler.Id_alquiler,
-                alquilerData.Id_colaborador
-            );
+            // Nota: No registramos en BitacoraProducto porque es específica para cambios en productos
+            // Los alquileres se registran en las tablas Alquiler y DetalleAlquiler
 
             console.log(`✅ Alquiler creado con ID: ${alquiler.Id_alquiler}`);
 
@@ -128,83 +82,21 @@ class AlquilerService {
         const offset = (page - 1) * limit;
 
         try {
-            let whereClause = 'WHERE 1=1';
-            const params = [];
+            // Llamar al SP con filtros
+            const result = await pool.request()
+                .input('Limit', sql.Int, limit)
+                .input('Offset', sql.Int, offset)
+                .input('Estado', sql.VarChar(50), filters.estado || null)
+                .input('ClienteId', sql.Int, filters.clienteId ? parseInt(filters.clienteId) : null)
+                .input('FechaInicio', sql.DateTime, filters.fechaInicio ? new Date(filters.fechaInicio) : null)
+                .input('FechaFin', sql.DateTime, filters.fechaFin ? new Date(filters.fechaFin) : null)
+                .execute('SP_ObtenerAlquileres');
 
-            if (filters.estado) {
-                whereClause += ' AND a.Estado = @estado';
-                params.push({ name: 'estado', type: sql.VarChar(50), value: filters.estado });
-            }
-
-            if (filters.clienteId) {
-                whereClause += ' AND a.Id_cliente = @clienteId';
-                params.push({ name: 'clienteId', type: sql.Int, value: parseInt(filters.clienteId) });
-            }
-
-            if (filters.fechaInicio) {
-                whereClause += ' AND a.FechaInicio >= @fechaInicio';
-                params.push({ name: 'fechaInicio', type: sql.DateTime, value: new Date(filters.fechaInicio) });
-            }
-
-            if (filters.fechaFin) {
-                whereClause += ' AND a.FechaFin <= @fechaFinFilter';
-                params.push({ name: 'fechaFinFilter', type: sql.DateTime, value: new Date(filters.fechaFin) });
-            }
-
-            let request = pool.request()
-                .input('limit', sql.Int, limit)
-                .input('offset', sql.Int, offset);
-
-            params.forEach(p => request.input(p.name, p.type, p.value));
-
-            const result = await request.query(`
-                SELECT 
-                    a.*,
-                    c.Nombre as ClienteNombre,
-                    c.Apellido1 + ' ' + ISNULL(c.Apellido2, '') as ClienteApellidos,
-                    c.Telefono as ClienteTelefono,
-                    col.Nombre as ColaboradorNombre,
-                    col.Apellido1 + ' ' + ISNULL(col.Apellido2, '') as ColaboradorApellidos,
-                    COUNT(da.Id_detalleAlquiler) as TotalProductos,
-                    SUM(da.CantidadDetalleAlquiler) as TotalUnidades,
-                    CASE 
-                        WHEN a.Estado = 'ACTIVO' AND GETDATE() > a.FechaFin THEN 'VENCIDO'
-                        WHEN a.Estado = 'ACTIVO' AND DATEDIFF(day, GETDATE(), a.FechaFin) <= 2 THEN 'POR_VENCER'
-                        ELSE a.Estado
-                    END as EstadoActual,
-                    DATEDIFF(day, GETDATE(), a.FechaFin) as DiasRestantes
-                FROM Alquiler a
-                INNER JOIN Cliente c ON a.Id_cliente = c.Id_cliente
-                INNER JOIN Colaborador col ON a.Id_colaborador = col.Id_colaborador
-                LEFT JOIN DetalleAlquiler da ON a.Id_alquiler = da.Id_alquiler
-                ${whereClause}
-                GROUP BY 
-                    a.Id_alquiler, a.FechaInicio, a.FechaFin, a.Estado, a.TotalAlquiler, 
-                    a.Id_cliente, a.Id_colaborador,
-                    c.Nombre, c.Apellido1, c.Apellido2, c.Telefono,
-                    col.Nombre, col.Apellido1, col.Apellido2
-                ORDER BY 
-                    CASE WHEN a.Estado = 'ACTIVO' AND GETDATE() > a.FechaFin THEN 1 
-                         WHEN a.Estado = 'ACTIVO' THEN 2 
-                         ELSE 3 END,
-                    a.FechaFin ASC
-                OFFSET @offset ROWS
-                FETCH NEXT @limit ROWS ONLY
-            `);
-
-            request = pool.request();
-            params.forEach(p => request.input(p.name, p.type, p.value));
-
-            const countResult = await request.query(`
-                SELECT COUNT(DISTINCT a.Id_alquiler) as total
-                FROM Alquiler a
-                ${whereClause}
-            `);
-
-            const total = countResult.recordset[0].total;
+            const data = result.recordsets[0];
+            const total = result.recordsets[1][0].Total;
 
             return {
-                data: result.recordset,
+                data: data,
                 pagination: {
                     page,
                     limit,
@@ -226,46 +118,17 @@ class AlquilerService {
         const pool = await getConnection();
 
         try {
-            // Obtener maestro
-            const alquilerResult = await pool.request()
-                .input('id', sql.Int, id)
-                .query(`
-                    SELECT 
-                        a.*,
-                        c.Nombre as ClienteNombre,
-                        c.Apellido1 + ' ' + ISNULL(c.Apellido2, '') as ClienteApellidos,
-                        c.Telefono as ClienteTelefono,
-                        c.Correo as ClienteEmail,
-                        col.Nombre as ColaboradorNombre,
-                        col.Apellido1 + ' ' + ISNULL(col.Apellido2, '') as ColaboradorApellidos,
-                        DATEDIFF(day, a.FechaInicio, ISNULL(a.FechaFin, GETDATE())) as DiasTranscurridos
-                    FROM Alquiler a
-                    INNER JOIN Cliente c ON a.Id_cliente = c.Id_cliente
-                    INNER JOIN Colaborador col ON a.Id_colaborador = col.Id_colaborador
-                    WHERE a.Id_alquiler = @id
-                `);
+            const result = await pool.request()
+                .input('Id', sql.Int, id)
+                .execute('SP_ObtenerAlquilerPorId');
 
-            if (alquilerResult.recordset.length === 0) {
+            if (result.recordsets[0].length === 0) {
                 throw new Error(`Alquiler con ID ${id} no encontrado`);
             }
 
-            // Obtener detalles
-            const detallesResult = await pool.request()
-                .input('id', sql.Int, id)
-                .query(`
-                    SELECT 
-                        da.*,
-                        p.Nombre as ProductoNombre,
-                        p.Descripcion as ProductoDescripcion,
-                        p.CodigoBarra as ProductoCodigoBarra
-                    FROM DetalleAlquiler da
-                    INNER JOIN Producto p ON da.Id_producto = p.Id_Producto
-                    WHERE da.Id_alquiler = @id
-                `);
-
             return {
-                ...alquilerResult.recordset[0],
-                detalles: detallesResult.recordset
+                ...result.recordsets[0][0],
+                detalles: result.recordsets[1]
             };
 
         } catch (error) {
@@ -281,74 +144,17 @@ class AlquilerService {
         return await transactionService.executeTransaction(async (transaction, request) => {
             console.log(`🔚 Finalizando alquiler ${alquilerId}`);
 
-            // Obtener datos del alquiler
-            const alquilerData = await request
-                .input('alquilerId', sql.Int, alquilerId)
-                .query('SELECT Estado, FechaFin FROM Alquiler WHERE Id_alquiler = @alquilerId');
-
-            if (alquilerData.recordset.length === 0) {
-                throw new Error(`Alquiler ${alquilerId} no encontrado`);
-            }
-
-            const alquiler = alquilerData.recordset[0];
-
-            if (alquiler.Estado === 'FINALIZADO') {
-                throw new Error('El alquiler ya está finalizado');
-            }
-
-            if (alquiler.Estado === 'CANCELADO') {
-                throw new Error('El alquiler está cancelado');
-            }
-
-            // Obtener detalles
-            const detallesData = await request.query(`
-                SELECT Id_producto, CantidadDetalleAlquiler
-                FROM DetalleAlquiler
-                WHERE Id_alquiler = @alquilerId
-            `);
-
-            // Devolver stock de cada producto (CREAR NUEVO REQUEST PARA CADA UNO)
             const pool = transaction;
-            for (const detalle of detallesData.recordset) {
-                const stockRequest = new sql.Request(pool);
-                await transactionService.updateStock(
-                    transaction,
-                    stockRequest,
-                    detalle.Id_producto,
-                    detalle.CantidadDetalleAlquiler,
-                    'DEVOLUCION_ALQUILER'
-                );
-            }
-
-            // Actualizar estado (CREAR NUEVO REQUEST)
-            const updateRequest = new sql.Request(pool);
-            await updateRequest
-                .input('alquilerId', sql.Int, alquilerId)
-                .query(`
-                    UPDATE Alquiler
-                    SET Estado = 'FINALIZADO',
-                        FechaFin = GETDATE()
-                    WHERE Id_alquiler = @alquilerId
-                `);
-
-            // Bitácora (CREAR NUEVO REQUEST)
-            const bitacoraRequest = new sql.Request(pool);
-            await transactionService.logToBitacora(
-                transaction,
-                bitacoraRequest,
-                'Alquiler',
-                'UPDATE',
-                alquilerId,
-                userId
-            );
+            const finalRequest = new sql.Request(pool);
+            
+            const result = await finalRequest
+                .input('Id_alquiler', sql.Int, alquilerId)
+                .input('UserId', sql.VarChar(50), userId || 'SYSTEM')
+                .execute('SP_FinalizarAlquiler');
 
             console.log(`✅ Alquiler ${alquilerId} finalizado`);
 
-            return {
-                alquilerId,
-                itemsRestored: detallesData.recordset.length,
-                status: 'FINALIZADO'
-            };
+            return result.recordset[0];
         });
     }
 
@@ -359,81 +165,25 @@ class AlquilerService {
         return await transactionService.executeTransaction(async (transaction, request) => {
             console.log(`📅 Extendiendo alquiler ${alquilerId} por ${diasAdicionales} días`);
 
-            const alquilerData = await request
-                .input('alquilerId', sql.Int, alquilerId)
-                .query('SELECT FechaFin, TotalAlquiler, Estado FROM Alquiler WHERE Id_alquiler = @alquilerId');
-
-            if (alquilerData.recordset.length === 0) {
-                throw new Error(`Alquiler ${alquilerId} no encontrado`);
-            }
-
-            const alquiler = alquilerData.recordset[0];
-
-            if (alquiler.Estado !== 'ACTIVO') {
-                throw new Error('Solo se pueden extender alquileres activos');
-            }
-
-            const nuevaFechaFin = new Date(alquiler.FechaFin);
-            nuevaFechaFin.setDate(nuevaFechaFin.getDate() + diasAdicionales);
-
-            // Calcular costo adicional (CREAR NUEVO REQUEST)
             const pool = transaction;
-            const detallesRequest = new sql.Request(pool);
-            const detallesData = await detallesRequest
-                .input('alquilerId', sql.Int, alquilerId)
-                .query(`
-                    SELECT SUM(TarifaDiaria * CantidadDetalleAlquiler) as TotalDiario
-                    FROM DetalleAlquiler
-                    WHERE Id_alquiler = @alquilerId
-                `);
+            const extenderRequest = new sql.Request(pool);
+            
+            const result = await extenderRequest
+                .input('Id_alquiler', sql.Int, alquilerId)
+                .input('DiasAdicionales', sql.Int, diasAdicionales)
+                .input('UserId', sql.VarChar(50), userId || 'SYSTEM')
+                .execute('SP_ExtenderAlquiler');
 
-            const costoAdicional = detallesData.recordset[0].TotalDiario * diasAdicionales;
-            const nuevoTotal = alquiler.TotalAlquiler + costoAdicional;
+            const data = result.recordset[0];
 
-            // Actualizar maestro (CREAR NUEVO REQUEST)
-            const updateRequest = new sql.Request(pool);
-            await updateRequest
-                .input('alquilerId', sql.Int, alquilerId)
-                .input('nuevaFechaFin', sql.DateTime, nuevaFechaFin)
-                .input('nuevoTotal', sql.Decimal(10, 2), nuevoTotal)
-                .query(`
-                    UPDATE Alquiler
-                    SET FechaFin = @nuevaFechaFin,
-                        TotalAlquiler = @nuevoTotal
-                    WHERE Id_alquiler = @alquilerId
-                `);
-
-            // Actualizar detalles (CREAR NUEVO REQUEST)
-            const updateDetallesRequest = new sql.Request(pool);
-            await updateDetallesRequest
-                .input('alquilerId', sql.Int, alquilerId)
-                .input('diasAdicionales', sql.Decimal(10, 2), diasAdicionales)
-                .query(`
-                    UPDATE DetalleAlquiler
-                    SET DiasAlquilados = DiasAlquilados + @diasAdicionales,
-                        Subtotal = (DiasAlquilados + @diasAdicionales) * TarifaDiaria * CantidadDetalleAlquiler
-                    WHERE Id_alquiler = @alquilerId
-                `);
-
-            // Bitácora (CREAR NUEVO REQUEST)
-            const bitacoraRequest = new sql.Request(pool);
-            await transactionService.logToBitacora(
-                transaction,
-                bitacoraRequest,
-                'Alquiler',
-                'UPDATE',
-                alquilerId,
-                userId
-            );
-
-            console.log(`✅ Alquiler extendido hasta ${nuevaFechaFin.toISOString()}`);
+            console.log(`✅ Alquiler extendido hasta ${data.nuevaFechaFin}`);
 
             return {
-                alquilerId,
-                nuevaFechaFin,
-                diasAdicionales,
-                costoAdicional: parseFloat(costoAdicional.toFixed(2)),
-                nuevoTotal: parseFloat(nuevoTotal.toFixed(2))
+                alquilerId: data.alquilerId,
+                nuevaFechaFin: data.nuevaFechaFin,
+                diasAdicionales: data.diasAdicionales,
+                costoAdicional: parseFloat(data.costoAdicional.toFixed(2)),
+                nuevoTotal: parseFloat(data.nuevoTotal.toFixed(2))
             };
         });
     }
@@ -445,76 +195,18 @@ class AlquilerService {
         return await transactionService.executeTransaction(async (transaction, request) => {
             console.log(`❌ Cancelando alquiler ${alquilerId}`);
 
-            const alquilerData = await request
-                .input('alquilerId', sql.Int, alquilerId)
-                .query('SELECT Estado FROM Alquiler WHERE Id_alquiler = @alquilerId');
-
-            if (alquilerData.recordset.length === 0) {
-                throw new Error(`Alquiler ${alquilerId} no encontrado`);
-            }
-
-            const alquiler = alquilerData.recordset[0];
-
-            if (alquiler.Estado === 'FINALIZADO') {
-                throw new Error('No se puede cancelar un alquiler finalizado');
-            }
-
-            if (alquiler.Estado === 'CANCELADO') {
-                throw new Error('El alquiler ya está cancelado');
-            }
-
-            // Obtener detalles y devolver stock (CREAR NUEVO REQUEST)
             const pool = transaction;
-            const detallesRequest = new sql.Request(pool);
-            const detallesData = await detallesRequest
-                .input('alquilerId', sql.Int, alquilerId)
-                .query(`
-                    SELECT Id_producto, CantidadDetalleAlquiler
-                    FROM DetalleAlquiler
-                    WHERE Id_alquiler = @alquilerId
-                `);
-
-            // Devolver stock (CREAR NUEVO REQUEST PARA CADA UNO)
-            for (const detalle of detallesData.recordset) {
-                const stockRequest = new sql.Request(pool);
-                await transactionService.updateStock(
-                    transaction,
-                    stockRequest,
-                    detalle.Id_producto,
-                    detalle.CantidadDetalleAlquiler,
-                    'CANCELACION_ALQUILER'
-                );
-            }
-
-            // Actualizar estado (CREAR NUEVO REQUEST)
-            const updateRequest = new sql.Request(pool);
-            await updateRequest
-                .input('alquilerId', sql.Int, alquilerId)
-                .query(`
-                    UPDATE Alquiler
-                    SET Estado = 'CANCELADO'
-                    WHERE Id_alquiler = @alquilerId
-                `);
-
-            // Bitácora (CREAR NUEVO REQUEST)
-            const bitacoraRequest = new sql.Request(pool);
-            await transactionService.logToBitacora(
-                transaction,
-                bitacoraRequest,
-                'Alquiler',
-                'UPDATE',
-                alquilerId,
-                userId
-            );
+            const cancelRequest = new sql.Request(pool);
+            
+            const result = await cancelRequest
+                .input('Id_alquiler', sql.Int, alquilerId)
+                .input('Motivo', sql.VarChar(255), motivo)
+                .input('UserId', sql.VarChar(50), userId || 'SYSTEM')
+                .execute('SP_CancelarAlquiler');
 
             console.log(`✅ Alquiler ${alquilerId} cancelado`);
 
-            return {
-                alquilerId,
-                itemsRestored: detallesData.recordset.length,
-                status: 'CANCELADO',
-                motivo
-            };
+            return result.recordset[0];
         });
     }
 
@@ -527,37 +219,15 @@ class AlquilerService {
 
         try {
             const result = await pool.request()
-                .input('limit', sql.Int, limit)
-                .input('offset', sql.Int, offset)
-                .query(`
-                    SELECT 
-                        a.*,
-                        c.Nombre as ClienteNombre,
-                        c.Apellido1 + ' ' + ISNULL(c.Apellido2, '') as ClienteApellidos,
-                        c.Telefono as ClienteTelefono,
-                        col.Nombre + ' ' + col.Apellido1 + ' ' + ISNULL(col.Apellido2, '') as ColaboradorNombre,
-                        DATEDIFF(day, GETDATE(), a.FechaFin) as DiasRestantes,
-                        CASE 
-                            WHEN DATEDIFF(day, GETDATE(), a.FechaFin) < 0 THEN 'VENCIDO'
-                            WHEN DATEDIFF(day, GETDATE(), a.FechaFin) <= 2 THEN 'POR_VENCER'
-                            ELSE 'VIGENTE'
-                        END as EstadoVigencia
-                    FROM Alquiler a
-                    INNER JOIN Cliente c ON a.Id_cliente = c.Id_cliente
-                    INNER JOIN Colaborador col ON a.Id_colaborador = col.Id_colaborador
-                    WHERE a.Estado = 'ACTIVO'
-                    ORDER BY a.FechaFin ASC
-                    OFFSET @offset ROWS
-                    FETCH NEXT @limit ROWS ONLY
-                `);
+                .input('Limit', sql.Int, limit)
+                .input('Offset', sql.Int, offset)
+                .execute('SP_ObtenerAlquileresActivos');
 
-            const countResult = await pool.request()
-                .query('SELECT COUNT(*) as total FROM Alquiler WHERE Estado = \'ACTIVO\'');
-
-            const total = countResult.recordset[0].total;
+            const data = result.recordsets[0];
+            const total = result.recordsets[1][0].Total;
 
             return {
-                data: result.recordset,
+                data: data,
                 pagination: {
                     page,
                     limit,
@@ -581,32 +251,15 @@ class AlquilerService {
 
         try {
             const result = await pool.request()
-                .input('limit', sql.Int, limit)
-                .input('offset', sql.Int, offset)
-                .query(`
-                    SELECT 
-                        a.*,
-                        c.Nombre as ClienteNombre,
-                        c.Apellido1 + ' ' + ISNULL(c.Apellido2, '') as ClienteApellidos,
-                        c.Telefono as ClienteTelefono,
-                        c.Correo as ClienteEmail,
-                        DATEDIFF(day, a.FechaFin, GETDATE()) as DiasVencidos
-                    FROM Alquiler a
-                    INNER JOIN Cliente c ON a.Id_cliente = c.Id_cliente
-                    WHERE a.Estado = 'ACTIVO'
-                    AND a.FechaFin < GETDATE()
-                    ORDER BY DiasVencidos DESC
-                    OFFSET @offset ROWS
-                    FETCH NEXT @limit ROWS ONLY
-                `);
+                .input('Limit', sql.Int, limit)
+                .input('Offset', sql.Int, offset)
+                .execute('SP_ObtenerAlquileresVencidos');
 
-            const countResult = await pool.request()
-                .query('SELECT COUNT(*) as total FROM Alquiler WHERE Estado = \'ACTIVO\' AND FechaFin < GETDATE()');
-
-            const total = countResult.recordset[0].total;
+            const data = result.recordsets[0];
+            const total = result.recordsets[1][0].Total;
 
             return {
-                data: result.recordset,
+                data: data,
                 pagination: {
                     page,
                     limit,
@@ -628,17 +281,8 @@ class AlquilerService {
         const pool = await getConnection();
 
         try {
-            const result = await pool.request().query(`
-                SELECT 
-                    COUNT(*) as TotalAlquileres,
-                    SUM(CASE WHEN Estado = 'ACTIVO' THEN 1 ELSE 0 END) as Activos,
-                    SUM(CASE WHEN Estado = 'FINALIZADO' THEN 1 ELSE 0 END) as Finalizados,
-                    SUM(CASE WHEN Estado = 'CANCELADO' THEN 1 ELSE 0 END) as Cancelados,
-                    SUM(CASE WHEN Estado = 'ACTIVO' AND FechaFin < GETDATE() THEN 1 ELSE 0 END) as Vencidos,
-                    ISNULL(SUM(TotalAlquiler), 0) as IngresoTotal,
-                    ISNULL(AVG(TotalAlquiler), 0) as PromedioIngresos
-                FROM Alquiler
-            `);
+            const result = await pool.request()
+                .execute('SP_ObtenerEstadisticasAlquileres');
 
             return result.recordset[0];
 
@@ -657,35 +301,16 @@ class AlquilerService {
 
         try {
             const result = await pool.request()
-                .input('clienteId', sql.Int, clienteId)
-                .input('limit', sql.Int, limit)
-                .input('offset', sql.Int, offset)
-                .query(`
-                    SELECT 
-                        a.*,
-                        col.Nombre + ' ' + col.Apellido1 + ' ' + ISNULL(col.Apellido2, '') as ColaboradorNombre,
-                        COUNT(da.Id_detalleAlquiler) as TotalProductos
-                    FROM Alquiler a
-                    INNER JOIN Colaborador col ON a.Id_colaborador = col.Id_colaborador
-                    LEFT JOIN DetalleAlquiler da ON a.Id_alquiler = da.Id_alquiler
-                    WHERE a.Id_cliente = @clienteId
-                    GROUP BY 
-                        a.Id_alquiler, a.FechaInicio, a.FechaFin, a.Estado, a.TotalAlquiler,
-                        a.Id_cliente, a.Id_colaborador,
-                        col.Nombre, col.Apellido1, col.Apellido2
-                    ORDER BY a.FechaInicio DESC
-                    OFFSET @offset ROWS
-                    FETCH NEXT @limit ROWS ONLY
-                `);
+                .input('ClienteId', sql.Int, clienteId)
+                .input('Limit', sql.Int, limit)
+                .input('Offset', sql.Int, offset)
+                .execute('SP_ObtenerHistorialCliente');
 
-            const countResult = await pool.request()
-                .input('clienteId', sql.Int, clienteId)
-                .query('SELECT COUNT(*) as total FROM Alquiler WHERE Id_cliente = @clienteId');
-
-            const total = countResult.recordset[0].total;
+            const data = result.recordsets[0];
+            const total = result.recordsets[1][0].Total;
 
             return {
-                data: result.recordset,
+                data: data,
                 pagination: {
                     page,
                     limit,

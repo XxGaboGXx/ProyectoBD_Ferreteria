@@ -47,7 +47,15 @@ exports.getTopClientes = async (req, res, next) => {
         next(error);
     }
 };
-
+exports.getTopProductos = async (req, res, next) => {
+    try {
+        const { limit = 10 } = req.query;
+        const result = await dashboardService.getTopProductos(parseInt(limit));
+        res.json(utils.successResponse(result));
+    } catch (error) {
+        next(error);
+    }
+};
 exports.getRendimientoColaboradores = async (req, res, next) => {
     try {
         const result = await dashboardService.getRendimientoColaboradores();

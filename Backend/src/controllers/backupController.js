@@ -85,3 +85,43 @@ exports.deleteBackup = async (req, res, next) => {
         next(error);
     }
 };
+
+/**
+ * Verificar integridad de un backup
+ */
+exports.verifyBackup = async (req, res, next) => {
+    try {
+        const { fileName } = req.params;
+        
+        if (!fileName) {
+            return res.status(constants.HTTP_STATUS.BAD_REQUEST).json(
+                utils.errorResponse('El nombre del archivo es requerido')
+            );
+        }
+
+        const result = await backupService.verifyBackup(fileName);
+        res.json(utils.successResponse(result, 'Backup verificado'));
+    } catch (error) {
+        next(error);
+    }
+};
+
+/**
+ * Obtener detalles de un backup
+ */
+exports.getBackupDetails = async (req, res, next) => {
+    try {
+        const { fileName } = req.params;
+        
+        if (!fileName) {
+            return res.status(constants.HTTP_STATUS.BAD_REQUEST).json(
+                utils.errorResponse('El nombre del archivo es requerido')
+            );
+        }
+
+        const result = await backupService.getBackupDetails(fileName);
+        res.json(utils.successResponse(result, 'Detalles del backup obtenidos'));
+    } catch (error) {
+        next(error);
+    }
+};

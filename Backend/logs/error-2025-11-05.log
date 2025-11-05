@@ -1,0 +1,314 @@
+{
+  "timestamp": "2025-11-05T04:39:51.308Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Producto no encontrado",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Producto no encontrado\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "PUT",
+  "url": "/api/productos/1",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Taladro Percutor",
+    "Descripcion": "Taladro percutor profesional 800W",
+    "CantidadActual": 15,
+    "PrecioVenta": 1550,
+    "PrecioCompra": 850,
+    "CantidadMinima": 5,
+    "Id_categoria": 1,
+    "CodigoBarra": "7501234567890"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T04:39:51.312Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Producto no encontrado",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Producto no encontrado\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "PUT",
+  "url": "/api/productos/1",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Taladro Percutor",
+    "Descripcion": "Taladro percutor profesional 800W",
+    "CantidadActual": 15,
+    "PrecioVenta": 1550,
+    "PrecioCompra": 850,
+    "CantidadMinima": 5,
+    "Id_categoria": 1,
+    "CodigoBarra": "7501234567890"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T04:40:29.926Z",
+  "message": "Producto con ID 1 no encontrado",
+  "stack": "Error: Producto con ID 1 no encontrado\n    at ProductoService.getById (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\services\\productoService.js:55:23)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async exports.getById (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\controllers\\productoController.js:41:24)",
+  "method": "GET",
+  "url": "/api/productos/1",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Taladro Percutor",
+    "Descripcion": "Taladro percutor profesional 800W",
+    "CantidadActual": 15,
+    "PrecioVenta": 1550,
+    "PrecioCompra": 850,
+    "CantidadMinima": 5,
+    "Id_categoria": 1,
+    "CodigoBarra": "7501234567890"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T04:40:29.928Z",
+  "message": "Producto con ID 1 no encontrado",
+  "stack": "Error: Producto con ID 1 no encontrado\n    at ProductoService.getById (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\services\\productoService.js:55:23)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async exports.getById (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\controllers\\productoController.js:41:24)",
+  "method": "GET",
+  "url": "/api/productos/1",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Taladro Percutor",
+    "Descripcion": "Taladro percutor profesional 800W",
+    "CantidadActual": 15,
+    "PrecioVenta": 1550,
+    "PrecioCompra": 850,
+    "CantidadMinima": 5,
+    "Id_categoria": 1,
+    "CodigoBarra": "7501234567890"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T07:14:04.067Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]RESTORE HEADERONLY is terminating abnormally.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]RESTORE HEADERONLY is terminating abnormally.\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/backups/TestBackup_Manual.bak/details",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "backupName": "TestBackup_Manual.bak"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T07:14:04.073Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]RESTORE HEADERONLY is terminating abnormally.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]RESTORE HEADERONLY is terminating abnormally.\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/backups/TestBackup_Manual.bak/details",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "backupName": "TestBackup_Manual.bak"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T07:25:25.401Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]Associated statement is not prepared",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]Associated statement is not prepared\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at Query.end (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:298:12)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:401:14",
+  "method": "POST",
+  "url": "/api/backups/restore",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "fileName": "TestBackup_Manual.bak"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T07:25:25.413Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]Associated statement is not prepared",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]Associated statement is not prepared\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at Query.end (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:298:12)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:401:14",
+  "method": "POST",
+  "url": "/api/backups/restore",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "fileName": "TestBackup_Manual.bak"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T07:33:24.318Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]Associated statement is not prepared",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]Associated statement is not prepared\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at Query.end (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:298:12)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:401:14",
+  "method": "POST",
+  "url": "/api/backups/restore",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "fileName": "BackupParaRestaurar.bak"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T07:33:24.321Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]Associated statement is not prepared",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]Associated statement is not prepared\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at Query.end (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:298:12)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:401:14",
+  "method": "POST",
+  "url": "/api/backups/restore",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "fileName": "BackupParaRestaurar.bak"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T07:35:55.733Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]Associated statement is not prepared",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]Associated statement is not prepared\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at Query.end (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:298:12)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:401:14",
+  "method": "POST",
+  "url": "/api/backups/restore",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "fileName": "BackupParaRestaurar.bak"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T07:35:55.737Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server]Associated statement is not prepared",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server]Associated statement is not prepared\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at Query.end (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:298:12)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:401:14",
+  "method": "POST",
+  "url": "/api/backups/restore",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "fileName": "BackupParaRestaurar.bak"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T07:45:23.035Z",
+  "message": "Expected property name or '}' in JSON at position 1 (line 1 column 2)",
+  "stack": "SyntaxError: Expected property name or '}' in JSON at position 1 (line 1 column 2)\n    at JSON.parse (<anonymous>)\n    at parse (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\body-parser\\lib\\types\\json.js:92:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\body-parser\\lib\\read.js:128:18\n    at AsyncResource.runInAsyncScope (node:async_hooks:214:14)\n    at invokeCallback (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\raw-body\\index.js:238:16)\n    at done (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\raw-body\\index.js:227:7)\n    at IncomingMessage.onEnd (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\raw-body\\index.js:287:7)\n    at IncomingMessage.emit (node:events:519:28)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)",
+  "method": "POST",
+  "url": "/api/backups/details",
+  "ip": "::ffff:127.0.0.1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T17:01:21.704Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_DetalleAlquiler_Producto\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Producto\", column 'Id_Producto'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_DetalleAlquiler_Producto\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Producto\", column 'Id_Producto'.\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/alquileres",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 1,
+    "Id_colaborador": 1,
+    "detalles": [
+      {
+        "Id_producto": 1,
+        "Cantidad": 2,
+        "Dias": 5,
+        "TarifaDiaria": 10,
+        "Deposito": 50
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T17:15:18.042Z",
+  "message": "Archivo de backup no encontrado: TestBackup_Manual.bak",
+  "stack": "Error: Archivo de backup no encontrado: TestBackup_Manual.bak\n    at BackupService.getBackupDetails (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\services\\backupService.js:419:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async exports.getBackupDetails (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\controllers\\backupController.js:122:24)",
+  "method": "GET",
+  "url": "/api/backups/TestBackup_Manual.bak/details",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "backupName": "TestBackup_Manual.bak"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T17:15:18.050Z",
+  "message": "Archivo de backup no encontrado: TestBackup_Manual.bak",
+  "stack": "Error: Archivo de backup no encontrado: TestBackup_Manual.bak\n    at BackupService.getBackupDetails (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\services\\backupService.js:419:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async exports.getBackupDetails (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\controllers\\backupController.js:122:24)",
+  "method": "GET",
+  "url": "/api/backups/TestBackup_Manual.bak/details",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "backupName": "TestBackup_Manual.bak"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T17:16:15.030Z",
+  "message": "Archivo de backup no encontrado: TestBackup_Manual.bak",
+  "stack": "Error: Archivo de backup no encontrado: TestBackup_Manual.bak\n    at BackupService.getBackupDetails (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\services\\backupService.js:419:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async exports.getBackupDetails (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\controllers\\backupController.js:122:24)",
+  "method": "GET",
+  "url": "/api/backups/TestBackup_Manual.bak/details",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "fileName": "TestBackup_Manual.bak"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T17:16:15.034Z",
+  "message": "Archivo de backup no encontrado: TestBackup_Manual.bak",
+  "stack": "Error: Archivo de backup no encontrado: TestBackup_Manual.bak\n    at BackupService.getBackupDetails (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\services\\backupService.js:419:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async exports.getBackupDetails (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\controllers\\backupController.js:122:24)",
+  "method": "GET",
+  "url": "/api/backups/TestBackup_Manual.bak/details",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "fileName": "TestBackup_Manual.bak"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T17:16:23.702Z",
+  "message": "Archivo de backup no encontrado: TestBackup_Manual.bak",
+  "stack": "Error: Archivo de backup no encontrado: TestBackup_Manual.bak\n    at BackupService.getBackupDetails (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\services\\backupService.js:419:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async exports.getBackupDetails (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\controllers\\backupController.js:122:24)",
+  "method": "GET",
+  "url": "/api/backups/TestBackup_Manual.bak/details",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "backupName": "TestBackup_Manual.bak"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T17:16:23.703Z",
+  "message": "Archivo de backup no encontrado: TestBackup_Manual.bak",
+  "stack": "Error: Archivo de backup no encontrado: TestBackup_Manual.bak\n    at BackupService.getBackupDetails (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\services\\backupService.js:419:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async exports.getBackupDetails (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\controllers\\backupController.js:122:24)",
+  "method": "GET",
+  "url": "/api/backups/TestBackup_Manual.bak/details",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "backupName": "TestBackup_Manual.bak"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T18:05:28.564Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe un producto con ese nombre",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe un producto con ese nombre\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Maquina de cortar hierro",
+    "Descripcion": "Maquina especializada en cortar hierro",
+    "CantidadActual": 15,
+    "PrecioVenta": 50000,
+    "PrecioCompra": 880,
+    "CantidadMinima": 5,
+    "Id_categoria": 1,
+    "CodigoBarra": "7501234567890"
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T18:05:28.567Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe un producto con ese nombre",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe un producto con ese nombre\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Nombre": "Maquina de cortar hierro",
+    "Descripcion": "Maquina especializada en cortar hierro",
+    "CantidadActual": 15,
+    "PrecioVenta": 50000,
+    "PrecioCompra": 880,
+    "CantidadMinima": 5,
+    "Id_categoria": 1,
+    "CodigoBarra": "7501234567890"
+  }
+}
+---

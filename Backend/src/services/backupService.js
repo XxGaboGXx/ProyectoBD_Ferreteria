@@ -40,15 +40,11 @@ class BackupService {
             console.log('🔄 Iniciando backup de base de datos...');
             console.log(`📁 Destino: ${fullPath}`);
             
-            // ✅ SIN COMPRESSION para SQL Server Express
-            await pool.request().query(`
-                BACKUP DATABASE [FerreteriaCentral]
-                TO DISK = N'${fullPath}'
-                WITH FORMAT, 
-                MEDIANAME = 'FerreteriaCentralBackup',
-                NAME = 'Full Backup of FerreteriaCentral',
-                STATS = 10;
-            `);
+            // Ejecutar SP_CrearBackup
+            const result = await pool.request()
+                .input('RutaCompleta', sql.NVarChar(500), fullPath)
+                .input('NombreArchivo', sql.NVarChar(200), fileName)
+                .execute('SP_CrearBackup');
 
             // Obtener tamaño del archivo
             let fileSize = 0;
@@ -109,19 +105,6 @@ class BackupService {
             console.log('🔄 Restaurando backup...');
             console.log(`📁 Origen: ${fullPath}`);
             
-            // Obtener nombres lógicos de los archivos
-            const fileListResult = await pool.request().query(`
-                RESTORE FILELISTONLY 
-                FROM DISK = N'${fullPath}'
-            `);
-            
-            const dataFile = fileListResult.recordset.find(f => f.Type === 'D');
-            const logFile = fileListResult.recordset.find(f => f.Type === 'L');
-
-            if (!dataFile || !logFile) {
-                throw new Error('No se pudieron obtener los nombres de archivos del backup');
-            }
-
             // Poner BD en modo single user
             await pool.request().query(`
                 USE master;
@@ -129,14 +112,11 @@ class BackupService {
             `);
 
             try {
-                // Restaurar con MOVE
+                // Restaurar directamente sin SP (más confiable para backups)
                 await pool.request().query(`
                     RESTORE DATABASE [FerreteriaCentral]
                     FROM DISK = N'${fullPath}'
-                    WITH REPLACE, RECOVERY,
-                    MOVE N'${dataFile.LogicalName}' TO N'${dataFile.PhysicalName}',
-                    MOVE N'${logFile.LogicalName}' TO N'${logFile.PhysicalName}',
-                    STATS = 10;
+                    WITH REPLACE, RECOVERY, STATS = 10;
                 `);
             } finally {
                 // Volver a modo multi user (siempre ejecutar esto)
@@ -382,6 +362,80 @@ class BackupService {
             clearInterval(this.autoBackupInterval);
             this.autoBackupInterval = null;
             console.log('🛑 Sistema de backups automáticos detenido');
+        }
+    }
+
+    /**
+     * Verifica la integridad de un backup
+     */
+    async verifyBackup(backupFileName) {
+        try {
+            const pool = await getConnection();
+            const fullPath = path.join(this.sqlServerBackupPath, backupFileName);
+
+            if (!fs.existsSync(fullPath)) {
+                throw new Error(`Archivo de backup no encontrado: ${backupFileName}`);
+            }
+
+            console.log('🔍 Verificando backup...');
+            console.log(`📁 Archivo: ${fullPath}`);
+            
+            // Ejecutar SP_VerificarBackup
+            const result = await pool.request()
+                .input('RutaCompleta', sql.NVarChar(500), fullPath)
+                .execute('SP_VerificarBackup');
+
+            console.log('✅ Backup verificado correctamente');
+            
+            return { 
+                success: true,
+                fileName: backupFileName,
+                status: 'VALID',
+                message: 'Backup verificado correctamente',
+                verifiedAt: new Date()
+            };
+        } catch (error) {
+            console.error('❌ Error al verificar backup:', error.message);
+            
+            return {
+                success: false,
+                fileName: backupFileName,
+                status: 'INVALID',
+                message: error.message,
+                verifiedAt: new Date()
+            };
+        }
+    }
+
+    /**
+     * Obtiene información detallada de un backup
+     */
+    async getBackupDetails(backupFileName) {
+        try {
+            const pool = await getConnection();
+            const fullPath = path.join(this.sqlServerBackupPath, backupFileName);
+
+            if (!fs.existsSync(fullPath)) {
+                throw new Error(`Archivo de backup no encontrado: ${backupFileName}`);
+            }
+
+            console.log('📄 Obteniendo información del backup...');
+            
+            // Ejecutar SP_ObtenerInfoBackup
+            const result = await pool.request()
+                .input('RutaCompleta', sql.NVarChar(500), fullPath)
+                .execute('SP_ObtenerInfoBackup');
+
+            const info = result.recordset[0];
+            
+            return {
+                success: true,
+                fileName: backupFileName,
+                ...info
+            };
+        } catch (error) {
+            console.error('❌ Error al obtener información del backup:', error.message);
+            throw error;
         }
     }
 }

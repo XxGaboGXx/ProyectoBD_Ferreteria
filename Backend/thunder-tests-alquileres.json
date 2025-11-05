@@ -1,0 +1,129 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "Alquileres API - Stored Procedures",
+  "dateExported": "2025-11-04",
+  "version": "1.0",
+  "folders": [],
+  "requests": [
+    {
+      "name": "1. Crear Alquiler (POST)",
+      "method": "POST",
+      "url": "http://localhost:3000/api/alquileres",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"Id_cliente\": 1,\n  \"Id_colaborador\": 1,\n  \"detalles\": [\n    {\n      \"Id_producto\": 1,\n      \"Cantidad\": 2,\n      \"Dias\": 5,\n      \"TarifaDiaria\": 15.00,\n      \"Deposito\": 50.00\n    },\n    {\n      \"Id_producto\": 2,\n      \"Cantidad\": 1,\n      \"Dias\": 5,\n      \"TarifaDiaria\": 20.00,\n      \"Deposito\": 30.00\n    }\n  ]\n}"
+      },
+      "tests": []
+    },
+    {
+      "name": "2. Obtener Estadísticas (GET)",
+      "method": "GET",
+      "url": "http://localhost:3000/api/alquileres/estadisticas",
+      "headers": [],
+      "body": {},
+      "tests": []
+    },
+    {
+      "name": "3. Listar Todos los Alquileres (GET)",
+      "method": "GET",
+      "url": "http://localhost:3000/api/alquileres?page=1&limit=10",
+      "headers": [],
+      "body": {},
+      "tests": []
+    },
+    {
+      "name": "4. Filtrar por Estado ACTIVO (GET)",
+      "method": "GET",
+      "url": "http://localhost:3000/api/alquileres?estado=ACTIVO",
+      "headers": [],
+      "body": {},
+      "tests": []
+    },
+    {
+      "name": "5. Obtener Alquileres Activos (GET)",
+      "method": "GET",
+      "url": "http://localhost:3000/api/alquileres/activos",
+      "headers": [],
+      "body": {},
+      "tests": []
+    },
+    {
+      "name": "6. Obtener Alquileres Vencidos (GET)",
+      "method": "GET",
+      "url": "http://localhost:3000/api/alquileres/vencidos",
+      "headers": [],
+      "body": {},
+      "tests": []
+    },
+    {
+      "name": "7. Obtener Alquiler por ID (GET)",
+      "method": "GET",
+      "url": "http://localhost:3000/api/alquileres/1",
+      "headers": [],
+      "body": {},
+      "tests": []
+    },
+    {
+      "name": "8. Historial de Cliente (GET)",
+      "method": "GET",
+      "url": "http://localhost:3000/api/alquileres/cliente/1/historial",
+      "headers": [],
+      "body": {},
+      "tests": []
+    },
+    {
+      "name": "9. Extender Alquiler (POST)",
+      "method": "POST",
+      "url": "http://localhost:3000/api/alquileres/1/extender",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"diasAdicionales\": 3,\n  \"userId\": \"admin\"\n}"
+      },
+      "tests": []
+    },
+    {
+      "name": "10. Finalizar Alquiler (POST)",
+      "method": "POST",
+      "url": "http://localhost:3000/api/alquileres/1/finalizar",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"userId\": \"admin\"\n}"
+      },
+      "tests": []
+    },
+    {
+      "name": "11. Cancelar Alquiler (POST)",
+      "method": "POST",
+      "url": "http://localhost:3000/api/alquileres/2/cancelar",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"motivo\": \"Cliente solicitó cancelación por cambio de planes\",\n  \"userId\": \"admin\"\n}"
+      },
+      "tests": []
+    }
+  ]
+}

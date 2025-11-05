@@ -1,73 +1,29 @@
-const BaseService = require('./baseService');
 const { getConnection, sql } = require('../config/database');
 
-class ProveedorService extends BaseService {
-    constructor() {
-        super('Proveedor', 'Id_proveedor');
-    }
-
+class ProveedorService {
     /**
-     * Sobrescribir getAll para incluir estadísticas de compras
+     * Obtener todos los proveedores con paginación y filtros
      */
     async getAll(page = 1, limit = 50, filters = {}) {
         const pool = await getConnection();
         const offset = (page - 1) * limit;
 
         try {
-            let whereClause = 'WHERE 1=1';
-            const params = [];
+            // Llamar al SP con filtros
+            const result = await pool.request()
+                .input('Limit', sql.Int, limit)
+                .input('Offset', sql.Int, offset)
+                .input('Nombre', sql.VarChar(20), filters.nombre || null)
+                .input('Telefono', sql.VarChar(20), filters.telefono || null)
+                .input('Correo', sql.VarChar(100), filters.correo || null)
+                .execute('SP_ObtenerProveedores');
 
-            if (filters.nombre) {
-                whereClause += ' AND p.Nombre LIKE @nombre';
-                params.push({ name: 'nombre', type: sql.VarChar(20), value: `%${filters.nombre}%` });
-            }
-
-            if (filters.telefono) {
-                whereClause += ' AND p.Telefono LIKE @telefono';
-                params.push({ name: 'telefono', type: sql.VarChar(20), value: `%${filters.telefono}%` });
-            }
-
-            if (filters.correo) {
-                whereClause += ' AND p.Correo_electronico LIKE @correo';
-                params.push({ name: 'correo', type: sql.VarChar(100), value: `%${filters.correo}%` });
-            }
-
-            let request = pool.request()
-                .input('limit', sql.Int, limit)
-                .input('offset', sql.Int, offset);
-
-            params.forEach(p => request.input(p.name, p.type, p.value));
-
-            // Consulta principal con estadísticas
-            const result = await request.query(`
-                SELECT 
-                    p.*,
-                    COUNT(DISTINCT c.Id_compra) as TotalCompras,
-                    ISNULL(SUM(c.TotalCompra), 0) as MontoTotalComprado,
-                    MAX(c.FechaCompra) as UltimaCompra
-                FROM Proveedor p
-                LEFT JOIN Compra c ON p.Id_proveedor = c.Id_proveedor
-                ${whereClause}
-                GROUP BY p.Id_proveedor, p.Nombre, p.Telefono, p.Direccion, p.Correo_electronico
-                ORDER BY p.Nombre ASC
-                OFFSET @offset ROWS
-                FETCH NEXT @limit ROWS ONLY
-            `);
-
-            // Contar total
-            request = pool.request();
-            params.forEach(p => request.input(p.name, p.type, p.value));
-
-            const countResult = await request.query(`
-                SELECT COUNT(*) as total
-                FROM Proveedor p
-                ${whereClause}
-            `);
-
-            const total = countResult.recordset[0].total;
+            // El SP retorna 2 recordsets: [0] = datos, [1] = total
+            const data = result.recordsets[0] || [];
+            const total = result.recordsets[1] && result.recordsets[1][0] ? result.recordsets[1][0].Total : 0;
 
             return {
-                data: result.recordset,
+                data,
                 pagination: {
                     page,
                     limit,
@@ -83,28 +39,18 @@ class ProveedorService extends BaseService {
     }
 
     /**
-     * Sobrescribir getById para incluir estadísticas
+     * Obtener proveedor por ID con estadísticas
      */
     async getById(id) {
         const pool = await getConnection();
 
         try {
+            // Llamar al SP
             const result = await pool.request()
-                .input('id', sql.Int, id)
-                .query(`
-                    SELECT 
-                        p.*,
-                        COUNT(DISTINCT c.Id_compra) as TotalCompras,
-                        ISNULL(SUM(c.TotalCompra), 0) as MontoTotalComprado,
-                        MAX(c.FechaCompra) as UltimaCompra,
-                        MIN(c.FechaCompra) as PrimeraCompra
-                    FROM Proveedor p
-                    LEFT JOIN Compra c ON p.Id_proveedor = c.Id_proveedor
-                    WHERE p.Id_proveedor = @id
-                    GROUP BY p.Id_proveedor, p.Nombre, p.Telefono, p.Direccion, p.Correo_electronico
-                `);
+                .input('Id', sql.Int, id)
+                .execute('SP_ObtenerProveedorPorId');
 
-            if (result.recordset.length === 0) {
+            if (!result.recordset || result.recordset.length === 0) {
                 throw new Error(`Proveedor con ID ${id} no encontrado`);
             }
 
@@ -117,7 +63,7 @@ class ProveedorService extends BaseService {
     }
 
     /**
-     * Sobrescribir create para validar nombre único
+     * Crear nuevo proveedor
      */
     async create(data) {
         const pool = await getConnection();
@@ -125,22 +71,17 @@ class ProveedorService extends BaseService {
         try {
             console.log('🏢 Creando proveedor:', data);
 
-            // Validar nombre requerido
-            if (!data.Nombre) {
-                throw new Error('El nombre del proveedor es requerido');
-            }
+            // Llamar al SP
+            const result = await pool.request()
+                .input('Nombre', sql.VarChar(20), data.Nombre)
+                .input('Telefono', sql.VarChar(20), data.Telefono || null)
+                .input('Direccion', sql.VarChar(255), data.Direccion || null)
+                .input('Correo_electronico', sql.VarChar(100), data.Correo_electronico || null)
+                .execute('SP_CrearProveedor');
 
-            // Verificar nombre único
-            const existeResult = await pool.request()
-                .input('nombre', sql.VarChar(20), data.Nombre)
-                .query('SELECT Id_proveedor FROM Proveedor WHERE Nombre = @nombre');
+            console.log(`✅ Proveedor creado con ID: ${result.recordset[0].Id_proveedor}`);
 
-            if (existeResult.recordset.length > 0) {
-                throw new Error('Ya existe un proveedor con ese nombre');
-            }
-
-            // Usar el método create del BaseService
-            return await super.create(data);
+            return result.recordset[0];
 
         } catch (error) {
             console.error('❌ Error al crear proveedor:', error);
@@ -149,7 +90,7 @@ class ProveedorService extends BaseService {
     }
 
     /**
-     * Sobrescribir update para validar nombre único
+     * Actualizar proveedor existente
      */
     async update(id, data) {
         const pool = await getConnection();
@@ -157,20 +98,18 @@ class ProveedorService extends BaseService {
         try {
             console.log(`🔄 Actualizando proveedor ${id}:`, data);
 
-            // Si se está actualizando el nombre, verificar que no exista otro
-            if (data.Nombre) {
-                const nombreExisteResult = await pool.request()
-                    .input('nombre', sql.VarChar(20), data.Nombre)
-                    .input('id', sql.Int, id)
-                    .query('SELECT Id_proveedor FROM Proveedor WHERE Nombre = @nombre AND Id_proveedor != @id');
+            // Llamar al SP
+            const result = await pool.request()
+                .input('Id', sql.Int, id)
+                .input('Nombre', sql.VarChar(20), data.Nombre || null)
+                .input('Telefono', sql.VarChar(20), data.Telefono || null)
+                .input('Direccion', sql.VarChar(255), data.Direccion || null)
+                .input('Correo_electronico', sql.VarChar(100), data.Correo_electronico || null)
+                .execute('SP_ActualizarProveedor');
 
-                if (nombreExisteResult.recordset.length > 0) {
-                    throw new Error('Ya existe otro proveedor con ese nombre');
-                }
-            }
+            console.log(`✅ Proveedor ${id} actualizado exitosamente`);
 
-            // Usar el método update del BaseService
-            return await super.update(id, data);
+            return result.recordset[0];
 
         } catch (error) {
             console.error('❌ Error al actualizar proveedor:', error);
@@ -179,7 +118,7 @@ class ProveedorService extends BaseService {
     }
 
     /**
-     * Sobrescribir delete para validar compras asociadas
+     * Eliminar proveedor (con validaciones de compras asociadas)
      */
     async delete(id) {
         const pool = await getConnection();
@@ -187,45 +126,14 @@ class ProveedorService extends BaseService {
         try {
             console.log(`🗑️  Intentando eliminar proveedor ${id}`);
 
-            // Verificar que existe
-            const existeResult = await pool.request()
-                .input('id', sql.Int, id)
-                .query('SELECT Nombre FROM Proveedor WHERE Id_proveedor = @id');
+            // Llamar al SP
+            const result = await pool.request()
+                .input('Id', sql.Int, id)
+                .execute('SP_EliminarProveedor');
 
-            if (existeResult.recordset.length === 0) {
-                throw new Error(`Proveedor con ID ${id} no encontrado`);
-            }
+            console.log(`✅ Proveedor ${id} eliminado exitosamente`);
 
-            const proveedor = existeResult.recordset[0];
-
-            // Verificar compras asociadas
-            const comprasResult = await pool.request()
-                .input('id', sql.Int, id)
-                .query(`
-                    SELECT 
-                        COUNT(*) as TotalCompras,
-                        ISNULL(SUM(TotalCompra), 0) as MontoTotal
-                    FROM Compra 
-                    WHERE Id_proveedor = @id
-                `);
-
-            const totalCompras = comprasResult.recordset[0].TotalCompras;
-            const montoTotal = comprasResult.recordset[0].MontoTotal;
-
-            if (totalCompras > 0) {
-                throw {
-                    statusCode: 400,
-                    message: `No se puede eliminar el proveedor "${proveedor.Nombre}" porque tiene ${totalCompras} compra(s) registrada(s) por un monto total de ₡${montoTotal.toLocaleString('es-CR', {minimumFractionDigits: 2})}.`,
-                    details: {
-                        proveedor: proveedor.Nombre,
-                        totalCompras: totalCompras,
-                        montoTotal: parseFloat(montoTotal.toFixed(2))
-                    }
-                };
-            }
-
-            // Usar el método delete del BaseService
-            return await super.delete(id);
+            return result.recordset[0];
 
         } catch (error) {
             console.error('❌ Error al eliminar proveedor:', error);
@@ -251,53 +159,21 @@ class ProveedorService extends BaseService {
         const offset = (page - 1) * limit;
 
         try {
-            let whereClause = 'WHERE c.Id_proveedor = @id';
-            const params = [{ name: 'id', type: sql.Int, value: id }];
+            // Llamar al SP
+            const result = await pool.request()
+                .input('Id_proveedor', sql.Int, id)
+                .input('Limit', sql.Int, limit)
+                .input('Offset', sql.Int, offset)
+                .input('FechaInicio', sql.DateTime, filters.fechaInicio ? new Date(filters.fechaInicio) : null)
+                .input('FechaFin', sql.DateTime, filters.fechaFin ? new Date(filters.fechaFin) : null)
+                .execute('SP_ObtenerHistorialComprasProveedor');
 
-            if (filters.fechaInicio) {
-                whereClause += ' AND c.FechaCompra >= @fechaInicio';
-                params.push({ name: 'fechaInicio', type: sql.DateTime, value: new Date(filters.fechaInicio) });
-            }
-
-            if (filters.fechaFin) {
-                whereClause += ' AND c.FechaCompra <= @fechaFin';
-                params.push({ name: 'fechaFin', type: sql.DateTime, value: new Date(filters.fechaFin) });
-            }
-
-            let request = pool.request()
-                .input('limit', sql.Int, limit)
-                .input('offset', sql.Int, offset);
-
-            params.forEach(p => request.input(p.name, p.type, p.value));
-
-            const result = await request.query(`
-                SELECT 
-                    c.*,
-                    COUNT(dc.Id_detalleCompra) as TotalProductos,
-                    SUM(dc.CantidadCompra) as CantidadTotal
-                FROM Compra c
-                LEFT JOIN DetalleCompra dc ON c.Id_compra = dc.Id_compra
-                ${whereClause}
-                GROUP BY c.Id_compra, c.FechaCompra, c.TotalCompra, c.NumeroFactura, c.Id_proveedor
-                ORDER BY c.FechaCompra DESC
-                OFFSET @offset ROWS
-                FETCH NEXT @limit ROWS ONLY
-            `);
-
-            // Contar total
-            request = pool.request();
-            params.forEach(p => request.input(p.name, p.type, p.value));
-
-            const countResult = await request.query(`
-                SELECT COUNT(*) as total
-                FROM Compra c
-                ${whereClause}
-            `);
-
-            const total = countResult.recordset[0].total;
+            // El SP retorna 2 recordsets: [0] = datos, [1] = total
+            const data = result.recordsets[0] || [];
+            const total = result.recordsets[1] && result.recordsets[1][0] ? result.recordsets[1][0].Total : 0;
 
             return {
-                data: result.recordset,
+                data,
                 pagination: {
                     page,
                     limit,
@@ -320,50 +196,19 @@ class ProveedorService extends BaseService {
         const offset = (page - 1) * limit;
 
         try {
+            // Llamar al SP
             const result = await pool.request()
-                .input('id', sql.Int, id)
-                .input('limit', sql.Int, limit)
-                .input('offset', sql.Int, offset)
-                .query(`
-                    SELECT 
-                        p.Id_Producto,
-                        p.Nombre,
-                        p.Descripcion,
-                        p.PrecioCompra,
-                        p.PrecioVenta,
-                        p.CantidadActual,
-                        cat.Nombre as Categoria,
-                        COUNT(DISTINCT dc.Id_compra) as VecesComprado,
-                        SUM(dc.CantidadCompra) as TotalComprado,
-                        MAX(c.FechaCompra) as UltimaCompra,
-                        AVG(dc.PrecioUnitario) as PrecioPromedio
-                    FROM Producto p
-                    INNER JOIN DetalleCompra dc ON p.Id_Producto = dc.Id_producto
-                    INNER JOIN Compra c ON dc.Id_compra = c.Id_compra
-                    LEFT JOIN Categoria cat ON p.Id_categoria = cat.Id_categoria
-                    WHERE c.Id_proveedor = @id
-                    GROUP BY p.Id_Producto, p.Nombre, p.Descripcion, p.PrecioCompra, 
-                             p.PrecioVenta, p.CantidadActual, cat.Nombre
-                    ORDER BY TotalComprado DESC
-                    OFFSET @offset ROWS
-                    FETCH NEXT @limit ROWS ONLY
-                `);
+                .input('Id_proveedor', sql.Int, id)
+                .input('Limit', sql.Int, limit)
+                .input('Offset', sql.Int, offset)
+                .execute('SP_ObtenerProductosProveedor');
 
-            // Contar total
-            const countResult = await pool.request()
-                .input('id', sql.Int, id)
-                .query(`
-                    SELECT COUNT(DISTINCT p.Id_Producto) as total
-                    FROM Producto p
-                    INNER JOIN DetalleCompra dc ON p.Id_Producto = dc.Id_producto
-                    INNER JOIN Compra c ON dc.Id_compra = c.Id_compra
-                    WHERE c.Id_proveedor = @id
-                `);
-
-            const total = countResult.recordset[0].total;
+            // El SP retorna 2 recordsets: [0] = datos, [1] = total
+            const data = result.recordsets[0] || [];
+            const total = result.recordsets[1] && result.recordsets[1][0] ? result.recordsets[1][0].Total : 0;
 
             return {
-                data: result.recordset,
+                data,
                 pagination: {
                     page,
                     limit,
@@ -379,29 +224,16 @@ class ProveedorService extends BaseService {
     }
 
     /**
-     * Obtener estadísticas del proveedor
+     * Obtener estadísticas detalladas del proveedor
      */
     async getEstadisticas(id) {
         const pool = await getConnection();
 
         try {
+            // Llamar al SP
             const result = await pool.request()
-                .input('id', sql.Int, id)
-                .query(`
-                    SELECT 
-                        COUNT(DISTINCT c.Id_compra) as TotalCompras,
-                        ISNULL(SUM(c.TotalCompra), 0) as MontoTotal,
-                        ISNULL(AVG(c.TotalCompra), 0) as PromedioCompra,
-                        ISNULL(MAX(c.TotalCompra), 0) as CompraMayor,
-                        ISNULL(MIN(c.TotalCompra), 0) as CompraMenor,
-                        COUNT(DISTINCT dc.Id_producto) as ProductosDistintos,
-                        SUM(dc.CantidadCompra) as CantidadTotalComprada,
-                        MAX(c.FechaCompra) as UltimaCompra,
-                        MIN(c.FechaCompra) as PrimeraCompra
-                    FROM Compra c
-                    LEFT JOIN DetalleCompra dc ON c.Id_compra = dc.Id_compra
-                    WHERE c.Id_proveedor = @id
-                `);
+                .input('Id_proveedor', sql.Int, id)
+                .execute('SP_ObtenerEstadisticasProveedor');
 
             const stats = result.recordset[0];
 

@@ -2,7 +2,7 @@ const sql = require('mssql/msnodesqlv8');
 require('dotenv').config();
 
 const config = {
-    connectionString: 'Driver={ODBC Driver 17 for SQL Server};Server=.\\SQLEXPRESS;Database=FerreteriaCentral;Trusted_Connection=yes;',
+    connectionString: 'Driver={ODBC Driver 17 for SQL Server};Server=.\\SQLEXPRESS01;Database=FerreteriaCentral;Trusted_Connection=yes;',
 };
 
 

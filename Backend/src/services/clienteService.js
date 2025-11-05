@@ -1,55 +1,152 @@
-const BaseService = require('./baseService');
 const { getConnection, sql } = require('../config/database');
 
-class ClienteService extends BaseService {
-    constructor() {
-        super('Cliente', 'Id_cliente');
+class ClienteService {
+    /**
+     * Obtener todos los clientes con paginación y filtros
+     */
+    async getAll(page = 1, limit = 50, filters = {}) {
+        const pool = await getConnection();
+        const offset = (page - 1) * limit;
+
+        const result = await pool.request()
+            .input('Limit', sql.Int, limit)
+            .input('Offset', sql.Int, offset)
+            .input('Nombre', sql.VarChar, filters.Nombre || null)
+            .execute('SP_ObtenerClientes');
+
+        const clientes = result.recordsets[0];
+        const total = result.recordsets[1][0].Total;
+
+        return {
+            data: clientes,
+            pagination: {
+                page: parseInt(page),
+                limit: parseInt(limit),
+                total,
+                totalPages: Math.ceil(total / limit)
+            }
+        };
     }
 
     /**
-     * Buscar cliente por cédula
+     * Obtener cliente por ID
      */
-    async getByCedula(cedula) {
+    async getById(id) {
         const pool = await getConnection();
         const result = await pool.request()
-            .input('cedula', sql.VarChar, cedula)
-            .query(`
-                SELECT * FROM Cliente 
-                WHERE Cedula = @cedula 
-                AND Activo = 1
-            `);
+            .input('Id', sql.Int, id)
+            .execute('SP_ObtenerClientePorId');
 
         if (result.recordset.length === 0) {
-            throw new Error(`Cliente con cédula ${cedula} no encontrado o inactivo`);
+            throw new Error(`Cliente con ID ${id} no encontrado`);
         }
 
         return result.recordset[0];
     }
 
     /**
-     * Obtener historial de compras del cliente
+     * Buscar cliente por cédula (Ya no disponible - columna no existe)
      */
-    async getHistorialCompras(clienteId) {
-        const pool = await getConnection();
-        const result = await pool.request()
-            .input('clienteId', sql.Int, clienteId)
-            .query(`
-                SELECT 
-                    v.*,
-                    col.Nombre as ColaboradorNombre,
-                    col.Apellido1 as ColaboradorApellido1,
-                    COUNT(dv.Id_detalleVenta) as TotalProductos
-                FROM Venta v
-                INNER JOIN Colaborador col ON v.Id_colaborador = col.Id_colaborador
-                LEFT JOIN DetalleVenta dv ON v.Id_venta = dv.Id_venta
-                WHERE v.Id_cliente = @clienteId
-                GROUP BY v.Id_venta, v.Id_cliente, v.Id_colaborador, v.Subtotal, 
-                         v.Descuento, v.Impuesto, v.Total, v.MetodoPago, v.Fecha, 
-                         v.Estado, col.Nombre, col.Apellido1
-                ORDER BY v.Fecha DESC
-            `);
+    async getByCedula(cedula) {
+        throw new Error('Funcionalidad no disponible: la columna Cedula no existe en la tabla Cliente');
+    }
 
-        return result.recordset;
+    /**
+     * Crear nuevo cliente
+     */
+    async create(clienteData) {
+        const pool = await getConnection();
+        
+        const result = await pool.request()
+            .input('Nombre', sql.VarChar, clienteData.Nombre)
+            .input('Apellido1', sql.VarChar, clienteData.Apellido1)
+            .input('Apellido2', sql.VarChar, clienteData.Apellido2 || null)
+            .input('Telefono', sql.VarChar, clienteData.Telefono || null)
+            .input('Correo', sql.VarChar, clienteData.Correo || null)
+            .input('Direccion', sql.VarChar, clienteData.Direccion || null)
+            .execute('SP_CrearCliente');
+
+        return result.recordset[0];
+    }
+
+    /**
+     * Actualizar cliente
+     */
+    async update(id, clienteData) {
+        const pool = await getConnection();
+        
+        const result = await pool.request()
+            .input('Id', sql.Int, id)
+            .input('Nombre', sql.VarChar, clienteData.Nombre || null)
+            .input('Apellido1', sql.VarChar, clienteData.Apellido1 || null)
+            .input('Apellido2', sql.VarChar, clienteData.Apellido2 || null)
+            .input('Telefono', sql.VarChar, clienteData.Telefono || null)
+            .input('Correo', sql.VarChar, clienteData.Correo || null)
+            .input('Direccion', sql.VarChar, clienteData.Direccion || null)
+            .execute('SP_ActualizarCliente');
+
+        return result.recordset[0];
+    }
+
+    /**
+     * Eliminar cliente (solo si no tiene referencias)
+     */
+    async delete(id) {
+        const pool = await getConnection();
+        
+        try {
+            const result = await pool.request()
+                .input('Id', sql.Int, id)
+                .execute('SP_EliminarCliente');
+
+            const info = result.recordset[0];
+            
+            console.log(`✅ Cliente ${id} eliminado físicamente`);
+            
+            return { 
+                success: true, 
+                message: info.Mensaje,
+                deleted: info,
+                eliminacionLogica: false
+            };
+            
+        } catch (error) {
+            if (error.message && error.message.includes('tiene registros asociados')) {
+                throw {
+                    statusCode: 409,
+                    message: 'No se puede eliminar el cliente porque tiene registros asociados',
+                    details: error.message
+                };
+            }
+            throw error;
+        }
+    }
+
+    /**
+     * Obtener historial de ventas del cliente
+     */
+    async getHistorialCompras(clienteId, page = 1, limit = 50) {
+        const pool = await getConnection();
+        const offset = (page - 1) * limit;
+
+        const result = await pool.request()
+            .input('Id_cliente', sql.Int, clienteId)
+            .input('Limit', sql.Int, limit)
+            .input('Offset', sql.Int, offset)
+            .execute('SP_ObtenerHistorialVentasCliente');
+
+        const ventas = result.recordsets[0];
+        const total = result.recordsets[1][0].Total;
+
+        return {
+            data: ventas,
+            pagination: {
+                page: parseInt(page),
+                limit: parseInt(limit),
+                total,
+                totalPages: Math.ceil(total / limit)
+            }
+        };
     }
 
     /**
@@ -57,174 +154,41 @@ class ClienteService extends BaseService {
      */
     async getEstadisticas(clienteId) {
         const pool = await getConnection();
+        
         const result = await pool.request()
-            .input('clienteId', sql.Int, clienteId)
-            .query(`
-                SELECT 
-                    COUNT(v.Id_venta) as TotalCompras,
-                    ISNULL(SUM(v.Total), 0) as TotalGastado,
-                    ISNULL(AVG(v.Total), 0) as PromedioCompra,
-                    MAX(v.Fecha) as UltimaCompra,
-                    MIN(v.Fecha) as PrimeraCompra,
-                    (SELECT COUNT(*) FROM Alquiler WHERE Id_cliente = @clienteId) as TotalAlquileres
-                FROM Venta v
-                WHERE v.Id_cliente = @clienteId
-                AND v.Estado = 'COMPLETADA'
-            `);
+            .input('Id_cliente', sql.Int, clienteId)
+            .execute('SP_ObtenerEstadisticasCliente');
 
         return result.recordset[0];
     }
 
     /**
-     * Eliminar cliente (eliminación lógica si tiene referencias)
-     */
-    async delete(id) {
-        const pool = await getConnection();
-        
-        try {
-            // Verificar referencias en otras tablas
-            const referencias = await pool.request()
-                .input('clienteId', sql.Int, id)
-                .query(`
-                    SELECT 
-                        (SELECT COUNT(*) FROM Alquiler WHERE Id_cliente = @clienteId) as totalAlquileres,
-                        (SELECT COUNT(*) FROM Venta WHERE Id_cliente = @clienteId) as totalVentas
-                `);
-            
-            const { totalAlquileres, totalVentas } = referencias.recordset[0];
-            const totalReferencias = totalAlquileres + totalVentas;
-            
-            if (totalReferencias > 0) {
-                // Eliminación lógica: marcar como inactivo
-                const result = await pool.request()
-                    .input('id', sql.Int, id)
-                    .query(`
-                        UPDATE Cliente 
-                        SET Activo = 0
-                        OUTPUT INSERTED.*
-                        WHERE Id_cliente = @id
-                    `);
-                
-                if (result.recordset.length === 0) {
-                    throw new Error(`Cliente con ID ${id} no encontrado`);
-                }
-                
-                const detalles = [];
-                if (totalAlquileres > 0) detalles.push(`${totalAlquileres} alquiler(es)`);
-                if (totalVentas > 0) detalles.push(`${totalVentas} venta(s)`);
-                
-                console.log(`⚠️  Cliente ${id} desactivado (tiene ${detalles.join(' y ')})`);
-                
-                return { 
-                    success: true, 
-                    message: `Cliente desactivado correctamente. Tiene ${detalles.join(' y ')} registrados.`,
-                    deleted: result.recordset[0],
-                    eliminacionLogica: true,
-                    referencias: {
-                        alquileres: totalAlquileres,
-                        ventas: totalVentas
-                    }
-                };
-            }
-            
-            // Si no tiene referencias, eliminar físicamente
-            const result = await pool.request()
-                .input('id', sql.Int, id)
-                .query(`
-                    DELETE FROM Cliente 
-                    OUTPUT DELETED.*
-                    WHERE Id_cliente = @id
-                `);
-            
-            if (result.recordset.length === 0) {
-                throw new Error(`Cliente con ID ${id} no encontrado`);
-            }
-            
-            console.log(`✅ Cliente ${id} eliminado físicamente`);
-            
-            return { 
-                success: true, 
-                message: 'Cliente eliminado correctamente',
-                deleted: result.recordset[0],
-                eliminacionLogica: false
-            };
-            
-        } catch (error) {
-            // Capturar error de FK constraint por si acaso
-            if (error.number === 547) {
-                throw {
-                    statusCode: 409,
-                    message: 'No se puede eliminar el cliente porque tiene registros asociados',
-                    details: {
-                        sugerencia: 'El cliente fue desactivado automáticamente'
-                    }
-                };
-            }
-            
-            throw error;
-        }
-    }
-
-    /**
-     * Obtener solo clientes activos
+     * Obtener solo clientes activos (No disponible - columna Activo no existe)
      */
     async getActivos(page = 1, limit = 50, filters = {}) {
-        return await this.getAll(page, limit, { ...filters, Activo: 1 });
+        // Retornar todos los clientes ya que no existe columna Activo
+        return await this.getAll(page, limit, filters);
     }
 
     /**
-     * Obtener clientes inactivos
+     * Obtener clientes inactivos (No disponible - columna Activo no existe)
      */
     async getInactivos(page = 1, limit = 50) {
-        return await this.getAll(page, limit, { Activo: 0 });
+        throw new Error('Funcionalidad no disponible: la columna Activo no existe en la tabla Cliente');
     }
 
     /**
-     * Desactivar cliente manualmente
+     * Desactivar cliente manualmente (No disponible - columna Activo no existe)
      */
     async desactivar(id) {
-        const pool = await getConnection();
-        
-        const result = await pool.request()
-            .input('id', sql.Int, id)
-            .query(`
-                UPDATE Cliente 
-                SET Activo = 0
-                OUTPUT INSERTED.*
-                WHERE Id_cliente = @id
-            `);
-        
-        if (result.recordset.length === 0) {
-            throw new Error(`Cliente con ID ${id} no encontrado`);
-        }
-        
-        console.log(`⚠️  Cliente ${id} desactivado manualmente`);
-        
-        return result.recordset[0];
+        throw new Error('Funcionalidad no disponible: la columna Activo no existe en la tabla Cliente');
     }
 
     /**
-     * Reactivar cliente
+     * Reactivar cliente (No disponible - columna Activo no existe)
      */
     async reactivar(id) {
-        const pool = await getConnection();
-        
-        const result = await pool.request()
-            .input('id', sql.Int, id)
-            .query(`
-                UPDATE Cliente 
-                SET Activo = 1
-                OUTPUT INSERTED.*
-                WHERE Id_cliente = @id
-            `);
-        
-        if (result.recordset.length === 0) {
-            throw new Error(`Cliente con ID ${id} no encontrado`);
-        }
-        
-        console.log(`✅ Cliente ${id} reactivado`);
-        
-        return result.recordset[0];
+        throw new Error('Funcionalidad no disponible: la columna Activo no existe en la tabla Cliente');
     }
 }
 

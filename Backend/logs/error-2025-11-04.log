@@ -1,0 +1,204 @@
+{
+  "timestamp": "2025-11-04T21:30:51.656Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cliente no encontrado",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cliente no encontrado\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/alquileres",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 1,
+    "Id_colaborador": 1,
+    "detalles": [
+      {
+        "Id_producto": 1,
+        "Cantidad": 2,
+        "Dias": 5,
+        "TarifaDiaria": 10,
+        "Deposito": 50
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-04T21:30:51.666Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cliente no encontrado",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cliente no encontrado\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/alquileres",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 1,
+    "Id_colaborador": 1,
+    "detalles": [
+      {
+        "Id_producto": 1,
+        "Cantidad": 2,
+        "Dias": 5,
+        "TarifaDiaria": 10,
+        "Deposito": 50
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-04T21:33:03.093Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cliente no encontrado",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cliente no encontrado\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/alquileres",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 1,
+    "Id_colaborador": 1,
+    "detalles": [
+      {
+        "Id_producto": 1,
+        "Cantidad": 2,
+        "Dias": 5,
+        "TarifaDiaria": 10,
+        "Deposito": 50
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-04T21:33:03.099Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cliente no encontrado",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cliente no encontrado\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/alquileres",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 1,
+    "Id_colaborador": 1,
+    "detalles": [
+      {
+        "Id_producto": 1,
+        "Cantidad": 2,
+        "Dias": 5,
+        "TarifaDiaria": 10,
+        "Deposito": 50
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-04T21:35:32.532Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cliente no encontrado",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cliente no encontrado\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/alquileres",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 1,
+    "Id_colaborador": 1,
+    "detalles": [
+      {
+        "Id_producto": 1,
+        "Cantidad": 2,
+        "Dias": 5,
+        "TarifaDiaria": 15,
+        "Deposito": 50
+      },
+      {
+        "Id_producto": 2,
+        "Cantidad": 1,
+        "Dias": 5,
+        "TarifaDiaria": 20,
+        "Deposito": 30
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-04T21:35:32.543Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cliente no encontrado",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cliente no encontrado\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/alquileres",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 1,
+    "Id_colaborador": 1,
+    "detalles": [
+      {
+        "Id_producto": 1,
+        "Cantidad": 2,
+        "Dias": 5,
+        "TarifaDiaria": 15,
+        "Deposito": 50
+      },
+      {
+        "Id_producto": 2,
+        "Cantidad": 1,
+        "Dias": 5,
+        "TarifaDiaria": 20,
+        "Deposito": 30
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-04T21:36:10.961Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cliente no encontrado",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cliente no encontrado\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/alquileres",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 1,
+    "Id_colaborador": 1,
+    "detalles": [
+      {
+        "Id_producto": 1,
+        "Cantidad": 2,
+        "Dias": 5,
+        "TarifaDiaria": 15,
+        "Deposito": 50
+      },
+      {
+        "Id_producto": 2,
+        "Cantidad": 1,
+        "Dias": 5,
+        "TarifaDiaria": 20,
+        "Deposito": 30
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-04T21:36:10.963Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cliente no encontrado",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cliente no encontrado\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/alquileres",
+  "ip": "::ffff:127.0.0.1",
+  "body": {
+    "Id_cliente": 1,
+    "Id_colaborador": 1,
+    "detalles": [
+      {
+        "Id_producto": 1,
+        "Cantidad": 2,
+        "Dias": 5,
+        "TarifaDiaria": 15,
+        "Deposito": 50
+      },
+      {
+        "Id_producto": 2,
+        "Cantidad": 1,
+        "Dias": 5,
+        "TarifaDiaria": 20,
+        "Deposito": 30
+      }
+    ]
+  }
+}
+---

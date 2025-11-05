@@ -1,68 +1,30 @@
 const { getConnection, sql } = require('../config/database');
 
-class ProveedorService {
+class ProductoService {
     /**
-     * Obtener todos los proveedores con paginación
+     * Obtener todos los productos con paginación y filtros
      */
     async getAll(page = 1, limit = 50, filters = {}) {
         const pool = await getConnection();
         const offset = (page - 1) * limit;
 
         try {
-            let whereClause = 'WHERE 1=1';
-            const params = [];
+            // Llamar al SP con filtros
+            const result = await pool.request()
+                .input('Limit', sql.Int, limit)
+                .input('Offset', sql.Int, offset)
+                .input('Nombre', sql.VarChar(50), filters.nombre || null)
+                .input('Id_categoria', sql.Int, filters.Id_categoria ? parseInt(filters.Id_categoria) : null)
+                .input('CantidadMinima', sql.Int, filters.cantidadMinima ? parseInt(filters.cantidadMinima) : null)
+                .input('CantidadMaxima', sql.Int, filters.cantidadMaxima ? parseInt(filters.cantidadMaxima) : null)
+                .execute('SP_ObtenerProductos');
 
-            if (filters.nombre) {
-                whereClause += ' AND Nombre LIKE @nombre';
-                params.push({ name: 'nombre', type: sql.VarChar(20), value: `%${filters.nombre}%` });
-            }
-
-            if (filters.telefono) {
-                whereClause += ' AND Telefono LIKE @telefono';
-                params.push({ name: 'telefono', type: sql.VarChar(20), value: `%${filters.telefono}%` });
-            }
-
-            if (filters.correo) {
-                whereClause += ' AND Correo_electronico LIKE @correo';
-                params.push({ name: 'correo', type: sql.VarChar(100), value: `%${filters.correo}%` });
-            }
-
-            let request = pool.request()
-                .input('limit', sql.Int, limit)
-                .input('offset', sql.Int, offset);
-
-            params.forEach(p => request.input(p.name, p.type, p.value));
-
-            // Consulta principal con conteo de compras
-            const result = await request.query(`
-                SELECT 
-                    p.*,
-                    COUNT(DISTINCT c.Id_compra) as TotalCompras,
-                    ISNULL(SUM(c.TotalCompra), 0) as MontoTotalComprado,
-                    MAX(c.FechaCompra) as UltimaCompra
-                FROM Proveedor p
-                LEFT JOIN Compra c ON p.Id_proveedor = c.Id_proveedor
-                ${whereClause}
-                GROUP BY p.Id_proveedor, p.Nombre, p.Telefono, p.Direccion, p.Correo_electronico
-                ORDER BY p.Nombre ASC
-                OFFSET @offset ROWS
-                FETCH NEXT @limit ROWS ONLY
-            `);
-
-            // Contar total
-            request = pool.request();
-            params.forEach(p => request.input(p.name, p.type, p.value));
-
-            const countResult = await request.query(`
-                SELECT COUNT(*) as total
-                FROM Proveedor p
-                ${whereClause}
-            `);
-
-            const total = countResult.recordset[0].total;
+            // El SP retorna 2 recordsets: [0] = datos, [1] = total
+            const data = result.recordsets[0] || [];
+            const total = result.recordsets[1] && result.recordsets[1][0] ? result.recordsets[1][0].Total : 0;
 
             return {
-                data: result.recordset,
+                data,
                 pagination: {
                     page,
                     limit,
@@ -72,397 +34,256 @@ class ProveedorService {
             };
 
         } catch (error) {
-            console.error('❌ Error al obtener proveedores:', error);
+            console.error('❌ Error al obtener productos:', error);
             throw error;
         }
     }
 
     /**
-     * Obtener proveedor por ID
+     * Obtener producto por ID con estadísticas completas
      */
     async getById(id) {
         const pool = await getConnection();
 
         try {
+            // Llamar al SP que retorna 4 recordsets: [0] = producto, [1] = ventas, [2] = compras, [3] = bitácora
             const result = await pool.request()
-                .input('id', sql.Int, id)
-                .query(`
-                    SELECT 
-                        p.*,
-                        COUNT(DISTINCT c.Id_compra) as TotalCompras,
-                        ISNULL(SUM(c.TotalCompra), 0) as MontoTotalComprado,
-                        MAX(c.FechaCompra) as UltimaCompra,
-                        MIN(c.FechaCompra) as PrimeraCompra
-                    FROM Proveedor p
-                    LEFT JOIN Compra c ON p.Id_proveedor = c.Id_proveedor
-                    WHERE p.Id_proveedor = @id
-                    GROUP BY p.Id_proveedor, p.Nombre, p.Telefono, p.Direccion, p.Correo_electronico
-                `);
+                .input('Id', sql.Int, id)
+                .execute('SP_ObtenerProductoPorId');
 
-            if (result.recordset.length === 0) {
-                throw new Error(`Proveedor con ID ${id} no encontrado`);
+            if (!result.recordsets[0] || result.recordsets[0].length === 0) {
+                throw new Error(`Producto con ID ${id} no encontrado`);
             }
 
-            return result.recordset[0];
+            const producto = result.recordsets[0][0];
+            producto.estadisticasVentas = result.recordsets[1] ? result.recordsets[1][0] : null;
+            producto.estadisticasCompras = result.recordsets[2] ? result.recordsets[2][0] : null;
+            producto.ultimosMovimientos = result.recordsets[3] || [];
+
+            return producto;
 
         } catch (error) {
-            console.error(`❌ Error al obtener proveedor ${id}:`, error);
+            console.error(`❌ Error al obtener producto ${id}:`, error);
             throw error;
         }
     }
 
     /**
-     * Crear nuevo proveedor
+     * Crear nuevo producto
      */
     async create(data) {
         const pool = await getConnection();
 
         try {
-            console.log('🏢 Creando proveedor:', data);
+            console.log('📦 Creando producto:', data);
 
-            // Validar datos requeridos
-            if (!data.Nombre) {
-                throw new Error('El nombre del proveedor es requerido');
-            }
-
-            // Verificar si ya existe un proveedor con el mismo nombre
-            const existeResult = await pool.request()
-                .input('nombre', sql.VarChar(20), data.Nombre)
-                .query('SELECT Id_proveedor FROM Proveedor WHERE Nombre = @nombre');
-
-            if (existeResult.recordset.length > 0) {
-                throw new Error('Ya existe un proveedor con ese nombre');
-            }
-
-            // Crear proveedor
+            // Llamar al SP
             const result = await pool.request()
-                .input('nombre', sql.VarChar(20), data.Nombre)
-                .input('telefono', sql.VarChar(20), data.Telefono || null)
-                .input('direccion', sql.VarChar(255), data.Direccion || null)
-                .input('correo', sql.VarChar(100), data.Correo_electronico || null)
-                .query(`
-                    INSERT INTO Proveedor (Nombre, Telefono, Direccion, Correo_electronico)
-                    OUTPUT INSERTED.*
-                    VALUES (@nombre, @telefono, @direccion, @correo)
-                `);
+                .input('Nombre', sql.VarChar(20), data.Nombre)
+                .input('Descripcion', sql.VarChar(100), data.Descripcion || null)
+                .input('CantidadActual', sql.Int, data.CantidadActual || data.Stock || 0)
+                .input('PrecioVenta', sql.Decimal(12, 2), data.PrecioVenta)
+                .input('PrecioCompra', sql.Decimal(12, 2), data.PrecioCompra || 0)
+                .input('CantidadMinima', sql.Int, data.CantidadMinima || data.StockMinimo || 5)
+                .input('Id_categoria', sql.Int, data.Id_categoria || null)
+                .input('CodigoBarra', sql.VarChar(50), data.CodigoBarra || null)
+                .execute('SP_CrearProducto');
 
-            console.log(`✅ Proveedor creado con ID: ${result.recordset[0].Id_proveedor}`);
+            const producto = result.recordset[0];
+            console.log(`✅ Producto creado con ID: ${producto.Id_producto}`);
 
-            return result.recordset[0];
+            return producto;
 
         } catch (error) {
-            console.error('❌ Error al crear proveedor:', error);
+            console.error('❌ Error al crear producto:', error);
             throw error;
         }
     }
 
     /**
-     * Actualizar proveedor
+     * Actualizar producto
      */
     async update(id, data) {
         const pool = await getConnection();
 
         try {
-            console.log(`🔄 Actualizando proveedor ${id}:`, data);
+            console.log(`🔄 Actualizando producto ${id}:`, data);
 
-            // Verificar que el proveedor existe
-            const existeResult = await pool.request()
-                .input('id', sql.Int, id)
-                .query('SELECT Id_proveedor FROM Proveedor WHERE Id_proveedor = @id');
+            // Llamar al SP (solo envía los campos que se quieren actualizar)
+            const result = await pool.request()
+                .input('Id', sql.Int, id)
+                .input('Nombre', sql.VarChar(20), data.Nombre || null)
+                .input('Descripcion', sql.VarChar(100), data.Descripcion !== undefined ? data.Descripcion : null)
+                .input('PrecioVenta', sql.Decimal(12, 2), data.PrecioVenta || null)
+                .input('PrecioCompra', sql.Decimal(12, 2), data.PrecioCompra !== undefined ? data.PrecioCompra : null)
+                .input('CantidadMinima', sql.Int, data.CantidadMinima || data.StockMinimo || null)
+                .input('Id_categoria', sql.Int, data.Id_categoria !== undefined ? data.Id_categoria : null)
+                .input('CodigoBarra', sql.VarChar(50), data.CodigoBarra !== undefined ? data.CodigoBarra : null)
+                .execute('SP_ActualizarProducto');
 
-            if (existeResult.recordset.length === 0) {
-                throw new Error(`Proveedor con ID ${id} no encontrado`);
-            }
+            const producto = result.recordset[0];
+            console.log(`✅ Producto ${id} actualizado correctamente`);
 
-            // Si se está actualizando el nombre, verificar que no exista otro con ese nombre
-            if (data.Nombre) {
-                const nombreExisteResult = await pool.request()
-                    .input('nombre', sql.VarChar(20), data.Nombre)
-                    .input('id', sql.Int, id)
-                    .query('SELECT Id_proveedor FROM Proveedor WHERE Nombre = @nombre AND Id_proveedor != @id');
-
-                if (nombreExisteResult.recordset.length > 0) {
-                    throw new Error('Ya existe otro proveedor con ese nombre');
-                }
-            }
-
-            // Construir query dinámica
-            const updates = [];
-            const request = pool.request().input('id', sql.Int, id);
-
-            if (data.Nombre !== undefined) {
-                updates.push('Nombre = @nombre');
-                request.input('nombre', sql.VarChar(20), data.Nombre);
-            }
-
-            if (data.Telefono !== undefined) {
-                updates.push('Telefono = @telefono');
-                request.input('telefono', sql.VarChar(20), data.Telefono || null);
-            }
-
-            if (data.Direccion !== undefined) {
-                updates.push('Direccion = @direccion');
-                request.input('direccion', sql.VarChar(255), data.Direccion || null);
-            }
-
-            if (data.Correo_electronico !== undefined) {
-                updates.push('Correo_electronico = @correo');
-                request.input('correo', sql.VarChar(100), data.Correo_electronico || null);
-            }
-
-            if (updates.length === 0) {
-                throw new Error('No hay campos para actualizar');
-            }
-
-            const result = await request.query(`
-                UPDATE Proveedor
-                SET ${updates.join(', ')}
-                OUTPUT INSERTED.*
-                WHERE Id_proveedor = @id
-            `);
-
-            console.log(`✅ Proveedor ${id} actualizado correctamente`);
-
-            return result.recordset[0];
+            return producto;
 
         } catch (error) {
-            console.error('❌ Error al actualizar proveedor:', error);
+            console.error('❌ Error al actualizar producto:', error);
             throw error;
         }
     }
 
     /**
-     * Eliminar proveedor
+     * Eliminar producto
      */
     async delete(id) {
         const pool = await getConnection();
 
         try {
-            console.log(`🗑️  Intentando eliminar proveedor ${id}`);
+            console.log(`🗑️  Intentando eliminar producto ${id}`);
 
-            // Verificar que el proveedor existe
-            const existeResult = await pool.request()
-                .input('id', sql.Int, id)
-                .query('SELECT Nombre FROM Proveedor WHERE Id_proveedor = @id');
-
-            if (existeResult.recordset.length === 0) {
-                throw new Error(`Proveedor con ID ${id} no encontrado`);
-            }
-
-            const proveedor = existeResult.recordset[0];
-
-            // Verificar si tiene compras asociadas
-            const comprasResult = await pool.request()
-                .input('id', sql.Int, id)
-                .query('SELECT COUNT(*) as total FROM Compra WHERE Id_proveedor = @id');
-
-            if (comprasResult.recordset[0].total > 0) {
-                throw {
-                    statusCode: 400,
-                    message: `No se puede eliminar el proveedor "${proveedor.Nombre}" porque tiene ${comprasResult.recordset[0].total} compra(s) asociada(s)`
-                };
-            }
-
-            // Eliminar proveedor
+            // Llamar al SP (verifica automáticamente dependencias)
             const result = await pool.request()
-                .input('id', sql.Int, id)
-                .query(`
-                    DELETE FROM Proveedor
-                    OUTPUT DELETED.*
-                    WHERE Id_proveedor = @id
-                `);
+                .input('Id', sql.Int, id)
+                .execute('SP_EliminarProducto');
 
-            console.log(`✅ Proveedor ${id} eliminado exitosamente`);
+            const producto = result.recordset[0];
+            console.log(`✅ Producto ${id} eliminado exitosamente`);
 
-            return result.recordset[0];
+            return producto;
 
         } catch (error) {
-            console.error('❌ Error al eliminar proveedor:', error);
+            console.error('❌ Error al eliminar producto:', error);
             throw error;
         }
     }
 
     /**
-     * Obtener historial de compras de un proveedor
+     * Ajustar manualmente el inventario de un producto
      */
-    async getHistorialCompras(id, page = 1, limit = 50, filters = {}) {
+    async ajustarInventario(id, ajuste) {
         const pool = await getConnection();
-        const offset = (page - 1) * limit;
 
         try {
-            let whereClause = 'WHERE c.Id_proveedor = @id';
-            const params = [{ name: 'id', type: sql.Int, value: id }];
+            console.log(`📊 Ajustando inventario del producto ${id}:`, ajuste);
 
-            if (filters.fechaInicio) {
-                whereClause += ' AND c.FechaCompra >= @fechaInicio';
-                params.push({ name: 'fechaInicio', type: sql.DateTime, value: new Date(filters.fechaInicio) });
+            // Validar datos
+            if (!ajuste.CantidadAjuste || ajuste.CantidadAjuste === 0) {
+                throw new Error('Debe especificar una cantidad de ajuste diferente de cero');
             }
 
-            if (filters.fechaFin) {
-                whereClause += ' AND c.FechaCompra <= @fechaFin';
-                params.push({ name: 'fechaFin', type: sql.DateTime, value: new Date(filters.fechaFin) });
+            if (!ajuste.TipoMovimiento) {
+                throw new Error('Debe especificar el tipo de movimiento');
             }
 
-            let request = pool.request()
-                .input('limit', sql.Int, limit)
-                .input('offset', sql.Int, offset);
+            // Llamar al SP
+            const result = await pool.request()
+                .input('Id_producto', sql.Int, id)
+                .input('CantidadAjuste', sql.Int, ajuste.CantidadAjuste)
+                .input('TipoMovimiento', sql.VarChar(50), ajuste.TipoMovimiento)
+                .input('Descripcion', sql.VarChar(255), ajuste.Descripcion || null)
+                .execute('SP_AjustarInventario');
 
-            params.forEach(p => request.input(p.name, p.type, p.value));
+            const resultado = result.recordset[0];
+            console.log(`✅ Inventario ajustado: ${resultado.StockAnterior} → ${resultado.StockActual}`);
 
-            const result = await request.query(`
-                SELECT 
-                    c.*,
-                    COUNT(dc.Id_detalleCompra) as TotalProductos,
-                    SUM(dc.CantidadCompra) as CantidadTotal
-                FROM Compra c
-                LEFT JOIN DetalleCompra dc ON c.Id_compra = dc.Id_compra
-                ${whereClause}
-                GROUP BY c.Id_compra, c.FechaCompra, c.TotalCompra, c.NumeroFactura, c.Id_proveedor
-                ORDER BY c.FechaCompra DESC
-                OFFSET @offset ROWS
-                FETCH NEXT @limit ROWS ONLY
-            `);
-
-            // Contar total
-            request = pool.request();
-            params.forEach(p => request.input(p.name, p.type, p.value));
-
-            const countResult = await request.query(`
-                SELECT COUNT(*) as total
-                FROM Compra c
-                ${whereClause}
-            `);
-
-            const total = countResult.recordset[0].total;
-
-            return {
-                data: result.recordset,
-                pagination: {
-                    page,
-                    limit,
-                    total,
-                    totalPages: Math.ceil(total / limit)
-                }
-            };
+            return resultado;
 
         } catch (error) {
-            console.error(`❌ Error al obtener historial de proveedor ${id}:`, error);
+            console.error('❌ Error al ajustar inventario:', error);
             throw error;
         }
     }
 
     /**
-     * Obtener productos suministrados por un proveedor
+     * Obtener productos con stock bajo o crítico
      */
-    async getProductos(id, page = 1, limit = 50) {
+    async getProductosBajoStock() {
         const pool = await getConnection();
-        const offset = (page - 1) * limit;
 
         try {
+            // Llamar al SP
             const result = await pool.request()
-                .input('id', sql.Int, id)
-                .input('limit', sql.Int, limit)
-                .input('offset', sql.Int, offset)
-                .query(`
-                    SELECT 
-                        p.Id_Producto,
-                        p.Nombre,
-                        p.Descripcion,
-                        p.PrecioCompra,
-                        p.PrecioVenta,
-                        p.CantidadActual,
-                        cat.Nombre as Categoria,
-                        COUNT(DISTINCT dc.Id_compra) as VecesComprado,
-                        SUM(dc.CantidadCompra) as TotalComprado,
-                        MAX(c.FechaCompra) as UltimaCompra,
-                        AVG(dc.PrecioUnitario) as PrecioPromedio
-                    FROM Producto p
-                    INNER JOIN DetalleCompra dc ON p.Id_Producto = dc.Id_producto
-                    INNER JOIN Compra c ON dc.Id_compra = c.Id_compra
-                    LEFT JOIN Categoria cat ON p.Id_categoria = cat.Id_categoria
-                    WHERE c.Id_proveedor = @id
-                    GROUP BY p.Id_Producto, p.Nombre, p.Descripcion, p.PrecioCompra, 
-                             p.PrecioVenta, p.CantidadActual, cat.Nombre
-                    ORDER BY TotalComprado DESC
-                    OFFSET @offset ROWS
-                    FETCH NEXT @limit ROWS ONLY
-                `);
+                .execute('SP_ObtenerProductosBajoStock');
 
-            // Contar total
-            const countResult = await pool.request()
-                .input('id', sql.Int, id)
-                .query(`
-                    SELECT COUNT(DISTINCT p.Id_Producto) as total
-                    FROM Producto p
-                    INNER JOIN DetalleCompra dc ON p.Id_Producto = dc.Id_producto
-                    INNER JOIN Compra c ON dc.Id_compra = c.Id_compra
-                    WHERE c.Id_proveedor = @id
-                `);
+            console.log(`⚠️  ${result.recordset.length} productos con stock bajo`);
 
-            const total = countResult.recordset[0].total;
-
-            return {
-                data: result.recordset,
-                pagination: {
-                    page,
-                    limit,
-                    total,
-                    totalPages: Math.ceil(total / limit)
-                }
-            };
+            return result.recordset;
 
         } catch (error) {
-            console.error(`❌ Error al obtener productos del proveedor ${id}:`, error);
+            console.error('❌ Error al obtener productos con stock bajo:', error);
             throw error;
         }
     }
 
     /**
-     * Obtener estadísticas de un proveedor
+     * Obtener estadísticas generales del inventario
      */
-    async getEstadisticas(id) {
+    async getEstadisticasInventario() {
         const pool = await getConnection();
 
         try {
+            // Llamar al SP
             const result = await pool.request()
-                .input('id', sql.Int, id)
-                .query(`
-                    SELECT 
-                        COUNT(DISTINCT c.Id_compra) as TotalCompras,
-                        ISNULL(SUM(c.TotalCompra), 0) as MontoTotal,
-                        ISNULL(AVG(c.TotalCompra), 0) as PromedioCompra,
-                        ISNULL(MAX(c.TotalCompra), 0) as CompraMayor,
-                        ISNULL(MIN(c.TotalCompra), 0) as CompraMenor,
-                        COUNT(DISTINCT dc.Id_producto) as ProductosDistintos,
-                        SUM(dc.CantidadCompra) as CantidadTotalComprada,
-                        MAX(c.FechaCompra) as UltimaCompra,
-                        MIN(c.FechaCompra) as PrimeraCompra
-                    FROM Compra c
-                    LEFT JOIN DetalleCompra dc ON c.Id_compra = dc.Id_compra
-                    WHERE c.Id_proveedor = @id
-                `);
+                .execute('SP_ObtenerEstadisticasInventario');
 
             const estadisticas = result.recordset[0];
 
-            console.log(`📊 Estadísticas del proveedor ${id} calculadas`);
+            const estadisticasFormateadas = {
+                TotalProductos: estadisticas.TotalProductos,
+                StockTotal: estadisticas.StockTotal,
+                ValorInventarioCompra: parseFloat(estadisticas.ValorInventarioCompra?.toFixed(2) || 0),
+                ValorInventarioVenta: parseFloat(estadisticas.ValorInventarioVenta?.toFixed(2) || 0),
+                GananciaPotencial: parseFloat(estadisticas.GananciaPotencial?.toFixed(2) || 0),
+                PromedioPrecios: parseFloat(estadisticas.PromedioPrecios?.toFixed(2) || 0),
+                ProductosBajoStock: estadisticas.ProductosBajoStock,
+                ProductosSinStock: estadisticas.ProductosSinStock,
+                ProductosAltoStock: estadisticas.ProductosAltoStock
+            };
+
+            console.log('📊 Estadísticas de inventario calculadas:', estadisticasFormateadas);
+
+            return estadisticasFormateadas;
+
+        } catch (error) {
+            console.error('❌ Error al obtener estadísticas de inventario:', error);
+            throw error;
+        }
+    }
+
+    /**
+     * Obtener productos de una categoría específica
+     */
+    async getByCategoria(idCategoria, page = 1, limit = 50) {
+        const pool = await getConnection();
+        const offset = (page - 1) * limit;
+
+        try {
+            // Llamar al SP
+            const result = await pool.request()
+                .input('Id_categoria', sql.Int, idCategoria)
+                .input('Limit', sql.Int, limit)
+                .input('Offset', sql.Int, offset)
+                .execute('SP_ObtenerProductosPorCategoria');
+
+            // El SP retorna 2 recordsets: [0] = productos, [1] = total
+            const data = result.recordsets[0] || [];
+            const total = result.recordsets[1] && result.recordsets[1][0] ? result.recordsets[1][0].Total : 0;
 
             return {
-                TotalCompras: estadisticas.TotalCompras,
-                MontoTotal: parseFloat(estadisticas.MontoTotal?.toFixed(2) || 0),
-                PromedioCompra: parseFloat(estadisticas.PromedioCompra?.toFixed(2) || 0),
-                CompraMayor: parseFloat(estadisticas.CompraMayor?.toFixed(2) || 0),
-                CompraMenor: parseFloat(estadisticas.CompraMenor?.toFixed(2) || 0),
-                ProductosDistintos: estadisticas.ProductosDistintos || 0,
-                CantidadTotalComprada: estadisticas.CantidadTotalComprada || 0,
-                UltimaCompra: estadisticas.UltimaCompra,
-                PrimeraCompra: estadisticas.PrimeraCompra
+                data,
+                pagination: {
+                    page,
+                    limit,
+                    total,
+                    totalPages: Math.ceil(total / limit)
+                }
             };
 
         } catch (error) {
-            console.error(`❌ Error al obtener estadísticas del proveedor ${id}:`, error);
+            console.error(`❌ Error al obtener productos de categoría ${idCategoria}:`, error);
             throw error;
         }
     }
 }
 
-module.exports = new ProveedorService();
+module.exports = new ProductoService();

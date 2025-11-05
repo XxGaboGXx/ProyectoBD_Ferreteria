@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { 
   RiHome5Line, RiBox3Line, RiMoneyDollarCircleLine, RiShoppingCartLine,
   RiKeyLine, RiTeamLine, RiBarChartBoxLine, RiLineChartLine,
-  RiFileList3Line, RiPriceTag3Line, RiSettings4Line 
+  RiFileList3Line, RiPriceTag3Line, RiSettings4Line, 
+  RiUserLine
 } from 'react-icons/ri';
 
 const Sidebar = () => {
@@ -54,11 +55,19 @@ const Sidebar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/inventario" className="flex items-center gap-3 px-4 py-2.5 rounded-lg hover:bg-gray-100 transition text-gray-700 hover:text-[#0b3b68]">
+              <Link to="/colaboradores" className="flex items-center gap-3 px-4 py-2.5 rounded-lg hover:bg-gray-100 transition text-gray-700 hover:text-[#0b3b68]">
+                <RiUserLine className="text-xl text-[#0b3b68]" />
+                <span className="font-medium">Colaboradores</span>
+              </Link>
+              
+            </li>
+            <li>
+              <Link to="/proveedores" className="flex items-center gap-3 px-4 py-2.5 rounded-lg hover:bg-gray-100 transition text-gray-700 hover:text-[#0b3b68]">
                 <RiBarChartBoxLine className="text-xl text-[#0b3b68]" />
-                <span className="font-medium">Inventario</span>
+                <span className="font-medium">Proveedores</span>
               </Link>
             </li>
+
             <li>
               <Link to="/reportes" className="flex items-center gap-3 px-4 py-2.5 rounded-lg hover:bg-gray-100 transition text-gray-700 hover:text-[#0b3b68]">
                 <RiLineChartLine className="text-xl text-[#0b3b68]" />
@@ -87,6 +96,7 @@ const Sidebar = () => {
         </nav>
       </div>
     </aside>
+
   );
 };
 

@@ -7,4 +7,10 @@ export interface Venta {
   Estado: string;
   Id_cliente: number;
   Id_colaborador: number;
+  detalles?: Array<{
+    Id_producto: number;
+    CantidadVenta: number;
+    Cantidad: number;
+    PrecioUnitario: number;
+  }>;
 }

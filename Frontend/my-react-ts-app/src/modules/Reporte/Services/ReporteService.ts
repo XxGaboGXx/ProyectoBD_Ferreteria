@@ -1,9 +1,10 @@
 import api from '../../../services/api';
+import { ToastContainer } from '../../../hooks/ToastContainer';
 
 // Tipados de respuestas (según backend)
 export interface ReporteVentasResponse {
   periodo: { inicio: string; fin: string };
-  resumen: any; // estructura definida por SP; mostramos como totales
+  resumen: any;
   ventas: Array<{ Fecha?: string; Total?: number; CantidadVentas?: number; [k: string]: any }>;
 }
 
@@ -60,4 +61,4 @@ export const fetchReporteProductosMasVendidos = async (params: { fechaInicio: st
   return response.data.data as any[];
 };
 
-// Nota: el backend no expone exportación a PDF/Excel en /reportes/:tipo/export; si se agrega, implementamos aquí.
+export { ToastContainer };

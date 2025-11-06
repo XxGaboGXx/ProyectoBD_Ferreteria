@@ -206,6 +206,97 @@ class VentaService {
             };
         });
     }
+
+    /**
+     * Actualizar venta existente
+     */
+    async update(id, ventaData) {
+        // Validar estructura
+        if (!ventaData.Id_cliente || !ventaData.Id_colaborador || !ventaData.Productos || ventaData.Productos.length === 0) {
+            throw new Error('Debe especificar cliente, colaborador y al menos un producto');
+        }
+
+        return await transactionService.executeWithRetry(async (transaction, request) => {
+            console.log('🔄 Actualizando venta:', {
+                Id_venta: id,
+                Id_cliente: ventaData.Id_cliente,
+                Id_colaborador: ventaData.Id_colaborador,
+                MetodoPago: ventaData.MetodoPago,
+                CantidadProductos: ventaData.Productos.length
+            });
+
+            const pool = transaction;
+
+            // Calcular nuevo total
+            let total = 0;
+            for (const producto of ventaData.Productos) {
+                const subtotal = producto.PrecioUnitario * producto.Cantidad;
+                total += subtotal;
+            }
+
+            // Actualizar maestro de venta
+            const updateVentaRequest = new sql.Request(pool);
+            await updateVentaRequest
+                .input('Id', sql.Int, id)
+                .input('Id_cliente', sql.Int, ventaData.Id_cliente)
+                .input('Id_colaborador', sql.Int, ventaData.Id_colaborador)
+                .input('MetodoPago', sql.VarChar(20), ventaData.MetodoPago)
+                .input('TotalVenta', sql.Decimal(12, 2), total)
+                .input('Estado', sql.VarChar(20), ventaData.Estado || 'Completada')
+                .query(`
+                    UPDATE Venta 
+                    SET Id_cliente = @Id_cliente,
+                        Id_colaborador = @Id_colaborador,
+                        MetodoPago = @MetodoPago,
+                        TotalVenta = @TotalVenta,
+                        Estado = @Estado
+                    WHERE Id_venta = @Id
+                `);
+
+            // Eliminar detalles existentes
+            const deleteDetallesRequest = new sql.Request(pool);
+            await deleteDetallesRequest
+                .input('Id_venta', sql.Int, id)
+                .query('DELETE FROM DetalleVenta WHERE Id_venta = @Id_venta');
+
+            // Insertar nuevos detalles
+            const detallesCreados = [];
+            let numeroLinea = 1;
+            for (const producto of ventaData.Productos) {
+                const subtotal = producto.PrecioUnitario * producto.Cantidad;
+
+                const detalleRequest = new sql.Request(pool);
+                const detalleResult = await detalleRequest
+                    .input('Id_venta', sql.Int, id)
+                    .input('Id_producto', sql.Int, producto.Id_producto)
+                    .input('CantidadVenta', sql.Int, producto.Cantidad)
+                    .input('NumeroLinea', sql.Int, numeroLinea)
+                    .input('PrecioUnitario', sql.Decimal(10, 2), producto.PrecioUnitario)
+                    .input('Subtotal', sql.Decimal(10, 2), subtotal)
+                    .execute('SP_CrearDetalleVenta');
+
+                detallesCreados.push(detalleResult.recordset[0]);
+                numeroLinea++;
+            }
+
+            // Obtener venta actualizada
+            const getVentaRequest = new sql.Request(pool);
+            const ventaResult = await getVentaRequest
+                .input('Id', sql.Int, id)
+                .query('SELECT * FROM Venta WHERE Id_venta = @Id');
+
+            const venta = ventaResult.recordset[0];
+
+            console.log(`✅ Venta ${id} actualizada exitosamente`);
+
+            return {
+                ...venta,
+                DetalleVenta: detallesCreados,
+                mensaje: 'Venta actualizada exitosamente'
+            };
+        });
+    }
+
     /**
      * Cancelar venta
      */

@@ -4,11 +4,14 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { FaUserAlt, FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
 import { createCliente, updateCliente, fetchClienteById } from "../Services/clienteService";
 import type { Cliente, NuevoCliente } from "../Types/Cliente";
+import { useToast } from "../../../hooks/useToast";
+import { ToastContainer } from "../../../hooks/ToastContainer";
 
 const FormularioCliente: React.FC = () => {
   const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
   const isEdit = Boolean(id);
+  const { toasts, showToast, removeToast } = useToast();
   const [form, setForm] = useState<NuevoCliente>({
     Nombre: "",
     Apellido1: "",
@@ -56,12 +59,15 @@ const FormularioCliente: React.FC = () => {
       setLoading(true);
       if (isEdit && id) {
         await updateCliente(Number(id), form);
+        showToast(`✅ Cliente "${form.Nombre} ${form.Apellido1}" actualizado exitosamente`, 'success');
       } else {
         await createCliente(form);
+        showToast(`✅ Cliente "${form.Nombre} ${form.Apellido1}" creado exitosamente`, 'success');
       }
-      navigate('/clientes');
+      setTimeout(() => navigate('/clientes'), 1000); // Pequeño delay para ver el toast
     } catch (e: any) {
       setError(e?.response?.data?.message || e?.message || 'Error al guardar el cliente');
+      showToast(e?.response?.data?.message || e?.message || 'Error al guardar el cliente', 'error');
     } finally {
       setLoading(false);
     }
@@ -69,6 +75,8 @@ const FormularioCliente: React.FC = () => {
 
   return (
     <div className="p-6">
+      <ToastContainer toasts={toasts} removeToast={removeToast} />
+      
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
         <h1 className="text-3xl font-bold text-gray-800 flex items-center gap-2 mb-4 sm:mb-0">
           {isEdit ? '✏️ Editar Cliente' : '➕ Nuevo Cliente'}

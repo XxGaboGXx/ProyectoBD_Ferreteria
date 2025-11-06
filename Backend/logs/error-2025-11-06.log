@@ -1,0 +1,750 @@
+{
+  "timestamp": "2025-11-06T00:06:37.980Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::1",
+  "body": {
+    "Nombre": "d",
+    "Descripcion": "d",
+    "PrecioCompra": 2,
+    "PrecioVenta": 2,
+    "CodigoBarra": "2",
+    "CantidadActual": 2,
+    "CantidadMinima": 2,
+    "FechaEntrada": "2025-10-31",
+    "FechaSalida": "2025-10-31",
+    "Id_categoria": 1
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T00:06:37.985Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::1",
+  "body": {
+    "Nombre": "d",
+    "Descripcion": "d",
+    "PrecioCompra": 2,
+    "PrecioVenta": 2,
+    "CodigoBarra": "2",
+    "CantidadActual": 2,
+    "CantidadMinima": 2,
+    "FechaEntrada": "2025-10-31",
+    "FechaSalida": "2025-10-31",
+    "Id_categoria": 1
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T00:06:44.258Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::1",
+  "body": {
+    "Nombre": "d",
+    "Descripcion": "d",
+    "PrecioCompra": 2,
+    "PrecioVenta": 2,
+    "CodigoBarra": "2",
+    "CantidadActual": 2,
+    "CantidadMinima": 2,
+    "FechaEntrada": "2025-10-31",
+    "FechaSalida": "2025-10-31",
+    "Id_categoria": 1
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T00:06:44.261Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::1",
+  "body": {
+    "Nombre": "d",
+    "Descripcion": "d",
+    "PrecioCompra": 2,
+    "PrecioVenta": 2,
+    "CodigoBarra": "2",
+    "CantidadActual": 2,
+    "CantidadMinima": 2,
+    "FechaEntrada": "2025-10-31",
+    "FechaSalida": "2025-10-31",
+    "Id_categoria": 1
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T00:15:46.490Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::1",
+  "body": {
+    "Nombre": "ttt",
+    "Descripcion": "ttg",
+    "PrecioCompra": 1,
+    "PrecioVenta": 1,
+    "CodigoBarra": "2",
+    "CantidadActual": 0,
+    "CantidadMinima": 3,
+    "FechaEntrada": "2025-11-01",
+    "FechaSalida": "2025-11-01",
+    "Id_categoria": 3
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T00:15:46.492Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::1",
+  "body": {
+    "Nombre": "ttt",
+    "Descripcion": "ttg",
+    "PrecioCompra": 1,
+    "PrecioVenta": 1,
+    "CodigoBarra": "2",
+    "CantidadActual": 0,
+    "CantidadMinima": 3,
+    "FechaEntrada": "2025-11-01",
+    "FechaSalida": "2025-11-01",
+    "Id_categoria": 3
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T00:31:14.483Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cliente no encontrado",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cliente no encontrado\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/ventas",
+  "ip": "::1",
+  "body": {
+    "Id_cliente": 11,
+    "Id_colaborador": 3,
+    "MetodoPago": "Tarjeta",
+    "Estado": "Completada",
+    "Productos": [
+      {
+        "Id_producto": 3,
+        "Cantidad": 4444,
+        "PrecioUnitario": 44332
+      },
+      {
+        "Id_producto": 23,
+        "Cantidad": 4,
+        "PrecioUnitario": 444
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T00:31:14.487Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cliente no encontrado",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cliente no encontrado\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/ventas",
+  "ip": "::1",
+  "body": {
+    "Id_cliente": 11,
+    "Id_colaborador": 3,
+    "MetodoPago": "Tarjeta",
+    "Estado": "Completada",
+    "Productos": [
+      {
+        "Id_producto": 3,
+        "Cantidad": 4444,
+        "PrecioUnitario": 44332
+      },
+      {
+        "Id_producto": 23,
+        "Cantidad": 4,
+        "PrecioUnitario": 444
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T00:46:10.485Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Proveedor no encontrado",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Proveedor no encontrado\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/compras",
+  "ip": "::1",
+  "body": {
+    "Id_proveedor": 210,
+    "FechaCompra": "2025-11-09T18:46:00.000Z",
+    "NumeroFactura": "223344",
+    "TotalCompra": 0.5,
+    "detalles": [
+      {
+        "Id_producto": 2,
+        "CantidadCompra": 11,
+        "PrecioUnitario": 0.05
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T00:46:10.490Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Proveedor no encontrado",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Proveedor no encontrado\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/compras",
+  "ip": "::1",
+  "body": {
+    "Id_proveedor": 210,
+    "FechaCompra": "2025-11-09T18:46:00.000Z",
+    "NumeroFactura": "223344",
+    "TotalCompra": 0.5,
+    "detalles": [
+      {
+        "Id_producto": 2,
+        "CantidadCompra": 11,
+        "PrecioUnitario": 0.05
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T00:46:45.450Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Proveedor no encontrado",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Proveedor no encontrado\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/compras",
+  "ip": "::1",
+  "body": {
+    "Id_proveedor": 2,
+    "FechaCompra": "2025-11-06T06:46:00.000Z",
+    "NumeroFactura": "323",
+    "TotalCompra": 0.01,
+    "detalles": [
+      {
+        "Id_producto": 1,
+        "CantidadCompra": 1,
+        "PrecioUnitario": 0.01
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T00:46:45.453Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Proveedor no encontrado",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Proveedor no encontrado\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/compras",
+  "ip": "::1",
+  "body": {
+    "Id_proveedor": 2,
+    "FechaCompra": "2025-11-06T06:46:00.000Z",
+    "NumeroFactura": "323",
+    "TotalCompra": 0.01,
+    "detalles": [
+      {
+        "Id_producto": 1,
+        "CantidadCompra": 1,
+        "PrecioUnitario": 0.01
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T00:46:46.172Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Proveedor no encontrado",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Proveedor no encontrado\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/compras",
+  "ip": "::1",
+  "body": {
+    "Id_proveedor": 2,
+    "FechaCompra": "2025-11-06T06:46:00.000Z",
+    "NumeroFactura": "323",
+    "TotalCompra": 0.01,
+    "detalles": [
+      {
+        "Id_producto": 1,
+        "CantidadCompra": 1,
+        "PrecioUnitario": 0.01
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T00:46:46.175Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Proveedor no encontrado",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Proveedor no encontrado\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/compras",
+  "ip": "::1",
+  "body": {
+    "Id_proveedor": 2,
+    "FechaCompra": "2025-11-06T06:46:00.000Z",
+    "NumeroFactura": "323",
+    "TotalCompra": 0.01,
+    "detalles": [
+      {
+        "Id_producto": 1,
+        "CantidadCompra": 1,
+        "PrecioUnitario": 0.01
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T00:46:46.743Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Proveedor no encontrado",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Proveedor no encontrado\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/compras",
+  "ip": "::1",
+  "body": {
+    "Id_proveedor": 2,
+    "FechaCompra": "2025-11-06T06:46:00.000Z",
+    "NumeroFactura": "323",
+    "TotalCompra": 0.01,
+    "detalles": [
+      {
+        "Id_producto": 1,
+        "CantidadCompra": 1,
+        "PrecioUnitario": 0.01
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T00:46:46.748Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Proveedor no encontrado",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Proveedor no encontrado\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/compras",
+  "ip": "::1",
+  "body": {
+    "Id_proveedor": 2,
+    "FechaCompra": "2025-11-06T06:46:00.000Z",
+    "NumeroFactura": "323",
+    "TotalCompra": 0.01,
+    "detalles": [
+      {
+        "Id_producto": 1,
+        "CantidadCompra": 1,
+        "PrecioUnitario": 0.01
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T00:46:47.249Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Proveedor no encontrado",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Proveedor no encontrado\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/compras",
+  "ip": "::1",
+  "body": {
+    "Id_proveedor": 2,
+    "FechaCompra": "2025-11-06T06:46:00.000Z",
+    "NumeroFactura": "323",
+    "TotalCompra": 0.01,
+    "detalles": [
+      {
+        "Id_producto": 1,
+        "CantidadCompra": 1,
+        "PrecioUnitario": 0.01
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T00:46:47.254Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Proveedor no encontrado",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Proveedor no encontrado\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/compras",
+  "ip": "::1",
+  "body": {
+    "Id_proveedor": 2,
+    "FechaCompra": "2025-11-06T06:46:00.000Z",
+    "NumeroFactura": "323",
+    "TotalCompra": 0.01,
+    "detalles": [
+      {
+        "Id_producto": 1,
+        "CantidadCompra": 1,
+        "PrecioUnitario": 0.01
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T00:58:53.800Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cliente no encontrado",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cliente no encontrado\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/alquileres",
+  "ip": "::1",
+  "body": {
+    "Id_cliente": 1,
+    "Id_colaborador": 1,
+    "detalles": [
+      {
+        "Id_producto": 1,
+        "Cantidad": 1,
+        "Dias": 2,
+        "TarifaDiaria": 2000,
+        "Deposito": 1000
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T00:58:53.807Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cliente no encontrado",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cliente no encontrado\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/alquileres",
+  "ip": "::1",
+  "body": {
+    "Id_cliente": 1,
+    "Id_colaborador": 1,
+    "detalles": [
+      {
+        "Id_producto": 1,
+        "Cantidad": 1,
+        "Dias": 2,
+        "TarifaDiaria": 2000,
+        "Deposito": 1000
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T00:58:54.875Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cliente no encontrado",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cliente no encontrado\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/alquileres",
+  "ip": "::1",
+  "body": {
+    "Id_cliente": 1,
+    "Id_colaborador": 1,
+    "detalles": [
+      {
+        "Id_producto": 1,
+        "Cantidad": 1,
+        "Dias": 2,
+        "TarifaDiaria": 2000,
+        "Deposito": 1000
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T00:58:54.881Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cliente no encontrado",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cliente no encontrado\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/alquileres",
+  "ip": "::1",
+  "body": {
+    "Id_cliente": 1,
+    "Id_colaborador": 1,
+    "detalles": [
+      {
+        "Id_producto": 1,
+        "Cantidad": 1,
+        "Dias": 2,
+        "TarifaDiaria": 2000,
+        "Deposito": 1000
+      }
+    ]
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T01:23:45.976Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe un proveedor con ese nombre",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe un proveedor con ese nombre\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/proveedores",
+  "ip": "::1",
+  "body": {
+    "Nombre": "naila",
+    "Telefono": "dde33",
+    "Direccion": "puerto jesus",
+    "Correo_electronico": "nai@gmail.com"
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T01:23:45.979Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe un proveedor con ese nombre",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe un proveedor con ese nombre\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/proveedores",
+  "ip": "::1",
+  "body": {
+    "Nombre": "naila",
+    "Telefono": "dde33",
+    "Direccion": "puerto jesus",
+    "Correo_electronico": "nai@gmail.com"
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T01:23:50.314Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe un proveedor con ese nombre",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe un proveedor con ese nombre\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/proveedores",
+  "ip": "::1",
+  "body": {
+    "Nombre": "naila",
+    "Telefono": "dde33",
+    "Direccion": "puerto jesus",
+    "Correo_electronico": "nai@gmail.com"
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T01:23:50.317Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe un proveedor con ese nombre",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe un proveedor con ese nombre\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/proveedores",
+  "ip": "::1",
+  "body": {
+    "Nombre": "naila",
+    "Telefono": "dde33",
+    "Direccion": "puerto jesus",
+    "Correo_electronico": "nai@gmail.com"
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T01:24:02.165Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe un proveedor con ese nombre",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe un proveedor con ese nombre\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/proveedores",
+  "ip": "::1",
+  "body": {
+    "Nombre": "naila",
+    "Telefono": "33333",
+    "Direccion": "puerto jesus",
+    "Correo_electronico": "nai@gmail.com"
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T01:24:02.168Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe un proveedor con ese nombre",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe un proveedor con ese nombre\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/proveedores",
+  "ip": "::1",
+  "body": {
+    "Nombre": "naila",
+    "Telefono": "33333",
+    "Direccion": "puerto jesus",
+    "Correo_electronico": "nai@gmail.com"
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T02:22:06.392Z",
+  "message": "productoService.getMovimientos is not a function",
+  "stack": "TypeError: productoService.getMovimientos is not a function\n    at exports.getMovimientos (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\src\\controllers\\productoController.js:129:46)\n    at Layer.handle [as handle_request] (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at param (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\express\\lib\\router\\index.js:365:14)\n    at param (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\express\\lib\\router\\index.js:376:14)\n    at Function.process_params (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\express\\lib\\router\\index.js:421:3)\n    at next (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)",
+  "method": "GET",
+  "url": "/api/productos/1/movimientos",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-06T02:22:06.395Z",
+  "message": "productoService.getMovimientos is not a function",
+  "stack": "TypeError: productoService.getMovimientos is not a function\n    at exports.getMovimientos (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\src\\controllers\\productoController.js:129:46)\n    at Layer.handle [as handle_request] (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at param (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\express\\lib\\router\\index.js:365:14)\n    at param (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\express\\lib\\router\\index.js:376:14)\n    at Function.process_params (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\express\\lib\\router\\index.js:421:3)\n    at next (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)",
+  "method": "GET",
+  "url": "/api/productos/1/movimientos",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-06T03:00:50.586Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]El nombre del cliente es requerido",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]El nombre del cliente es requerido\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/clientes",
+  "ip": "::1",
+  "body": {
+    "Nombre": "",
+    "Apellido1": "",
+    "Apellido2": "",
+    "Telefono": "",
+    "Correo": "",
+    "Direccion": ""
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T03:00:50.589Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]El nombre del cliente es requerido",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]El nombre del cliente es requerido\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/clientes",
+  "ip": "::1",
+  "body": {
+    "Nombre": "",
+    "Apellido1": "",
+    "Apellido2": "",
+    "Telefono": "",
+    "Correo": "",
+    "Direccion": ""
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T03:00:51.741Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]El nombre del cliente es requerido",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]El nombre del cliente es requerido\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/clientes",
+  "ip": "::1",
+  "body": {
+    "Nombre": "",
+    "Apellido1": "",
+    "Apellido2": "",
+    "Telefono": "",
+    "Correo": "",
+    "Direccion": ""
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T03:00:51.744Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]El nombre del cliente es requerido",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]El nombre del cliente es requerido\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/clientes",
+  "ip": "::1",
+  "body": {
+    "Nombre": "",
+    "Apellido1": "",
+    "Apellido2": "",
+    "Telefono": "",
+    "Correo": "",
+    "Direccion": ""
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T03:08:20.616Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::1",
+  "body": {
+    "Nombre": "naila",
+    "Descripcion": "jhgf",
+    "PrecioCompra": 76,
+    "PrecioVenta": 8,
+    "CodigoBarra": "66666",
+    "CantidadActual": 6,
+    "CantidadMinima": 5,
+    "FechaEntrada": "2025-11-07",
+    "FechaSalida": "2025-12-06",
+    "Id_categoria": 2
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T03:08:20.618Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::1",
+  "body": {
+    "Nombre": "naila",
+    "Descripcion": "jhgf",
+    "PrecioCompra": 76,
+    "PrecioVenta": 8,
+    "CodigoBarra": "66666",
+    "CantidadActual": 6,
+    "CantidadMinima": 5,
+    "FechaEntrada": "2025-11-07",
+    "FechaSalida": "2025-12-06",
+    "Id_categoria": 2
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T03:20:57.987Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::1",
+  "body": {
+    "Nombre": "clavos",
+    "Descripcion": "jhg",
+    "PrecioCompra": 77,
+    "PrecioVenta": 2433.99,
+    "CodigoBarra": "12344",
+    "CantidadActual": 2,
+    "CantidadMinima": 1,
+    "FechaEntrada": "2025-11-14",
+    "FechaSalida": "2025-11-29",
+    "Id_categoria": 1
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T03:20:57.990Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::1",
+  "body": {
+    "Nombre": "clavos",
+    "Descripcion": "jhg",
+    "PrecioCompra": 77,
+    "PrecioVenta": 2433.99,
+    "CodigoBarra": "12344",
+    "CantidadActual": 2,
+    "CantidadMinima": 1,
+    "FechaEntrada": "2025-11-14",
+    "FechaSalida": "2025-11-29",
+    "Id_categoria": 1
+  }
+}
+---

@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import { 
   RiHome5Line, RiBox3Line, RiMoneyDollarCircleLine, RiShoppingCartLine,
   RiKeyLine, RiTeamLine, RiBarChartBoxLine, RiLineChartLine,
-  RiFileList3Line, RiPriceTag3Line, RiSettings4Line, 
-  RiUserLine
+ RiSettings4Line, RiPriceTag3Line
 } from 'react-icons/ri';
 
 const Sidebar = () => {
@@ -55,9 +54,9 @@ const Sidebar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/colaboradores" className="flex items-center gap-3 px-4 py-2.5 rounded-lg hover:bg-gray-100 transition text-gray-700 hover:text-[#0b3b68]">
-                <RiUserLine className="text-xl text-[#0b3b68]" />
-                <span className="font-medium">Colaboradores</span>
+              <Link to="/categorias" className="flex items-center gap-3 px-4 py-2.5 rounded-lg hover:bg-gray-100 transition text-gray-700 hover:text-[#0b3b68]">
+                <RiPriceTag3Line className="text-xl text-[#0b3b68]" />
+                <span className="font-medium">Categorías</span>
               </Link>
               
             </li>
@@ -74,18 +73,8 @@ const Sidebar = () => {
                 <span className="font-medium">Reportes</span>
               </Link>
             </li>
-            <li>
-              <Link to="/bitacora" className="flex items-center gap-3 px-4 py-2.5 rounded-lg hover:bg-gray-100 transition text-gray-700 hover:text-[#0b3b68]">
-                <RiFileList3Line className="text-xl text-[#0b3b68]" />
-                <span className="font-medium">Bitácora</span>
-              </Link>
-            </li>
-            <li>
-              <Link to="/etiquetas" className="flex items-center gap-3 px-4 py-2.5 rounded-lg hover:bg-gray-100 transition text-gray-700 hover:text-[#0b3b68]">
-                <RiPriceTag3Line className="text-xl text-[#0b3b68]" />
-                <span className="font-medium">Etiquetas</span>
-              </Link>
-            </li>
+           
+            
             <li>
               <Link to="/configuracion" className="flex items-center gap-3 px-4 py-2.5 rounded-lg hover:bg-gray-100 transition text-gray-700 hover:text-[#0b3b68]">
                 <RiSettings4Line className="text-xl text-[#0b3b68]" />

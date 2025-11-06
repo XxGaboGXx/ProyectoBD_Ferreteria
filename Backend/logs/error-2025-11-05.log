@@ -2632,3 +2632,87 @@
   "body": {}
 }
 ---
+{
+  "timestamp": "2025-11-05T23:52:17.669Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::1",
+  "body": {
+    "Nombre": "clavos",
+    "Descripcion": "2 pulgadas",
+    "PrecioCompra": 1,
+    "PrecioVenta": 1.99,
+    "CodigoBarra": "123445556",
+    "CantidadActual": 29,
+    "CantidadMinima": 1,
+    "FechaEntrada": "2025-11-01",
+    "FechaSalida": "2025-11-14",
+    "Id_categoria": 1
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T23:52:17.673Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::1",
+  "body": {
+    "Nombre": "clavos",
+    "Descripcion": "2 pulgadas",
+    "PrecioCompra": 1,
+    "PrecioVenta": 1.99,
+    "CodigoBarra": "123445556",
+    "CantidadActual": 29,
+    "CantidadMinima": 1,
+    "FechaEntrada": "2025-11-01",
+    "FechaSalida": "2025-11-14",
+    "Id_categoria": 1
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T23:56:14.047Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::1",
+  "body": {
+    "Nombre": "6",
+    "Descripcion": ",",
+    "PrecioCompra": 7,
+    "PrecioVenta": 5,
+    "CodigoBarra": "66666",
+    "CantidadActual": 6,
+    "CantidadMinima": 5,
+    "FechaEntrada": "2025-10-31",
+    "FechaSalida": "2025-11-09",
+    "Id_categoria": 6
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T23:56:14.050Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::1",
+  "body": {
+    "Nombre": "6",
+    "Descripcion": ",",
+    "PrecioCompra": 7,
+    "PrecioVenta": 5,
+    "CodigoBarra": "66666",
+    "CantidadActual": 6,
+    "CantidadMinima": 5,
+    "FechaEntrada": "2025-10-31",
+    "FechaSalida": "2025-11-09",
+    "Id_categoria": 6
+  }
+}
+---

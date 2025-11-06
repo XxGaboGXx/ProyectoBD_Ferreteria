@@ -19,6 +19,10 @@ const routes: RouteObject[] = [
     path: '/productos/:id',
     element: React.createElement(DetalleProducto),
   },
+  {
+    path: '/productos/:id/editar',
+    element: React.createElement(FormularioProducto),
+  },
 ];
 
 export default routes;

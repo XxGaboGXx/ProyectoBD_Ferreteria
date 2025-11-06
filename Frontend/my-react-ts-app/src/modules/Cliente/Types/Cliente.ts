@@ -2,9 +2,11 @@
 export interface Cliente {
   Id_cliente: number;
   Nombre: string;
-  Apellidos: string;
+  Apellido1: string | null;
+  Apellido2: string | null;
   Telefono: string | null;
   Direccion: string | null;
   Correo: string | null;
-  TipoCliente: string; // 'Contado', 'Crédito', etc.
 }
+
+export type NuevoCliente = Omit<Cliente, 'Id_cliente'>;

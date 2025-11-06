@@ -3,17 +3,24 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaBoxOpen, FaPhone, FaMapMarkerAlt, FaEnvelope, FaTrash, FaRegEdit, FaSearch } from "react-icons/fa";
+import { fetchProveedores, deleteProveedor } from "../Services/ProveedorService";
 
 const ListaProveedor: React.FC = () => {
   const [proveedores, setProveedores] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   const loadProveedores = async () => {
     try {
-      const data = await fetchProveedores();
-      setProveedores(data);
-    } catch (error) {
+      setLoading(true);
+      const resp = await fetchProveedores({ page: 1, limit: 30 });
+      setProveedores(resp.data);
+      setError(null);
+    } catch (error: any) {
       console.error("Error al cargar proveedores:", error);
-      alert("No se pudieron cargar los proveedores");
+      setError(error?.message || "No se pudieron cargar los proveedores");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -23,15 +30,14 @@ const ListaProveedor: React.FC = () => {
 
   const handleEliminar = async (id: number, nombre: string) => {
     const confirmDelete = window.confirm(`¿Seguro que deseas eliminar al proveedor ${nombre}?`);
-    if (confirmDelete) {
-      try {
-        // Aquí puedes agregar tu llamada al servicio de eliminación si la tienes
-        setProveedores((prev) => prev.filter((prov) => prov.Id_proveedor !== id));
-        alert(`Proveedor ${nombre} eliminado correctamente.`);
-      } catch (error) {
-        console.error("Error al eliminar proveedor:", error);
-        alert("Hubo un error al eliminar el proveedor.");
-      }
+    if (!confirmDelete) return;
+    try {
+      await deleteProveedor(id);
+      setProveedores((prev) => prev.filter((prov) => prov.Id_proveedor !== id));
+      alert(`Proveedor ${nombre} eliminado correctamente.`);
+    } catch (error: any) {
+      console.error("Error al eliminar proveedor:", error);
+      alert(error?.response?.data?.message || "Hubo un error al eliminar el proveedor.");
     }
   };
 
@@ -51,8 +57,10 @@ const ListaProveedor: React.FC = () => {
         </Link>
       </div>
 
+      {loading && <p className="text-gray-600">Cargando proveedores...</p>}
+      {error && <p className="text-red-600">{error}</p>}
       {/* Lista de proveedores */}
-      {proveedores.length === 0 ? (
+      {!loading && !error && (proveedores.length === 0 ? (
         <p className="text-gray-600 text-center mt-10">No hay proveedores registrados.</p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -77,7 +85,7 @@ const ListaProveedor: React.FC = () => {
 
               <p className="text-gray-600 flex items-center gap-2">
                 <FaEnvelope className="text-purple-600" />
-                <strong>Correo:</strong> {proveedor.Correo || "No disponible"}
+                <strong>Correo:</strong> {proveedor.Correo_electronico || "No disponible"}
               </p>
 
               {/* Botones de acción */}
@@ -108,7 +116,7 @@ const ListaProveedor: React.FC = () => {
             </div>
           ))}
         </div>
-      )}
+      ))}
     </div>
   );
 };

@@ -1,91 +1,63 @@
 import api from '../../../services/api';
 
-// Obtener reporte de ventas
-export const fetchReporteVentas = async (params: { fechaInicio: string; fechaFin: string }) => {
-  try {
-    const response = await api.get('/reportes/ventas', { params });
-    return response.data.data || response.data;
-  } catch (error) {
-    console.error('Error al obtener reporte de ventas:', error);
-    throw error;
-  }
+// Tipados de respuestas (según backend)
+export interface ReporteVentasResponse {
+  periodo: { inicio: string; fin: string };
+  resumen: any; // estructura definida por SP; mostramos como totales
+  ventas: Array<{ Fecha?: string; Total?: number; CantidadVentas?: number; [k: string]: any }>;
+}
+
+export interface ReporteComprasResponse {
+  periodo: { inicio: string; fin: string };
+  resumen: any;
+  compras: Array<{ Fecha?: string; Total?: number; CantidadCompras?: number; [k: string]: any }>;
+}
+
+export interface ReporteInventarioResponse {
+  resumen: any;
+  productos: Array<{ Id_producto: number; Nombre: string; CantidadActual: number; CantidadMinima: number; [k: string]: any }>;
+}
+
+export interface ReporteAlquileresResponse {
+  periodo: { inicio: string; fin: string };
+  resumen: any;
+  alquileres: any[];
+}
+
+// Ventas
+export const fetchReporteVentas = async (params: { fechaInicio: string; fechaFin: string }): Promise<ReporteVentasResponse> => {
+  const response = await api.get('/reportes/ventas', { params });
+  return response.data.data as ReporteVentasResponse;
 };
 
-// Obtener reporte de compras
-export const fetchReporteCompras = async (params: { fechaInicio: string; fechaFin: string }) => {
-  try {
-    const response = await api.get('/reportes/compras', { params });
-    return response.data.data || response.data;
-  } catch (error) {
-    console.error('Error al obtener reporte de compras:', error);
-    throw error;
-  }
+// Compras
+export const fetchReporteCompras = async (params: { fechaInicio: string; fechaFin: string }): Promise<ReporteComprasResponse> => {
+  const response = await api.get('/reportes/compras', { params });
+  return response.data.data as ReporteComprasResponse;
 };
 
-// Obtener reporte de inventario
-export const fetchReporteInventario = async () => {
-  try {
-    const response = await api.get('/reportes/inventario');
-    return response.data.data || response.data;
-  } catch (error) {
-    console.error('Error al obtener reporte de inventario:', error);
-    throw error;
-  }
+// Inventario
+export const fetchReporteInventario = async (): Promise<ReporteInventarioResponse> => {
+  const response = await api.get('/reportes/inventario');
+  return response.data.data as ReporteInventarioResponse;
 };
 
-// Obtener reporte de alquileres
-export const fetchReporteAlquileres = async (params: { fechaInicio: string; fechaFin: string }) => {
-  try {
-    const response = await api.get('/reportes/alquileres', { params });
-    return response.data.data || response.data;
-  } catch (error) {
-    console.error('Error al obtener reporte de alquileres:', error);
-    throw error;
-  }
+// Alquileres
+export const fetchReporteAlquileres = async (params: { fechaInicio: string; fechaFin: string }): Promise<ReporteAlquileresResponse> => {
+  const response = await api.get('/reportes/alquileres', { params });
+  return response.data.data as ReporteAlquileresResponse;
 };
 
-// Obtener reporte de clientes
-export const fetchReporteClientes = async () => {
-  try {
-    const response = await api.get('/reportes/clientes');
-    return response.data.data || response.data;
-  } catch (error) {
-    console.error('Error al obtener reporte de clientes:', error);
-    throw error;
-  }
+// Clientes
+export const fetchReporteClientes = async (): Promise<{ totalClientes: number; clientes: any[] }> => {
+  const response = await api.get('/reportes/clientes');
+  return response.data.data as { totalClientes: number; clientes: any[] };
 };
 
-// Obtener reporte de productos más vendidos
-export const fetchReporteTopProductos = async (params?: { fechaInicio?: string; fechaFin?: string; limit?: number }) => {
-  try {
-    const response = await api.get('/reportes/top-productos', { params });
-    return response.data.data || response.data;
-  } catch (error) {
-    console.error('Error al obtener reporte de top productos:', error);
-    throw error;
-  }
+// Productos más vendidos
+export const fetchReporteProductosMasVendidos = async (params: { fechaInicio: string; fechaFin: string; limit?: number }): Promise<any[]> => {
+  const response = await api.get('/reportes/productos-mas-vendidos', { params });
+  return response.data.data as any[];
 };
 
-// Exportar reporte a PDF o Excel
-export const exportReporte = async (tipo: string, formato: 'pdf' | 'excel', params?: any) => {
-  try {
-    const response = await api.get(`/reportes/${tipo}/export`, {
-      params: { ...params, formato },
-      responseType: 'blob', // Para descargar archivos
-    });
-    
-    // Crear enlace de descarga
-    const url = window.URL.createObjectURL(new Blob([response.data]));
-    const link = document.createElement('a');
-    link.href = url;
-    link.setAttribute('download', `reporte-${tipo}.${formato === 'pdf' ? 'pdf' : 'xlsx'}`);
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-    
-    return response.data;
-  } catch (error) {
-    console.error(`Error al exportar reporte ${tipo}:`, error);
-    throw error;
-  }
-};
+// Nota: el backend no expone exportación a PDF/Excel en /reportes/:tipo/export; si se agrega, implementamos aquí.

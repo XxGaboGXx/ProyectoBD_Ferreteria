@@ -28,7 +28,15 @@ export type NuevaVenta = {
 };
 
 export const createVenta = async (venta: NuevaVenta): Promise<any> => {
+  console.log('📤 Creando venta:', JSON.stringify(venta, null, 2));
   const response = await api.post('/ventas', venta);
+  return response.data.data;
+};
+
+// Actualizar venta
+export const updateVenta = async (id: number, venta: Partial<NuevaVenta>): Promise<any> => {
+  console.log('📤 Actualizando venta:', JSON.stringify(venta, null, 2));
+  const response = await api.put(`/ventas/${id}`, venta);
   return response.data.data;
 };
 

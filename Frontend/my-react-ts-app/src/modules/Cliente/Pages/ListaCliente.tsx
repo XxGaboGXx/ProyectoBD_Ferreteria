@@ -12,11 +12,14 @@ import {
 } from "react-icons/fa";
 import { fetchClientes, deleteCliente } from "../Services/clienteService";
 import type { Cliente } from "../Types/Cliente";
+import { useToast } from "../../../hooks/useToast";
+import { ToastContainer } from "../../../hooks/ToastContainer";
 
 const ListaCliente: React.FC = () => {
   const [clientes, setClientes] = useState<Cliente[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const { toasts, showToast, removeToast } = useToast();
 
   const loadClientes = async () => {
     try {
@@ -38,14 +41,17 @@ const ListaCliente: React.FC = () => {
     if (!window.confirm(`¿Seguro que deseas eliminar a ${c.Nombre} ${c.Apellido1 ?? ''}?`)) return;
     try {
       await deleteCliente(c.Id_cliente);
+      showToast(`✅ Cliente "${c.Nombre} ${c.Apellido1}" eliminado exitosamente`, 'success');
       await loadClientes();
     } catch (e: any) {
-      alert(e?.response?.data?.message || e?.message || 'No se pudo eliminar el cliente');
+      showToast(e?.response?.data?.message || e?.message || 'No se pudo eliminar el cliente', 'error');
     }
   };
 
   return (
     <div className="p-6">
+      <ToastContainer toasts={toasts} removeToast={removeToast} />
+      
       {/* Encabezado con título y botón alineado */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
         <h1 className="text-3xl font-bold text-gray-800 flex items-center gap-2 mb-4 sm:mb-0">

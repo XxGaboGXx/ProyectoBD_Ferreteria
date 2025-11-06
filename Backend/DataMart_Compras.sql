@@ -499,7 +499,7 @@ BEGIN
         INNER JOIN dbo.DetalleCompra dc_det ON c.Id_compra = dc_det.Id_compra
         INNER JOIN dbo.Producto p ON dc_det.Id_producto = p.Id_producto
         INNER JOIN DM.Dim_Tiempo dt ON CAST(c.FechaCompra AS DATE) = dt.Fecha
-        INNER JOIN DM.Dim_Proveedor dp ON c.Id_Proveedor = dp.Id_proveedor AND dp.EsActual = 1
+        INNER JOIN DM.Dim_Proveedor dp ON c.Id_proveedor = dp.Id_proveedor AND dp.EsActual = 1
         INNER JOIN DM.Dim_Producto dprod ON p.Id_producto = dprod.Id_producto AND dprod.EsActual = 1
         INNER JOIN DM.Dim_Categoria dc ON dprod.Id_dim_categoria = dc.Id_dim_categoria
         WHERE CAST(c.FechaCompra AS DATE) BETWEEN @FechaInicio AND @FechaFin

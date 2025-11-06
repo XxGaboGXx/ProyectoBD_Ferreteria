@@ -29,6 +29,7 @@ const alquilerRoutes = require('./routes/alquilerRoutes');
 const dashboardRoutes = require('./routes/dashboardRoutes');
 const reporteRoutes = require('./routes/reporteRoutes');
 const movimientoRoutes = require('./routes/movimientoRoutes');
+const dataMartRoutes = require('./routes/dataMartRoutes');
 
 const app = express();
 
@@ -247,6 +248,7 @@ app.use('/api/proveedores', proveedorRoutes);
 app.use('/api/categorias', categoriaRoutes);
 app.use('/api/colaboradores', colaboradorRoutes);
 app.use('/api/movimientos', movimientoRoutes);
+app.use('/api/datamart', dataMartRoutes);
 
 // Middleware de logging de errores
 app.use(errorLogger);

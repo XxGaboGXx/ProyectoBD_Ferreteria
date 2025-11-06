@@ -1,5 +1,6 @@
 const { getConnection, sql } = require('../config/database');
 const transactionService = require('./transactionService');
+const dataMartService = require('./dataMartService');
 
 class CompraService {
     /**
@@ -124,6 +125,11 @@ class CompraService {
             }
 
             console.log(`✅ Compra creada con ID: ${compra.Id_compra}. Total: ${compra.TotalCompra}`);
+
+            // Actualizar DataMart de forma asíncrona (no bloquea la respuesta)
+            dataMartService.actualizarComprasHoy().catch(err => {
+                console.warn('⚠️  Error actualizando DataMart (no crítico):', err.message);
+            });
 
             return {
                 ...compra,

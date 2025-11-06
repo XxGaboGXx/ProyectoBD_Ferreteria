@@ -1304,3 +1304,203 @@
   }
 }
 ---
+{
+  "timestamp": "2025-11-06T22:24:53.380Z",
+  "message": "Estructura de datos incompleta del Stored Procedure",
+  "stack": "Error: Estructura de datos incompleta del Stored Procedure\n    at DashboardService.getDashboardSummary (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\services\\dashboardService.js:19:19)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async exports.getSummary (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\controllers\\dashboardController.js:6:24)",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-06T22:24:53.383Z",
+  "message": "Estructura de datos incompleta del Stored Procedure",
+  "stack": "Error: Estructura de datos incompleta del Stored Procedure\n    at DashboardService.getDashboardSummary (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\services\\dashboardService.js:19:19)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async exports.getSummary (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\controllers\\dashboardController.js:6:24)",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-06T22:24:53.400Z",
+  "message": "Estructura de datos incompleta del Stored Procedure",
+  "stack": "Error: Estructura de datos incompleta del Stored Procedure\n    at DashboardService.getDashboardSummary (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\services\\dashboardService.js:19:19)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async exports.getSummary (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\controllers\\dashboardController.js:6:24)",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-06T22:24:53.403Z",
+  "message": "Estructura de datos incompleta del Stored Procedure",
+  "stack": "Error: Estructura de datos incompleta del Stored Procedure\n    at DashboardService.getDashboardSummary (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\services\\dashboardService.js:19:19)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async exports.getSummary (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\controllers\\dashboardController.js:6:24)",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-06T22:24:59.622Z",
+  "message": "Estructura de datos incompleta del Stored Procedure",
+  "stack": "Error: Estructura de datos incompleta del Stored Procedure\n    at DashboardService.getDashboardSummary (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\services\\dashboardService.js:19:19)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async exports.getSummary (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\controllers\\dashboardController.js:6:24)",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-06T22:24:59.625Z",
+  "message": "Estructura de datos incompleta del Stored Procedure",
+  "stack": "Error: Estructura de datos incompleta del Stored Procedure\n    at DashboardService.getDashboardSummary (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\services\\dashboardService.js:19:19)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async exports.getSummary (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\controllers\\dashboardController.js:6:24)",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-06T22:24:59.637Z",
+  "message": "Estructura de datos incompleta del Stored Procedure",
+  "stack": "Error: Estructura de datos incompleta del Stored Procedure\n    at DashboardService.getDashboardSummary (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\services\\dashboardService.js:19:19)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async exports.getSummary (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\controllers\\dashboardController.js:6:24)",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-06T22:24:59.640Z",
+  "message": "Estructura de datos incompleta del Stored Procedure",
+  "stack": "Error: Estructura de datos incompleta del Stored Procedure\n    at DashboardService.getDashboardSummary (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\services\\dashboardService.js:19:19)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async exports.getSummary (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\controllers\\dashboardController.js:6:24)",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-06T22:25:20.220Z",
+  "message": "Estructura de datos incompleta del Stored Procedure",
+  "stack": "Error: Estructura de datos incompleta del Stored Procedure\n    at DashboardService.getDashboardSummary (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\services\\dashboardService.js:19:19)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async exports.getSummary (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\controllers\\dashboardController.js:6:24)",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-06T22:25:20.233Z",
+  "message": "Estructura de datos incompleta del Stored Procedure",
+  "stack": "Error: Estructura de datos incompleta del Stored Procedure\n    at DashboardService.getDashboardSummary (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\services\\dashboardService.js:19:19)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async exports.getSummary (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\controllers\\dashboardController.js:6:24)",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-06T22:25:20.262Z",
+  "message": "Estructura de datos incompleta del Stored Procedure",
+  "stack": "Error: Estructura de datos incompleta del Stored Procedure\n    at DashboardService.getDashboardSummary (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\services\\dashboardService.js:19:19)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async exports.getSummary (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\controllers\\dashboardController.js:6:24)",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-06T22:25:20.264Z",
+  "message": "Estructura de datos incompleta del Stored Procedure",
+  "stack": "Error: Estructura de datos incompleta del Stored Procedure\n    at DashboardService.getDashboardSummary (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\services\\dashboardService.js:19:19)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async exports.getSummary (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\src\\controllers\\dashboardController.js:6:24)",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-06T22:27:12.880Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limite is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limite is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-06T22:27:12.890Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limite is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limite is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-06T22:27:12.894Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limite is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limite is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-06T22:27:12.897Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limite is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limite is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-06T22:27:12.913Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limite is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limite is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-06T22:27:12.916Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limite is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limite is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-06T22:27:12.921Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limite is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limite is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-06T22:27:12.923Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limite is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limite is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---

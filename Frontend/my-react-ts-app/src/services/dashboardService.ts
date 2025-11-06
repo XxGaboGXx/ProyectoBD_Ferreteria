@@ -1,118 +1,192 @@
-import api, { getCached } from './api';
+import api from './api';
 
 // ============================================
-// FUNCIONES CON CACHÉ PARA DASHBOARD
+// 📊 INTERFACES / TYPES
 // ============================================
+export interface DashboardSummary {
+    ventasMes: {
+        total: number;
+        cantidad: number;
+        cambio: number;
+    };
+    comprasMes: {
+        total: number;
+        cantidad: number;
+        cambio: number;
+    };
+    alquileresMes: {
+        total: number;
+        cantidad: number;
+        cambio: number;
+    };
+    productos: {
+        total: number;
+        stockBajo: number;
+        cambio: number;
+    };
+}
 
-// Obtener resumen general del dashboard (con caché de 10 segundos)
-export const fetchDashboardSummary = async () => {
-  try {
-    return await getCached(
-      'dashboard-summary',
-      async () => {
-        const response = await api.get('/dashboard/summary');
-        return response.data.data || response.data;
-      },
-      10000 // 10 segundos
-    );
-  } catch (error) {
-    console.error('Error al obtener resumen del dashboard:', error);
-    throw error;
-  }
-};
+export interface TopProducto {
+    Ranking: number;
+    Id_Producto: number;
+    Producto: string;
+    CodigoBarra?: string;
+    Categoria: string;
+    CantidadVendida: number;
+    MontoTotal: number;
+    NumeroVentas: number;
+    PrecioPromedio?: number;
+    StockActual?: number;
+}
 
-// Obtener ventas por día (últimos N días) - SIN caché (datos en tiempo real)
-export const fetchVentasPorDia = async (days: number = 30) => {
-  try {
-    const response = await api.get('/dashboard/ventas-por-dia', { params: { days } });
-    return response.data.data || response.data;
-  } catch (error) {
-    console.error('Error al obtener ventas por día:', error);
-    throw error;
-  }
-};
+export interface TopCliente {
+    Ranking: number;
+    Id_Cliente: number;
+    Cliente: string;
+    NumeroCompras: number;
+    MontoTotal: number;
+    PromedioCompra: number;
+    UltimaCompra?: string;
+    Telefono?: string;
+    Correo?: string;
+}
 
-// Obtener top clientes (con caché de 15 segundos)
-export const fetchTopClientes = async (limit: number = 10) => {
-  try {
-    return await getCached(
-      `dashboard-top-clientes-${limit}`,
-      async () => {
-        const response = await api.get('/dashboard/top-clientes', { params: { limit } });
-        return response.data.data || response.data;
-      },
-      15000 // 15 segundos
-    );
-  } catch (error) {
-    console.error('Error al obtener top clientes:', error);
-    throw error;
-  }
-};
+export interface Alerta {
+    tipo: 'stock' | 'alquiler_vencido' | 'sin_movimiento';
+    nivel: 'critico' | 'advertencia' | 'info';
+    mensaje: string;
+    data?: any;
+}
 
-// Obtener top productos más vendidos (con caché de 15 segundos)
-export const fetchTopProductos = async (limit: number = 10) => {
-  try {
-    return await getCached(
-      `dashboard-top-productos-${limit}`,
-      async () => {
-        const response = await api.get('/dashboard/top-productos', { params: { limit } });
-        return response.data.data || response.data;
-      },
-      15000 // 15 segundos
-    );
-  } catch (error) {
-    console.error('Error al obtener top productos:', error);
-    throw error;
-  }
-};
+export interface VentasPorDia {
+    Fecha: string;
+    NumeroVentas: number;
+    TotalVentas: number;
+    PromedioVenta: number;
+}
 
-// Obtener alertas del sistema (con caché de 20 segundos)
-export const fetchAlertas = async () => {
-  try {
-    return await getCached(
-      'dashboard-alertas',
-      async () => {
-        const response = await api.get('/dashboard/alertas');
-        return response.data.data || response.data;
-      },
-      20000 // 20 segundos
-    );
-  } catch (error) {
-    console.error('Error al obtener alertas:', error);
-    throw error;
-  }
-};
+export interface VentasPorCategoria {
+    Categoria: string;
+    NumeroVentas: number;
+    UnidadesVendidas: number;
+    TotalVentas: number;
+}
 
-// Obtener ventas por categoría (con caché de 30 segundos)
-export const fetchVentasPorCategoria = async () => {
-  try {
-    return await getCached(
-      'dashboard-ventas-categoria',
-      async () => {
-        const response = await api.get('/dashboard/ventas-por-categoria');
-        return response.data.data || response.data;
-      },
-      30000 // 30 segundos
-    );
-  } catch (error) {
-    console.error('Error al obtener ventas por categoría:', error);
-    throw error;
-  }
-};
+export interface EstadisticasAlquileres {
+    total: number;
+    activos: number;
+    vencidos: number;
+    completados: number;
+}
 
-// Obtener estadísticas de alquileres (con caché de 30 segundos)
-export const fetchEstadisticasAlquileres = async () => {
-  try {
-    return await getCached(
-      'dashboard-alquileres-stats',
-      async () => {
-        const response = await api.get('/dashboard/alquileres-stats');
-        return response.data.data || response.data;
-      },
-      30000 // 30 segundos
-    );
-  } catch (error) {
-    console.error('Error al obtener estadísticas de alquileres:', error);
-    throw error;
-  }
-};
+// ============================================
+// 🔧 DASHBOARD SERVICE CLASS
+// ============================================
+class DashboardService {
+    /**
+     * Obtener resumen general del dashboard
+     */
+    async getSummary(): Promise<DashboardSummary> {
+        try {
+            const response = await api.get('/dashboard/summary');
+            return response.data.data;
+        } catch (error) {
+            console.error('Error al obtener resumen del dashboard:', error);
+            throw error;
+        }
+    }
+
+    /**
+     * Obtener top productos más vendidos
+     */
+    async getTopProductos(limit: number = 10): Promise<TopProducto[]> {
+        try {
+            const response = await api.get('/dashboard/top-productos', {
+                params: { limit }
+            });
+            return response.data.data || [];
+        } catch (error) {
+            console.error('Error al obtener top productos:', error);
+            throw error;
+        }
+    }
+
+    /**
+     * Obtener top clientes
+     */
+    async getTopClientes(limit: number = 10): Promise<TopCliente[]> {
+        try {
+            const response = await api.get('/dashboard/top-clientes', {
+                params: { limit }
+            });
+            return response.data.data || [];
+        } catch (error) {
+            console.error('Error al obtener top clientes:', error);
+            throw error;
+        }
+    }
+
+    /**
+     * Obtener alertas del sistema
+     */
+    async getAlertas(): Promise<Alerta[]> {
+        try {
+            const response = await api.get('/dashboard/alertas');
+            
+            // El backend retorna { total, alertas, resumen }
+            if (response.data.data?.alertas) {
+                return response.data.data.alertas;
+            }
+            
+            return response.data.data || [];
+        } catch (error) {
+            console.error('Error al obtener alertas:', error);
+            throw error;
+        }
+    }
+
+    /**
+     * Obtener ventas por día
+     */
+    async getVentasPorDia(days: number = 30): Promise<VentasPorDia[]> {
+        try {
+            const response = await api.get('/dashboard/ventas-por-dia', {
+                params: { days }
+            });
+            return response.data.data || [];
+        } catch (error) {
+            console.error('Error al obtener ventas por día:', error);
+            throw error;
+        }
+    }
+
+    /**
+     * Obtener ventas por categoría
+     */
+    async getVentasPorCategoria(): Promise<VentasPorCategoria[]> {
+        try {
+            const response = await api.get('/dashboard/ventas-por-categoria');
+            return response.data.data || [];
+        } catch (error) {
+            console.error('Error al obtener ventas por categoría:', error);
+            throw error;
+        }
+    }
+
+    /**
+     * Obtener estadísticas de alquileres
+     */
+    async getEstadisticasAlquileres(): Promise<EstadisticasAlquileres> {
+        try {
+            const response = await api.get('/dashboard/estadisticas-alquileres');
+            return response.data.data;
+        } catch (error) {
+            console.error('Error al obtener estadísticas de alquileres:', error);
+            throw error;
+        }
+    }
+}
+
+// ✅ EXPORT DEFAULT - Instancia única del servicio
+const dashboardService = new DashboardService();
+export default dashboardService;

@@ -1,111 +1,56 @@
 import api from '../../../services/api';
 import type { Venta } from '../Types/Venta';
 
-// Obtener todas las ventas
-export const fetchVentas = async (): Promise<Venta[]> => {
-  try {
-    const response = await api.get('/ventas');
-    return response.data.data || response.data;
-  } catch (error) {
-    console.error('Error al obtener ventas:', error);
-    throw error;
-  }
+export interface VentaListResponse {
+  data: Venta[];
+  pagination: { page: number; limit: number; total: number; totalPages: number };
+}
+
+// Listar ventas
+export const fetchVentas = async (params?: { page?: number; limit?: number; estado?: string; fechaInicio?: string; fechaFin?: string; clienteId?: number }): Promise<VentaListResponse> => {
+  const response = await api.get('/ventas', { params });
+  return response.data as { success: boolean; data: Venta[]; pagination: any } as any;
 };
 
-// Obtener una venta por ID
+// Venta por id
 export const fetchVentaById = async (id: number): Promise<Venta> => {
-  try {
-    const response = await api.get(`/ventas/${id}`);
-    return response.data.data || response.data;
-  } catch (error) {
-    console.error(`Error al obtener venta ${id}:`, error);
-    throw error;
-  }
+  const response = await api.get(`/ventas/${id}`);
+  return response.data.data as Venta;
 };
 
-// Crear una nueva venta
-export const createVenta = async (venta: Omit<Venta, 'Id_venta'>): Promise<Venta> => {
-  try {
-    const response = await api.post('/ventas', venta);
-    return response.data.data || response.data;
-  } catch (error) {
-    console.error('Error al crear venta:', error);
-    throw error;
-  }
+// Crear venta (estructura esperada por backend)
+export type NuevaVenta = {
+  Id_cliente: number;
+  Id_colaborador: number;
+  MetodoPago: string;
+  Estado?: string;
+  Productos: Array<{ Id_producto: number; Cantidad: number; PrecioUnitario: number }>;
 };
 
-// Actualizar una venta
-export const updateVenta = async (id: number, venta: Partial<Venta>): Promise<Venta> => {
-  try {
-    const response = await api.put(`/ventas/${id}`, venta);
-    return response.data.data || response.data;
-  } catch (error) {
-    console.error(`Error al actualizar venta ${id}:`, error);
-    throw error;
-  }
+export const createVenta = async (venta: NuevaVenta): Promise<any> => {
+  const response = await api.post('/ventas', venta);
+  return response.data.data;
 };
 
-// Cancelar una venta
-export const cancelVenta = async (id: number): Promise<any> => {
-  try {
-    const response = await api.post(`/ventas/${id}/cancel`);
-    return response.data.data || response.data;
-  } catch (error) {
-    console.error(`Error al cancelar venta ${id}:`, error);
-    throw error;
-  }
+// Cancelar venta (el backend expone PATCH /ventas/:id/cancelar con { motivo })
+export const cancelVenta = async (id: number, motivo: string): Promise<any> => {
+  const response = await api.patch(`/ventas/${id}/cancelar`, { motivo });
+  return response.data.data;
 };
 
-// Eliminar una venta
-export const deleteVenta = async (id: number): Promise<void> => {
-  try {
-    await api.delete(`/ventas/${id}`);
-  } catch (error) {
-    console.error(`Error al eliminar venta ${id}:`, error);
-    throw error;
-  }
+// Detalles de venta
+export const fetchDetallesVenta = async (id: number): Promise<any[]> => {
+  const response = await api.get(`/ventas/${id}/detalles`);
+  return response.data.data;
 };
 
-// Obtener detalles de una venta con productos
-export const fetchDetallesVenta = async (id: number): Promise<any> => {
-  try {
-    const response = await api.get(`/ventas/${id}/detalles`);
-    return response.data.data || response.data;
-  } catch (error) {
-    console.error(`Error al obtener detalles de venta ${id}:`, error);
-    throw error;
-  }
+// Extras del backend disponibles
+export const fetchEstadisticasVentas = async (params?: { fechaInicio?: string; fechaFin?: string }) => {
+  const response = await api.get('/ventas/estadisticas', { params });
+  return response.data.data;
 };
 
-// Obtener ventas por cliente
-export const fetchVentasByCliente = async (clienteId: number): Promise<Venta[]> => {
-  try {
-    const response = await api.get(`/ventas/cliente/${clienteId}`);
-    return response.data.data || response.data;
-  } catch (error) {
-    console.error(`Error al obtener ventas del cliente ${clienteId}:`, error);
-    throw error;
-  }
-};
-
-// Obtener ventas por rango de fechas
-export const fetchVentasByFecha = async (params: { fechaInicio: string; fechaFin: string }): Promise<Venta[]> => {
-  try {
-    const response = await api.get('/ventas/fecha', { params });
-    return response.data.data || response.data;
-  } catch (error) {
-    console.error('Error al obtener ventas por fecha:', error);
-    throw error;
-  }
-};
-
-// Obtener ventas del día
-export const fetchVentasDelDia = async (): Promise<Venta[]> => {
-  try {
-    const response = await api.get('/ventas/hoy');
-    return response.data.data || response.data;
-  } catch (error) {
-    console.error('Error al obtener ventas del día:', error);
-    throw error;
-  }
+export const fetchTopProductosVendidos = async (params?: { limit?: number; fechaInicio?: string; fechaFin?: string }) => {
+  const response = await api.get('/ventas/productos-mas-vendidos', { params });
+  return response.data.data;
 };

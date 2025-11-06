@@ -9,9 +9,10 @@ const {
     logger,
     errorLogger,
     errorHandler,
-    rateLimiter,
     sanitize
 } = require('./middlewares');
+
+const { generalLimiter } = require('./middlewares/rateLimiter');
 
 const backupService = require('./services/backupService');
 
@@ -27,6 +28,7 @@ const colaboradorRoutes = require('./routes/colaboradorRoutes');
 const alquilerRoutes = require('./routes/alquilerRoutes');
 const dashboardRoutes = require('./routes/dashboardRoutes');
 const reporteRoutes = require('./routes/reporteRoutes');
+const movimientoRoutes = require('./routes/movimientoRoutes');
 
 const app = express();
 
@@ -36,7 +38,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(logger);
 app.use(sanitize);
-app.use(rateLimiter);
+app.use(generalLimiter);
 
 // Ruta de salud básica
 app.get('/health', (req, res) => {
@@ -244,6 +246,7 @@ app.use('/api/clientes', clienteRoutes);
 app.use('/api/proveedores', proveedorRoutes);
 app.use('/api/categorias', categoriaRoutes);
 app.use('/api/colaboradores', colaboradorRoutes);
+app.use('/api/movimientos', movimientoRoutes);
 
 // Middleware de logging de errores
 app.use(errorLogger);
@@ -285,7 +288,6 @@ app.listen(PORT, async () => {
         await getConnection();
         console.log('✅ Conexión a base de datos establecida');
         
-        // ✅ MEJORADO: Validación de backups con manejo de errores
         if (config.backup && config.backup.enabled) {
             try {
                 backupService.startAutoBackup();
@@ -302,108 +304,6 @@ app.listen(PORT, async () => {
         }
         
         console.log('\n' + '='.repeat(60));
-        console.log('📋 ENDPOINTS DISPONIBLES');
-        console.log('='.repeat(60));
-        
-        console.log('\n🏥 SALUD Y CONEXIÓN:');
-        console.log('  GET    /health                          # Estado básico del servidor');
-        console.log('  GET    /api/status                      # Estado completo del sistema');
-        console.log('  GET    /api/test-connection             # Test de conexión a BD');
-        console.log('  GET    /api/tables                      # Listar todas las tablas');
-        console.log('  GET    /api/data/:tableName?limit=50    # Ver datos de una tabla');
-        if (config.nodeEnv === 'development') {
-            console.log('  GET    /api/config                      # Ver configuración (solo dev)');
-        }
-        
-        console.log('\n📊 DASHBOARD:');
-        console.log('  GET    /api/dashboard/summary                       # Resumen general');
-        console.log('  GET    /api/dashboard/ventas-por-dia?days=30        # Ventas por día');
-        console.log('  GET    /api/dashboard/ventas-por-categoria          # Ventas por categoría');
-        console.log('  GET    /api/dashboard/ventas-por-metodo-pago        # Ventas por método de pago');
-        console.log('  GET    /api/dashboard/top-clientes?limit=10         # Top clientes');
-        console.log('  GET    /api/dashboard/rendimiento-colaboradores     # Rendimiento colaboradores');
-        console.log('  GET    /api/dashboard/analisis-inventario           # Análisis de inventario');
-        console.log('  GET    /api/dashboard/movimientos-recientes?limit=20 # Movimientos recientes');
-        console.log('  GET    /api/dashboard/resumen-financiero            # Resumen financiero');
-        console.log('  GET    /api/dashboard/alertas                       # Alertas del sistema');
-        
-        console.log('\n📈 REPORTES:');
-        console.log('  GET    /api/reportes/ventas?fechaInicio=...&fechaFin=...    # Reporte de ventas');
-        console.log('  GET    /api/reportes/inventario                             # Reporte de inventario');
-        console.log('  GET    /api/reportes/clientes                               # Reporte de clientes');
-        console.log('  GET    /api/reportes/productos-mas-vendidos?limit=20        # Productos más vendidos');
-        console.log('  GET    /api/reportes/compras?fechaInicio=...&fechaFin=...   # Reporte de compras');
-        console.log('  GET    /api/reportes/alquileres?fechaInicio=...&fechaFin=... # Reporte de alquileres');
-        
-        console.log('\n📦 PRODUCTOS:');
-        console.log('  GET    /api/productos                               # Listar productos');
-        console.log('  GET    /api/productos/low-stock                     # Productos con stock bajo');
-        console.log('  GET    /api/productos/:id                           # Obtener producto');
-        console.log('  POST   /api/productos                               # Crear producto');
-        console.log('  PUT    /api/productos/:id                           # Actualizar producto');
-        console.log('  DELETE /api/productos/:id                           # Eliminar producto');
-        console.log('  POST   /api/productos/:id/adjust-stock              # Ajustar stock');
-        console.log('  GET    /api/productos/:id/movimientos               # Historial movimientos');
-        
-        console.log('\n👥 CLIENTES:');
-        console.log('  GET    /api/clientes                                # Listar clientes');
-        console.log('  GET    /api/clientes/:id                            # Obtener cliente');
-        console.log('  GET    /api/clientes/cedula/:cedula                 # Buscar por cédula');
-        console.log('  POST   /api/clientes                                # Crear cliente');
-        console.log('  PUT    /api/clientes/:id                            # Actualizar cliente');
-        console.log('  DELETE /api/clientes/:id                            # Eliminar cliente');
-        console.log('  GET    /api/clientes/:id/historial                  # Historial de compras');
-        console.log('  GET    /api/clientes/:id/estadisticas               # Estadísticas del cliente');
-        
-        console.log('\n💰 VENTAS:');
-        console.log('  POST   /api/ventas                                  # Crear venta');
-        console.log('  GET    /api/ventas/:id                              # Obtener venta');
-        console.log('  POST   /api/ventas/:id/cancel                       # Cancelar venta');
-        
-        console.log('\n🛒 COMPRAS:');
-        console.log('  POST   /api/compras                                 # Crear compra');
-        console.log('  GET    /api/compras/:id                             # Obtener compra');
-        
-        console.log('\n🏪 PROVEEDORES:');
-        console.log('  GET    /api/proveedores                             # Listar proveedores');
-        console.log('  GET    /api/proveedores/:id                         # Obtener proveedor');
-        console.log('  POST   /api/proveedores                             # Crear proveedor');
-        console.log('  PUT    /api/proveedores/:id                         # Actualizar proveedor');
-        console.log('  DELETE /api/proveedores/:id                         # Eliminar proveedor');
-        console.log('  GET    /api/proveedores/:id/historial               # Historial de compras');
-        console.log('  GET    /api/proveedores/:id/productos               # Productos del proveedor');
-        
-        console.log('\n🔧 ALQUILERES:');
-        console.log('  POST   /api/alquileres                              # Crear alquiler');
-        console.log('  GET    /api/alquileres/activos                      # Alquileres activos');
-        console.log('  GET    /api/alquileres/vencidos                     # Alquileres vencidos');
-        console.log('  POST   /api/alquileres/:id/finalizar                # Finalizar alquiler');
-        console.log('  POST   /api/alquileres/:id/extender                 # Extender alquiler');
-        console.log('  POST   /api/alquileres/:id/cancelar                 # Cancelar alquiler');
-        
-        console.log('\n📂 CATEGORÍAS:');
-        console.log('  GET    /api/categorias                              # Listar categorías');
-        console.log('  GET    /api/categorias/:id                          # Obtener categoría');
-        console.log('  POST   /api/categorias                              # Crear categoría');
-        console.log('  PUT    /api/categorias/:id                          # Actualizar categoría');
-        console.log('  DELETE /api/categorias/:id                          # Eliminar categoría');
-        
-        console.log('\n👷 COLABORADORES:');
-        console.log('  GET    /api/colaboradores                           # Listar colaboradores');
-        console.log('  GET    /api/colaboradores/:id                       # Obtener colaborador');
-        console.log('  POST   /api/colaboradores                           # Crear colaborador');
-        console.log('  PUT    /api/colaboradores/:id                       # Actualizar colaborador');
-        console.log('  DELETE /api/colaboradores/:id                       # Eliminar colaborador');
-        
-        console.log('\n💾 BACKUPS:');
-        console.log('  POST   /api/backups/create                          # Crear backup manual');
-        console.log('  GET    /api/backups/list                            # Listar todos los backups');
-        console.log('  GET    /api/backups/info                            # Info del sistema de backups');
-        console.log('  POST   /api/backups/restore                         # Restaurar un backup');
-        console.log('  DELETE /api/backups/cleanup?days=30                 # Eliminar backups antiguos');
-        console.log('  DELETE /api/backups/:fileName                       # Eliminar backup específico');
-        
-        console.log('\n' + '='.repeat(60));
         console.log('✅ Servidor iniciado correctamente');
         console.log('📌 Documentación completa en /api/status');
         console.log('='.repeat(60) + '\n');
@@ -416,13 +316,12 @@ app.listen(PORT, async () => {
     }
 });
 
-// ✅ MEJORADO: Manejo de cierre graceful con try-catch
+// Manejo de señales y errores...
 process.on('SIGINT', async () => {
     console.log('\n\n🛑 Señal de cierre recibida (SIGINT)');
     console.log('🔄 Cerrando servidor gracefully...');
     
     try {
-        // Detener backups automáticos
         if (backupService && typeof backupService.stopAutoBackup === 'function') {
             try {
                 backupService.stopAutoBackup();
@@ -432,7 +331,6 @@ process.on('SIGINT', async () => {
             }
         }
         
-        // Cerrar conexión a BD
         try {
             const { closeConnection } = require('./config/database');
             await closeConnection();
@@ -449,7 +347,6 @@ process.on('SIGINT', async () => {
     }
 });
 
-// Manejo de señal SIGTERM (usado por Docker, PM2, etc.)
 process.on('SIGTERM', async () => {
     console.log('\n\n🛑 Señal de cierre recibida (SIGTERM)');
     console.log('🔄 Cerrando servidor gracefully...');
@@ -470,7 +367,6 @@ process.on('SIGTERM', async () => {
     }
 });
 
-// Manejo de errores no capturados
 process.on('unhandledRejection', (reason, promise) => {
     console.error('\n❌ Unhandled Rejection detectado:');
     console.error('📍 Promise:', promise);
@@ -482,7 +378,6 @@ process.on('uncaughtException', (error) => {
     console.error('📋 Error:', error.message);
     console.error('📋 Stack:', error.stack);
     
-    // Dar tiempo para que se escriban los logs antes de salir
     setTimeout(() => {
         process.exit(1);
     }, 1000);

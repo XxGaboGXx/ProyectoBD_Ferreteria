@@ -11,8 +11,8 @@
     "log-stats": "node src/scripts/log-stats.js",
     "test-api": "node src/scripts/test-api.js",
     "check-structure": "node src/scripts/check-structure.js",
-     "test-dashboard": "node src/scripts/test-dashboard.js",
-     "verify-schema": "node src/scripts/verify-schema.js",
+    "test-dashboard": "node src/scripts/test-dashboard.js",
+    "verify-schema": "node src/scripts/verify-schema.js",
     "seed": "node src/scripts/seed-database.js",
     "seed:fresh": "node src/scripts/seed-database.js --clear"
   },
@@ -29,6 +29,9 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-rate-limit": "^8.2.1",
+    "helmet": "^8.1.0",
+    "morgan": "^1.10.1",
     "msnodesqlv8": "^5.1.1",
     "mssql": "^10.0.1"
   },

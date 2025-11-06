@@ -1,64 +1,161 @@
 import api from '../../../services/api';
-import { ToastContainer } from '../../../hooks/ToastContainer';
 
-// Tipados de respuestas (según backend)
-export interface ReporteVentasResponse {
-  periodo: { inicio: string; fin: string };
-  resumen: any;
-  ventas: Array<{ Fecha?: string; Total?: number; CantidadVentas?: number; [k: string]: any }>;
+interface ReporteVentasResponse {
+    ventas: any[];
+    resumen: any;
 }
 
-export interface ReporteComprasResponse {
-  periodo: { inicio: string; fin: string };
-  resumen: any;
-  compras: Array<{ Fecha?: string; Total?: number; CantidadCompras?: number; [k: string]: any }>;
+interface ReporteComprasResponse {
+    compras: any[];
+    resumen: any;
 }
 
-export interface ReporteInventarioResponse {
-  resumen: any;
-  productos: Array<{ Id_producto: number; Nombre: string; CantidadActual: number; CantidadMinima: number; [k: string]: any }>;
+interface ReporteAlquileresResponse {
+    alquileres: any[];
+    resumen: any;
 }
 
-export interface ReporteAlquileresResponse {
-  periodo: { inicio: string; fin: string };
-  resumen: any;
-  alquileres: any[];
+interface ReporteInventarioResponse {
+    productos: any[];
+    resumen: any;
 }
 
-// Ventas
-export const fetchReporteVentas = async (params: { fechaInicio: string; fechaFin: string }): Promise<ReporteVentasResponse> => {
-  const response = await api.get('/reportes/ventas', { params });
-  return response.data.data as ReporteVentasResponse;
-};
+class ReporteService {
+    /**
+     * Obtener reporte de ventas
+     */
+    async getReporteVentas(fechaInicio: string, fechaFin: string): Promise<ReporteVentasResponse> {
+        try {
+            const response = await api.get(`/reportes/ventas`, {
+                params: { fechaInicio, fechaFin }
+            });
+            return response.data.data;
+        } catch (error) {
+            console.error('Error al obtener reporte de ventas:', error);
+            throw error;
+        }
+    }
 
-// Compras
-export const fetchReporteCompras = async (params: { fechaInicio: string; fechaFin: string }): Promise<ReporteComprasResponse> => {
-  const response = await api.get('/reportes/compras', { params });
-  return response.data.data as ReporteComprasResponse;
-};
+    /**
+     * Obtener reporte de compras
+     */
+    async getReporteCompras(fechaInicio: string, fechaFin: string): Promise<ReporteComprasResponse> {
+        try {
+            const response = await api.get(`/reportes/compras`, {
+                params: { fechaInicio, fechaFin }
+            });
+            return response.data.data;
+        } catch (error) {
+            console.error('Error al obtener reporte de compras:', error);
+            throw error;
+        }
+    }
 
-// Inventario
-export const fetchReporteInventario = async (): Promise<ReporteInventarioResponse> => {
-  const response = await api.get('/reportes/inventario');
-  return response.data.data as ReporteInventarioResponse;
-};
+    /**
+     * Obtener reporte de alquileres
+     */
+    async getReporteAlquileres(fechaInicio: string, fechaFin: string): Promise<ReporteAlquileresResponse> {
+        try {
+            const response = await api.get(`/reportes/alquileres`, {
+                params: { fechaInicio, fechaFin }
+            });
+            return response.data.data;
+        } catch (error) {
+            console.error('Error al obtener reporte de alquileres:', error);
+            throw error;
+        }
+    }
 
-// Alquileres
-export const fetchReporteAlquileres = async (params: { fechaInicio: string; fechaFin: string }): Promise<ReporteAlquileresResponse> => {
-  const response = await api.get('/reportes/alquileres', { params });
-  return response.data.data as ReporteAlquileresResponse;
-};
+    /**
+     * Obtener reporte de inventario
+     */
+    async getReporteInventario(): Promise<ReporteInventarioResponse> {
+        try {
+            const response = await api.get(`/reportes/inventario`);
+            return response.data.data;
+        } catch (error) {
+            console.error('Error al obtener reporte de inventario:', error);
+            throw error;
+        }
+    }
 
-// Clientes
-export const fetchReporteClientes = async (): Promise<{ totalClientes: number; clientes: any[] }> => {
-  const response = await api.get('/reportes/clientes');
-  return response.data.data as { totalClientes: number; clientes: any[] };
-};
+    /**
+     * Obtener top productos más vendidos
+     */
+    async getTopProductos(fechaInicio: string, fechaFin: string): Promise<any[]> {
+        try {
+            const response = await api.get(`/reportes/top-productos`, {
+                params: { fechaInicio, fechaFin }
+            });
+            return response.data.data;
+        } catch (error) {
+            console.error('Error al obtener top productos:', error);
+            throw error;
+        }
+    }
 
-// Productos más vendidos
-export const fetchReporteProductosMasVendidos = async (params: { fechaInicio: string; fechaFin: string; limit?: number }): Promise<any[]> => {
-  const response = await api.get('/reportes/productos-mas-vendidos', { params });
-  return response.data.data as any[];
-};
+    /**
+     * Obtener top clientes
+     */
+    async getTopClientes(fechaInicio: string, fechaFin: string): Promise<any[]> {
+        try {
+            const response = await api.get(`/reportes/top-clientes`, {
+                params: { fechaInicio, fechaFin }
+            });
+            return response.data.data;
+        } catch (error) {
+            console.error('Error al obtener top clientes:', error);
+            throw error;
+        }
+    }
 
-export { ToastContainer };
+    /**
+     * Obtener productos con bajo stock
+     */
+    async getProductosBajoStock(): Promise<any[]> {
+        try {
+            const response = await api.get(`/reportes/bajo-stock`);
+            return response.data.data;
+        } catch (error) {
+            console.error('Error al obtener productos bajo stock:', error);
+            throw error;
+        }
+    }
+
+    /**
+     * Obtener productos más vendidos (con límite)
+     */
+    async getProductosMasVendidos(fechaInicio: string, fechaFin: string, limit: number = 20): Promise<any[]> {
+        try {
+            const response = await api.get(`/reportes/productos-mas-vendidos`, {
+                params: { fechaInicio, fechaFin, limit }
+            });
+            return response.data.data;
+        } catch (error) {
+            console.error('Error al obtener productos más vendidos:', error);
+            throw error;
+        }
+    }
+
+    /**
+     * Obtener ventas por período con agrupación
+     */
+    async getVentasPorPeriodo(
+        fechaInicio: string, 
+        fechaFin: string, 
+        tipoAgrupacion: 'Dia' | 'Mes' | 'Categoria' = 'Dia'
+    ): Promise<any[]> {
+        try {
+            const response = await api.get(`/reportes/ventas-por-periodo`, {
+                params: { fechaInicio, fechaFin, tipoAgrupacion }
+            });
+            return response.data.data;
+        } catch (error) {
+            console.error('Error al obtener ventas por período:', error);
+            throw error;
+        }
+    }
+}
+
+// ✅ EXPORTACIÓN POR DEFECTO
+export default new ReporteService();

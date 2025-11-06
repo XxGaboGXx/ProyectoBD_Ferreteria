@@ -596,3 +596,155 @@
   "body": {}
 }
 ---
+{
+  "timestamp": "2025-11-06T03:00:50.586Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]El nombre del cliente es requerido",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]El nombre del cliente es requerido\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/clientes",
+  "ip": "::1",
+  "body": {
+    "Nombre": "",
+    "Apellido1": "",
+    "Apellido2": "",
+    "Telefono": "",
+    "Correo": "",
+    "Direccion": ""
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T03:00:50.589Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]El nombre del cliente es requerido",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]El nombre del cliente es requerido\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/clientes",
+  "ip": "::1",
+  "body": {
+    "Nombre": "",
+    "Apellido1": "",
+    "Apellido2": "",
+    "Telefono": "",
+    "Correo": "",
+    "Direccion": ""
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T03:00:51.741Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]El nombre del cliente es requerido",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]El nombre del cliente es requerido\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/clientes",
+  "ip": "::1",
+  "body": {
+    "Nombre": "",
+    "Apellido1": "",
+    "Apellido2": "",
+    "Telefono": "",
+    "Correo": "",
+    "Direccion": ""
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T03:00:51.744Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]El nombre del cliente es requerido",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]El nombre del cliente es requerido\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/clientes",
+  "ip": "::1",
+  "body": {
+    "Nombre": "",
+    "Apellido1": "",
+    "Apellido2": "",
+    "Telefono": "",
+    "Correo": "",
+    "Direccion": ""
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T03:08:20.616Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::1",
+  "body": {
+    "Nombre": "naila",
+    "Descripcion": "jhgf",
+    "PrecioCompra": 76,
+    "PrecioVenta": 8,
+    "CodigoBarra": "66666",
+    "CantidadActual": 6,
+    "CantidadMinima": 5,
+    "FechaEntrada": "2025-11-07",
+    "FechaSalida": "2025-12-06",
+    "Id_categoria": 2
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T03:08:20.618Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::1",
+  "body": {
+    "Nombre": "naila",
+    "Descripcion": "jhgf",
+    "PrecioCompra": 76,
+    "PrecioVenta": 8,
+    "CodigoBarra": "66666",
+    "CantidadActual": 6,
+    "CantidadMinima": 5,
+    "FechaEntrada": "2025-11-07",
+    "FechaSalida": "2025-12-06",
+    "Id_categoria": 2
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T03:20:57.987Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::1",
+  "body": {
+    "Nombre": "clavos",
+    "Descripcion": "jhg",
+    "PrecioCompra": 77,
+    "PrecioVenta": 2433.99,
+    "CodigoBarra": "12344",
+    "CantidadActual": 2,
+    "CantidadMinima": 1,
+    "FechaEntrada": "2025-11-14",
+    "FechaSalida": "2025-11-29",
+    "Id_categoria": 1
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T03:20:57.990Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::1",
+  "body": {
+    "Nombre": "clavos",
+    "Descripcion": "jhg",
+    "PrecioCompra": 77,
+    "PrecioVenta": 2433.99,
+    "CodigoBarra": "12344",
+    "CantidadActual": 2,
+    "CantidadMinima": 1,
+    "FechaEntrada": "2025-11-14",
+    "FechaSalida": "2025-11-29",
+    "Id_categoria": 1
+  }
+}
+---

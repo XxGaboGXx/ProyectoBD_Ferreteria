@@ -70,16 +70,34 @@ const FormularioProducto: React.FC = () => {
     e.preventDefault();
     try {
       setLoading(true);
+      
       if (isEdit) {
-        await updateProducto(Number(id), producto);
-        alert('Producto actualizado');
+        // MODO EDICIÓN: Solo enviar campos que acepta SP_ActualizarProducto
+        // NO enviar: CantidadActual, FechaEntrada, FechaSalida
+        const dataToUpdate = {
+          Nombre: producto.Nombre,
+          Descripcion: producto.Descripcion || null,
+          PrecioVenta: producto.PrecioVenta,
+          PrecioCompra: producto.PrecioCompra || null,
+          CantidadMinima: producto.CantidadMinima || null,
+          Id_categoria: producto.Id_categoria || null,
+          CodigoBarra: producto.CodigoBarra || null,
+        };
+        
+        console.log('📤 Datos a actualizar:', dataToUpdate);
+        await updateProducto(Number(id), dataToUpdate);
+        alert('✅ Producto actualizado exitosamente');
       } else {
+        // MODO CREACIÓN: Enviar todos los campos
         await createProducto(producto);
-        alert('Producto creado');
+        alert('✅ Producto creado exitosamente');
       }
+      
       navigate('/productos');
     } catch (err: any) {
-      alert(err?.response?.data?.message || 'No se pudo guardar el producto');
+      console.error('❌ Error:', err);
+      const errorMsg = err?.response?.data?.error?.message || err?.response?.data?.message || 'No se pudo guardar el producto';
+      alert('❌ ' + errorMsg);
     } finally {
       setLoading(false);
     }

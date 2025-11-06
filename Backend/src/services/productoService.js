@@ -107,19 +107,65 @@ class ProductoService {
         const pool = await getConnection();
 
         try {
-            console.log(`🔄 Actualizando producto ${id}:`, data);
+            console.log(`🔄 Actualizando producto ${id}:`, JSON.stringify(data, null, 2));
+
+            // Validar que el ID sea un número válido
+            if (!id || isNaN(id)) {
+                throw new Error('ID de producto inválido');
+            }
 
             // Llamar al SP (solo envía los campos que se quieren actualizar)
-            const result = await pool.request()
-                .input('Id', sql.Int, id)
-                .input('Nombre', sql.VarChar(20), data.Nombre || null)
-                .input('Descripcion', sql.VarChar(100), data.Descripcion !== undefined ? data.Descripcion : null)
-                .input('PrecioVenta', sql.Decimal(12, 2), data.PrecioVenta || null)
-                .input('PrecioCompra', sql.Decimal(12, 2), data.PrecioCompra !== undefined ? data.PrecioCompra : null)
-                .input('CantidadMinima', sql.Int, data.CantidadMinima || data.StockMinimo || null)
-                .input('Id_categoria', sql.Int, data.Id_categoria !== undefined ? data.Id_categoria : null)
-                .input('CodigoBarra', sql.VarChar(50), data.CodigoBarra !== undefined ? data.CodigoBarra : null)
-                .execute('SP_ActualizarProducto');
+            const request = pool.request()
+                .input('Id', sql.Int, parseInt(id));
+
+            // Solo agregar inputs si el valor está definido
+            if (data.Nombre !== undefined) {
+                request.input('Nombre', sql.VarChar(20), data.Nombre);
+            } else {
+                request.input('Nombre', sql.VarChar(20), null);
+            }
+
+            if (data.Descripcion !== undefined) {
+                request.input('Descripcion', sql.VarChar(100), data.Descripcion);
+            } else {
+                request.input('Descripcion', sql.VarChar(100), null);
+            }
+
+            if (data.PrecioVenta !== undefined) {
+                request.input('PrecioVenta', sql.Decimal(12, 2), data.PrecioVenta);
+            } else {
+                request.input('PrecioVenta', sql.Decimal(12, 2), null);
+            }
+
+            if (data.PrecioCompra !== undefined) {
+                request.input('PrecioCompra', sql.Decimal(12, 2), data.PrecioCompra);
+            } else {
+                request.input('PrecioCompra', sql.Decimal(12, 2), null);
+            }
+
+            if (data.CantidadMinima !== undefined) {
+                request.input('CantidadMinima', sql.Int, data.CantidadMinima);
+            } else {
+                request.input('CantidadMinima', sql.Int, null);
+            }
+
+            if (data.Id_categoria !== undefined) {
+                request.input('Id_categoria', sql.Int, data.Id_categoria);
+            } else {
+                request.input('Id_categoria', sql.Int, null);
+            }
+
+            if (data.CodigoBarra !== undefined) {
+                request.input('CodigoBarra', sql.VarChar(50), data.CodigoBarra);
+            } else {
+                request.input('CodigoBarra', sql.VarChar(50), null);
+            }
+
+            const result = await request.execute('SP_ActualizarProducto');
+
+            if (!result.recordset || result.recordset.length === 0) {
+                throw new Error(`No se pudo actualizar el producto ${id}`);
+            }
 
             const producto = result.recordset[0];
             console.log(`✅ Producto ${id} actualizado correctamente`);
@@ -127,7 +173,8 @@ class ProductoService {
             return producto;
 
         } catch (error) {
-            console.error('❌ Error al actualizar producto:', error);
+            console.error('❌ Error al actualizar producto:', error.message);
+            console.error('❌ Stack:', error.stack);
             throw error;
         }
     }

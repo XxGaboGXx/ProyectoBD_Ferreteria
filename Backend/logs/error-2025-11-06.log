@@ -748,3 +748,191 @@
   }
 }
 ---
+{
+  "timestamp": "2025-11-06T03:54:28.292Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe otro producto con ese nombre",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe otro producto con ese nombre\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "PUT",
+  "url": "/api/productos/6",
+  "ip": "::1",
+  "body": {
+    "Id_producto": 6,
+    "Nombre": "Escalera Aluminio",
+    "Descripcion": "Escalera 6 peldaños",
+    "CantidadActual": 8,
+    "PrecioVenta": 75000,
+    "PrecioCompra": 55000,
+    "CantidadMinima": 2,
+    "Id_categoria": 1,
+    "NombreCategoria": "Herramientas",
+    "FechaEntrada": "2025-11-04",
+    "CodigoBarra": "PROD005",
+    "MargenGanancia": 36.36,
+    "EstadoStock": "Normal",
+    "estadisticasVentas": {
+      "TotalVentas": 0,
+      "CantidadVendida": 0,
+      "MontoTotalVendido": 0,
+      "UltimaVenta": null
+    },
+    "estadisticasCompras": {
+      "TotalCompras": 0,
+      "CantidadComprada": 0,
+      "MontoTotalComprado": 0,
+      "UltimaCompra": null
+    },
+    "ultimosMovimientos": [],
+    "FechaSalida": ""
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T03:54:28.295Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe otro producto con ese nombre",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe otro producto con ese nombre\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "PUT",
+  "url": "/api/productos/6",
+  "ip": "::1",
+  "body": {
+    "Id_producto": 6,
+    "Nombre": "Escalera Aluminio",
+    "Descripcion": "Escalera 6 peldaños",
+    "CantidadActual": 8,
+    "PrecioVenta": 75000,
+    "PrecioCompra": 55000,
+    "CantidadMinima": 2,
+    "Id_categoria": 1,
+    "NombreCategoria": "Herramientas",
+    "FechaEntrada": "2025-11-04",
+    "CodigoBarra": "PROD005",
+    "MargenGanancia": 36.36,
+    "EstadoStock": "Normal",
+    "estadisticasVentas": {
+      "TotalVentas": 0,
+      "CantidadVendida": 0,
+      "MontoTotalVendido": 0,
+      "UltimaVenta": null
+    },
+    "estadisticasCompras": {
+      "TotalCompras": 0,
+      "CantidadComprada": 0,
+      "MontoTotalComprado": 0,
+      "UltimaCompra": null
+    },
+    "ultimosMovimientos": [],
+    "FechaSalida": ""
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T03:59:57.718Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe otro producto con ese nombre",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe otro producto con ese nombre\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "PUT",
+  "url": "/api/productos/6",
+  "ip": "::1",
+  "body": {
+    "Id_producto": 6,
+    "Nombre": "Escalera Aluminio",
+    "Descripcion": "Escalera 6 peldaños",
+    "CantidadActual": 8,
+    "PrecioVenta": 75000,
+    "PrecioCompra": 55000,
+    "CantidadMinima": 2,
+    "Id_categoria": 1,
+    "NombreCategoria": "Herramientas",
+    "FechaEntrada": "2025-11-04",
+    "CodigoBarra": "PROD005",
+    "MargenGanancia": 36.36,
+    "EstadoStock": "Normal",
+    "estadisticasVentas": {
+      "TotalVentas": 0,
+      "CantidadVendida": 0,
+      "MontoTotalVendido": 0,
+      "UltimaVenta": null
+    },
+    "estadisticasCompras": {
+      "TotalCompras": 0,
+      "CantidadComprada": 0,
+      "MontoTotalComprado": 0,
+      "UltimaCompra": null
+    },
+    "ultimosMovimientos": [],
+    "FechaSalida": "2025-11-30"
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T03:59:57.727Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe otro producto con ese nombre",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe otro producto con ese nombre\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "PUT",
+  "url": "/api/productos/6",
+  "ip": "::1",
+  "body": {
+    "Id_producto": 6,
+    "Nombre": "Escalera Aluminio",
+    "Descripcion": "Escalera 6 peldaños",
+    "CantidadActual": 8,
+    "PrecioVenta": 75000,
+    "PrecioCompra": 55000,
+    "CantidadMinima": 2,
+    "Id_categoria": 1,
+    "NombreCategoria": "Herramientas",
+    "FechaEntrada": "2025-11-04",
+    "CodigoBarra": "PROD005",
+    "MargenGanancia": 36.36,
+    "EstadoStock": "Normal",
+    "estadisticasVentas": {
+      "TotalVentas": 0,
+      "CantidadVendida": 0,
+      "MontoTotalVendido": 0,
+      "UltimaVenta": null
+    },
+    "estadisticasCompras": {
+      "TotalCompras": 0,
+      "CantidadComprada": 0,
+      "MontoTotalComprado": 0,
+      "UltimaCompra": null
+    },
+    "ultimosMovimientos": [],
+    "FechaSalida": "2025-11-30"
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T04:02:18.992Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe otro producto con ese nombre",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe otro producto con ese nombre\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "PUT",
+  "url": "/api/productos/6",
+  "ip": "::1",
+  "body": {
+    "Nombre": "Escalera Aluminio",
+    "Descripcion": "Escalera 6 peldaños",
+    "PrecioVenta": 75000,
+    "PrecioCompra": 55000,
+    "CantidadMinima": 2,
+    "Id_categoria": 1,
+    "CodigoBarra": "PROD005"
+  }
+}
+---
+{
+  "timestamp": "2025-11-06T04:02:18.995Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe otro producto con ese nombre",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ya existe otro producto con ese nombre\n    at handleError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:519:28)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\dixon\\OneDrive\\Documentos\\1 UNIVERSIDAD 2025\\SEGUNDO SEMESTRE\\BASES DE DATOS 2\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "PUT",
+  "url": "/api/productos/6",
+  "ip": "::1",
+  "body": {
+    "Nombre": "Escalera Aluminio",
+    "Descripcion": "Escalera 6 peldaños",
+    "PrecioVenta": 75000,
+    "PrecioCompra": 55000,
+    "CantidadMinima": 2,
+    "Id_categoria": 1,
+    "CodigoBarra": "PROD005"
+  }
+}
+---

@@ -1372,3 +1372,1347 @@
   "body": {}
 }
 ---
+{
+  "timestamp": "2025-11-05T22:11:07.178Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:11:07.186Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:11:07.190Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:11:07.192Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:11:07.211Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:11:07.214Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:11:07.209Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:11:07.217Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:11:07.241Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:11:07.245Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:11:07.268Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:11:07.270Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:11:09.169Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:11:09.171Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:11:09.173Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:11:09.175Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:11:09.190Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:11:09.191Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:11:09.330Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:11:09.331Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:11:09.333Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:11:09.335Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:11:09.352Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:11:09.354Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:11:09.497Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:11:09.499Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:11:09.500Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:11:09.501Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:11:09.520Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:11:09.523Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:52.218Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:52.226Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:52.230Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:52.232Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:52.246Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:52.249Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:52.253Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:52.258Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:52.271Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:52.273Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:52.293Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:52.295Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.240Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.243Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.248Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.250Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.255Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.257Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.261Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.264Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.274Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.277Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.292Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.293Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.363Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.368Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.365Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.371Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.380Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.382Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.384Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.386Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.390Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.391Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.407Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.409Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.552Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.556Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.554Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.557Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.567Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.570Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.577Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.579Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.584Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.586Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.599Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.600Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.719Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.721Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.723Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.725Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.737Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.750Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.740Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.743Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.760Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.763Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.777Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.780Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.880Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.882Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.883Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.885Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.896Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.897Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.898Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.899Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.903Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.905Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.917Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:53.918Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:54.695Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:54.697Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:54.703Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:54.708Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:54.723Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:54.726Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:54.727Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:54.728Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:54.735Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:54.737Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:54.753Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:13:54.754Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:14:03.496Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:14:03.498Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:14:03.500Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:14:03.501Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:14:03.512Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:14:03.515Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:14:03.514Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)",
+  "method": "GET",
+  "url": "/api/dashboard/top-productos?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:14:03.516Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopClientes.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/top-clientes?limit=5",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:14:03.521Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:14:03.522Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:14:03.534Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T22:14:03.536Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@Limit is not a parameter for procedure SP_ObtenerTopProductos.\n    at handleError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:518:28)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\gabog\\OneDrive\\Escritorio\\Proyecto-DB-main\\Proyecto-DB-main\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "GET",
+  "url": "/api/dashboard/summary",
+  "ip": "::1",
+  "body": {}
+}
+---
+{
+  "timestamp": "2025-11-05T23:52:17.669Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::1",
+  "body": {
+    "Nombre": "clavos",
+    "Descripcion": "2 pulgadas",
+    "PrecioCompra": 1,
+    "PrecioVenta": 1.99,
+    "CodigoBarra": "123445556",
+    "CantidadActual": 29,
+    "CantidadMinima": 1,
+    "FechaEntrada": "2025-11-01",
+    "FechaSalida": "2025-11-14",
+    "Id_categoria": 1
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T23:52:17.673Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::1",
+  "body": {
+    "Nombre": "clavos",
+    "Descripcion": "2 pulgadas",
+    "PrecioCompra": 1,
+    "PrecioVenta": 1.99,
+    "CodigoBarra": "123445556",
+    "CantidadActual": 29,
+    "CantidadMinima": 1,
+    "FechaEntrada": "2025-11-01",
+    "FechaSalida": "2025-11-14",
+    "Id_categoria": 1
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T23:56:14.047Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::1",
+  "body": {
+    "Nombre": "6",
+    "Descripcion": ",",
+    "PrecioCompra": 7,
+    "PrecioVenta": 5,
+    "CodigoBarra": "66666",
+    "CantidadActual": 6,
+    "CantidadMinima": 5,
+    "FechaEntrada": "2025-10-31",
+    "FechaSalida": "2025-11-09",
+    "Id_categoria": 6
+  }
+}
+---
+{
+  "timestamp": "2025-11-05T23:56:14.050Z",
+  "message": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.",
+  "stack": "RequestError: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Producto_Categoria\". The conflict occurred in database \"FerreteriaCentral\", table \"dbo.Categoria\", column 'Id_categoria'.\n    at handleError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\mssql\\lib\\msnodesqlv8\\request.js:276:21)\n    at StreamEvents.emit (node:events:507:28)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:94:20\n    at Array.forEach (<anonymous>)\n    at Query.routeStatementError (C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:84:19)\n    at C:\\Users\\Naila Torres\\Desktop\\PROYECBD\\ProyectoBD_Ferreteria\\Backend\\node_modules\\msnodesqlv8\\lib\\reader.js:436:12",
+  "method": "POST",
+  "url": "/api/productos",
+  "ip": "::1",
+  "body": {
+    "Nombre": "6",
+    "Descripcion": ",",
+    "PrecioCompra": 7,
+    "PrecioVenta": 5,
+    "CodigoBarra": "66666",
+    "CantidadActual": 6,
+    "CantidadMinima": 5,
+    "FechaEntrada": "2025-10-31",
+    "FechaSalida": "2025-11-09",
+    "Id_categoria": 6
+  }
+}
+---

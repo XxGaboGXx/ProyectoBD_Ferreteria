@@ -1,111 +1,51 @@
 import api from '../../../services/api';
-import type { Cliente } from '../Types/Cliente';
+import type { Cliente, NuevoCliente } from '../Types/Cliente';
 
-// Obtener todos los clientes
-export const fetchClientes = async (): Promise<Cliente[]> => {
-  try {
-    const response = await api.get('/clientes');
-    return response.data.data || response.data;
-  } catch (error) {
-    console.error('Error al obtener clientes:', error);
-    throw error;
-  }
+export interface ClienteListResponse {
+  data: Cliente[];
+  pagination: { page: number; limit: number; total: number; totalPages: number };
+}
+
+// Listar clientes con paginación y filtros (Nombre)
+export const fetchClientes = async (params?: { page?: number; limit?: number; Nombre?: string }): Promise<ClienteListResponse> => {
+  const response = await api.get('/clientes', { params });
+  return response.data.data as ClienteListResponse;
 };
 
 // Obtener un cliente por ID
 export const fetchClienteById = async (id: number): Promise<Cliente> => {
-  try {
-    const response = await api.get(`/clientes/${id}`);
-    return response.data.data || response.data;
-  } catch (error) {
-    console.error(`Error al obtener cliente ${id}:`, error);
-    throw error;
-  }
-};
-
-// Obtener un cliente por cédula
-export const fetchClienteByCedula = async (cedula: string): Promise<Cliente> => {
-  try {
-    const response = await api.get(`/clientes/cedula/${cedula}`);
-    return response.data.data || response.data;
-  } catch (error) {
-    console.error(`Error al obtener cliente con cédula ${cedula}:`, error);
-    throw error;
-  }
+  const response = await api.get(`/clientes/${id}`);
+  return response.data.data as Cliente;
 };
 
 // Crear un nuevo cliente
-export const createCliente = async (cliente: Omit<Cliente, 'Id_cliente'>): Promise<Cliente> => {
-  try {
-    const response = await api.post('/clientes', cliente);
-    return response.data.data || response.data;
-  } catch (error) {
-    console.error('Error al crear cliente:', error);
-    throw error;
-  }
+export const createCliente = async (cliente: NuevoCliente): Promise<Cliente> => {
+  const response = await api.post('/clientes', cliente);
+  return response.data.data as Cliente;
 };
 
 // Actualizar un cliente
-export const updateCliente = async (id: number, cliente: Partial<Cliente>): Promise<Cliente> => {
-  try {
-    const response = await api.put(`/clientes/${id}`, cliente);
-    return response.data.data || response.data;
-  } catch (error) {
-    console.error(`Error al actualizar cliente ${id}:`, error);
-    throw error;
-  }
+export const updateCliente = async (id: number, cliente: Partial<NuevoCliente>): Promise<Cliente> => {
+  const response = await api.put(`/clientes/${id}`, cliente);
+  return response.data.data as Cliente;
 };
 
 // Eliminar un cliente
-export const deleteCliente = async (id: number): Promise<void> => {
-  try {
-    await api.delete(`/clientes/${id}`);
-  } catch (error) {
-    console.error(`Error al eliminar cliente ${id}:`, error);
-    throw error;
-  }
+export const deleteCliente = async (id: number): Promise<{ success: boolean; message?: string }> => {
+  const response = await api.delete(`/clientes/${id}`);
+  return response.data;
 };
 
-// Obtener historial de compras/ventas de un cliente
-export const fetchHistorialCliente = async (id: number): Promise<any[]> => {
-  try {
-    const response = await api.get(`/clientes/${id}/historial`);
-    return response.data.data || response.data;
-  } catch (error) {
-    console.error(`Error al obtener historial del cliente ${id}:`, error);
-    throw error;
-  }
+// Historial de compras/ventas del cliente (paginado)
+export const fetchHistorialCliente = async (id: number, params?: { page?: number; limit?: number }): Promise<ClienteListResponse> => {
+  const response = await api.get(`/clientes/${id}/historial`, { params });
+  return response.data.data as ClienteListResponse;
 };
 
-// Obtener estadísticas de un cliente
+// Estadísticas de un cliente
 export const fetchEstadisticasCliente = async (id: number): Promise<any> => {
-  try {
-    const response = await api.get(`/clientes/${id}/estadisticas`);
-    return response.data.data || response.data;
-  } catch (error) {
-    console.error(`Error al obtener estadísticas del cliente ${id}:`, error);
-    throw error;
-  }
+  const response = await api.get(`/clientes/${id}/estadisticas`);
+  return response.data.data;
 };
 
-// Obtener alquileres activos de un cliente
-export const fetchAlquileresCliente = async (id: number): Promise<any[]> => {
-  try {
-    const response = await api.get(`/clientes/${id}/alquileres`);
-    return response.data.data || response.data;
-  } catch (error) {
-    console.error(`Error al obtener alquileres del cliente ${id}:`, error);
-    throw error;
-  }
-};
-
-// Actualizar línea de crédito de un cliente
-export const updateLineaCredito = async (id: number, data: { linea_credito: number }): Promise<Cliente> => {
-  try {
-    const response = await api.put(`/clientes/${id}/linea-credito`, data);
-    return response.data.data || response.data;
-  } catch (error) {
-    console.error(`Error al actualizar línea de crédito del cliente ${id}:`, error);
-    throw error;
-  }
-};
+// Nota: Rutas como /cedula/:cedula, /inactivos, desactivar/reactivar no están disponibles en el backend actual o lanzan error controlado.

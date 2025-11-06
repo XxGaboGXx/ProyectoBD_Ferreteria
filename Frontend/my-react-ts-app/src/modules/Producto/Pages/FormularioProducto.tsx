@@ -1,6 +1,6 @@
 // src/modules/Producto/Pages/FormularioProducto.tsx
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import {
   FaBoxOpen,
   FaDollarSign,
@@ -13,37 +13,82 @@ import {
   FaSave,
   FaTimesCircle,
 } from "react-icons/fa";
-
+import { createProducto, fetchProductoById, updateProducto } from "../Services/productoService";
+import type { Producto } from "../Types/Producto";
 
 const FormularioProducto: React.FC = () => {
-  const [producto, setProducto] = useState({
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const isEdit = Boolean(id);
+  const [loading, setLoading] = useState(false);
+  const [producto, setProducto] = useState<Partial<Producto>>({
     Nombre: "",
     Descripcion: "",
-    PrecioCompra: "",
-    PrecioVenta: "",
+    PrecioCompra: undefined,
+    PrecioVenta: 0,
     CodigoBarra: "",
-    CantidadActual: "",
-    CantidadMinima: "",
+    CantidadActual: 0,
+    CantidadMinima: undefined,
     FechaEntrada: "",
     FechaSalida: "",
-    Id_categoria: "",
+    Id_categoria: undefined,
   });
+
+  useEffect(() => {
+    const load = async () => {
+      if (!id) return;
+      setLoading(true);
+      try {
+        const data = await fetchProductoById(Number(id));
+        setProducto(data);
+      } catch (e) {
+        alert('No se pudo cargar el producto');
+      } finally {
+        setLoading(false);
+      }
+    };
+    load();
+  }, [id]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setProducto({ ...producto, [name]: value });
+    // Convertir numéricos cuando corresponda
+    const numericFields = [
+      'PrecioCompra',
+      'PrecioVenta',
+      'CantidadActual',
+      'CantidadMinima',
+      'Id_categoria',
+    ];
+    const newValue = numericFields.includes(name)
+      ? (value === '' ? undefined : Number(value))
+      : value;
+    setProducto({ ...producto, [name]: newValue } as Partial<Producto>);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Producto guardado:", producto);
-    // Aquí podrías llamar a una API (POST) para guardar en la base de datos
+    try {
+      setLoading(true);
+      if (isEdit) {
+        await updateProducto(Number(id), producto);
+        alert('Producto actualizado');
+      } else {
+        await createProducto(producto);
+        alert('Producto creado');
+      }
+      navigate('/productos');
+    } catch (err: any) {
+      alert(err?.response?.data?.message || 'No se pudo guardar el producto');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="p-6 max-w-2xl mx-auto bg-white rounded-2xl shadow-lg">
       <h1 className="text-3xl font-bold mb-6 flex items-center gap-2 text-gray-800">
-        <FaClipboardList className="text-blue-600" /> Nuevo Producto
+        <FaClipboardList className="text-blue-600" /> {isEdit ? 'Editar Producto' : 'Nuevo Producto'}
       </h1>
 
       <form onSubmit={handleSubmit} className="space-y-5">
@@ -55,7 +100,7 @@ const FormularioProducto: React.FC = () => {
           <input
             type="text"
             name="Nombre"
-            value={producto.Nombre}
+            value={producto.Nombre || ''}
             onChange={handleChange}
             className="w-full border rounded-lg p-2 focus:ring-2 focus:ring-blue-500 outline-none"
             placeholder="Ej. Laptop X1"
@@ -68,7 +113,7 @@ const FormularioProducto: React.FC = () => {
           <label className=" text-gray-700 font-semibold mb-1">Descripción</label>
           <textarea
             name="Descripcion"
-            value={producto.Descripcion}
+            value={producto.Descripcion || ''}
             onChange={handleChange}
             className="w-full border rounded-lg p-2 focus:ring-2 focus:ring-blue-500 outline-none"
             placeholder="Ej. Laptop de alto rendimiento..."
@@ -84,7 +129,7 @@ const FormularioProducto: React.FC = () => {
           <input
             type="number"
             name="PrecioCompra"
-            value={producto.PrecioCompra}
+            value={producto.PrecioCompra ?? ''}
             onChange={handleChange}
             step="0.01"
             className="w-full border rounded-lg p-2 focus:ring-2 focus:ring-green-500 outline-none"
@@ -101,7 +146,7 @@ const FormularioProducto: React.FC = () => {
           <input
             type="number"
             name="PrecioVenta"
-            value={producto.PrecioVenta}
+            value={producto.PrecioVenta ?? ''}
             onChange={handleChange}
             step="0.01"
             className="w-full border rounded-lg p-2 focus:ring-2 focus:ring-yellow-400 outline-none"
@@ -118,7 +163,7 @@ const FormularioProducto: React.FC = () => {
           <input
             type="text"
             name="CodigoBarra"
-            value={producto.CodigoBarra}
+            value={producto.CodigoBarra || ''}
             onChange={handleChange}
             className="w-full border rounded-lg p-2 focus:ring-2 focus:ring-indigo-500 outline-none"
             placeholder="Ej. 123456789001"
@@ -133,7 +178,7 @@ const FormularioProducto: React.FC = () => {
           <input
             type="number"
             name="CantidadActual"
-            value={producto.CantidadActual}
+            value={producto.CantidadActual ?? ''}
             onChange={handleChange}
             className="w-full border rounded-lg p-2 focus:ring-2 focus:ring-purple-500 outline-none"
             placeholder="Ej. 10"
@@ -149,7 +194,7 @@ const FormularioProducto: React.FC = () => {
           <input
             type="number"
             name="CantidadMinima"
-            value={producto.CantidadMinima}
+            value={producto.CantidadMinima ?? ''}
             onChange={handleChange}
             className="w-full border rounded-lg p-2 focus:ring-2 focus:ring-red-400 outline-none"
             placeholder="Ej. 2"
@@ -165,7 +210,7 @@ const FormularioProducto: React.FC = () => {
           <input
             type="date"
             name="FechaEntrada"
-            value={producto.FechaEntrada}
+            value={producto.FechaEntrada || ''}
             onChange={handleChange}
             className="w-full border rounded-lg p-2 focus:ring-2 focus:ring-blue-400 outline-none"
             required
@@ -180,7 +225,7 @@ const FormularioProducto: React.FC = () => {
           <input
             type="date"
             name="FechaSalida"
-            value={producto.FechaSalida}
+            value={producto.FechaSalida || ''}
             onChange={handleChange}
             className="w-full border rounded-lg p-2 focus:ring-2 focus:ring-gray-400 outline-none"
           />
@@ -194,7 +239,7 @@ const FormularioProducto: React.FC = () => {
           <input
             type="number"
             name="Id_categoria"
-            value={producto.Id_categoria}
+            value={producto.Id_categoria ?? ''}
             onChange={handleChange}
             className="w-full border rounded-lg p-2 focus:ring-2 focus:ring-pink-400 outline-none"
             placeholder="Ej. 1"
@@ -213,8 +258,9 @@ const FormularioProducto: React.FC = () => {
           <button
             type="submit"
             className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+            disabled={loading}
           >
-            <FaSave /> Guardar Producto
+            <FaSave /> {isEdit ? 'Actualizar Producto' : 'Guardar Producto'}
           </button>
         </div>
       </form>

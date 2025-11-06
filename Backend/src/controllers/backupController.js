@@ -6,12 +6,33 @@ const { utils, constants } = require('../config');
  */
 exports.createBackup = async (req, res, next) => {
     try {
+        console.log('📥 ==================== CREAR BACKUP ====================');
+        console.log('📥 Body completo recibido:', JSON.stringify(req.body, null, 2));
+        console.log('📥 Headers:', req.headers);
+        
         const { backupName } = req.body;
-        const result = await backupService.createBackup(backupName);
+        
+        console.log('📝 backupName extraído:', backupName);
+        console.log('📝 Tipo de backupName:', typeof backupName);
+        
+        // ✅ Validar y limpiar el nombre
+        const finalName = backupName && typeof backupName === 'string' && backupName.trim() 
+            ? backupName.trim() 
+            : null;
+        
+        console.log('✅ Nombre final procesado:', finalName);
+        console.log('🚀 Llamando a backupService.createBackup con:', finalName);
+        
+        const result = await backupService.createBackup(finalName);
+        
+        console.log('✅ Resultado del servicio:', JSON.stringify(result, null, 2));
+        console.log('📥 =====================================================');
+        
         res.status(constants.HTTP_STATUS.CREATED).json(
             utils.successResponse(result, 'Backup creado exitosamente')
         );
     } catch (error) {
+        console.error('❌ Error en createBackup:', error);
         next(error);
     }
 };

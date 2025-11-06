@@ -20,5 +20,6 @@ router.get('/:id', ventaController.getById);
 
 // 5. CRUD operations
 router.post('/', ventaController.create);
+router.put('/:id', ventaController.update);
 
 module.exports = router;

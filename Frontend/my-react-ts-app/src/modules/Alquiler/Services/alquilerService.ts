@@ -56,13 +56,19 @@ export const finalizarAlquiler = async (id: number, userId?: string): Promise<an
 
 // Extender alquiler (en días adicionales)
 export const extenderAlquiler = async (id: number, diasAdicionales: number, userId?: string): Promise<any> => {
-  const response = await api.post(`/alquileres/${id}/extender`, { diasAdicionales, userId });
+  console.log('🔧 Extendiendo alquiler:', { id, diasAdicionales, userId });
+  const payload = { diasAdicionales, userId: userId || 'SYSTEM' };
+  console.log('📤 Payload a enviar:', payload);
+  const response = await api.post(`/alquileres/${id}/extender`, payload);
   return response.data.data;
 };
 
 // Cancelar alquiler
 export const cancelarAlquiler = async (id: number, motivo: string, userId?: string): Promise<any> => {
-  const response = await api.post(`/alquileres/${id}/cancelar`, { motivo, userId });
+  console.log('🔧 Cancelando alquiler:', { id, motivo, userId });
+  const payload = { motivo, userId: userId || 'SYSTEM' };
+  console.log('📤 Payload a enviar:', payload);
+  const response = await api.post(`/alquileres/${id}/cancelar`, payload);
   return response.data.data;
 };
 

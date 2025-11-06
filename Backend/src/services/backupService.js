@@ -17,138 +17,211 @@ class BackupService {
             if (!fs.existsSync(this.sqlServerBackupPath)) {
                 fs.mkdirSync(this.sqlServerBackupPath, { recursive: true });
                 console.log(`✅ Directorio de backups creado: ${this.sqlServerBackupPath}`);
-            } else {
-                console.log(`✅ Directorio de backups encontrado: ${this.sqlServerBackupPath}`);
             }
         } catch (error) {
-            console.error(`❌ Error al crear/verificar directorio: ${error.message}`);
+            console.error('❌ Error al crear directorio de backups:', error.message);
         }
     }
 
     /**
-     * Crea un backup de la base de datos
+     * Formatea bytes a formato legible
+     */
+    formatBytes(bytes, decimals = 2) {
+        if (bytes === 0) return '0 Bytes';
+        if (!bytes) return 'N/A';
+        
+        const k = 1024;
+        const dm = decimals < 0 ? 0 : decimals;
+        const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+        
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+    }
+
+    /**
+     * Crea un backup de la base de datos usando SP
      */
     async createBackup(backupName = null) {
         try {
-            const pool = await getConnection();
+            console.log('💾 ==================== BACKUP SERVICE ====================');
+            console.log('💾 Parámetro recibido:', backupName);
             
-            const timestamp = new Date().toISOString().replace(/[:.]/g, '-').split('.')[0];
-            const fileName = backupName || `FerreteriaCentral_${timestamp}.bak`;
+            const pool = await getConnection();
+            const dbName = config.database.database;
+            
+            // Generar timestamp
+            const timestamp = new Date().toISOString()
+                .replace(/:/g, '-')
+                .replace(/\./g, '-')
+                .slice(0, -5);
+            
+            // Generar nombre del archivo
+            let fileName;
+            if (backupName && backupName.trim()) {
+                fileName = `${backupName.trim()}_${timestamp}.bak`;
+                console.log('💾 Usando nombre PERSONALIZADO:', fileName);
+            } else {
+                fileName = `${dbName}_${timestamp}.bak`;
+                console.log('💾 Usando nombre AUTOMÁTICO:', fileName);
+            }
             
             const fullPath = path.join(this.sqlServerBackupPath, fileName);
             
-            console.log('🔄 Iniciando backup de base de datos...');
-            console.log(`📁 Destino: ${fullPath}`);
+            console.log('💾 Ruta completa del backup:', fullPath);
+            console.log('💾 Llamando a SP_CrearBackup...');
             
-            // Ejecutar SP_CrearBackup
+            // ✅ USAR STORED PROCEDURE
             const result = await pool.request()
                 .input('RutaCompleta', sql.NVarChar(500), fullPath)
                 .input('NombreArchivo', sql.NVarChar(200), fileName)
                 .execute('SP_CrearBackup');
-
-            // Obtener tamaño del archivo
+            
+            const spResult = result.recordset[0];
+            
+            if (!spResult.Success) {
+                throw new Error(spResult.Mensaje);
+            }
+            
+            console.log('✅ SP ejecutado exitosamente');
+            
+            // Verificar que el archivo existe
             let fileSize = 0;
+            let fileExists = false;
+            
             try {
                 if (fs.existsSync(fullPath)) {
                     const stats = fs.statSync(fullPath);
                     fileSize = stats.size;
+                    fileExists = true;
+                    console.log('✅ Archivo verificado en disco');
+                    console.log('💾 Tamaño:', this.formatBytes(fileSize));
+                } else {
+                    console.warn('⚠️  Archivo NO encontrado en disco');
                 }
             } catch (e) {
-                console.warn('⚠️  No se pudo obtener tamaño del archivo');
+                console.warn('⚠️  Error al verificar archivo:', e.message);
             }
-
-            const sizeInMB = (fileSize / (1024 * 1024)).toFixed(2);
-
-            console.log(`✅ Backup creado exitosamente`);
-            console.log(`   📄 Archivo: ${fileName}`);
-            console.log(`   💾 Tamaño: ${sizeInMB} MB`);
             
-            return {
+            const finalResult = {
                 success: true,
                 fileName,
                 path: fullPath,
                 size: fileSize,
-                sizeFormatted: `${sizeInMB} MB`,
+                sizeFormatted: this.formatBytes(fileSize),
                 date: new Date(),
-                timestamp
+                timestamp,
+                isAutomatic: !backupName,
+                exists: fileExists
             };
+            
+            console.log('💾 Resultado final:', JSON.stringify(finalResult, null, 2));
+            console.log('💾 =========================================================');
+            
+            return finalResult;
         } catch (error) {
-            console.error('❌ Error al crear backup:', error.message);
-            
-            if (error.message.includes('Cannot open backup device') || 
-                error.message.includes('denied') || 
-                error.message.includes('EPERM')) {
-                console.error('\n💡 SOLUCIÓN:');
-                console.error('   1. Verifica que la carpeta existe:');
-                console.error(`      dir "${this.sqlServerBackupPath}"`);
-                console.error('   2. Da permisos (PowerShell Admin):');
-                console.error(`      icacls "${this.sqlServerBackupPath}" /grant "NT SERVICE\\MSSQL\`$SQLEXPRESS:(OI)(CI)F" /T`);
-                console.error(`      icacls "${this.sqlServerBackupPath}" /grant "$env:USERDOMAIN\\$env:USERNAME:(OI)(CI)F" /T`);
-            }
-            
+            console.error('❌ ==================== ERROR EN BACKUP ====================');
+            console.error('❌ Mensaje:', error.message);
+            console.error('❌ Stack:', error.stack);
+            console.error('❌ ==========================================================');
             throw error;
         }
     }
 
     /**
-     * Restaura un backup
+     * Restaura un backup usando SP
      */
     async restoreBackup(backupFileName) {
-        try {
-            const pool = await getConnection();
-            const fullPath = path.join(this.sqlServerBackupPath, backupFileName);
+    try {
+        console.log('🔄 ==================== RESTAURAR BACKUP ====================');
+        console.log('🔄 Archivo:', backupFileName);
+        
+        const backupPath = path.join(this.sqlServerBackupPath, backupFileName);
 
-            if (!fs.existsSync(fullPath)) {
-                throw new Error(`Archivo de backup no encontrado: ${backupFileName}`);
-            }
+        if (!fs.existsSync(backupPath)) {
+            throw new Error(`El archivo de backup no existe: ${backupFileName}`);
+        }
 
-            console.log('🔄 Restaurando backup...');
-            console.log(`📁 Origen: ${fullPath}`);
-            
-            // Poner BD en modo single user
-            await pool.request().query(`
+        console.log('✅ Archivo encontrado:', backupPath);
+        console.log('🔄 Llamando a SP_RestaurarBackup en master...');
+
+        const pool = await getConnection();
+
+        // ✅ IMPORTANTE: Ejecutar el SP que está en master
+        // Cambiar el contexto a master antes de llamar al SP
+        const result = await pool.request()
+            .input('RutaCompleta', sql.NVarChar(500), backupPath)
+            .query(`
                 USE master;
-                ALTER DATABASE [FerreteriaCentral] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+                EXEC SP_RestaurarBackup @RutaCompleta;
             `);
 
-            try {
-                // Restaurar directamente sin SP (más confiable para backups)
-                await pool.request().query(`
-                    RESTORE DATABASE [FerreteriaCentral]
-                    FROM DISK = N'${fullPath}'
-                    WITH REPLACE, RECOVERY, STATS = 10;
-                `);
-            } finally {
-                // Volver a modo multi user (siempre ejecutar esto)
-                await pool.request().query(`
-                    USE master;
-                    ALTER DATABASE [FerreteriaCentral] SET MULTI_USER;
-                `);
+        // El resultado estará en el segundo recordset (después del USE)
+        const spResult = result.recordsets[result.recordsets.length - 1][0];
+
+        if (!spResult || !spResult.Success) {
+            throw new Error(spResult?.Mensaje || 'Error desconocido al restaurar');
+        }
+
+        console.log('✅ Backup restaurado exitosamente');
+        console.log('🔄 ===========================================================');
+
+        return {
+            success: true,
+            message: 'Backup restaurado exitosamente',
+            fileName: backupFileName,
+            restoredAt: new Date()
+        };
+    } catch (error) {
+        console.error('❌ ==================== ERROR EN RESTORE ====================');
+        console.error('❌ Mensaje:', error.message);
+        console.error('❌ Código:', error.code);
+        console.error('❌ Detalles:', error);
+        console.error('❌ ===========================================================');
+        throw new Error(`Error al restaurar backup: ${error.message}`);
+    }
+}
+
+
+    /**
+     * Verifica la integridad de un backup usando SP
+     */
+    async verifyBackup(backupFileName) {
+        try {
+            const backupPath = path.join(this.sqlServerBackupPath, backupFileName);
+
+            if (!fs.existsSync(backupPath)) {
+                throw new Error(`El archivo no existe: ${backupFileName}`);
             }
 
-            console.log('✅ Backup restaurado exitosamente');
+            const pool = await getConnection();
             
-            return { 
-                success: true, 
-                message: 'Backup restaurado exitosamente',
+            // ✅ USAR STORED PROCEDURE
+            const result = await pool.request()
+                .input('RutaCompleta', sql.NVarChar(500), backupPath)
+                .execute('SP_VerificarBackup');
+
+            const spResult = result.recordset[0];
+
+            console.log(`${spResult.IsValid ? '✅' : '❌'} Verificación de backup:`, backupFileName);
+
+            return {
+                success: spResult.Success === 1,
+                isValid: spResult.IsValid === 1,
                 fileName: backupFileName,
-                restoredAt: new Date()
+                message: spResult.Mensaje,
+                exists: true,
+                size: fs.statSync(backupPath).size
             };
         } catch (error) {
-            console.error('❌ Error al restaurar backup:', error.message);
-            
-            // Intentar restaurar modo multi user
-            try {
-                const pool = await getConnection();
-                await pool.request().query(`
-                    USE master;
-                    ALTER DATABASE [FerreteriaCentral] SET MULTI_USER;
-                `);
-            } catch (e) {
-                console.error('⚠️  No se pudo restaurar modo multi user');
-            }
-            
-            throw error;
+            console.error('❌ Error al verificar backup:', error.message);
+            return {
+                success: false,
+                isValid: false,
+                fileName: backupFileName,
+                message: error.message,
+                exists: fs.existsSync(path.join(this.sqlServerBackupPath, backupFileName))
+            };
         }
     }
 
@@ -158,41 +231,32 @@ class BackupService {
     async listBackups() {
         try {
             if (!fs.existsSync(this.sqlServerBackupPath)) {
-                console.warn(`⚠️  Ruta de backups no encontrada: ${this.sqlServerBackupPath}`);
-                console.log('📁 Creando directorio...');
-                fs.mkdirSync(this.sqlServerBackupPath, { recursive: true });
                 return [];
             }
 
-            const files = fs.readdirSync(this.sqlServerBackupPath);
-            const backups = files
+            const files = fs.readdirSync(this.sqlServerBackupPath)
                 .filter(file => file.endsWith('.bak'))
                 .map(file => {
                     const filePath = path.join(this.sqlServerBackupPath, file);
                     const stats = fs.statSync(filePath);
-                    const sizeInMB = (stats.size / (1024 * 1024)).toFixed(2);
                     
                     return {
                         fileName: file,
                         path: filePath,
                         size: stats.size,
-                        sizeFormatted: `${sizeInMB} MB`,
+                        sizeFormatted: this.formatBytes(stats.size),
                         created: stats.birthtime,
                         modified: stats.mtime,
-                        age: this.getFileAge(stats.birthtime)
+                        sizeBytes: stats.size,
+                        isAutomatic: !file.includes('_') || file.startsWith('FerreteriaCentral_')
                     };
                 })
                 .sort((a, b) => b.created - a.created);
 
-            return backups;
+            console.log(`📋 Backups encontrados: ${files.length}`);
+            return files;
         } catch (error) {
             console.error('❌ Error al listar backups:', error.message);
-            
-            if (error.code === 'EPERM' || error.code === 'EACCES') {
-                console.warn('⚠️  Sin permisos para leer la carpeta. Devolviendo lista vacía.');
-                return [];
-            }
-            
             throw error;
         }
     }
@@ -204,18 +268,13 @@ class BackupService {
         const now = new Date();
         const diffMs = now - date;
         const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-        const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
-        const diffMinutes = Math.floor(diffMs / (1000 * 60));
-
-        if (diffDays > 0) {
-            return `${diffDays} día${diffDays > 1 ? 's' : ''}`;
-        } else if (diffHours > 0) {
-            return `${diffHours} hora${diffHours > 1 ? 's' : ''}`;
-        } else if (diffMinutes > 0) {
-            return `${diffMinutes} minuto${diffMinutes > 1 ? 's' : ''}`;
-        } else {
-            return 'recién creado';
-        }
+        
+        if (diffDays === 0) return 'Hoy';
+        if (diffDays === 1) return 'Ayer';
+        if (diffDays < 7) return `${diffDays} días`;
+        if (diffDays < 30) return `${Math.floor(diffDays / 7)} semanas`;
+        if (diffDays < 365) return `${Math.floor(diffDays / 30)} meses`;
+        return `${Math.floor(diffDays / 365)} años`;
     }
 
     /**
@@ -223,48 +282,27 @@ class BackupService {
      */
     async deleteOldBackups(daysToKeep = 30) {
         try {
-            if (!fs.existsSync(this.sqlServerBackupPath)) {
-                return { success: true, deleted: 0, deletedFiles: [], daysToKeep };
-            }
-
-            const files = fs.readdirSync(this.sqlServerBackupPath);
-            const now = Date.now();
-            const maxAge = daysToKeep * 24 * 60 * 60 * 1000;
+            const files = await this.listBackups();
+            const now = new Date();
             let deleted = 0;
-            const deletedFiles = [];
 
-            files.forEach(file => {
-                if (!file.endsWith('.bak')) return;
+            for (const file of files) {
+                const ageInDays = Math.floor((now - new Date(file.created)) / (1000 * 60 * 60 * 24));
                 
-                const filePath = path.join(this.sqlServerBackupPath, file);
-                const stats = fs.statSync(filePath);
-                const age = now - stats.birthtime.getTime();
-
-                if (age > maxAge) {
-                    const sizeInMB = (stats.size / (1024 * 1024)).toFixed(2);
-                    fs.unlinkSync(filePath);
+                if (ageInDays > daysToKeep) {
+                    fs.unlinkSync(file.path);
                     deleted++;
-                    deletedFiles.push({
-                        name: file,
-                        size: `${sizeInMB} MB`,
-                        age: this.getFileAge(stats.birthtime)
-                    });
-                    console.log(`🗑️  Backup antiguo eliminado: ${file}`);
+                    console.log(`🗑️  Eliminado backup antiguo: ${file.fileName} (${ageInDays} días)`);
                 }
-            });
-
-            if (deleted > 0) {
-                console.log(`✅ ${deleted} backup(s) antiguo(s) eliminado(s)`);
             }
 
-            return { 
-                success: true, 
+            return {
+                success: true,
                 deleted,
-                deletedFiles,
-                daysToKeep
+                message: `${deleted} backups eliminados (mayores a ${daysToKeep} días)`
             };
         } catch (error) {
-            console.error('❌ Error al eliminar backups antiguos:', error);
+            console.error('❌ Error al eliminar backups antiguos:', error.message);
             throw error;
         }
     }
@@ -275,26 +313,21 @@ class BackupService {
     async deleteBackup(fileName) {
         try {
             const filePath = path.join(this.sqlServerBackupPath, fileName);
-            
+
             if (!fs.existsSync(filePath)) {
-                throw new Error(`Backup no encontrado: ${fileName}`);
+                throw new Error(`El archivo no existe: ${fileName}`);
             }
 
-            const stats = fs.statSync(filePath);
-            const sizeInMB = (stats.size / (1024 * 1024)).toFixed(2);
-            
             fs.unlinkSync(filePath);
-            
             console.log(`🗑️  Backup eliminado: ${fileName}`);
-            
+
             return {
                 success: true,
                 message: 'Backup eliminado exitosamente',
-                fileName,
-                size: `${sizeInMB} MB`
+                fileName
             };
         } catch (error) {
-            console.error('❌ Error al eliminar backup:', error);
+            console.error('❌ Error al eliminar backup:', error.message);
             throw error;
         }
     }
@@ -306,104 +339,19 @@ class BackupService {
         try {
             const backups = await this.listBackups();
             
-            const totalSize = backups.reduce((sum, backup) => sum + backup.size, 0);
-            const totalSizeInMB = (totalSize / (1024 * 1024)).toFixed(2);
-            const totalSizeInGB = (totalSize / (1024 * 1024 * 1024)).toFixed(2);
-
+            const totalSize = backups.reduce((sum, b) => sum + b.size, 0);
+            
             return {
-                path: this.sqlServerBackupPath,
                 count: backups.length,
-                totalSize: totalSize,
-                totalSizeFormatted: totalSizeInGB > 1 ? `${totalSizeInGB} GB` : `${totalSizeInMB} MB`,
+                totalSizeBytes: totalSize,
+                totalSizeFormatted: this.formatBytes(totalSize),
                 oldest: backups.length > 0 ? backups[backups.length - 1] : null,
                 newest: backups.length > 0 ? backups[0] : null,
-                backups: backups,
-                sqlServerEdition: 'Express (sin compresión)'
+                backups
             };
         } catch (error) {
-            console.error('❌ Error al obtener información de backups:', error);
+            console.error('❌ Error al obtener info de backups:', error.message);
             throw error;
-        }
-    }
-
-    /**
-     * Inicia el sistema de backups automáticos
-     */
-    startAutoBackup() {
-        if (!config.backup?.enabled) {
-            console.log('⚠️  Backups automáticos deshabilitados en configuración');
-            return;
-        }
-
-        console.log('🔄 Iniciando sistema de backups automáticos...');
-        console.log(`   📁 Ruta: ${this.sqlServerBackupPath}`);
-        console.log(`   ⏰ Intervalo: ${config.backup.autoBackupInterval / (60 * 60 * 1000)} horas`);
-        console.log(`   📅 Retención: ${config.backup.retention} días`);
-        console.log(`   💡 SQL Server Express: Backups SIN compresión`);
-        
-        this.autoBackupInterval = setInterval(async () => {
-            try {
-                console.log('\n⏰ Ejecutando backup automático programado...');
-                await this.createBackup();
-                await this.deleteOldBackups(config.backup.retention);
-            } catch (error) {
-                console.error('❌ Error en backup automático:', error.message);
-            }
-        }, config.backup.autoBackupInterval);
-
-        console.log(`✅ Sistema de backups automáticos iniciado`);
-    }
-
-    /**
-     * Detiene el sistema de backups automáticos
-     */
-    stopAutoBackup() {
-        if (this.autoBackupInterval) {
-            clearInterval(this.autoBackupInterval);
-            this.autoBackupInterval = null;
-            console.log('🛑 Sistema de backups automáticos detenido');
-        }
-    }
-
-    /**
-     * Verifica la integridad de un backup
-     */
-    async verifyBackup(backupFileName) {
-        try {
-            const pool = await getConnection();
-            const fullPath = path.join(this.sqlServerBackupPath, backupFileName);
-
-            if (!fs.existsSync(fullPath)) {
-                throw new Error(`Archivo de backup no encontrado: ${backupFileName}`);
-            }
-
-            console.log('🔍 Verificando backup...');
-            console.log(`📁 Archivo: ${fullPath}`);
-            
-            // Ejecutar SP_VerificarBackup
-            const result = await pool.request()
-                .input('RutaCompleta', sql.NVarChar(500), fullPath)
-                .execute('SP_VerificarBackup');
-
-            console.log('✅ Backup verificado correctamente');
-            
-            return { 
-                success: true,
-                fileName: backupFileName,
-                status: 'VALID',
-                message: 'Backup verificado correctamente',
-                verifiedAt: new Date()
-            };
-        } catch (error) {
-            console.error('❌ Error al verificar backup:', error.message);
-            
-            return {
-                success: false,
-                fileName: backupFileName,
-                status: 'INVALID',
-                message: error.message,
-                verifiedAt: new Date()
-            };
         }
     }
 
@@ -412,30 +360,55 @@ class BackupService {
      */
     async getBackupDetails(backupFileName) {
         try {
-            const pool = await getConnection();
-            const fullPath = path.join(this.sqlServerBackupPath, backupFileName);
+            const filePath = path.join(this.sqlServerBackupPath, backupFileName);
 
-            if (!fs.existsSync(fullPath)) {
-                throw new Error(`Archivo de backup no encontrado: ${backupFileName}`);
+            if (!fs.existsSync(filePath)) {
+                throw new Error(`El archivo no existe: ${backupFileName}`);
             }
 
-            console.log('📄 Obteniendo información del backup...');
-            
-            // Ejecutar SP_ObtenerInfoBackup
-            const result = await pool.request()
-                .input('RutaCompleta', sql.NVarChar(500), fullPath)
-                .execute('SP_ObtenerInfoBackup');
+            const stats = fs.statSync(filePath);
 
-            const info = result.recordset[0];
-            
             return {
-                success: true,
                 fileName: backupFileName,
-                ...info
+                fullPath: filePath,
+                exists: true,
+                sizeBytes: stats.size,
+                sizeFormatted: this.formatBytes(stats.size),
+                created: stats.birthtime,
+                modified: stats.mtime
             };
         } catch (error) {
-            console.error('❌ Error al obtener información del backup:', error.message);
+            console.error('❌ Error al obtener detalles del backup:', error.message);
             throw error;
+        }
+    }
+
+    /**
+     * Inicia el sistema de backups automáticos
+     */
+    startAutoBackup() {
+        const interval = config.backup?.autoBackupInterval || 24 * 60 * 60 * 1000; // 24 horas por defecto
+        
+        this.autoBackupTimer = setInterval(async () => {
+            try {
+                console.log('⏰ Iniciando backup automático...');
+                await this.createBackup();
+            } catch (error) {
+                console.error('❌ Error en backup automático:', error.message);
+            }
+        }, interval);
+
+        console.log(`✅ Sistema de backups automáticos iniciado (cada ${interval / 1000 / 60 / 60} horas)`);
+    }
+
+    /**
+     * Detiene el sistema de backups automáticos
+     */
+    stopAutoBackup() {
+        if (this.autoBackupTimer) {
+            clearInterval(this.autoBackupTimer);
+            this.autoBackupTimer = null;
+            console.log('🛑 Sistema de backups automáticos detenido');
         }
     }
 }

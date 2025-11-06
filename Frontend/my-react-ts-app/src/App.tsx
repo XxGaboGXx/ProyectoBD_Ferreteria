@@ -26,6 +26,7 @@ import FormularioProveedor from './modules/Proveedor/Pages/FormularioProveedor';
 import DetalleProveedor from './modules/Proveedor/Pages/DetalleProveedor';
 import ListaBitacora from './modules/Bitacora/Pages/ListaBitacora';
 import ReportesList from './modules/Reporte/Pages/ListaReporte';
+import ListaBackup from './modules/Backup/Pages/ListaBackup'; // ✅ NUEVO
 
 
 function App() {
@@ -62,11 +63,11 @@ function App() {
           <Route path="/colaboradores/*" element={<ListaColaborador />} />
           {/* Proveedores */}
           <Route path="/proveedores" element={<ListaProveedor />} />
-            {/* Categorías */}
-            <Route path="/categorias" element={<ListaCategoria />} />
-            <Route path="/categorias/nuevo" element={<FormularioCategoria />} />
-            <Route path="/categorias/:id" element={<DetalleCategoria />} />
-            <Route path="/categorias/:id/editar" element={<FormularioCategoria />} />
+          {/* Categorías */}
+          <Route path="/categorias" element={<ListaCategoria />} />
+          <Route path="/categorias/nuevo" element={<FormularioCategoria />} />
+          <Route path="/categorias/:id" element={<DetalleCategoria />} />
+          <Route path="/categorias/:id/editar" element={<FormularioCategoria />} />
           <Route path="/proveedores/nuevo" element={<FormularioProveedor />} />
           <Route path="/proveedores/:id" element={<DetalleProveedor />} />
           <Route path="/proveedores/:id/editar" element={<FormularioProveedor />} />
@@ -74,9 +75,8 @@ function App() {
           <Route path="/reportes" element={<ReportesList />} />
           {/* Bitácora */}
           <Route path="/bitacora" element={<ListaBitacora />} />
-         
-
-         
+          {/* Backups ✅ NUEVO */}
+          <Route path="/backups" element={<ListaBackup />} />
         </Routes>
       </MainLayout>
     </BrowserRouter>

@@ -70,6 +70,10 @@ exports.create = async (req, res, next) => {
  */
 exports.update = async (req, res, next) => {
     try {
+        console.log('📥 Controller - Datos recibidos para actualizar:', JSON.stringify({
+            id: req.params.id,
+            body: req.body
+        }, null, 2));
         const result = await productoService.update(req.params.id, req.body);
         res.json({
             success: true,
@@ -77,6 +81,7 @@ exports.update = async (req, res, next) => {
             data: result
         });
     } catch (error) {
+        console.error('❌ Controller - Error en update:', error.message);
         next(error);
     }
 };

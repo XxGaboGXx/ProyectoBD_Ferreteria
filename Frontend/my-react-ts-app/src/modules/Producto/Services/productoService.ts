@@ -43,6 +43,7 @@ export const createProducto = async (
 
 // Actualizar un producto
 export const updateProducto = async (id: number, producto: Partial<Producto>): Promise<Producto> => {
+  console.log('📤 Datos enviados al backend (UPDATE):', JSON.stringify(producto, null, 2));
   const response = await api.put(`/productos/${id}`, producto);
   return response.data.data as Producto;
 };

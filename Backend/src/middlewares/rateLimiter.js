@@ -1,58 +1,76 @@
-const { config, constants } = require('../config');
+const rateLimit = require('express-rate-limit');
 
-// Almacenar intentos de peticiones por IP
-const requestCounts = new Map();
+// ============================================
+// CONFIGURACIÓN DESDE VARIABLES DE ENTORNO
+// ============================================
+const isProduction = process.env.NODE_ENV === 'production';
+const rateLimitEnabled = process.env.RATE_LIMIT_ENABLED !== 'false';
 
-/**
- * Limpia contadores antiguos cada minuto
- */
-setInterval(() => {
-    const now = Date.now();
-    for (const [key, data] of requestCounts.entries()) {
-        if (now - data.resetTime > config.security.rateLimit.windowMs) {
-            requestCounts.delete(key);
+// ============================================
+// RATE LIMITER GENERAL - MUY PERMISIVO
+// ============================================
+const generalLimiter = rateLimit({
+    windowMs: 1 * 60 * 1000, // 1 minuto
+    max: 300, // 300 peticiones por minuto
+    message: {
+        error: 'Demasiadas peticiones',
+        code: 'RATE_LIMIT_EXCEEDED',
+        retryAfter: 60
+    },
+    standardHeaders: true,
+    legacyHeaders: false,
+    // Desactivar en desarrollo o cuando RATE_LIMIT_ENABLED=false
+    skip: (req) => {
+        const isLocalIP = req.ip === '::1' || req.ip === '127.0.0.1' || req.ip?.startsWith('192.168.');
+        const skipInDev = !isProduction && isLocalIP;
+        const skipByConfig = !rateLimitEnabled;
+        
+        if (skipInDev || skipByConfig) {
+            return true;
         }
-    }
-}, 60000);
-
-/**
- * Middleware de rate limiting
- */
-const rateLimiter = (req, res, next) => {
-    const ip = req.ip || req.connection.remoteAddress;
-    const now = Date.now();
-    
-    let requestData = requestCounts.get(ip);
-    
-    // Si no existe o el tiempo expiró, crear nuevo
-    if (!requestData || now - requestData.resetTime > config.security.rateLimit.windowMs) {
-        requestData = {
-            count: 0,
-            resetTime: now
-        };
-        requestCounts.set(ip, requestData);
-    }
-    
-    requestData.count++;
-    
-    // Verificar si excede el límite
-    if (requestData.count > config.security.rateLimit.max) {
-        return res.status(429).json({
-            success: false,
-            error: {
-                message: 'Demasiadas peticiones. Por favor intente más tarde.',
-                code: 'RATE_LIMIT_EXCEEDED',
-                retryAfter: Math.ceil((config.security.rateLimit.windowMs - (now - requestData.resetTime)) / 1000)
-            }
+        return false;
+    },
+    handler: (req, res) => {
+        console.warn(`⚠️ Rate limit excedido: ${req.ip} - ${req.method} ${req.path}`);
+        res.status(429).json({
+            error: 'Demasiadas peticiones',
+            message: 'Por favor espera un momento antes de reintentar',
+            retryAfter: 60
         });
     }
-    
-    // Agregar headers informativos
-    res.setHeader('X-RateLimit-Limit', config.security.rateLimit.max);
-    res.setHeader('X-RateLimit-Remaining', config.security.rateLimit.max - requestData.count);
-    res.setHeader('X-RateLimit-Reset', new Date(requestData.resetTime + config.security.rateLimit.windowMs).toISOString());
-    
-    next();
-};
+});
 
-module.exports = rateLimiter;
+// ============================================
+// RATE LIMITER PARA ESCRITURA
+// ============================================
+const writeLimiter = rateLimit({
+    windowMs: 1 * 60 * 1000,
+    max: 100,
+    skip: (req) => !rateLimitEnabled || (!isProduction && (req.ip === '::1' || req.ip === '127.0.0.1'))
+});
+
+// ============================================
+// RATE LIMITER PARA AUTENTICACIÓN
+// ============================================
+const authLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 20,
+    skipSuccessfulRequests: true,
+    skip: (req) => !rateLimitEnabled
+});
+
+// ============================================
+// RATE LIMITER PARA OPERACIONES PESADAS
+// ============================================
+const heavyLimiter = rateLimit({
+    windowMs: 1 * 60 * 1000,
+    max: 50,
+    skip: (req) => !rateLimitEnabled || (!isProduction && (req.ip === '::1' || req.ip === '127.0.0.1'))
+});
+
+module.exports = {
+    generalLimiter,
+    writeLimiter,
+    authLimiter,
+    heavyLimiter
+};

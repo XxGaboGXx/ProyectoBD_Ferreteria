@@ -1,5 +1,5 @@
 // src/modules/Compra/Pages/ListaCompra.tsx
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   FaShoppingCart,
@@ -8,34 +8,31 @@ import {
   FaTruck,
   FaDollarSign,
   FaSearch,
-  FaRegEdit,
-  FaTrashAlt,
+  // FaRegEdit,
+  // FaTrashAlt,
 } from "react-icons/fa";
+import { fetchCompras } from "../Services/compraService";
+import type { Compra } from "../Types/Compra";
 
 const ListaCompra: React.FC = () => {
-  const compras = [
-    {
-      id: 1,
-      fecha: "2025-04-01",
-      total: 1200.0,
-      factura: "F-001",
-      proveedor: "Tech Supplies",
-    },
-    {
-      id: 2,
-      fecha: "2025-04-02",
-      total: 850.0,
-      factura: "F-002",
-      proveedor: "Global Parts",
-    },
-    {
-      id: 3,
-      fecha: "2025-04-03",
-      total: 430.5,
-      factura: "F-003",
-      proveedor: "Hardware Center",
-    },
-  ];
+  const [compras, setCompras] = useState<Compra[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const load = async () => {
+      try {
+        setLoading(true);
+        const resp = await fetchCompras({ page: 1, limit: 20 });
+        setCompras(resp.data);
+      } catch (e: any) {
+        setError(e?.message || "Error al cargar compras");
+      } finally {
+        setLoading(false);
+      }
+    };
+    load();
+  }, []);
 
   return (
     <div className="p-6">
@@ -53,64 +50,53 @@ const ListaCompra: React.FC = () => {
         </Link>
       </div>
 
+      {loading && <p className="text-gray-600">Cargando compras...</p>}
+      {error && (
+        <p className="text-red-600">Ocurrió un error cargando compras: {error}</p>
+      )}
+
       {/* Cards de compras */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {compras.map((compra) => (
+        {!loading && !error && compras.map((compra) => (
           <div
-            key={compra.id}
+            key={compra.Id_compra}
             className="bg-white p-5 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition"
           >
             <h3 className="text-xl font-semibold text-gray-800 mb-2">
               <FaFileInvoiceDollar className="inline-block text-blue-600 mr-2" />
-              Compra #{compra.id}
+              Compra #{compra.Id_compra}
             </h3>
 
             <p className="text-gray-600 flex items-center gap-2">
               <FaRegCalendarAlt className="text-blue-500" />
-              <strong>Fecha:</strong> {compra.fecha}
+              <strong>Fecha:</strong> {new Date(compra.FechaCompra).toLocaleString()}
             </p>
 
             <p className="text-gray-600 flex items-center gap-2">
               <FaDollarSign className="text-green-600" />
-              <strong>Total:</strong> ${compra.total.toFixed(2)}
+              <strong>Total:</strong> ${Number(compra.TotalCompra || 0).toFixed(2)}
             </p>
 
             <p className="text-gray-600 flex items-center gap-2">
               <FaFileInvoiceDollar className="text-purple-600" />
-              <strong>Factura:</strong> {compra.factura}
+              <strong>Factura:</strong> {compra.NumeroFactura || '—'}
             </p>
 
             <p className="text-gray-600 flex items-center gap-2">
               <FaTruck className="text-orange-500" />
-              <strong>Proveedor:</strong> {compra.proveedor}
+              <strong>Proveedor (ID):</strong> {compra.Id_proveedor}
             </p>
 
             {/* Botones de acción */}
             <div className="mt-4 flex justify-between">
               <Link
-                to={`/compras/${compra.id}`}
+                to={`/compras/${compra.Id_compra}`}
                 className="flex items-center gap-1 text-blue-600 hover:underline"
               >
                 <FaSearch /> Ver Detalle
               </Link>
 
-              <div className="flex gap-3">
-                <Link
-                  to={`/compras/${compra.id}/editar`}
-                  className="flex items-center gap-1 text-green-600 hover:underline"
-                >
-                  <FaRegEdit /> Editar
-                </Link>
-
-                <button
-                  onClick={() =>
-                    alert(`¿Deseas eliminar la compra #${compra.id}?`)
-                  }
-                  className="flex items-center gap-1 text-red-600 hover:underline"
-                >
-                  <FaTrashAlt /> Eliminar
-                </button>
-              </div>
+              {/* Backend no soporta editar/eliminar compras actualmente */}
             </div>
           </div>
         ))}

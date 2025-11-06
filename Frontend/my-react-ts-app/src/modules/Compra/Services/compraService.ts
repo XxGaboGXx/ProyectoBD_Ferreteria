@@ -1,67 +1,35 @@
 import api from '../../../services/api';
 import type { Compra } from '../Types/Compra';
 
-// Obtener todas las compras
-export const fetchCompras = async (): Promise<Compra[]> => {
-  try {
-    const response = await api.get('/compras');
-    return response.data.data || response.data;
-  } catch (error) {
-    console.error('Error al obtener compras:', error);
-    throw error;
-  }
-};
+export interface CompraListResponse {
+  data: Compra[];
+  pagination: { page: number; limit: number; total: number; totalPages: number };
+}
 
-// Crear una nueva compra
-export const createCompra = async (compra: Partial<Compra>): Promise<Compra> => {
-  try {
-    const response = await api.post('/compras', compra);
-    return response.data.data || response.data;
-  } catch (error) {
-    console.error('Error al crear compra:', error);
-    throw error;
-  }
-};
-
-// Actualizar una compra
-export const updateCompra = async (id: number, compra: Partial<Compra>): Promise<Compra> => {
-  try {
-    const response = await api.put(`/compras/${id}`, compra);
-    return response.data.data || response.data;
-  } catch (error) {
-    console.error(`Error al actualizar compra ${id}:`, error);
-    throw error;
-  }
+// Obtener todas las compras (respeta estructura del backend)
+export const fetchCompras = async (params?: { page?: number; limit?: number; Id_proveedor?: number; fechaInicio?: string; fechaFin?: string }): Promise<CompraListResponse> => {
+  const response = await api.get('/compras', { params });
+  return response.data.data as CompraListResponse;
 };
 
 // Obtener una compra por ID
-export const fetchCompraById = async (id: number): Promise<Compra> => {
-  try {
-    const response = await api.get(`/compras/${id}`);
-    return response.data.data || response.data;
-  } catch (error) {
-    console.error(`Error al obtener compra ${id}:`, error);
-    throw error;
-  }
+export const fetchCompraById = async (id: number): Promise<any> => {
+  const response = await api.get(`/compras/${id}`);
+  return response.data.data; // incluye compra + detalles
 };
 
-// Eliminar una compra (si existe en tu backend)
-export const deleteCompra = async (id: number): Promise<void> => {
-  try {
-    await api.delete(`/compras/${id}`);
-  } catch (error) {
-    console.error(`Error al eliminar compra ${id}:`, error);
-    throw error;
-  }
+// Crear una nueva compra (payload esperado por backend)
+export type NuevaCompra = {
+  Id_proveedor: number;
+  FechaCompra?: string; // ISO opcional
+  NumeroFactura?: string | null;
+  TotalCompra?: number; // el backend recalcula si no se envía
+  detalles: Array<{ Id_producto: number; CantidadCompra: number; PrecioUnitario: number }>;
 };
 
-// Obtener detalles de una compra con productos
-export const fetchDetallesCompra = async (id: number): Promise<any> => {
-  try {
-    const response = await api.get(`/compras/${id}/detalles`);
-    return response.data.data || response.data;
-  } catch (error) {
-    console.error(`Error al obtener detalles de compra ${id}:`, error);
-    throw error;
-  }
+export const createCompra = async (compra: NuevaCompra): Promise<any> => {
+  const response = await api.post('/compras', compra);
+  return response.data.data;
 };
+
+// Nota: Backend no expone PUT/DELETE ni /detalles. Si se agregan, podemos sumar aquí.
